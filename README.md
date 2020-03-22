@@ -1,0 +1,1 @@
+General repository for students from IASA KPI group KA-76 and our mentors from EPAM to study QA.
