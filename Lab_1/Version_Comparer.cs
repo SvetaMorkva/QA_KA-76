@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lab_1
 {
+    // If first version is greater than second method
+    // returns 1, if equals 0, if less -1.
     class Version_Comparer
     {
         public static int CompareVersions(string str1, string str2)
@@ -19,6 +17,8 @@ namespace Lab_1
             int num1 = int.Parse(string.Concat(splited_str1));
             int num2 = int.Parse(string.Concat(splited_str2));
 
+            // makes digits` lengths equal,
+            // e.g. [1038, 1029384] becomes [1038000, 1029384]
             if (len_str1 > len_str2)
                 num2 *= Convert.ToInt32(Math.Pow(10.0, len_str1 - len_str2));
             else
@@ -26,13 +26,10 @@ namespace Lab_1
 
             if (num1 == num2)
                 return 0;
-            else {
-
-                if (num1 > num2)
-                    return 1;
-                else
-                    return -1;
-            }
+            else if (num1 > num2)
+                return 1;
+            else
+                return -1;
         }
     }
 }
