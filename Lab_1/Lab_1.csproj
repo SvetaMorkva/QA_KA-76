@@ -51,6 +51,7 @@
     <Compile Include="Employees.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests.cs" />
+    <Compile Include="Version_Comparer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
