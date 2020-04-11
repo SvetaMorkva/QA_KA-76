@@ -10,14 +10,29 @@ namespace Lab_1
     {
         public static int CompareVersions(string str1, string str2)
         {
-            int num1 = int.Parse(string.Concat(str1.Trim().Split('.')));
-            int num2 = int.Parse(string.Concat(str2.Trim().Split('.')));
-            if (num1 == num2 || Math.Max(num1, num2) / Math.Min(num1, num2) == 10)
-                return 0;
-            else if (num1 > num2)
-                return 1;
+            string[] splited_str1 = str1.Trim().Split('.');
+            string[] splited_str2 = str2.Trim().Split('.');
+
+            int len_str1 = splited_str1.Length;
+            int len_str2 = splited_str2.Length;
+
+            int num1 = int.Parse(string.Concat(splited_str1));
+            int num2 = int.Parse(string.Concat(splited_str2));
+
+            if (len_str1 > len_str2)
+                num2 *= Convert.ToInt32(Math.Pow(10.0, len_str1 - len_str2));
             else
-                return -1;
+                num1 *= Convert.ToInt32(Math.Pow(10.0, len_str2 - len_str1));
+
+            if (num1 == num2)
+                return 0;
+            else {
+
+                if (num1 > num2)
+                    return 1;
+                else
+                    return -1;
+            }
         }
     }
 }
