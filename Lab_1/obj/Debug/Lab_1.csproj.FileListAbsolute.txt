@@ -1,0 +1,10 @@
+D:\QA\QA_KA-76\Lab_1\bin\Debug\Lab_1.dll
+D:\QA\QA_KA-76\Lab_1\bin\Debug\Lab_1.pdb
+D:\QA\QA_KA-76\Lab_1\bin\Debug\nunit.framework.dll
+D:\QA\QA_KA-76\Lab_1\bin\Debug\nunit.framework.pdb
+D:\QA\QA_KA-76\Lab_1\bin\Debug\nunit.framework.xml
+D:\QA\QA_KA-76\Lab_1\obj\Debug\Lab_1.csprojAssemblyReference.cache
+D:\QA\QA_KA-76\Lab_1\obj\Debug\Lab_1.csproj.CoreCompileInputs.cache
+D:\QA\QA_KA-76\Lab_1\obj\Debug\Lab_1.csproj.CopyComplete
+D:\QA\QA_KA-76\Lab_1\obj\Debug\Lab_1.dll
+D:\QA\QA_KA-76\Lab_1\obj\Debug\Lab_1.pdb

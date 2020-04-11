@@ -18,18 +18,19 @@ namespace Lab_1
         }
     }
 
-    public class Main
+    public class Mock
     {
-        public static List<Employee> employees = new List<Employee>();
+        public static CustomQueue<Employee> employees = new CustomQueue<Employee>();
         public static void AddEmployees()
         {
-            employees.Add(new Employee() { Company = "Alfreds Futterkiste", Contact = "Maria Anders", Country = "Germany" });
-            employees.Add(new Employee() { Company = "Centro commercial Moctezuma", Contact = "Francisco Chang", Country = "Mexico" });
-            employees.Add(new Employee() { Company = "Ernst Handel", Contact = "Roland Mendel", Country = "Austria" });
-            employees.Add(new Employee() { Company = "Island Trading", Contact = "Helen Bennett", Country = "UK" });
-            employees.Add(new Employee() { Company = "Laughing Bacchus Winecellars", Contact = "Yoshi Tannamuri", Country = "Canada" });
-            employees.Add(new Employee() { Company = "Magazine Alimentari Riuniti", Contact = "Giovanni Rovelli", Country = "Italy" });
-            employees.Add(new Employee() { Company = "Island Trading", Contact = "Maria Mendel", Country = "USA" });
+            employees.Clear();
+            employees.Enqueue(new Employee() { Company = "Alfreds Futterkiste", Contact = "Maria Anders", Country = "Germany" });
+            employees.Enqueue(new Employee() { Company = "Centro commercial Moctezuma", Contact = "Francisco Chang", Country = "Mexico" });
+            employees.Enqueue(new Employee() { Company = "Ernst Handel", Contact = "Roland Mendel", Country = "Austria" });
+            employees.Enqueue(new Employee() { Company = "Island Trading", Contact = "Helen Bennett", Country = "UK" });
+            employees.Enqueue(new Employee() { Company = "Laughing Bacchus Winecellars", Contact = "Yoshi Tannamuri", Country = "Canada" });
+            employees.Enqueue(new Employee() { Company = "Magazine Alimentari Riuniti", Contact = "Giovanni Rovelli", Country = "Italy" });
+            employees.Enqueue(new Employee() { Company = "Island Trading", Contact = "Maria Mendel", Country = "USA" });
         }
     }
 }

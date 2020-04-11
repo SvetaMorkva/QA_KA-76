@@ -50,6 +50,7 @@
     <Compile Include="CustomQueue.cs" />
     <Compile Include="Employees.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

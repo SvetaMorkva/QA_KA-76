@@ -33,7 +33,7 @@ namespace Lab_1
         {
             T item = default(T);
 
-            lock (this.SyncRoot)
+            lock (SyncRoot)
                 if (this.Count > 0)
                     item = this[0];
             return (item);
