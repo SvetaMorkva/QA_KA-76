@@ -8,7 +8,7 @@ namespace Lab_1
 {
     class Version_Comparer
     {
-        public int CompareVersions(string str1, string str2)
+        public static int CompareVersions(string str1, string str2)
         {
             int num1 = int.Parse(string.Concat(str1.Trim().Split('.')));
             int num2 = int.Parse(string.Concat(str2.Trim().Split('.')));

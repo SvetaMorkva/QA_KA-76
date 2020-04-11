@@ -49,4 +49,17 @@ namespace Lab_1
             Assert.AreEqual(0, Mock.employees.Count);
         }
     }
+
+    [TestFixture]
+    class Version_Comparer_Tests
+    {
+        [TestCase("1.2.3", "4.5.6", -1)]
+        [TestCase("1", "1.0", 0)]
+        [TestCase("1.1.0", "1.0.1", 1)]
+        public void CompareVersion_InputsVersions_ReturnsResult(string firstString, string secondString, int expectedResult)
+        {
+            int actualResult = Version_Comparer.CompareVersions(firstString, secondString);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+    }
 }
