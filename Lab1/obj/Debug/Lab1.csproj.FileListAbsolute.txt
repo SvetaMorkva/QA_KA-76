@@ -1,0 +1,10 @@
+C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\Lab1\bin\Debug\Lab1.dll
+C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\Lab1\bin\Debug\Lab1.pdb
+C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\Lab1\bin\Debug\nunit.framework.dll
+C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\Lab1\bin\Debug\nunit.framework.pdb
+C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\Lab1\bin\Debug\nunit.framework.xml
+C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\Lab1\obj\Debug\Lab1.csprojAssemblyReference.cache
+C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\Lab1\obj\Debug\Lab1.csproj.CoreCompileInputs.cache
+C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\Lab1\obj\Debug\Lab1.csproj.CopyComplete
+C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\Lab1\obj\Debug\Lab1.dll
+C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\Lab1\obj\Debug\Lab1.pdb
