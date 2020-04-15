@@ -1,0 +1,4 @@
+/home/pavlo/Documents/QA_KA-76/lab1/test/obj/Debug/netcoreapp3.1/test.csprojAssemblyReference.cache
+/home/pavlo/Documents/QA_KA-76/lab1/test/obj/Debug/netcoreapp3.1/test.csproj.CoreCompileInputs.cache
+/home/pavlo/Documents/QA_KA-76/lab1/test/obj/Debug/netcoreapp3.1/test.AssemblyInfoInputs.cache
+/home/pavlo/Documents/QA_KA-76/lab1/test/obj/Debug/netcoreapp3.1/test.AssemblyInfo.cs
