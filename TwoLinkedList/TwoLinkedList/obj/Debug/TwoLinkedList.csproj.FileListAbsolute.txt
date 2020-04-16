@@ -1,0 +1,11 @@
+D:\Projects\C#\QA_KA-76\TwoLinkedList\TwoLinkedList\obj\Debug\TwoLinkedList.csprojAssemblyReference.cache
+D:\Projects\C#\QA_KA-76\TwoLinkedList\TwoLinkedList\obj\Debug\TwoLinkedList.csproj.CoreCompileInputs.cache
+D:\Projects\C#\QA_KA-76\TwoLinkedList\TwoLinkedList\bin\Debug\TwoLinkedList.exe.config
+D:\Projects\C#\QA_KA-76\TwoLinkedList\TwoLinkedList\bin\Debug\TwoLinkedList.exe
+D:\Projects\C#\QA_KA-76\TwoLinkedList\TwoLinkedList\bin\Debug\TwoLinkedList.pdb
+D:\Projects\C#\QA_KA-76\TwoLinkedList\TwoLinkedList\bin\Debug\nunit.framework.dll
+D:\Projects\C#\QA_KA-76\TwoLinkedList\TwoLinkedList\bin\Debug\nunit.framework.pdb
+D:\Projects\C#\QA_KA-76\TwoLinkedList\TwoLinkedList\bin\Debug\nunit.framework.xml
+D:\Projects\C#\QA_KA-76\TwoLinkedList\TwoLinkedList\obj\Debug\TwoLinkedList.csproj.CopyComplete
+D:\Projects\C#\QA_KA-76\TwoLinkedList\TwoLinkedList\obj\Debug\TwoLinkedList.exe
+D:\Projects\C#\QA_KA-76\TwoLinkedList\TwoLinkedList\obj\Debug\TwoLinkedList.pdb
