@@ -1,0 +1,9 @@
+/home/petro/Projects/C#/QA_KA-76/task0/TwoLinkedList/bin/Debug/netstandard2.0/TwoLinkedList.deps.json
+/home/petro/Projects/C#/QA_KA-76/task0/TwoLinkedList/bin/Debug/netstandard2.0/TwoLinkedList.dll
+/home/petro/Projects/C#/QA_KA-76/task0/TwoLinkedList/bin/Debug/netstandard2.0/TwoLinkedList.pdb
+/home/petro/Projects/C#/QA_KA-76/task0/TwoLinkedList/obj/Debug/netstandard2.0/TwoLinkedList.csprojAssemblyReference.cache
+/home/petro/Projects/C#/QA_KA-76/task0/TwoLinkedList/obj/Debug/netstandard2.0/TwoLinkedList.csproj.CoreCompileInputs.cache
+/home/petro/Projects/C#/QA_KA-76/task0/TwoLinkedList/obj/Debug/netstandard2.0/TwoLinkedList.AssemblyInfoInputs.cache
+/home/petro/Projects/C#/QA_KA-76/task0/TwoLinkedList/obj/Debug/netstandard2.0/TwoLinkedList.AssemblyInfo.cs
+/home/petro/Projects/C#/QA_KA-76/task0/TwoLinkedList/obj/Debug/netstandard2.0/TwoLinkedList.dll
+/home/petro/Projects/C#/QA_KA-76/task0/TwoLinkedList/obj/Debug/netstandard2.0/TwoLinkedList.pdb
