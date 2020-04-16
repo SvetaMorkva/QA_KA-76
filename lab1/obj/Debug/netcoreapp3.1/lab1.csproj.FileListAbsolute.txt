@@ -1,0 +1,13 @@
+/home/pavlo/Documents/QA_KA-76/lab1/bin/Debug/netcoreapp3.1/lab1
+/home/pavlo/Documents/QA_KA-76/lab1/bin/Debug/netcoreapp3.1/lab1.deps.json
+/home/pavlo/Documents/QA_KA-76/lab1/bin/Debug/netcoreapp3.1/lab1.runtimeconfig.json
+/home/pavlo/Documents/QA_KA-76/lab1/bin/Debug/netcoreapp3.1/lab1.runtimeconfig.dev.json
+/home/pavlo/Documents/QA_KA-76/lab1/bin/Debug/netcoreapp3.1/lab1.dll
+/home/pavlo/Documents/QA_KA-76/lab1/bin/Debug/netcoreapp3.1/lab1.pdb
+/home/pavlo/Documents/QA_KA-76/lab1/obj/Debug/netcoreapp3.1/lab1.csprojAssemblyReference.cache
+/home/pavlo/Documents/QA_KA-76/lab1/obj/Debug/netcoreapp3.1/lab1.csproj.CoreCompileInputs.cache
+/home/pavlo/Documents/QA_KA-76/lab1/obj/Debug/netcoreapp3.1/lab1.AssemblyInfoInputs.cache
+/home/pavlo/Documents/QA_KA-76/lab1/obj/Debug/netcoreapp3.1/lab1.AssemblyInfo.cs
+/home/pavlo/Documents/QA_KA-76/lab1/obj/Debug/netcoreapp3.1/lab1.dll
+/home/pavlo/Documents/QA_KA-76/lab1/obj/Debug/netcoreapp3.1/lab1.pdb
+/home/pavlo/Documents/QA_KA-76/lab1/obj/Debug/netcoreapp3.1/lab1.genruntimeconfig.cache
