@@ -15,7 +15,7 @@ namespace NUnitTestLab1
         {
             Task2 task2 = new Task2();
             int actualResult = task2.CompareVersions(str1, str2);
-            Assert.AreEqual(actualResult, expectedResult);
+            Assert.AreEqual(expectedResult, actualResult);
         }
     }
 }
