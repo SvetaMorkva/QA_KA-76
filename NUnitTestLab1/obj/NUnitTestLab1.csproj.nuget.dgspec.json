@@ -53,17 +53,15 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "Microsoft.CodeCoverage": {
+            "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.5.0, )"
             },
-            "Microsoft.NET.Test.Sdk": {
-              "target": "Package",
-              "version": "[16.4.0, )"
-            },
             "NUnit3TestAdapter": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[3.15.1, )"
+              "version": "[3.16.1, )"
             },
             "nunit": {
               "target": "Package",
