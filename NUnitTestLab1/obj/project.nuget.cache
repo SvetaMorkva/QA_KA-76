@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "/NzPAzNFO+awWaEjEvKTH4mVqoXmccgLm9vWhRIA0hcbsE/vLpTwvx2RX9gjhbn1pOrWL3auKA6NmgE7UT195g==",
+  "dgSpecHash": "5t495LIyYYv0Rnj8XCKkIjegjssTqcVDc1mh2LBenFmXVWS4I6hpBvW50Ja20R+kbQAs/Wt2DcsYFlKPGtcAzw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Yarik\\Desktop\\Institute\\Csharp\\QA_KA-76\\NUnitTestLab1\\NUnitTestLab1.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Yarik\\.nuget\\packages\\microsoft.codecoverage\\16.4.0\\microsoft.codecoverage.16.4.0.nupkg.sha512",
+    "C:\\Users\\Yarik\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",
     "C:\\Users\\Yarik\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\Yarik\\.nuget\\packages\\microsoft.dotnet.internalabstractions\\1.0.0\\microsoft.dotnet.internalabstractions.1.0.0.nupkg.sha512",
     "C:\\Users\\Yarik\\.nuget\\packages\\microsoft.net.test.sdk\\16.4.0\\microsoft.net.test.sdk.16.4.0.nupkg.sha512",

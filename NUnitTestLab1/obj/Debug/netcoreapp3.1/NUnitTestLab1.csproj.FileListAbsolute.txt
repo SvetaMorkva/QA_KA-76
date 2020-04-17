@@ -89,10 +89,10 @@ C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\NUnitTestLab1\bin\Debug\netcore
 C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\NUnitTestLab1\bin\Debug\netcoreapp3.1\Lab1.dll
 C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\NUnitTestLab1\bin\Debug\netcoreapp3.1\Lab1.pdb
 C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\NUnitTestLab1\obj\Debug\netcoreapp3.1\NUnitTestLab1.csprojAssemblyReference.cache
-C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\NUnitTestLab1\obj\Debug\netcoreapp3.1\NUnitTestLab1.csproj.CoreCompileInputs.cache
 C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\NUnitTestLab1\obj\Debug\netcoreapp3.1\NUnitTestLab1.AssemblyInfoInputs.cache
 C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\NUnitTestLab1\obj\Debug\netcoreapp3.1\NUnitTestLab1.AssemblyInfo.cs
 C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\NUnitTestLab1\obj\Debug\netcoreapp3.1\NUnitTestLab1.csproj.CopyComplete
 C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\NUnitTestLab1\obj\Debug\netcoreapp3.1\NUnitTestLab1.dll
 C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\NUnitTestLab1\obj\Debug\netcoreapp3.1\NUnitTestLab1.pdb
 C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\NUnitTestLab1\obj\Debug\netcoreapp3.1\NUnitTestLab1.genruntimeconfig.cache
+C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\NUnitTestLab1\obj\Debug\netcoreapp3.1\NUnitTestLab1.csproj.CoreCompileInputs.cache
