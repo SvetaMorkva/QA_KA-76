@@ -1,0 +1,11 @@
+D:\Projects\C#\QA_KA-76\task_2\task_2\obj\Debug\task_2.csprojAssemblyReference.cache
+D:\Projects\C#\QA_KA-76\task_2\task_2\obj\Debug\task_2.csproj.CoreCompileInputs.cache
+D:\Projects\C#\QA_KA-76\task_2\task_2\bin\Debug\task_2.exe.config
+D:\Projects\C#\QA_KA-76\task_2\task_2\bin\Debug\task_2.exe
+D:\Projects\C#\QA_KA-76\task_2\task_2\bin\Debug\task_2.pdb
+D:\Projects\C#\QA_KA-76\task_2\task_2\obj\Debug\task_2.exe
+D:\Projects\C#\QA_KA-76\task_2\task_2\obj\Debug\task_2.pdb
+D:\Projects\C#\QA_KA-76\task_2\task_2\bin\Debug\nunit.framework.dll
+D:\Projects\C#\QA_KA-76\task_2\task_2\bin\Debug\nunit.framework.pdb
+D:\Projects\C#\QA_KA-76\task_2\task_2\bin\Debug\nunit.framework.xml
+D:\Projects\C#\QA_KA-76\task_2\task_2\obj\Debug\task_2.csproj.CopyComplete
