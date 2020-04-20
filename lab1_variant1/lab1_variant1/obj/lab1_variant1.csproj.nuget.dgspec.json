@@ -1,0 +1,75 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/olyapashneva/Desktop/QA/QA_KA-76/lab1_variant1/lab1_variant1/lab1_variant1.csproj": {}
+  },
+  "projects": {
+    "/Users/olyapashneva/Desktop/QA/QA_KA-76/lab1_variant1/lab1_variant1/lab1_variant1.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/olyapashneva/Desktop/QA/QA_KA-76/lab1_variant1/lab1_variant1/lab1_variant1.csproj",
+        "projectName": "lab1_variant1",
+        "projectPath": "/Users/olyapashneva/Desktop/QA/QA_KA-76/lab1_variant1/lab1_variant1/lab1_variant1.csproj",
+        "packagesPath": "/Users/olyapashneva/.nuget/packages/",
+        "outputPath": "/Users/olyapashneva/Desktop/QA/QA_KA-76/lab1_variant1/lab1_variant1/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/olyapashneva/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.4.0, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[3.15.1, )"
+            },
+            "nunit": {
+              "target": "Package",
+              "version": "[3.12.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.200/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
