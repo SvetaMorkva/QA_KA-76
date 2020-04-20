@@ -9,7 +9,9 @@
                 "build",
                 "${workspaceFolder}/task1/task1.csproj",
                 "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "/consoleloggerparameters:NoSummary",
+                // "/unsafe"
+                // add unsafe to allow using pointers
             ],
             "problemMatcher": "$msCompile"
         },
