@@ -8,3 +8,12 @@
 /Users/ivan/Projects/Lab1/Lab1/obj/Debug/Lab1.csproj.CopyComplete
 /Users/ivan/Projects/Lab1/Lab1/obj/Debug/Lab1.exe
 /Users/ivan/Projects/Lab1/Lab1/obj/Debug/Lab1.pdb
+D:\VS\Lab1\bin\Debug\Lab1.exe
+D:\VS\Lab1\bin\Debug\Lab1.pdb
+D:\VS\Lab1\bin\Debug\nunit.framework.dll
+D:\VS\Lab1\bin\Debug\nunit.framework.pdb
+D:\VS\Lab1\bin\Debug\nunit.framework.xml
+D:\VS\Lab1\obj\Debug\Lab1.csprojAssemblyReference.cache
+D:\VS\Lab1\obj\Debug\Lab1.csproj.CopyComplete
+D:\VS\Lab1\obj\Debug\Lab1.exe
+D:\VS\Lab1\obj\Debug\Lab1.pdb

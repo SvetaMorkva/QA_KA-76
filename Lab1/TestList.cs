@@ -6,14 +6,16 @@ namespace Lab1
     [TestFixture]
     public class TestList
     {
+        [SetUp]
+        static public void FillMock()
+        {
+            Mock.FillMock();
+        }
+
+
         [Test]
         static public void Add_SixItemsIn_Returns6()
         {
-            Mock.FillMock();
-            //for(int i = 0; i < 5; i++)
-            //{
-            //    Mock.list.GetCurrent(i).toString();
-            //}
             Assert.AreEqual(4, Mock.list.Length);
         }
 

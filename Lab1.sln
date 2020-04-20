@@ -1,17 +1,30 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29905.134
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab1", "Lab1\Lab1.csproj", "{69F12685-811F-4C8A-B9FD-8FFF94F0AF3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|anycpu = Debug|anycpu
+		Debug|x64 = Debug|x64
 		Release|anycpu = Release|anycpu
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{69F12685-811F-4C8A-B9FD-8FFF94F0AF3A}.Debug|anycpu.ActiveCfg = Debug|anycpu
-		{69F12685-811F-4C8A-B9FD-8FFF94F0AF3A}.Debug|anycpu.Build.0 = Debug|anycpu
-		{69F12685-811F-4C8A-B9FD-8FFF94F0AF3A}.Release|anycpu.ActiveCfg = Release|anycpu
-		{69F12685-811F-4C8A-B9FD-8FFF94F0AF3A}.Release|anycpu.Build.0 = Release|anycpu
+		{69F12685-811F-4C8A-B9FD-8FFF94F0AF3A}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{69F12685-811F-4C8A-B9FD-8FFF94F0AF3A}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{69F12685-811F-4C8A-B9FD-8FFF94F0AF3A}.Debug|x64.ActiveCfg = Debug|x64
+		{69F12685-811F-4C8A-B9FD-8FFF94F0AF3A}.Debug|x64.Build.0 = Debug|x64
+		{69F12685-811F-4C8A-B9FD-8FFF94F0AF3A}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{69F12685-811F-4C8A-B9FD-8FFF94F0AF3A}.Release|anycpu.Build.0 = Release|Any CPU
+		{69F12685-811F-4C8A-B9FD-8FFF94F0AF3A}.Release|x64.ActiveCfg = Release|x64
+		{69F12685-811F-4C8A-B9FD-8FFF94F0AF3A}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FCC3C39E-734F-4831-87F6-EDA1421076AE}
 	EndGlobalSection
 EndGlobal
