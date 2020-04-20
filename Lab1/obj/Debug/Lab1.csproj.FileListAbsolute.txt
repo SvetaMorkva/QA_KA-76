@@ -1,0 +1,10 @@
+/Users/ivan/Projects/Lab1/Lab1/bin/Debug/Lab1.exe
+/Users/ivan/Projects/Lab1/Lab1/bin/Debug/Lab1.pdb
+/Users/ivan/Projects/Lab1/Lab1/bin/Debug/nunit.framework.dll
+/Users/ivan/Projects/Lab1/Lab1/bin/Debug/nunit.framework.pdb
+/Users/ivan/Projects/Lab1/Lab1/bin/Debug/nunit.framework.xml
+/Users/ivan/Projects/Lab1/Lab1/obj/Debug/Lab1.csprojAssemblyReference.cache
+/Users/ivan/Projects/Lab1/Lab1/obj/Debug/Lab1.csproj.CoreCompileInputs.cache
+/Users/ivan/Projects/Lab1/Lab1/obj/Debug/Lab1.csproj.CopyComplete
+/Users/ivan/Projects/Lab1/Lab1/obj/Debug/Lab1.exe
+/Users/ivan/Projects/Lab1/Lab1/obj/Debug/Lab1.pdb
