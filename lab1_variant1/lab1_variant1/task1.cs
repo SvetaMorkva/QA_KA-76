@@ -1,5 +1,4 @@
-﻿using System;
-namespace lab1_variant1
+﻿namespace lab1_variant1
 {
     public class DoublyLinkedList
     {
