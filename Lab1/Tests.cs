@@ -13,7 +13,7 @@ namespace Lab1
         public static void VersionCompare_ShouldReturn(string version1, string version2, int expectedValue)
         {
             int actualValue = Comparer.CompareVersions(version1, version2);
-            Assert.AreEqual(actualValue, expectedValue);
+            Assert.AreEqual(expectedValue, actualValue);
         }
     }
 
@@ -26,7 +26,7 @@ namespace Lab1
             MyQueue<int> queue = new MyQueue<int>();
             queue.Enqueue(3);
             queue.Enqueue(6);
-            Assert.AreEqual(queue.Count, 2);
+            Assert.AreEqual(2, queue.Count);
         }
 
         [TestCase(10, 10)]
@@ -54,7 +54,7 @@ namespace Lab1
             queue.Enqueue(10);
             queue.Enqueue(-23);
             queue.Enqueue(111);
-            Assert.AreEqual(queue.Peek(), 10);
+            Assert.AreEqual(10, queue.Peek());
         }
 
         [Test]
@@ -67,7 +67,7 @@ namespace Lab1
             queue.Enqueue(true);
             queue.Enqueue(false);
             queue.Clear();
-            Assert.AreEqual(queue.Count, 0);
+            Assert.AreEqual(0, queue.Count);
         }
         
     }

@@ -9,7 +9,8 @@ namespace Lab1
 
         public void Enqueue(T item)
         {
-            Queue.Add(item);
+            Count++;
+            Queue.Insert(Count - 1, item);
         }
         
         public T Dequeue()
@@ -21,9 +22,9 @@ namespace Lab1
             else
             {
                 Count--;
-                T lastValue = Queue[Queue.Count];
-                Queue.RemoveAt(Queue.Count - 1);
-                return lastValue;
+                T value = Queue[0];
+                Queue.RemoveAt(0);
+                return value;
             }
         }
 
@@ -35,7 +36,7 @@ namespace Lab1
             }
             else
             {
-                return Queue[Count];
+                return Queue[0];
             }
         }
 
