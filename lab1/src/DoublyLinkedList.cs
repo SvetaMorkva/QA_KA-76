@@ -5,6 +5,9 @@ namespace lab1
     public class Node
 
     {
+        /*
+            Helper class for DoublyLinkedList class.
+        */
         int key;
         internal Node prev;
         internal Node next;
@@ -19,24 +22,6 @@ namespace lab1
         public int getKey()
         {
             return this.key;
-        }
-
-        public bool hasNext()
-        {
-            if(this.next == null)
-            {
-                return false;
-            }
-            return true;
-        }
-
-        public bool hasPrev()
-        {
-            if(this.prev == null)
-            {
-                return false;
-            }
-            return true;
         }
 
         public Node getNext()
@@ -65,33 +50,32 @@ namespace lab1
    
         public void Add(int key)
         {
+            /*
+                Add element to the head of the doubly linked list.
+            */
             Node node = new Node(key);
             node.prev = this.head;
             this.head.next = node;
             this.head = node;
-            Console.WriteLine("Element added");
         }
 
         public Node GetCurrent(int key)
         {
+            /*
+                Get the element with a given key.
+            */
             Node h = this.head;
             while(h != null && h.getKey() != key)
             {
                 h = h.prev;
                 Console.WriteLine(h == null);
             }
-            Console.WriteLine("Current element returned");
             return h;
         }
 
         public Node getHead()
         {
             return this.head;
-        }
-
-        public void print()
-        {
-           
         }
     }
 }
