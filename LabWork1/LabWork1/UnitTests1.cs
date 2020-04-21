@@ -20,7 +20,7 @@ namespace LabWork1
         {
             DoubleLinkedList<int> testList = mocks[0].TestList;
             testList.Add(60);
-            Assert.AreEqual(60, testList.GetCurrent(5));
+            Assert.AreEqual(60, testList.GetCurrent(5).Data);
         }
 
 
@@ -29,7 +29,7 @@ namespace LabWork1
         {
             DoubleLinkedList<int> testList = mocks[1].TestList;
             testList.Add(-60);
-            Assert.AreEqual(-50, testList.GetPrevious(5));
+            Assert.AreEqual(-50, testList.GetPrevious(5).Data);
         }
 
         [Test]
@@ -37,7 +37,7 @@ namespace LabWork1
         {
             DoubleLinkedList<int> testList = mocks[1].TestList;
             testList.Add(-60);
-            Assert.AreEqual(-60, testList.GetNext(4));
+            Assert.AreEqual(-60, testList.GetNext(4).Data);
         }
     }
 }

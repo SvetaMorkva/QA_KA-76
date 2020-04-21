@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Lab1
+namespace LabWork1
 {
     public class Task2
     {
@@ -7,7 +7,7 @@ namespace Lab1
         {
             for (int i = 0; i < Math.Max(version1.Split('.').Length, version2.Split('.').Length); i++)
             {
-                if ((i < version1.Split('.').Length) && (i < version1.Split('.').Length))
+                if ((i < version1.Split('.').Length) && (i < version2.Split('.').Length))
                 {
                     if (Int32.Parse(version1.Split('.')[i]) > Int32.Parse(version2.Split('.')[i]))
                     {
