@@ -1,0 +1,11 @@
+D:\Knowledge6(prb)\qa_course\new\LabWork1\LabWork1\bin\Debug\LabWork1.exe.config
+D:\Knowledge6(prb)\qa_course\new\LabWork1\LabWork1\bin\Debug\LabWork1.exe
+D:\Knowledge6(prb)\qa_course\new\LabWork1\LabWork1\bin\Debug\LabWork1.pdb
+D:\Knowledge6(prb)\qa_course\new\LabWork1\LabWork1\obj\Debug\LabWork1.csproj.CoreCompileInputs.cache
+D:\Knowledge6(prb)\qa_course\new\LabWork1\LabWork1\obj\Debug\LabWork1.exe
+D:\Knowledge6(prb)\qa_course\new\LabWork1\LabWork1\obj\Debug\LabWork1.pdb
+D:\Knowledge6(prb)\qa_course\new\LabWork1\LabWork1\bin\Debug\nunit.framework.dll
+D:\Knowledge6(prb)\qa_course\new\LabWork1\LabWork1\bin\Debug\nunit.framework.pdb
+D:\Knowledge6(prb)\qa_course\new\LabWork1\LabWork1\bin\Debug\nunit.framework.xml
+D:\Knowledge6(prb)\qa_course\new\LabWork1\LabWork1\obj\Debug\LabWork1.csprojAssemblyReference.cache
+D:\Knowledge6(prb)\qa_course\new\LabWork1\LabWork1\obj\Debug\LabWork1.csproj.CopyComplete
