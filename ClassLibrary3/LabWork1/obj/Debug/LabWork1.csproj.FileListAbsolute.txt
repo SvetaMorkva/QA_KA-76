@@ -1,0 +1,10 @@
+C:\Users\Bataisk\RiderProjects\QA_KA-76_1\ClassLibrary3\LabWork1\bin\Debug\LabWork1.dll
+C:\Users\Bataisk\RiderProjects\QA_KA-76_1\ClassLibrary3\LabWork1\bin\Debug\LabWork1.pdb
+C:\Users\Bataisk\RiderProjects\QA_KA-76_1\ClassLibrary3\LabWork1\bin\Debug\nunit.framework.dll
+C:\Users\Bataisk\RiderProjects\QA_KA-76_1\ClassLibrary3\LabWork1\bin\Debug\nunit.framework.pdb
+C:\Users\Bataisk\RiderProjects\QA_KA-76_1\ClassLibrary3\LabWork1\bin\Debug\nunit.framework.xml
+C:\Users\Bataisk\RiderProjects\QA_KA-76_1\ClassLibrary3\LabWork1\obj\Debug\LabWork1.csprojAssemblyReference.cache
+C:\Users\Bataisk\RiderProjects\QA_KA-76_1\ClassLibrary3\LabWork1\obj\Debug\LabWork1.csproj.CoreCompileInputs.cache
+C:\Users\Bataisk\RiderProjects\QA_KA-76_1\ClassLibrary3\LabWork1\obj\Debug\LabWork1.csproj.CopyComplete
+C:\Users\Bataisk\RiderProjects\QA_KA-76_1\ClassLibrary3\LabWork1\obj\Debug\LabWork1.dll
+C:\Users\Bataisk\RiderProjects\QA_KA-76_1\ClassLibrary3\LabWork1\obj\Debug\LabWork1.pdb
