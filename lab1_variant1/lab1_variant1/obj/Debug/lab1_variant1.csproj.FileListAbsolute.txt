@@ -19,14 +19,13 @@ C:\Users\Olha\Desktop\lab1_variant1\lab1_variant1\obj\Debug\lab1_variant1.csproj
 C:\Users\Olha\Desktop\lab1_variant1\lab1_variant1\obj\Debug\lab1_variant1.csproj.CopyComplete
 C:\Users\Olha\Desktop\lab1_variant1\lab1_variant1\obj\Debug\lab1_variant1.exe
 C:\Users\Olha\Desktop\lab1_variant1\lab1_variant1\obj\Debug\lab1_variant1.pdb
-C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab1_variant1\lab1_variant1\bin\Debug\lab1_variant1.exe.config
-C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab1_variant1\lab1_variant1\bin\Debug\lab1_variant1.exe
 C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab1_variant1\lab1_variant1\bin\Debug\lab1_variant1.pdb
 C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab1_variant1\lab1_variant1\bin\Debug\nunit.framework.dll
 C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab1_variant1\lab1_variant1\bin\Debug\nunit.framework.pdb
 C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab1_variant1\lab1_variant1\bin\Debug\nunit.framework.xml
-C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab1_variant1\lab1_variant1\obj\Debug\lab1_variant1.csprojAssemblyReference.cache
 C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab1_variant1\lab1_variant1\obj\Debug\lab1_variant1.csproj.CoreCompileInputs.cache
 C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab1_variant1\lab1_variant1\obj\Debug\lab1_variant1.csproj.CopyComplete
-C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab1_variant1\lab1_variant1\obj\Debug\lab1_variant1.exe
 C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab1_variant1\lab1_variant1\obj\Debug\lab1_variant1.pdb
+C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab1_variant1\lab1_variant1\bin\Debug\lab1_variant1.dll.config
+C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab1_variant1\lab1_variant1\bin\Debug\lab1_variant1.dll
+C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab1_variant1\lab1_variant1\obj\Debug\lab1_variant1.dll
