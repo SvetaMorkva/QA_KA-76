@@ -15,6 +15,7 @@
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
         <e p="Task1.cs" t="Include" />
+        <e p="Task2.cs" t="Include" />
         <e p="Tests.cs" t="Include" />
       </e>
       <e p="packages" t="ExcludeRecursive" />
