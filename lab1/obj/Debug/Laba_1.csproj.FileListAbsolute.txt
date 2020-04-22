@@ -1,0 +1,11 @@
+C:\Users\ihnat\source\repos\Laba_1\Laba_1\obj\Debug\Laba_1.csproj.CoreCompileInputs.cache
+C:\Users\ihnat\source\repos\Laba_1\Laba_1\bin\Debug\Laba_1.dll.config
+C:\Users\ihnat\source\repos\Laba_1\Laba_1\bin\Debug\Laba_1.dll
+C:\Users\ihnat\source\repos\Laba_1\Laba_1\bin\Debug\Laba_1.pdb
+C:\Users\ihnat\source\repos\Laba_1\Laba_1\bin\Debug\nunit.framework.dll
+C:\Users\ihnat\source\repos\Laba_1\Laba_1\bin\Debug\nunit.framework.pdb
+C:\Users\ihnat\source\repos\Laba_1\Laba_1\bin\Debug\nunit.framework.xml
+C:\Users\ihnat\source\repos\Laba_1\Laba_1\obj\Debug\Laba_1.csproj.CopyComplete
+C:\Users\ihnat\source\repos\Laba_1\Laba_1\obj\Debug\Laba_1.dll
+C:\Users\ihnat\source\repos\Laba_1\Laba_1\obj\Debug\Laba_1.pdb
+C:\Users\ihnat\source\repos\Laba_1\Laba_1\obj\Debug\Laba_1.csprojAssemblyReference.cache
