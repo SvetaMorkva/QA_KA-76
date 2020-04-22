@@ -1,4 +1,3 @@
-using System;
 using NUnit.Framework;
 
 namespace lab1_variant1
