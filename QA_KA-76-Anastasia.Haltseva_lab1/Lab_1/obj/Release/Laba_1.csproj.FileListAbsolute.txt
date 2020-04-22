@@ -1,0 +1,11 @@
+/Users/anastasia/Downloads/QA_KA-76-Dmytro.Ihnatov_lab1/Laba_1/bin/Release/Laba_1.dll.config
+/Users/anastasia/Downloads/QA_KA-76-Dmytro.Ihnatov_lab1/Laba_1/bin/Release/Laba_1.dll
+/Users/anastasia/Downloads/QA_KA-76-Dmytro.Ihnatov_lab1/Laba_1/bin/Release/Laba_1.pdb
+/Users/anastasia/Downloads/QA_KA-76-Dmytro.Ihnatov_lab1/Laba_1/bin/Release/nunit.framework.dll
+/Users/anastasia/Downloads/QA_KA-76-Dmytro.Ihnatov_lab1/Laba_1/bin/Release/nunit.framework.pdb
+/Users/anastasia/Downloads/QA_KA-76-Dmytro.Ihnatov_lab1/Laba_1/bin/Release/nunit.framework.xml
+/Users/anastasia/Downloads/QA_KA-76-Dmytro.Ihnatov_lab1/Laba_1/obj/Release/Laba_1.csprojAssemblyReference.cache
+/Users/anastasia/Downloads/QA_KA-76-Dmytro.Ihnatov_lab1/Laba_1/obj/Release/Laba_1.csproj.CoreCompileInputs.cache
+/Users/anastasia/Downloads/QA_KA-76-Dmytro.Ihnatov_lab1/Laba_1/obj/Release/Laba_1.csproj.CopyComplete
+/Users/anastasia/Downloads/QA_KA-76-Dmytro.Ihnatov_lab1/Laba_1/obj/Release/Laba_1.dll
+/Users/anastasia/Downloads/QA_KA-76-Dmytro.Ihnatov_lab1/Laba_1/obj/Release/Laba_1.pdb

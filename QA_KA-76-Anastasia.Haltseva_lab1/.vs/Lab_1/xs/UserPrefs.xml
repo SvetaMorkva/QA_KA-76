@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{40A9056B-16B6-41F3-BA04-C63C77A65E79}|Модульные тесты">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Laba_1/UnitTest2.cs">
+    <Files>
+      <File FileName="Laba_1/VersionComparator.cs" Line="4" Column="2" />
+      <File FileName="Laba_1/UnitTest2.cs" Line="15" Column="1" />
+      <File FileName="Laba_1/UnitTest1.cs" Line="3" Column="16" />
+      <File FileName="Laba_1/MyStack.cs" Line="8" Column="6" />
+      <File FileName="Laba_1/StackItems.cs" Line="3" Column="2" />
+      <File FileName="Laba_1/App.config" Line="1" Column="1" />
+      <File FileName="Laba_1/packages.config" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Lab_1" expanded="True">
+            <Node name="Lab_1" expanded="True">
+              <Node name="VersionComparator.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Lab__1 PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
