@@ -30,4 +30,14 @@ namespace Lab_1
             schedule.Add(new Course { credits = 5, title = "System Analysis", teacher = "Mr. E" });
         }
     }
+
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Build is on");
+            Console.ReadLine();
+        }
+    }
+
 }
