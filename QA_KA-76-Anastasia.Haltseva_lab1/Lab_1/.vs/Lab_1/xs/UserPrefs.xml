@@ -3,8 +3,8 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Lab_1" expanded="True">
-            <Node name="Lab_1" selected="True" />
+          <Node name="Lab_1" expanded="True" selected="True">
+            <Node name="Lab_1" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -16,5 +16,4 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Lab__1 PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>

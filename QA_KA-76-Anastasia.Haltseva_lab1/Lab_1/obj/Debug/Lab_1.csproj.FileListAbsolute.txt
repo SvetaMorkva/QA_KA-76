@@ -9,3 +9,14 @@
 /Users/anastasia/Desktop/QA_KA-76-Anastasia.Haltseva_lab1/Laba_1/obj/Debug/Lab_1.csproj.CopyComplete
 /Users/anastasia/Desktop/QA_KA-76-Anastasia.Haltseva_lab1/Laba_1/obj/Debug/Laba_1.dll
 /Users/anastasia/Desktop/QA_KA-76-Anastasia.Haltseva_lab1/Laba_1/obj/Debug/Laba_1.pdb
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/QA_KA-76-Anastasia.Haltseva_lab1/Lab_1/bin/Debug/Laba_1.dll.config
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/QA_KA-76-Anastasia.Haltseva_lab1/Lab_1/bin/Debug/Laba_1.dll
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/QA_KA-76-Anastasia.Haltseva_lab1/Lab_1/bin/Debug/Laba_1.pdb
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/QA_KA-76-Anastasia.Haltseva_lab1/Lab_1/bin/Debug/nunit.framework.dll
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/QA_KA-76-Anastasia.Haltseva_lab1/Lab_1/bin/Debug/nunit.framework.pdb
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/QA_KA-76-Anastasia.Haltseva_lab1/Lab_1/bin/Debug/nunit.framework.xml
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/QA_KA-76-Anastasia.Haltseva_lab1/Lab_1/obj/Debug/Lab_1.csprojAssemblyReference.cache
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/QA_KA-76-Anastasia.Haltseva_lab1/Lab_1/obj/Debug/Lab_1.csproj.CoreCompileInputs.cache
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/QA_KA-76-Anastasia.Haltseva_lab1/Lab_1/obj/Debug/Lab_1.csproj.CopyComplete
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/QA_KA-76-Anastasia.Haltseva_lab1/Lab_1/obj/Debug/Laba_1.dll
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/QA_KA-76-Anastasia.Haltseva_lab1/Lab_1/obj/Debug/Laba_1.pdb
