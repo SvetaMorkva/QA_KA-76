@@ -1,0 +1,11 @@
+C:\Users\yulyz\source\repos\Lab_1\Lab_1\obj\Debug\Lab_1.csprojAssemblyReference.cache
+C:\Users\yulyz\source\repos\Lab_1\Lab_1\obj\Debug\Lab_1.csproj.CoreCompileInputs.cache
+C:\Users\yulyz\source\repos\Lab_1\Lab_1\bin\Debug\Lab_1.exe.config
+C:\Users\yulyz\source\repos\Lab_1\Lab_1\bin\Debug\Lab_1.exe
+C:\Users\yulyz\source\repos\Lab_1\Lab_1\bin\Debug\Lab_1.pdb
+C:\Users\yulyz\source\repos\Lab_1\Lab_1\bin\Debug\nunit.framework.dll
+C:\Users\yulyz\source\repos\Lab_1\Lab_1\bin\Debug\nunit.framework.pdb
+C:\Users\yulyz\source\repos\Lab_1\Lab_1\bin\Debug\nunit.framework.xml
+C:\Users\yulyz\source\repos\Lab_1\Lab_1\obj\Debug\Lab_1.csproj.CopyComplete
+C:\Users\yulyz\source\repos\Lab_1\Lab_1\obj\Debug\Lab_1.exe
+C:\Users\yulyz\source\repos\Lab_1\Lab_1\obj\Debug\Lab_1.pdb
