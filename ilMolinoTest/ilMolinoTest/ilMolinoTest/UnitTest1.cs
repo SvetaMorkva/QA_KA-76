@@ -27,7 +27,7 @@ namespace ilMolinoTest
         [TearDown]
         public void CleanUp()
         {
-            _driver.Close();
+            _driver.Quit();
         }
 
         [Test]
@@ -47,11 +47,11 @@ namespace ilMolinoTest
         {
             _driver.FindElement(By.XPath("//div[@class='menu js_drop-menu']//a[@href='/delivery/pizza.html']")).Click();
             Thread.Sleep(2000);
-            _driver.FindElement(By.XPath("//a[@class='box js-add-basket tit_1165015']")).Click();
+            _driver.FindElement(By.XPath("//a[@data-price='99']")).Click();
             Thread.Sleep(2000);
             _driver.FindElement(By.XPath("//a[@class='menu-item-2328']")).Click();
             Thread.Sleep(2000);
-            _driver.FindElement(By.XPath("//a[@class='box js-add-basket tit_1165001']")).Click();
+            _driver.FindElement(By.XPath("//a[@class='box js-add-basket tit_1165002']")).Click();
             Thread.Sleep(2000);
             string count = _driver.FindElement(By.XPath("//span[@class='js-lb-basket-qty']")).Text;
             string expected = "(2)";
@@ -105,7 +105,7 @@ namespace ilMolinoTest
             Assert.AreEqual(expectedPrice, price);
         }
         */
-        [TestCase ("EN")]
+        [TestCase ("UA")]
         public void TestLocalizationSiteIlMolino(string expected)
         {
             Thread.Sleep(2000);
