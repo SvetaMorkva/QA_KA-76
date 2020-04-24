@@ -1,12 +1,12 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using NUnit.Framework;
 
 namespace Lab_2
 {
-    [TestClass]
+    [TestFixture]
     public class NotAuthorisedTests
     {
         private IWebDriver _driver;
@@ -14,7 +14,7 @@ namespace Lab_2
         private string _articles_selector = "header li:nth-of-type(4) a";
         private string _jobs_selector = "header li:nth-of-type(6) a";
 
-        [TestInitialize]
+        [SetUp]
         public void TestInitialize()
         {
             var options = new ChromeOptions();
@@ -26,16 +26,16 @@ namespace Lab_2
             _driver.FindElement(By.CssSelector(".footer-lang-switch a:nth-of-type(2)")).Click();
         }
 
-        [TestCleanup]
+        [TearDown]
         public void TestFinalize()
         {
             _driver.Close();
         }
 
-        [DataTestMethod]
-        [DataRow("QA")]
-        [DataRow("Python")]
-        [DataRow(".NET")]
+
+        [TestCase("QA")]
+        [TestCase("Python")]
+        [TestCase(".NET")]
         public void TestViewArticlesbyTag(string expected_tag)
         {
             _driver.FindElement(By.CssSelector(_articles_selector)).Click();
@@ -46,7 +46,7 @@ namespace Lab_2
             Assert.AreEqual($"https://dou.ua/lenta/tags/{expected_tag}/", _driver.Url);
         }
 
-        [TestMethod]
+        [Test]
         public void TestViewBestAtricles()
         {
             _driver.FindElement(By.CssSelector(_articles_selector)).Click();
@@ -56,7 +56,7 @@ namespace Lab_2
             Assert.AreEqual("https://dou.ua/lenta/best/", _driver.Url);
         }
 
-        [TestMethod]
+        [Test]
         public void TestViewRecentDigests()
         {
             _driver.FindElement(By.CssSelector(_articles_selector)).Click();
@@ -66,10 +66,9 @@ namespace Lab_2
             Assert.AreEqual("https://dou.ua/lenta/digests/", _driver.Url);
         }
 
-        [DataTestMethod]
-        [DataRow("epam")]
-        [DataRow("pharos production")]
-        [DataRow("genesis")]
+        [TestCase("epam")]
+        [TestCase("pharos production")]
+        [TestCase("genesis")]
         public void TestSearchforCompany(string expected_company)
         {
             _driver.FindElement(By.CssSelector(_jobs_selector)).Click();
@@ -81,10 +80,9 @@ namespace Lab_2
             Assert.IsTrue(actual_company.ToLower().Contains(expected_company), $"{actual_company} is expected to contain '{expected_company}'");
         }
 
-        [DataTestMethod]
-        [DataRow("QA", "Genesis")]
-        [DataRow("Python", "Luxoft")]
-        [DataRow(".NET", "EPAM")]
+        [TestCase("QA", "Genesis")]
+        [TestCase("Python", "Luxoft")]
+        [TestCase(".NET", "EPAM")]
         public void TestSearchforVacancy(string expected_category, string expected_company)
         {
             _driver.FindElement(By.CssSelector(_jobs_selector)).Click();
