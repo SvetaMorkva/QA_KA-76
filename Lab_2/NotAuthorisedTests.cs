@@ -3,6 +3,9 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using NUnit.Framework;
+using OpenQA.Selenium.Interactions;
+using System.Threading;
+using System.Collections.Generic;
 
 namespace Lab_2
 {
@@ -13,6 +16,7 @@ namespace Lab_2
         private string _url = "https://dou.ua/";
         private string _articles_selector = "header li:nth-of-type(4) a";
         private string _jobs_selector = "header li:nth-of-type(6) a";
+        private string _salaries_selector = "header li:nth-of-type(5) a";
 
         [SetUp]
         public void TestInitialize()
@@ -29,7 +33,7 @@ namespace Lab_2
         [TearDown]
         public void TestFinalize()
         {
-            _driver.Close();
+            _driver.Quit();
         }
 
 
@@ -93,6 +97,53 @@ namespace Lab_2
             string actual_company = _driver.FindElement(By.CssSelector(".company")).Text;
             Assert.IsTrue(actual_header.ToLower().Contains(expected_category.ToLower()), $"{actual_header} is expected to contain '{expected_category}'");
             Assert.IsTrue(actual_company.ToLower().Contains(expected_company.ToLower()), $"{actual_company} is expected to contain '{expected_company}'");
+        }
+
+        [TestCase("Junior QA engineer", "Manual QA", "500", "600", "778")]
+        [TestCase("Junior QA engineer", "Automation QA", "500", "790", "1000")]
+        [TestCase("Junior QA engineer", "General QA", "525", "650", "1000")]
+        [TestCase("Junior Software Engineer", "C#/.NET", "600", "855", "1200")]
+        [TestCase("Junior Software Engineer", "Python", "600", "770", "1000")]
+        [TestCase("Junior Software Engineer", "Swift", "600", "800", "1100")]
+        [TestCase("Data Scientist", null, "700", "1300", "1750")]
+        public void TestViewSalaryDependsonPositionandTechnology(
+            string job, 
+            string position, 
+            string expected_i_quartile,
+            string expected_median,
+            string expected_iii_quartile)
+        {
+            _driver.FindElement(By.CssSelector(_salaries_selector)).Click();
+            _driver.FindElement(By.XPath("//select/option[text()='December 2019']")).Click();
+            _driver.FindElement(By.XPath("//select/option[text()='Kyiv']")).Click();
+            _driver.FindElement(By.XPath($"//select//option[text()='{job}']")).Click();
+
+            var elementList = new List<IWebElement>();
+            elementList.AddRange(_driver.FindElements(By.XPath($"//select//option[text()='{position}']")));
+            if (elementList.Count > 0)
+                elementList[0].Click();
+
+            IWebElement slider = _driver.FindElement(By.CssSelector(".salarydec-slider a:nth-of-type(2)"));
+            Actions action = new Actions(_driver);
+            action.Click(slider).Build().Perform();
+            Thread.Sleep(100);
+            for (int i = 0; i < 8; i++)
+            {
+                action.SendKeys(Keys.ArrowLeft).Build();
+            }
+            action.Perform();
+            slider.SendKeys(Keys.Enter);
+            Thread.Sleep(500);
+
+            
+
+            string actual_i_quartile = _driver.FindElement(By.CssSelector(".salarydec-results-min .num")).Text;
+            string actual_median = _driver.FindElement(By.CssSelector(".salarydec-results-median .num")).Text;
+            string actual_iii_quartile = _driver.FindElement(By.CssSelector(".salarydec-results-max .num")).Text;
+
+            Assert.AreEqual(expected_i_quartile, actual_i_quartile);
+            Assert.AreEqual(expected_median, actual_median);
+            Assert.AreEqual(expected_iii_quartile, actual_iii_quartile);
         }
     }
 }
