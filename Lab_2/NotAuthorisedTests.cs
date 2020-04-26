@@ -29,7 +29,9 @@ namespace Lab_2
             _driver = new ChromeDriver(options);
             _driver.Navigate().GoToUrl(_url);
             new WebDriverWait(_driver, TimeSpan.FromSeconds(3)).Until(d => d.Url == _url);
-            _driver.FindElement(By.CssSelector(".footer-lang-switch a:nth-of-type(2)")).Click();
+            IWebElement lang_switcher = _driver.FindElement(By.CssSelector(".footer-lang-switch a:nth-of-type(2)"));
+            if (lang_switcher.Text == "English")
+                lang_switcher.Click();
         }
 
         [TearDown]
