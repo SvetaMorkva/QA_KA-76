@@ -88,7 +88,7 @@ namespace ilMolinoTest
             string expected = "(2)";
             Assert.AreEqual(expected, count);
         }
-        /*
+        
         [Test]
         public void TestBuyPizzaWithIngredientsSiteIlMolino()
         {
@@ -104,7 +104,7 @@ namespace ilMolinoTest
             string price = _driver.FindElement(By.XPath("//span[@class='js-lb-price']")).Text;
             Assert.AreEqual(expectedPrice, price);
         }
-        */
+        
         [TestCase ("UA")]
         public void TestLocalizationSiteIlMolino(string expected)
         {
