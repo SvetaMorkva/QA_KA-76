@@ -105,7 +105,7 @@ namespace ilMolinoTest
             Assert.AreEqual(expectedPrice, price);
         }
         
-        [TestCase ("UA")]
+        [TestCase ("EN")]
         public void TestLocalizationSiteIlMolino(string expected)
         {
             Thread.Sleep(2000);
