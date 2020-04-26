@@ -98,7 +98,7 @@ namespace ilMolinoTest
             Thread.Sleep(2000);
             _driver.FindElement(By.XPath("//a[@class='button_a js-add-ingr']")).Click();
             Thread.Sleep(2000);
-            _driver.FindElement(By.XPath("//li[@data-absnum='787']//a[@class='plus_ingr js-btn-ingr-plus']")).Click();
+            _driver.FindElement(By.XPath("//li[@data-absnum='780']//a[@class='plus_ingr js-btn-ingr-plus']")).Click();
             Thread.Sleep(2000);
             string expectedPrice = "264";
             string price = _driver.FindElement(By.XPath("//span[@class='js-lb-price']")).Text;
