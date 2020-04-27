@@ -7,6 +7,7 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Linq;
 using System.Threading;
+using System.Collections.Generic;
 
 namespace Lab_2
 {
@@ -15,6 +16,18 @@ namespace Lab_2
     {
         private IWebDriver _driver;
         private string _url = "https://dou.ua/";
+
+        public static IWebElement WaitandFindElement(IWebDriver driver, string selector)
+        {
+            var elementList = new List<IWebElement>();
+            do
+            {
+                elementList.AddRange(driver.FindElements(By.CssSelector(selector)));
+                Thread.Sleep(500);
+            }
+            while (elementList.Count == 0);
+            return elementList.First();
+        }
 
         [SetUp]
         public void TestInitialize()
@@ -25,20 +38,20 @@ namespace Lab_2
             _driver = new ChromeDriver(options);
             _driver.Navigate().GoToUrl(_url);
             new WebDriverWait(_driver, TimeSpan.FromSeconds(3)).Until(d => d.Url == _url);
-            
-            _driver.FindElement(By.CssSelector(".right-part a")).Click();
-            _driver.FindElement(By.Id("btnGoogle")).Click();
-            Thread.Sleep(1000);
+
+            WaitandFindElement(_driver, ".right-part a").Click();
+            WaitandFindElement(_driver, "#btnGoogle").Click();
             _driver.SwitchTo().Window(_driver.WindowHandles.Last());
             _driver.FindElement(By.CssSelector("input[type=email]")).SendKeys("test.qa.epam@gmail.com");
             _driver.FindElement(By.CssSelector("div[role=button]")).Click();
             Thread.Sleep(3000);
+            
             _driver.FindElement(By.CssSelector("input[type='password']")).SendKeys("ytrewq654321");
+            
             _driver.FindElement(By.Id("passwordNext")).Click();
             Thread.Sleep(3000);
             _driver.SwitchTo().Window(_driver.WindowHandles.First());
-            Thread.Sleep(3000);
-            IWebElement lang_switcher = _driver.FindElement(By.CssSelector(".footer-lang-switch a:nth-of-type(2)"));
+            IWebElement lang_switcher = WaitandFindElement(_driver, ".footer-lang-switch a:nth-of-type(2)");
             if (lang_switcher.Text == "English")
                 lang_switcher.Click();
         }
@@ -49,12 +62,11 @@ namespace Lab_2
             _driver.Quit();
         }
 
-
         [Test]
         public void TestAuthwithGoogle()
         {
-            _driver.FindElement(By.ClassName("min-profile")).Click();
-            string actual_name = _driver.FindElement(By.TagName("h1")).Text;
+            WaitandFindElement(_driver, ".min-profile").Click();
+            string actual_name = WaitandFindElement(_driver, "h1").Text;
             using (new AssertionScope())
                 actual_name.Should().Be("Test Testing");
         }
@@ -64,22 +76,21 @@ namespace Lab_2
         [TestCase("Poltava", "Ubisoft")]
         public void TestEditProfileInformation(string expected_city, string expected_company)
         {
-            _driver.FindElement(By.ClassName("min-profile")).Click();
-            _driver.FindElement(By.CssSelector(".b-content-menu li:nth-of-type(2) a")).Click();
-            _driver.FindElement(By.Id("txtcity")).Clear();
+            WaitandFindElement(_driver, ".min-profile").Click();
+            WaitandFindElement(_driver, ".b-content-menu li:nth-of-type(2) a").Click();
+            WaitandFindElement(_driver, "#txtcity").Clear();
             Thread.Sleep(100);
-            _driver.FindElement(By.Id("txtcity")).SendKeys(expected_city);
-            _driver.FindElement(By.Id("txtworkplace")).Clear();
+            WaitandFindElement(_driver, "#txtcity").SendKeys(expected_city);
+            WaitandFindElement(_driver, "#txtworkplace").Clear();
             Thread.Sleep(100);
-            _driver.FindElement(By.Id("txtworkplace")).SendKeys(expected_company);
-            _driver.FindElement(By.Id("btnSubmit")).Click();
+            WaitandFindElement(_driver, "#txtworkplace").SendKeys(expected_company);
+            WaitandFindElement(_driver, "#btnSubmit").Click();
 
-            Thread.Sleep(1000);
-            string[] city_information = _driver.FindElement(By.ClassName("city")).Text.Trim().Split(',');
+            string[] city_information = WaitandFindElement(_driver, ".city").Text.Trim().Split(',');
             city_information = city_information[0].Split('\n');
             string actual_city = city_information[1];
 
-            string actual_company = _driver.FindElement(By.CssSelector(".descr span")).Text;
+            string actual_company = WaitandFindElement(_driver, ".descr span").Text;
 
             using (new AssertionScope())
             {
@@ -92,28 +103,27 @@ namespace Lab_2
         [Test]
         public void TestManageSubscriptions()
         {
-            _driver.FindElement(By.ClassName("min-profile")).Click();
-            _driver.FindElement(By.CssSelector(".b-content-menu li:nth-of-type(2) a")).Click();
-            _driver.FindElement(By.CssSelector(".b-content-menu li:nth-of-type(2) a")).Click();
+            WaitandFindElement(_driver, ".min-profile").Click();
+            WaitandFindElement(_driver, ".b-content-menu li:nth-of-type(2) a").Click();
+            WaitandFindElement(_driver, ".b-content-menu li:nth-of-type(2) a").Click();
 
-            IWebElement newsletter = _driver.FindElement(By.Id("id_newsletter"));
+            IWebElement newsletter = WaitandFindElement(_driver, "#id_newsletter");
             if (newsletter.Selected)
                 newsletter.Click();
 
-            IWebElement receive_digests = _driver.FindElement(By.Id("id_receive_comment_digest"));
+            IWebElement receive_digests = WaitandFindElement(_driver, "#id_receive_comment_digest");
             if (receive_digests.Selected)
                 receive_digests.Click();
 
-            IWebElement allow_pm = _driver.FindElement(By.Id("id_allow_pm"));
+            IWebElement allow_pm = WaitandFindElement(_driver, "#id_allow_pm");
             if (!allow_pm.Selected)
                 allow_pm.Click();
 
-            _driver.FindElement(By.Id("btnSubmit")).Click();
-            Thread.Sleep(1000);
+            WaitandFindElement(_driver, "#btnSubmit");
 
-            newsletter = _driver.FindElement(By.Id("id_newsletter"));
-            receive_digests = _driver.FindElement(By.Id("id_receive_comment_digest"));
-            allow_pm = _driver.FindElement(By.Id("id_allow_pm"));
+            newsletter = WaitandFindElement(_driver, "#id_newsletter");
+            receive_digests = WaitandFindElement(_driver, "#id_receive_comment_digest");
+            allow_pm = WaitandFindElement(_driver, "#id_allow_pm");
 
             using (new AssertionScope())
             {
@@ -122,5 +132,6 @@ namespace Lab_2
                 allow_pm.Selected.Should().BeTrue();
             }
         }
+
     }
 }
