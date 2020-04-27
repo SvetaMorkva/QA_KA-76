@@ -45,7 +45,8 @@ namespace Lab_2
             _driver.Navigate().GoToUrl(_url);
             new WebDriverWait(_driver, TimeSpan.FromSeconds(3)).Until(d => d.Url == _url);
 
-            WaitandFindElement(_driver, By.CssSelector(".right-part a")).Click();
+            var mainPage = new MainPage(_driver);
+            mainPage.GoToLogInPage();
             WaitandFindElement(_driver, By.Id("btnGoogle")).Click();
             _driver.SwitchTo().Window(_driver.WindowHandles.Last());
             _driver.FindElement(By.CssSelector("input[type=email]")).SendKeys("test.qa.epam@gmail.com");
@@ -57,9 +58,8 @@ namespace Lab_2
             _driver.FindElement(By.Id("passwordNext")).Click();
             Thread.Sleep(3000);
             _driver.SwitchTo().Window(_driver.WindowHandles.First());
-            IWebElement lang_switcher = WaitandFindElement(_driver, By.CssSelector(".footer-lang-switch a:nth-of-type(2)"));
-            if (lang_switcher.Text == "English")
-                lang_switcher.Click();
+
+            mainPage.SwitchLanguageToEnglish();
         }
 
         [TearDown]
@@ -71,7 +71,8 @@ namespace Lab_2
         [Test]
         public void TestAuthwithGoogle()
         {
-            WaitandFindElement(_driver, By.ClassName("min-profile")).Click();
+            var mainPage = new MainPage(_driver);
+            mainPage.GoToProfilePage();
             string actual_name = WaitandFindElement(_driver, By.TagName("h1")).Text;
             using (new AssertionScope())
                 actual_name.Should().Be("Test Testing");
@@ -82,7 +83,9 @@ namespace Lab_2
         [TestCase("Poltava", "Ubisoft")]
         public void TestEditProfileInformation(string expected_city, string expected_company)
         {
-            WaitandFindElement(_driver, By.ClassName("min-profile")).Click();
+            var mainPage = new MainPage(_driver);
+            mainPage.GoToProfilePage();
+
             WaitandFindElement(_driver, By.CssSelector(".b-content-menu li:nth-of-type(2) a")).Click();
             WaitandFindElement(_driver, By.Id("txtcity")).Clear();
             Thread.Sleep(100);
@@ -109,7 +112,9 @@ namespace Lab_2
         [Test]
         public void TestManageSubscriptions()
         {
-            WaitandFindElement(_driver, By.ClassName("min-profile")).Click();
+            var mainPage = new MainPage(_driver);
+            mainPage.GoToProfilePage();
+
             WaitandFindElement(_driver, By.CssSelector(".b-content-menu li:nth-of-type(2) a")).Click();
             WaitandFindElement(_driver, By.CssSelector(".b-content-menu li:nth-of-type(2) a")).Click();
 

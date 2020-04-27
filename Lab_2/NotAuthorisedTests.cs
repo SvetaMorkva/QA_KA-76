@@ -18,9 +18,6 @@ namespace Lab_2
     {
         private IWebDriver _driver;
         private string _url = "https://dou.ua/";
-        private string _articles_selector = "header li:nth-of-type(4) a";
-        private string _jobs_selector = "header li:nth-of-type(6) a";
-        private string _salaries_selector = "header li:nth-of-type(5) a";
 
         public static IWebElement WaitandFindElement(IWebDriver driver, By selector)
         {
@@ -48,9 +45,9 @@ namespace Lab_2
             _driver = new ChromeDriver(options);
             _driver.Navigate().GoToUrl(_url);
             new WebDriverWait(_driver, TimeSpan.FromSeconds(3)).Until(d => d.Url == _url);
-            IWebElement lang_switcher = WaitandFindElement(_driver, By.CssSelector(".footer-lang-switch a:nth-of-type(2)"));
-            if (lang_switcher.Text == "English")
-                lang_switcher.Click();
+
+            var mainPage = new MainPage(_driver);
+            mainPage.SwitchLanguageToEnglish();
         }
 
         [TearDown]
@@ -65,7 +62,8 @@ namespace Lab_2
         [TestCase(".NET")]
         public void TestViewArticlesbyTag(string expected_tag)
         {
-            WaitandFindElement(_driver, By.CssSelector(_articles_selector)).Click();
+            var mainPage = new MainPage(_driver);
+            mainPage.GoToArticlesPage();
             WaitandFindElement(_driver, By.CssSelector(".top_wide li:nth-of-type(3) a")).Click();
             WaitandFindElement(_driver, By.XPath($"//a[contains(text(), '{expected_tag}') and @class='b-tag tag-7']")).Click();
             string actual_header = WaitandFindElement(_driver, By.CssSelector(".page-head h1")).Text;
@@ -79,7 +77,8 @@ namespace Lab_2
         [Test]
         public void TestViewBestAtricles()
         {
-            WaitandFindElement(_driver, By.CssSelector(_articles_selector)).Click();
+            var mainPage = new MainPage(_driver);
+            mainPage.GoToArticlesPage();
             WaitandFindElement(_driver, By.CssSelector(".top_wide li:nth-of-type(2) a")).Click();
 
             string actual_header = WaitandFindElement(_driver, By.CssSelector(".page-head h1")).Text;
@@ -93,7 +92,8 @@ namespace Lab_2
         [Test]
         public void TestViewRecentDigests()
         {
-            WaitandFindElement(_driver, By.CssSelector(_articles_selector)).Click();
+            var mainPage = new MainPage(_driver);
+            mainPage.GoToArticlesPage();
 
             WaitandFindElement(_driver, By.XPath("//select/option[text()='Digests']")).Click();
 
@@ -110,7 +110,8 @@ namespace Lab_2
         [TestCase("genesis")]
         public void TestSearchforCompany(string expected_company)
         {
-            WaitandFindElement(_driver, By.CssSelector(_jobs_selector)).Click();
+            var mainPage = new MainPage(_driver);
+            mainPage.GoToJobsPage();
             WaitandFindElement(_driver, By.CssSelector(".sub li:nth-of-type(3) a")).Click();
             WaitandFindElement(_driver, By.CssSelector("input[class='company']")).SendKeys(expected_company);
             WaitandFindElement(_driver, By.ClassName("btn-search")).Click();
@@ -126,7 +127,8 @@ namespace Lab_2
         [TestCase(".NET", "EPAM")]
         public void TestSearchforVacancy(string expected_category, string expected_company)
         {
-            WaitandFindElement(_driver, By.CssSelector(_jobs_selector)).Click();
+            var mainPage = new MainPage(_driver);
+            mainPage.GoToJobsPage();
             WaitandFindElement(_driver, By.XPath($"//select/option[text()='{expected_category}']")).Click();
 
             WaitandFindElement(_driver, By.ClassName("job")).SendKeys(expected_company);
@@ -156,7 +158,8 @@ namespace Lab_2
             string expected_median,
             string expected_iii_quartile)
         {
-            WaitandFindElement(_driver, By.CssSelector(_salaries_selector)).Click();
+            var mainPage = new MainPage(_driver);
+            mainPage.GoToSalariesPage();
 
             WaitandFindElement(_driver, By.XPath("//select/option[text()='December 2019']")).Click();
             WaitandFindElement(_driver, By.XPath("//select/option[text()='Kyiv']")).Click();
