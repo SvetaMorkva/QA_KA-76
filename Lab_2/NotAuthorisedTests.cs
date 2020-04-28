@@ -3,11 +3,8 @@ using FluentAssertions.Execution;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Threading;
 
 namespace Lab_2
 {
@@ -16,12 +13,6 @@ namespace Lab_2
     {
         private IWebDriver _driver;
         private string _url = "https://dou.ua/";
-
-        public static IWebElement WaitandFindElement(IWebDriver driver, By selector)
-        {
-            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists(selector));
-            return driver.FindElement(selector);
-        }
 
         [SetUp]
         public void TestInitialize()
@@ -153,34 +144,18 @@ namespace Lab_2
             string expected_iii_quartile)
         {
             var mainPage = new MainPage(_driver);
+            var salariesPage = new SalariesPage(_driver);
+
             mainPage.GoToSalariesPage();
+            salariesPage.SelectPeriod().
+                SelectCity().
+                SelectJob(job).
+                SelectPositionIfExist(position).
+                MoveSlider();
 
-            WaitandFindElement(_driver, By.XPath("//select/option[text()='December 2019']")).Click();
-            WaitandFindElement(_driver, By.XPath("//select/option[text()='Kyiv']")).Click();
-            WaitandFindElement(_driver, By.XPath($"//select//option[text()='{job}']")).Click();
-
-            var elementList = new List<IWebElement>();
-            elementList.AddRange(_driver.FindElements(By.XPath($"//select//option[text()='{position}']")));
-            if (elementList.Count > 0)
-                elementList[0].Click();
-
-            IWebElement slider = WaitandFindElement(_driver, By.CssSelector(".salarydec-slider a:nth-of-type(2)"));
-            Actions action = new Actions(_driver);
-            action.Click(slider).Build().Perform();
-            Thread.Sleep(300);
-            for (int i = 0; i < 8; i++)
-            {
-                action.SendKeys(Keys.ArrowLeft).Build();
-            }
-            action.Perform();
-            slider.SendKeys(Keys.Enter);
-            Thread.Sleep(3000);
-
-            
-
-            string actual_i_quartile = WaitandFindElement(_driver, By.CssSelector(".salarydec-results-min .num")).Text;
-            string actual_median = WaitandFindElement(_driver, By.CssSelector(".salarydec-results-median .num")).Text;
-            string actual_iii_quartile = WaitandFindElement(_driver, By.CssSelector(".salarydec-results-max .num")).Text;
+            string actual_i_quartile = salariesPage.GetMinField();
+            string actual_median = salariesPage.GetMedianField();
+            string actual_iii_quartile = salariesPage.GetMaxField();
 
             using (new AssertionScope())
             {

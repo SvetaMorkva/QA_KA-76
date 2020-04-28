@@ -74,9 +74,8 @@ namespace Lab_2
 
         public JobsPage SelectJobCategory(string JobCategory)
         {
-            IWebElement SelectJob = _driver.FindElement(By.XPath($"//select/option[text()='{JobCategory}']"));
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(SelectJob));
-            SelectJob.Click();
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(_driver.FindElement(By.XPath($"//select/option[text()='{JobCategory}']"))));
+            _driver.FindElement(By.XPath($"//select/option[text()='{JobCategory}']")).Click();
             return this;
         }
     }
