@@ -35,15 +35,15 @@ namespace Lab_2
             new WebDriverWait(_driver, TimeSpan.FromSeconds(3)).Until(d => d.Url == _url);
 
             var mainPage = new MainPage(_driver);
+            var logInPage = new LogInPage(_driver);
+
             mainPage.GoToLogInPage();
-            WaitandFindElement(_driver, By.Id("btnGoogle")).Click();
+            logInPage.SelectGoogleAuth();
+
             _driver.SwitchTo().Window(_driver.WindowHandles.Last());
-            _driver.FindElement(By.CssSelector("input[type=email]")).SendKeys("test.qa.epam@gmail.com");
-            _driver.FindElement(By.CssSelector("div[role=button]")).Click();
-            Thread.Sleep(3000);
-            
+            logInPage.TypeAndSubmitEmail("test.qa.epam@gmail.com");
+
             _driver.FindElement(By.CssSelector("input[type='password']")).SendKeys("ytrewq654321");
-            
             _driver.FindElement(By.Id("passwordNext")).Click();
             Thread.Sleep(3000);
             _driver.SwitchTo().Window(_driver.WindowHandles.First());

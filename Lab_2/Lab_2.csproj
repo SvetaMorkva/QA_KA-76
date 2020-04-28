@@ -62,6 +62,7 @@
     <Compile Include="ArticlesPage.cs" />
     <Compile Include="AuthorisedTests.cs" />
     <Compile Include="JobsPage.cs" />
+    <Compile Include="LogInPage.cs" />
     <Compile Include="MainPage.cs" />
     <Compile Include="NotAuthorisedTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
