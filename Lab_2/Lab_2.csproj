@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArticlesPage.cs" />
     <Compile Include="AuthorisedTests.cs" />
     <Compile Include="MainPage.cs" />
     <Compile Include="NotAuthorisedTests.cs" />

@@ -21,19 +21,8 @@ namespace Lab_2
 
         public static IWebElement WaitandFindElement(IWebDriver driver, By selector)
         {
-            var sw = new Stopwatch();
-            var elementList = new List<IWebElement>();
-            sw.Start();
-            do
-            {
-                elementList.AddRange(driver.FindElements(selector));
-                Thread.Sleep(500);
-            }
-            while (elementList.Count == 0 && sw.Elapsed.TotalSeconds < 7);
-            sw.Stop();
-            if (sw.Elapsed.TotalSeconds > 7)
-                throw new InvalidSelectorException();
-            return elementList.First();
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists(selector));
+            return driver.FindElement(selector);
         }
 
         [SetUp]
@@ -44,7 +33,7 @@ namespace Lab_2
 
             _driver = new ChromeDriver(options);
             _driver.Navigate().GoToUrl(_url);
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(3)).Until(d => d.Url == _url);
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(3)).Until(ExpectedConditions.UrlToBe(_url));
 
             var mainPage = new MainPage(_driver);
             mainPage.SwitchLanguageToEnglish();
@@ -63,10 +52,13 @@ namespace Lab_2
         public void TestViewArticlesbyTag(string expected_tag)
         {
             var mainPage = new MainPage(_driver);
+            var articlesPage = new ArticlesPage(_driver);
+
             mainPage.GoToArticlesPage();
-            WaitandFindElement(_driver, By.CssSelector(".top_wide li:nth-of-type(3) a")).Click();
-            WaitandFindElement(_driver, By.XPath($"//a[contains(text(), '{expected_tag}') and @class='b-tag tag-7']")).Click();
-            string actual_header = WaitandFindElement(_driver, By.CssSelector(".page-head h1")).Text;
+            string actual_header = articlesPage.GoToTags().
+                SelectTag(expected_tag).
+                GetPageHeader();
+
             using (new AssertionScope())
             {
                 actual_header.Should().Contain(expected_tag);
@@ -78,10 +70,11 @@ namespace Lab_2
         public void TestViewBestAtricles()
         {
             var mainPage = new MainPage(_driver);
-            mainPage.GoToArticlesPage();
-            WaitandFindElement(_driver, By.CssSelector(".top_wide li:nth-of-type(2) a")).Click();
+            var articlesPage = new ArticlesPage(_driver);
 
-            string actual_header = WaitandFindElement(_driver, By.CssSelector(".page-head h1")).Text;
+            mainPage.GoToArticlesPage();
+            string actual_header = articlesPage.SelectBestArticles().GetPageHeader();
+
             using (new AssertionScope())
             {
                 actual_header.ToLower().Should().Contain("best articles");
@@ -93,11 +86,11 @@ namespace Lab_2
         public void TestViewRecentDigests()
         {
             var mainPage = new MainPage(_driver);
+            var articlesPage = new ArticlesPage(_driver);
+
             mainPage.GoToArticlesPage();
+            string actual_header = articlesPage.SelectDigestsOption().GetFirstArticleHeader();
 
-            WaitandFindElement(_driver, By.XPath("//select/option[text()='Digests']")).Click();
-
-            string actual_header = WaitandFindElement(_driver, By.CssSelector(".title a")).Text;
             using (new AssertionScope())
             {
                 actual_header.ToLower().Should().Contain("дайджест");

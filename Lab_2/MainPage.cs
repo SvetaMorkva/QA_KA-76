@@ -1,10 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lab_2
 {
@@ -19,55 +16,61 @@ namespace Lab_2
         }
 
         [FindsBy(How = How.CssSelector, Using = "header li:nth-of-type(4) a")]
-        public IWebElement ArticlesPage;
+        private IWebElement ArticlesPage;
 
         [FindsBy(How = How.CssSelector, Using = "header li:nth-of-type(6) a")]
-        public IWebElement JobsPage;
+        private IWebElement JobsPage;
 
         [FindsBy(How = How.CssSelector, Using = "header li:nth-of-type(5) a")]
-        public IWebElement SalariesPage;
+        private IWebElement SalariesPage;
 
         [FindsBy(How = How.ClassName, Using = "min-profile")]
-        public IWebElement ProfilePage;
+        private IWebElement ProfilePage;
 
         [FindsBy(How = How.CssSelector, Using = ".right-part a")]
-        public IWebElement LogInPage;
+        private IWebElement LogInPage;
 
         [FindsBy(How = How.CssSelector, Using = ".footer-lang-switch a:nth-of-type(2)")]
-        public IWebElement SwitchLink;
+        private IWebElement SwitchLink;
 
         public MainPage GoToArticlesPage()
         {
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(ArticlesPage));
             ArticlesPage.Click();
             return this;
         }
 
         public MainPage GoToJobsPage()
         {
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(JobsPage));
             JobsPage.Click();
             return this;
         }
 
         public MainPage GoToSalariesPage()
         {
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(SalariesPage));
             SalariesPage.Click();
             return this;
         }
 
         public MainPage GoToProfilePage()
         {
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(ProfilePage));
             ProfilePage.Click();
             return this;
         }
 
         public MainPage GoToLogInPage()
         {
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(LogInPage));
             LogInPage.Click();
             return this;
         }
 
         public MainPage SwitchLanguageToEnglish()
         {
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(SwitchLink));
             if (SwitchLink.Text == "English")
                 SwitchLink.Click();
             return this;

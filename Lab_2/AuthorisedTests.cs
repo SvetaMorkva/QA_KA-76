@@ -20,19 +20,8 @@ namespace Lab_2
 
         public static IWebElement WaitandFindElement(IWebDriver driver, By selector)
         {
-            var sw = new Stopwatch();
-            var elementList = new List<IWebElement>();
-            sw.Start();
-            do
-            {
-                elementList.AddRange(driver.FindElements(selector));
-                Thread.Sleep(500);
-            }
-            while (elementList.Count == 0 && sw.Elapsed.TotalSeconds < 7);
-            sw.Stop();
-            if (sw.Elapsed.TotalSeconds > 7)
-                throw new InvalidSelectorException();
-            return elementList.First();
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists(selector));
+            return driver.FindElement(selector);
         }
 
         [SetUp]
