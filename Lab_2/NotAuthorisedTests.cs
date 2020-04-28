@@ -7,8 +7,6 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using System.Threading;
 
 namespace Lab_2
@@ -22,21 +20,10 @@ namespace Lab_2
         private string _jobs_selector = "header li:nth-of-type(6) a";
         private string _salaries_selector = "header li:nth-of-type(5) a";
 
-        public static IWebElement WaitandFindElement(IWebDriver driver, By selector)
+        private static IWebElement WaitandFindElement(IWebDriver driver, By selector)
         {
-            var sw = new Stopwatch();
-            var elementList = new List<IWebElement>();
-            sw.Start();
-            do
-            {
-                elementList.AddRange(driver.FindElements(selector));
-                Thread.Sleep(500);
-            }
-            while (elementList.Count == 0 && sw.Elapsed.TotalSeconds < 7);
-            sw.Stop();
-            if (sw.Elapsed.TotalSeconds > 7)
-                throw new InvalidSelectorException();
-            return elementList.First();
+            new WebDriverWait(driver, TimeSpan.FromSeconds(20)).Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(selector)));
+            return driver.FindElement(selector);
         }
 
         [SetUp]

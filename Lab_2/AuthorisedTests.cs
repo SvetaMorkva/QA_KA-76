@@ -5,8 +5,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 
@@ -18,21 +16,10 @@ namespace Lab_2
         private IWebDriver _driver;
         private string _url = "https://dou.ua/";
 
-        public static IWebElement WaitandFindElement(IWebDriver driver, By selector)
+        private static IWebElement WaitandFindElement(IWebDriver driver, By selector)
         {
-            var sw = new Stopwatch();
-            var elementList = new List<IWebElement>();
-            sw.Start();
-            do
-            {
-                elementList.AddRange(driver.FindElements(selector));
-                Thread.Sleep(500);
-            }
-            while (elementList.Count == 0 && sw.Elapsed.TotalSeconds < 7);
-            sw.Stop();
-            if (sw.Elapsed.TotalSeconds > 7)
-                throw new InvalidSelectorException();
-            return elementList.First();
+            new WebDriverWait(driver, TimeSpan.FromSeconds(20)).Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(selector)));
+            return driver.FindElement(selector);
         }
 
         [SetUp]
@@ -51,9 +38,11 @@ namespace Lab_2
             _driver.FindElement(By.CssSelector("input[type=email]")).SendKeys("test.qa.epam@gmail.com");
             _driver.FindElement(By.CssSelector("div[role=button]")).Click();
             Thread.Sleep(3000);
-            
+
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(20)).Until(ExpectedConditions.ElementToBeClickable(_driver.FindElement(By.CssSelector("input[type='password']"))));
+            _driver.FindElement(By.CssSelector("input[type='password']")).Click();
+            Thread.Sleep(2000);
             _driver.FindElement(By.CssSelector("input[type='password']")).SendKeys("ytrewq654321");
-            
             _driver.FindElement(By.Id("passwordNext")).Click();
             Thread.Sleep(3000);
             _driver.SwitchTo().Window(_driver.WindowHandles.First());
