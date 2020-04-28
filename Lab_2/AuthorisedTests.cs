@@ -35,7 +35,7 @@ namespace Lab_2
             _driver.SwitchTo().Window(_driver.WindowHandles.Last());
             logInPage.TypeAndSubmitEmail("test.qa.epam@gmail.com");
 
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(3)).Until(ExpectedConditions.ElementToBeClickable(_driver.FindElement(By.CssSelector("input[type='password']"))));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(20)).Until(ExpectedConditions.ElementToBeClickable(_driver.FindElement(By.CssSelector("input[type='password']"))));
             _driver.FindElement(By.CssSelector("input[type='password']")).Click();
             Thread.Sleep(2000);
             _driver.FindElement(By.CssSelector("input[type='password']")).SendKeys("ytrewq654321");
