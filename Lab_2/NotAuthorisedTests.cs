@@ -61,7 +61,7 @@ namespace Lab_2
             var mainPage = new MainPage(_driver);
             var articlesPage = new ArticlesPage(_driver);
 
-            mainPage.GoToArticlesPage();
+            mainPage.SwitchLanguageToEnglish().GoToArticlesPage();
             string actual_header = articlesPage.SelectBestArticles().GetPageHeader();
 
             using (new AssertionScope())
