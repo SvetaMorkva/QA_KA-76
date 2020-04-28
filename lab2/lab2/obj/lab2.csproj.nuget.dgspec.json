@@ -46,6 +46,14 @@
               "target": "Package",
               "version": "[3.15.1, )"
             },
+            "Selenium.WebDriver": {
+              "target": "Package",
+              "version": "[3.141.0, )"
+            },
+            "Selenium.WebDriver.ChromeDriver": {
+              "target": "Package",
+              "version": "[81.0.4044.6900, )"
+            },
             "SpecFlow": {
               "target": "Package",
               "version": "[3.1.97, )"
@@ -58,7 +66,7 @@
               "target": "Package",
               "version": "[3.1.97, )"
             },
-            "SpecRun.SpecFlow": {
+            "SpecRun.Runner": {
               "target": "Package",
               "version": "[3.2.22, )"
             },
