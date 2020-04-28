@@ -9,7 +9,23 @@
       "restore": {
         "projectUniqueName": "C:\\Users\\Yarik\\Desktop\\Institute\\Csharp\\QA_KA-76\\Lab1\\Lab1.csproj",
         "projectName": "Lab1",
-        "projectPath": "C:\\Users\\Yarik\\Desktop\\Institute\\Csharp\\QA_KA-76\\Lab1\\Lab1.csproj"
+        "projectPath": "C:\\Users\\Yarik\\Desktop\\Institute\\Csharp\\QA_KA-76\\Lab1\\Lab1.csproj",
+        "packagesPath": "C:\\Users\\Yarik\\.nuget\\packages\\",
+        "projectStyle": "PackagesConfig",
+        "configFilePaths": [
+          "C:\\Users\\Yarik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        },
+        "packagesConfigPath": "C:\\Users\\Yarik\\Desktop\\Institute\\Csharp\\QA_KA-76\\Lab1\\packages.config"
       },
       "frameworks": {
         "net472": {}
