@@ -7,8 +7,6 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using System.Threading;
 
 namespace Lab_2
@@ -104,13 +102,15 @@ namespace Lab_2
         public void TestSearchforCompany(string expected_company)
         {
             var mainPage = new MainPage(_driver);
-            mainPage.GoToJobsPage();
-            WaitandFindElement(_driver, By.CssSelector(".sub li:nth-of-type(3) a")).Click();
-            WaitandFindElement(_driver, By.CssSelector("input[class='company']")).SendKeys(expected_company);
-            WaitandFindElement(_driver, By.ClassName("btn-search")).Click();
-            WaitandFindElement(_driver, By.CssSelector(".h2 a")).Click();
+            var jobsPage = new JobsPage(_driver);
 
-            string actual_company = WaitandFindElement(_driver, By.CssSelector("h1[class='g-h2']")).Text;
+            mainPage.GoToJobsPage();
+            string actual_company = jobsPage.SelectCompaniesPage().
+                TypeFindCompanyName(expected_company).
+                PerformSearch().
+                ViewFirstCompany().
+                GetCompanyHeader();
+
             using (new AssertionScope())
                 actual_company.ToLower().Should().Contain(expected_company);
         }
@@ -121,14 +121,15 @@ namespace Lab_2
         public void TestSearchforVacancy(string expected_category, string expected_company)
         {
             var mainPage = new MainPage(_driver);
+            var jobsPage = new JobsPage(_driver);
+
             mainPage.GoToJobsPage();
-            WaitandFindElement(_driver, By.XPath($"//select/option[text()='{expected_category}']")).Click();
+            jobsPage.SelectJobCategory(expected_category).
+                TypeFindCompanyName(expected_company).
+                PerformSearch();
 
-            WaitandFindElement(_driver, By.ClassName("job")).SendKeys(expected_company);
-            WaitandFindElement(_driver, By.ClassName("btn-search")).Click();
-
-            string actual_header = WaitandFindElement(_driver, By.ClassName("vt")).Text;
-            string actual_company = WaitandFindElement(_driver, By.ClassName("company")).Text;
+            string actual_header = jobsPage.GetJobName();
+            string actual_company = jobsPage.GetCompanyName();
 
             using (new AssertionScope())
             {
