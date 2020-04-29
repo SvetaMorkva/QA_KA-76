@@ -33,7 +33,7 @@ namespace QA_Lab2
             clearAll = driver.FindElement(By.CssSelector(".reset-filter"));
             articles = driver.FindElement(By.CssSelector("body .testimonial-block"));
 
-            wait.Until(d => driver.FindElements(By.CssSelector(".filter.industry")).Count > 0);
+            wait.Until(d => driver.FindElements(By.CssSelector("option[value=" + industry + "]")));
             selectBoxIndustry = new SelectElement(driver.FindElement(By.CssSelector(".filter.industry")));
             selectBoxIndustry.SelectByValue(industry);
             wait.Until(d => !articles.Displayed);

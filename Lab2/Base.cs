@@ -44,7 +44,8 @@ namespace QA_Lab2
             wait.Until(d => driver.FindElement(By.Id("password")));
 
             passwordLineEdit = driver.FindElement(By.Id("password"));
-            wait.Until(ExpectedConditions.ElementToBeClickable(passwordLineEdit));
+            System.Threading.Thread.Sleep(3000);
+            wait.Until(d => passwordLineEdit.Displayed && passwordLineEdit.Enabled);
             passwordLineEdit.SendKeys(myPassword);
         }
     }

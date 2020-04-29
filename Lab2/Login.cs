@@ -9,15 +9,16 @@ namespace QA_Lab2
     [TestFixture]
     public class Login : Base
     {
-        [Test]
+/*        [Test]
         public void WithoutFilling_ShouldMadeErrorVisible()
         {
+            wait.Until(ExpectedConditions.ElementToBeClickable(nextButton));
             nextButton.Click();
 
             var errorMsg = driver.FindElement(By.CssSelector(".fielderror.errorlabel"));
- /*           var errorLineEdit = driver.FindElement(By.CssSelector(".textbox.errorborder"));*/
+            var errorLineEdit = driver.FindElement(By.CssSelector(".textbox.errorborder"));
 
-            Assert.IsTrue(errorMsg.Displayed);
+            Assert.IsTrue(errorMsg.Displayed && errorLineEdit.Displayed);
         }
 
         [Test]
@@ -44,7 +45,7 @@ namespace QA_Lab2
             var userEmail = driver.FindElement(By.Id("ztb-user-id")).GetAttribute("ztooltip");
 
             Assert.AreEqual(myEmail, userEmail);
-        }
+        }*/
 
     }
 }
