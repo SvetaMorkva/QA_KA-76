@@ -131,9 +131,10 @@ namespace WebDriverHomework
             {
                 //gotta "re-like"
                 smartFind(driver, ".ltpMr .fr66n .wpO6b").Click();
-                Thread.Sleep(2000);
+                Thread.Sleep(3000);
             }
             smartFind(driver, ".ltpMr .fr66n .wpO6b").Click();
+            Thread.Sleep(3000);
 
             //we should see the test account in the list of people who has liked this post
             smartFind(driver, ".Nm9Fw button").Click();
