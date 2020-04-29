@@ -42,8 +42,8 @@ namespace QA_Lab2
             driver.FindElement(By.CssSelector("[class*='ztb-p']")).Click();
 
             wait.Until(d => driver.FindElement(By.Id("ztb-myaccount")));
+            System.Threading.Thread.Sleep(3000);
             var myAccount = driver.FindElement(By.Id("ztb-myaccount"));
-            wait.Until(ExpectedConditions.ElementToBeClickable(myAccount));
             myAccount.Click();
 
             driver.Close();

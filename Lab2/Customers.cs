@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium.Interactions;
 using System;
 
 namespace QA_Lab2
@@ -67,7 +68,8 @@ namespace QA_Lab2
         [Test]
         public void ClearClick_ShouldUnsetSelect_RemoveClearAllButton()
         {
-            clearAll.Click();
+            Actions actions = new Actions(driver);
+            actions.MoveToElement(clearAll, 1, 1).Click().Build().Perform();
 
             wait.Until(d => driver.FindElements(By.CssSelector("div[class$='reset-filter']")));
 
