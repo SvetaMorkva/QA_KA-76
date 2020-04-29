@@ -10,7 +10,9 @@ namespace QA_Lab2
         public void PasswordEyeButton_ShouldMadePasswordVisible()
         {
             FillDataForLogin();
+            System.Threading.Thread.Sleep(3000);
             driver.FindElement(By.CssSelector("[class$='show_hide_password']")).Click();
+            System.Threading.Thread.Sleep(2000);
 
             wait.Until(d => driver.FindElements(By.CssSelector("[class$='show_hide_password']")).Count == 0);
             var iconShow = driver.FindElement(By.CssSelector(".icon-show"));
