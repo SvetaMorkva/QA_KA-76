@@ -64,7 +64,7 @@ namespace Lab2
             wait.Until(d => driver.FindElement(By.XPath("/html/body/div[7]/div[1]/div[2]/div[1]/div/ul/li[6]/span")));
             driver.FindElement(By.XPath("/html/body/div[7]/div[1]/div[2]/div[1]/div/ul/li[6]/span")).Click();
 
-            wait.Until(d => driver.FindElement(By.CssSelector(".ql-editor.ql-blank"));
+            wait.Until(d => driver.FindElement(By.CssSelector(".ql-editor.ql-blank")));
             driver.FindElement(By.CssSelector(".ql-editor.ql-blank")).SendKeys("new project");
 
             driver.FindElement(By.CssSelector(".btn.pink.accent-4")).Click();
@@ -84,6 +84,7 @@ namespace Lab2
             wait.Until(d => driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")));
 
             driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")).Click();
+            wait.Until(d => driver.FindElement(By.LinkText("Task")));
             driver.FindElement(By.LinkText("Task")).Click();
 
             wait.Until(d => driver.FindElement(By.XPath("//*[@id='modal-content']/div[4]/div[2]/a")));
