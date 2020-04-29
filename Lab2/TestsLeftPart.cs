@@ -17,19 +17,27 @@ namespace Lab2
         private IWebDriver driver;
         private string _url = "https://greenforest.com.ua/";
 
+        private IWebElement WaitForFindElement(IWebDriver driver, By selector)
+        {
+            new WebDriverWait(driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(selector));
+            return driver.FindElement(selector);
+        }
+
         [SetUp]
         public void TestInitialize()
         {
             var options = new ChromeOptions();
             options.AddArgument("start-maximized");
+            options.AddArgument("proxy-server='direct://'");
+            options.AddArgument("proxy-bypass-list=*");
 
             driver = new ChromeDriver(options);
             driver.Navigate().GoToUrl(_url);
             new WebDriverWait(driver, TimeSpan.FromSeconds(5)).Until(d => d.Url == _url);
 
-            driver.FindElement(By.CssSelector(".left a")).Click();
-            Thread.Sleep(1000);
-            driver.FindElement(By.CssSelector(".cities-popup li:nth-of-type(1)")).Click();
+            WaitForFindElement(driver, By.CssSelector(".left a")).Click();
+            Thread.Sleep(3000);
+            WaitForFindElement(driver ,By.CssSelector(".cities-popup li:nth-of-type(1)")).Click();
         }
 
         [TearDown]
@@ -44,10 +52,10 @@ namespace Lab2
         [TestCase("Одесса", "odessa")]
         public void TestChangeCity(string CityRus, string CityLatin)
         {
-            driver.FindElement(By.ClassName("fa-caret-down")).Click();
-            driver.FindElement(By.XPath($"//div[@class='cities-switch']//ul//a[contains(text(), '{CityRus}')]")).Click();
-            Thread.Sleep(1000);
-            string actual_prelabel = driver.FindElement(By.ClassName("courses-list-prelabel")).Text;
+            WaitForFindElement(driver, By.ClassName("fa-caret-down")).Click();
+            WaitForFindElement(driver, By.XPath($"//div[@class='cities-switch']//ul//a[contains(text(), '{CityRus}')]")).Click();
+            Thread.Sleep(3000);
+            string actual_prelabel = WaitForFindElement(driver, By.ClassName("courses-list-prelabel")).Text;
 
             using (new AssertionScope())
             {
@@ -59,10 +67,10 @@ namespace Lab2
         [Test]
         public void TestSwitchLangToUkr()
         {
-            string rus_prelabel = driver.FindElement(By.ClassName("courses-list-prelabel")).Text;
-            driver.FindElement(By.CssSelector(".language-switcher a")).Click();
+            string rus_prelabel = WaitForFindElement(driver, By.ClassName("courses-list-prelabel")).Text;
+            WaitForFindElement(driver, By.CssSelector(".language-switcher a")).Click();
             Thread.Sleep(1000);
-            string ukr_prelabel = driver.FindElement(By.ClassName("courses-list-prelabel")).Text;
+            string ukr_prelabel = WaitForFindElement(driver, By.ClassName("courses-list-prelabel")).Text;
 
             using (new AssertionScope())
             {
@@ -75,12 +83,12 @@ namespace Lab2
         [Test]
         public void TestOpenMyGF()
         {
-            driver.FindElement(By.XPath("//div[@class='right-part']/a[contains(text(), 'MY GREEN FOREST')]")).Click();
+            WaitForFindElement(driver, By.XPath("//div[@class='right-part']/a[contains(text(), 'MY GREEN FOREST')]")).Click();
             Thread.Sleep(3000);
             driver.SwitchTo().Window(driver.WindowHandles.Last());
-            driver.FindElement(By.CssSelector(".logo a")).Click();
+            WaitForFindElement(driver, By.CssSelector(".logo a")).Click();
 
-            string actual_header = driver.FindElement(By.CssSelector(".bottom-offset span")).Text.ToLower();
+            string actual_header = WaitForFindElement(driver, By.CssSelector(".bottom-offset span")).Text.ToLower();
 
             using (new AssertionScope())
             {
@@ -97,11 +105,14 @@ namespace Lab2
         {
             if (CityName != "Киев")
             {
-                driver.FindElement(By.ClassName("fa-caret-down")).Click();
-                driver.FindElement(By.XPath($"//div[@class='cities-switch']//ul//a[contains(text(), '{CityName}')]")).Click();
+                WaitForFindElement(driver, By.ClassName("fa-caret-down")).Click();
+                Thread.Sleep(2000);
+                WaitForFindElement(driver, By.XPath($"//div[@class='cities-switch']//ul//a[contains(text(), '{CityName}')]")).Click();
             }
             Thread.Sleep(1000);
-            driver.FindElement(By.ClassName("details")).Click();
+            WaitForFindElement(driver, By.ClassName("details")).Click();
+            Thread.Sleep(2000);
+
             List<IWebElement> Courses = new List<IWebElement>();
             Courses.AddRange(driver.FindElements(By.ClassName("title")));
             List<string> CoursesNames = new List<string>();

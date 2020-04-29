@@ -16,6 +16,12 @@ namespace Lab2
         private IWebDriver driver;
         private string _url = "https://greenforest.com.ua/";
 
+        private IWebElement WaitForFindElement(IWebDriver driver, By selector)
+        {
+            new WebDriverWait(driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(selector));
+            return driver.FindElement(selector);
+        }
+
         [SetUp]
         public void TestInitialize()
         {
@@ -26,7 +32,7 @@ namespace Lab2
             driver.Navigate().GoToUrl(_url);
             new WebDriverWait(driver, TimeSpan.FromSeconds(5)).Until(d => d.Url == _url);
 
-            driver.FindElement(By.CssSelector(".right a")).Click();
+            WaitForFindElement(driver, By.CssSelector(".right a")).Click();
             Thread.Sleep(1000);
         }
 
@@ -43,9 +49,10 @@ namespace Lab2
         [TestCase("Reviews")]
         public void TestViewNewsOnTopic(string Topic)
         {
-            driver.FindElement(By.ClassName("fa-caret-down")).Click();
-            Thread.Sleep(1000);
-            driver.FindElement(By.XPath($"//ul[@class='categories']//a[text()='{Topic}']")).Click();
+            WaitForFindElement(driver, By.ClassName("fa-caret-down")).Click();
+            Thread.Sleep(3000);
+            WaitForFindElement(driver, By.XPath($"//ul[@class='categories']//a[text()='{Topic}']")).Click();
+            Thread.Sleep(3000);
 
             List<IWebElement> CategoryElements = new List<IWebElement>();
             CategoryElements.AddRange(driver.FindElements(By.CssSelector(".article-block-category a")));
