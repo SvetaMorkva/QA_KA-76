@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitSoundCloudFeaturesTestProject1", "NUnitSoundCloudFeaturesTestProject1.csproj", "{6213E463-7F39-412A-AED9-4D22A0AFAD0F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6213E463-7F39-412A-AED9-4D22A0AFAD0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6213E463-7F39-412A-AED9-4D22A0AFAD0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6213E463-7F39-412A-AED9-4D22A0AFAD0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6213E463-7F39-412A-AED9-4D22A0AFAD0F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D159DD7-BDD1-47A9-96F1-F233F6138807}
+	EndGlobalSection
+EndGlobal

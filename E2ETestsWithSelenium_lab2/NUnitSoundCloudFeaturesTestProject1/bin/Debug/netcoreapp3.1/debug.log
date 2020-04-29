@@ -1,0 +1,4 @@
+[0429/051042.258:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0429/051042.258:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0429/051042.258:ERROR:process_reader_win.cc(123)] NtOpenThread: {Отказано в доступе} Процесс запросил доступ к объекту, но права на доступ не предоставлены. (0xc0000022)
+[0429/051042.321:ERROR:exception_snapshot_win.cc(98)] thread ID 37984 not found in process
