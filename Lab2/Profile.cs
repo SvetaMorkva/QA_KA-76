@@ -40,15 +40,19 @@ namespace QA_Lab2
 
             wait.Until(d => driver.FindElement(By.CssSelector("[class*='ztb-p']")));
             driver.FindElement(By.CssSelector("[class*='ztb-p']")).Click();
+
             wait.Until(d => driver.FindElement(By.Id("ztb-myaccount")));
             var myAccount = driver.FindElement(By.Id("ztb-myaccount"));
             wait.Until(ExpectedConditions.ElementToBeClickable(myAccount));
             myAccount.Click();
+
             driver.Close();
             driver.SwitchTo().Window(driver.WindowHandles[0]);
+
             wait.Until(d => driver.FindElement(By.Id("editprofile")));
             editButton = driver.FindElement(By.Id("editprofile"));
             wait.Until(d => editButton.Enabled && editButton.Displayed);
+
             editButton.Click();
         }
     }

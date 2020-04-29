@@ -15,6 +15,7 @@ namespace QA_Lab2
             wait.Until(ExpectedConditions.ElementToBeClickable(nextButton));
             nextButton.Click();
 
+            wait.Until(d => driver.FindElement(By.CssSelector("div[class$='errorlabel']")));
             var errorMsg = driver.FindElement(By.CssSelector(".fielderror.errorlabel"));
             var errorLineEdit = driver.FindElement(By.CssSelector(".textbox.errorborder"));
 
@@ -25,7 +26,6 @@ namespace QA_Lab2
         public void PasswordEyeButton_ShouldMadePasswordVisible()
         {
             FillDataForLogin();
-
             driver.FindElement(By.CssSelector("[class$='show_hide_password']")).Click();
 
             wait.Until(d => driver.FindElements(By.CssSelector("[class$='show_hide_password']")).Count == 0);
@@ -38,7 +38,6 @@ namespace QA_Lab2
         public void ValidEmailAndPassword_ShouldEnterInAccount()
         {
             FillDataForLogin();
-
             nextButton.Click();
 
             wait.Until(d => driver.FindElement(By.CssSelector("[class*='ztb-p']")));
