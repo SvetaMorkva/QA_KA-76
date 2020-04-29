@@ -71,8 +71,8 @@ namespace QA_Lab2
 
             wait.Until(d => driver.FindElements(By.CssSelector("div[class$='reset-filter']")));
 
-            Assert.IsTrue(selectBoxIndustry.SelectedOption.Text == "Industry");
             Assert.IsTrue(!clearAll.Displayed);
+            Assert.IsTrue(selectBoxIndustry.SelectedOption.Text == "Industry");
         }
 
         [TearDown]
