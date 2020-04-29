@@ -352,6 +352,8 @@ C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab2\lab2\bin\Debug\netcoreapp3.1\TechTalk
 C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab2\lab2\bin\Debug\netcoreapp3.1\StreamJsonRpc.dll
 C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab2\lab2\bin\Debug\netcoreapp3.1\FSharp.Core.dll
 C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab2\lab2\bin\Debug\netcoreapp3.1\lab2.pdb
-C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab2\lab2\obj\Debug\netcoreapp3.1\lab2.csproj.CoreCompileInputs.cache
 C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab2\lab2\obj\Debug\netcoreapp3.1\lab2.dll
 C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab2\lab2\obj\Debug\netcoreapp3.1\lab2.pdb
+C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab2\lab2\bin\Debug\netcoreapp3.1\WebDriver.Support.dll
+C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab2\lab2\bin\Debug\netcoreapp3.1\SeleniumExtras.WaitHelpers.dll
+C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab2\lab2\obj\Debug\netcoreapp3.1\lab2.csproj.CoreCompileInputs.cache

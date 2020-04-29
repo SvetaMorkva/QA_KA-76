@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "JMl9crbuyd8ynMUrUh8ASNQmqt9ICp7tgQLZmIWA74tnDCfugOdWHwomWl+d5SqSOSWW9cnVdAVGWXm/kPq6nA==",
+  "dgSpecHash": "bfPTy+KDjw01APXaG90/zJrF9y/EplcVJ+rd1wqjjC0eFtYjHG15sRpUX2LBFN+rHaQ5YOWP5gWQ8zAWY/Tjaw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Olha\\Desktop\\GitHub\\QA_KA-76\\lab2\\lab2\\lab2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Olha\\.nuget\\packages\\bodi\\1.4.1\\bodi.1.4.1.nupkg.sha512",
     "C:\\Users\\Olha\\.nuget\\packages\\cucumber.messages\\6.0.1\\cucumber.messages.6.0.1.nupkg.sha512",
+    "C:\\Users\\Olha\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
     "C:\\Users\\Olha\\.nuget\\packages\\gherkin\\6.0.0\\gherkin.6.0.0.nupkg.sha512",
     "C:\\Users\\Olha\\.nuget\\packages\\google.protobuf\\3.7.0\\google.protobuf.3.7.0.nupkg.sha512",
     "C:\\Users\\Olha\\.nuget\\packages\\microsoft.codecoverage\\16.4.0\\microsoft.codecoverage.16.4.0.nupkg.sha512",
@@ -38,6 +39,7 @@
     "C:\\Users\\Olha\\.nuget\\packages\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\Olha\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\Olha\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
+    "C:\\Users\\Olha\\.nuget\\packages\\selenium.support\\3.141.0\\selenium.support.3.141.0.nupkg.sha512",
     "C:\\Users\\Olha\\.nuget\\packages\\selenium.webdriver\\3.141.0\\selenium.webdriver.3.141.0.nupkg.sha512",
     "C:\\Users\\Olha\\.nuget\\packages\\selenium.webdriver.chromedriver\\81.0.4044.6900\\selenium.webdriver.chromedriver.81.0.4044.6900.nupkg.sha512",
     "C:\\Users\\Olha\\.nuget\\packages\\specflow\\3.1.97\\specflow.3.1.97.nupkg.sha512",
