@@ -31,6 +31,7 @@ namespace QA_Lab2
             System.Threading.Thread.Sleep(7000);
             signUpButton.Click();
 
+            wait.Until(d => driver.FindElements(By.CssSelector(".testdrivetext .field-msg")).Count == 3);
             var errorMsg = driver.FindElements(By.CssSelector(".testdrivetext .field-msg"));
 
             bool errorsDisplayed = true;
@@ -43,7 +44,6 @@ namespace QA_Lab2
                 }
             }
 
-            Assert.AreEqual(3, errorMsg.Count);
             Assert.IsTrue(errorsDisplayed);
         }
 
