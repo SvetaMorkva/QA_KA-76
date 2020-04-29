@@ -45,11 +45,54 @@ namespace NUnitSoundCloudFeaturesTestProject1
             string trackXpath = "//div[contains(@class,'l-about-main')]//li[" + selectedTrack + "]//div[1]//div[1]//div[1]//span[1]";
             new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(trackXpath)));
             driver.FindElementByXPath(trackXpath).Click();
-            driver.Close();
+            driver.Quit();
 
             Assert.Pass();
         }
     }
+
+    public class ScrollListOfPlaylists
+    {
+        [SetUp]
+        public void Setup()
+        {
+        }
+
+        [Test]
+        public void ScrollListOfPlaylistsTest()
+        {
+            var driver = new ChromeDriver();
+            driver.Navigate().GoToUrl("https://soundcloud.com/discover");
+            var wait = new WebDriverWait(driver, TimeSpan.FromMinutes(1));
+
+            try
+            {
+                string cookyButtonXpath = "//*[@id='app']/div[1]/div/div/div/button";
+                var cookyButton = wait.Until(d => d.FindElement(By.XPath(cookyButtonXpath)));
+                new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(cookyButtonXpath)));
+                cookyButton.Click();
+
+            }
+            catch { }
+
+            int selectedListOfPlaylists = 1;
+            string sliderFarwardButtonXpath = "//*[@id='content']/div/div/div[1]/div[2]/div/ul/li[" + selectedListOfPlaylists + "]/ div/div[2]/div[2]/button";
+            var sliderFarwardButton = wait.Until(d => d.FindElement(By.XPath(sliderFarwardButtonXpath)));
+            new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(sliderFarwardButtonXpath)));
+            sliderFarwardButton.Click();
+
+            string sliderBackwardButtonXpath = "//*[@id='content']/div/div/div[1]/div[2]/div/ul/li[" + selectedListOfPlaylists + "]/div/div[2]/div[3]/button";
+            var sliderBackwardButton = wait.Until(d => d.FindElement(By.XPath(sliderBackwardButtonXpath)));
+            new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(sliderBackwardButtonXpath)));
+            sliderBackwardButton.Click();
+
+            driver.Quit();
+            Assert.Pass();
+        }
+
+    }
+
+
     public class SelectUserWhoLikedTheTrack
     {
         [SetUp]
@@ -57,7 +100,7 @@ namespace NUnitSoundCloudFeaturesTestProject1
         {
         }
 
-        private IWebElement getLikeScoreLink(IWebDriver driver )
+        private IWebElement getLikeScoreLink(IWebDriver driver)
         {
             driver.Navigate().GoToUrl("https://soundcloud.com/discover");
             var wait = new WebDriverWait(driver, TimeSpan.FromMinutes(1));
@@ -87,10 +130,12 @@ namespace NUnitSoundCloudFeaturesTestProject1
 
             //I have pressed the LikeScoreLink
             string likeScoreXpath = "//*[@id='content']/div/div[3]/div[1]/div/div[1]/div/div/div[2]/ul/li[2]/a";
+            Thread.Sleep(4000);
             var likeScoreLink = wait.Until(d => d.FindElement(By.XPath(likeScoreXpath)));
             new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(likeScoreXpath)));
             return likeScoreLink;
         }
+
 
         [Test]
         public void ShowUsersWhoHaveLikedTrackTest()
@@ -109,7 +154,7 @@ namespace NUnitSoundCloudFeaturesTestProject1
                 if (amountOfUsersWhoLikedTheTrack.Count == 0) Assert.Fail("Error: LikeScore = " + likeScore + " but amountOfUsersWhoLikedTheTrack = " + amountOfUsersWhoLikedTheTrack.Count );
             }
 
-            driver.Close();
+            driver.Quit();
             Assert.Pass();
         }
 
@@ -131,7 +176,7 @@ namespace NUnitSoundCloudFeaturesTestProject1
                 userWhoLikedTrackLink.Click();
             }
 
-            driver.Close();
+            driver.Quit();
             Assert.Pass();
         }
     }
