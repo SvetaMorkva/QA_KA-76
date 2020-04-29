@@ -141,5 +141,26 @@ namespace WebDriverHomework
             Assert.AreEqual(username, smartFind(driver, ".rBNOH:nth-child(1) .IwRSH .eGOV_ div div div div")
                     .GetAttribute("innerHTML"));
         }
+
+        [Test]
+        public void commentRandomPost()
+        {
+            string comment = "Малышка любит дилера";
+            string irra_url = "https://www.instagram.com/et.irremissibile/";
+            
+            //lets open my main account and like the first post
+            driver.Navigate().GoToUrl(irra_url);
+            smartFind(driver, ".weEfm:nth-child(1) ._bz0w:nth-child(1) ._9AhH0").Click();
+
+            //write and send the comment
+            smartFind(driver, ".X7cDz textarea").Click();
+            smartFind(driver, ".X7cDz textarea").SendKeys(comment);
+            smartFind(driver, ".X7cDz textarea").SendKeys(Keys.Enter);
+
+            //Gotta wait for instagram to process the comment
+            Thread.Sleep(5000);
+
+            Assert.AreEqual(comment, smartFind(driver, ".Mr508:last-child .C4VMK span").GetAttribute("innerHTML"));
+        }
     }
 }
