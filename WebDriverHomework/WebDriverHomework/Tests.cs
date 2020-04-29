@@ -212,5 +212,43 @@ namespace WebDriverHomework
 
             Assert.AreEqual(newName, smartFind(driver, ".rhpdm").GetAttribute("innerHTML"));
         }
+
+        [TestCase("The legend")]
+        [TestCase("Super sexy little girl")]
+        [TestCase("Rap god")]
+        [TestCase("I have been beaten by my mum")]
+        public void changeAccountBio(string newBio)
+        {
+            mainPage.openProfilePage();
+            smartFind(driver, ".thEYr button").Click();
+            smartFind(driver, "#pepBio").Click();
+            smartFind(driver, "#pepBio").Clear();
+            smartFind(driver, "#pepBio").SendKeys(newBio);
+            Thread.Sleep(1000);
+            smartFind(driver, ".L3NKy").Click();
+            mainPage.openProfilePage();
+            Thread.Sleep(2000);
+
+            Assert.AreEqual(newBio, smartFind(driver, ".-vDIg span").GetAttribute("innerHTML"));
+        }
+
+        [TestCase("heaven.org")]
+        [TestCase("pornhub.com")]
+        [TestCase("genius.com")]
+        [TestCase("dypka.ua")]
+        public void changeAccountWebsite(string newWebsite)
+        {
+            mainPage.openProfilePage();
+            smartFind(driver, ".thEYr button").Click();
+            smartFind(driver, "#pepWebsite").Click();
+            smartFind(driver, "#pepWebsite").Clear();
+            smartFind(driver, "#pepWebsite").SendKeys(newWebsite);
+            Thread.Sleep(1000);
+            smartFind(driver, ".L3NKy").Click();
+            mainPage.openProfilePage();
+            Thread.Sleep(2000);
+
+            Assert.AreEqual(newWebsite, smartFind(driver, ".yLUwa").GetAttribute("innerHTML"));
+        }
     }
 }
