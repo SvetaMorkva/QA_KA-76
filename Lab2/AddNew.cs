@@ -31,6 +31,7 @@ namespace Lab2
             wait.Until(d => driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_clients.png']")));
 
             driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_clients.png']")).Click();
+            wait.Until(d => driver.FindElement(By.LinkText("Client")));
             driver.FindElement(By.LinkText("Client")).Click();
 
             wait.Until(d => driver.FindElement(By.Id("clientCompany")));
@@ -54,13 +55,16 @@ namespace Lab2
             wait.Until(d => driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")));
 
             driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")).Click();
+            wait.Until(d => driver.FindElement(By.LinkText("Project")));
             driver.FindElement(By.LinkText("Project")).Click();
 
             wait.Until(d => driver.FindElement(By.XPath("//*[@id='modal-content']/div[2]/div[1]/div/input")));
             driver.FindElement(By.XPath("//*[@id='modal-content']/div[2]/div[1]/div/input")).Click();
-            
+
+            wait.Until(d => driver.FindElement(By.XPath("/html/body/div[7]/div[1]/div[2]/div[1]/div/ul/li[6]/span")));
             driver.FindElement(By.XPath("/html/body/div[7]/div[1]/div[2]/div[1]/div/ul/li[6]/span")).Click();
-            
+
+            wait.Until(d => driver.FindElement(By.CssSelector(".ql-editor.ql-blank"));
             driver.FindElement(By.CssSelector(".ql-editor.ql-blank")).SendKeys("new project");
 
             driver.FindElement(By.CssSelector(".btn.pink.accent-4")).Click();
@@ -72,7 +76,7 @@ namespace Lab2
         }
 
         [Test]
-        public void CreateTask_ShouldAddNewProject()
+        public void CreateTask_ShouldAddNewTask()
         {
             driver.FindElement(By.Id("email")).SendKeys("l.khylenko@gmail.com");
             driver.FindElement(By.Id("password")).SendKeys("!Q@W#E");

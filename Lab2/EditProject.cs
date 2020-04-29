@@ -30,6 +30,7 @@ namespace Lab2
             wait.Until(d => driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")));
 
             driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")).Click();
+            wait.Until(d => driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[5]/div/a[3]")));
             driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[5]/div/a[3]")).Click();
 
             wait.Until(d => driver.FindElement(By.XPath("//*[@id='projectViewList']/table/tbody/tr[1]/td[7]/a[2]")));
