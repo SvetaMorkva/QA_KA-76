@@ -162,5 +162,55 @@ namespace WebDriverHomework
 
             Assert.AreEqual(comment, smartFind(driver, ".Mr508:last-child .C4VMK span").GetAttribute("innerHTML"));
         }
+
+        [Test]
+        public void shareRandomPost()
+        {
+            string messageReceiver = "et.irremissibile";
+
+            mainPage.openExplorePage();
+
+            //open and share the first post in "explore"
+            smartFind(driver, ".-muEz+ .pKKVh ._9AhH0").Click();
+            smartFind(driver, ".ltpMr button:nth-child(3)").Click();
+            smartFind(driver, ".HVWg4 .-qQT3:nth-child(1)").Click();
+
+            //find an input search field and paste the username
+            smartFind(driver, ".j_2Hd").SendKeys(messageReceiver);
+            //choose the first one suggested
+            smartFind(driver, ".-qQT3:nth-child(1)").Click();
+            //click "send"
+            smartFind(driver, ".cB_4K").Click();
+
+            //wait for instagram to process and close
+            Thread.Sleep(5000);
+            smartFind(driver, ".fm1AK  ._8-yf5").Click();
+
+            //open inbox
+            mainPage.openInboxPage();
+
+            //then the last message should be "You sent a post" and time should be "N s" (n seconds ago)
+            Assert.AreEqual("You sent a post", smartFind(driver, ".R19PB span").GetAttribute("innerHTML"));
+            Assert.IsTrue(smartFind(driver, ".R19PB span").GetAttribute("innerHTML").Contains("s"));
+        }
+
+        [TestCase("Jim Morrison")]
+        [TestCase("Riley Reid")]
+        [TestCase("Marshall Mathers")]
+        [TestCase("Selenium Tester")]
+        public void changeAccountName(string newName)
+        {
+            mainPage.openProfilePage();
+            smartFind(driver, ".thEYr button").Click();
+            smartFind(driver, "#pepName").Click();
+            smartFind(driver, "#pepName").Clear();
+            smartFind(driver, "#pepName").SendKeys(newName);
+            Thread.Sleep(1000);
+            smartFind(driver, ".L3NKy").Click();
+            mainPage.openProfilePage();
+            Thread.Sleep(2000);
+
+            Assert.AreEqual(newName, smartFind(driver, ".rhpdm").GetAttribute("innerHTML"));
+        }
     }
 }
