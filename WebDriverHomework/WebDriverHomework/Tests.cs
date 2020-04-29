@@ -177,8 +177,9 @@ namespace WebDriverHomework
 
             //find an input search field and paste the username
             smartFind(driver, ".j_2Hd").SendKeys(messageReceiver);
+            Thread.Sleep(1000);
             //choose the first one suggested
-            smartFind(driver, ".-qQT3:nth-child(1)").Click();
+            smartFind(driver, ".-qQT3:nth-child(1) .eGOV_:nth-child(2)").Click();
             //click "send"
             smartFind(driver, ".cB_4K").Click();
 
@@ -190,8 +191,12 @@ namespace WebDriverHomework
             mainPage.openInboxPage();
 
             //then the last message should be "You sent a post" and time should be "N s" (n seconds ago)
-            Assert.AreEqual("You sent a post", smartFind(driver, ".R19PB span").GetAttribute("innerHTML"));
-            Assert.IsTrue(smartFind(driver, ".R19PB span").GetAttribute("innerHTML").Contains("s"));
+            //language dependent!!!
+            Assert.IsTrue(smartFind(driver, ".R19PB ~ time").GetAttribute("innerHTML").Contains("s") ||
+                    smartFind(driver, ".R19PB ~ time").GetAttribute("innerHTML").Contains("с"));
+
+            Assert.IsTrue("You sent a post".Equals(smartFind(driver, ".R19PB span").GetAttribute("innerHTML")) ||
+                    "Вы отправили публикацию".Equals(smartFind(driver, ".R19PB span").GetAttribute("innerHTML")));
         }
 
         [Test]
