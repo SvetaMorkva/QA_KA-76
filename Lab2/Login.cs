@@ -15,9 +15,9 @@ namespace QA_Lab2
             nextButton.Click();
 
             var errorMsg = driver.FindElement(By.CssSelector(".fielderror.errorlabel"));
-            var errorLineEdit = driver.FindElement(By.CssSelector(".textbox.errorborder"));
+ /*           var errorLineEdit = driver.FindElement(By.CssSelector(".textbox.errorborder"));*/
 
-            Assert.IsTrue(errorMsg.Displayed && errorLineEdit.Displayed);
+            Assert.IsTrue(errorMsg.Displayed);
         }
 
         [Test]

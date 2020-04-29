@@ -61,7 +61,7 @@ namespace QA_Lab2
         [TearDown]
         public void CleanUp()
         {
-            driver.Close();
+            driver.Quit();
         }
     }
 }

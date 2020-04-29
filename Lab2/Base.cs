@@ -33,7 +33,7 @@ namespace QA_Lab2
         [TearDown]
         public void CleanUp()
         {
-            driver.Close();
+            driver.Quit();
         }
 
         public void FillDataForLogin()
@@ -44,7 +44,7 @@ namespace QA_Lab2
             wait.Until(d => driver.FindElement(By.Id("password")));
 
             passwordLineEdit = driver.FindElement(By.Id("password"));
-            wait.Until(d => passwordLineEdit.Enabled);
+            wait.Until(ExpectedConditions.ElementToBeClickable(passwordLineEdit));
             passwordLineEdit.SendKeys(myPassword);
         }
     }
