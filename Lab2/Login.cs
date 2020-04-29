@@ -7,33 +7,10 @@ using OpenQA.Selenium.Support.UI;
 namespace QA_Lab2
 {
     [TestFixture]
-    public class Login
+    public class Login : Base
     {
-        string url = "https://accounts.zoho.eu/signin?servicename=ZohoHome&signupurl=https://www.zoho.com/signup.html";
-        string myEmail = "sveta.morkva28@gmail.com";
-        string myPassword = "ssss_1111";
-        ChromeDriver driver;
-        WebDriverWait wait;
-        IWebElement loginLineEdit;
-        IWebElement nextButton;
-        IWebElement passwordLineEdit;
-
-        [SetUp]
-        public void Initialize()
-        {
-            driver = new ChromeDriver();
-            driver.Navigate().GoToUrl(url);
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
-
-            loginLineEdit = driver.FindElement(By.Id("login_id"));
-            nextButton = driver.FindElement(By.Id("nextbtn"));
-
-            loginLineEdit.Clear();
-        }
-
-
         [Test]
-        public void Login_WithoutFilling_ShouldMadeErrorVisible()
+        public void WithoutFilling_ShouldMadeErrorVisible()
         {
             nextButton.Click();
 
@@ -44,7 +21,7 @@ namespace QA_Lab2
         }
 
         [Test]
-        public void Login_PasswordEyeButton_ShouldMadePasswordVisible()
+        public void PasswordEyeButton_ShouldMadePasswordVisible()
         {
             FillDataForLogin();
 
@@ -57,7 +34,7 @@ namespace QA_Lab2
         }
 
         [Test]
-        public void Login_ValidEmailAndPassword_ShouldEnterInAccount()
+        public void ValidEmailAndPassword_ShouldEnterInAccount()
         {
             FillDataForLogin();
 
@@ -69,22 +46,5 @@ namespace QA_Lab2
             Assert.AreEqual(myEmail, userEmail);
         }
 
-
-        [TearDown]
-        public void CleanUp()
-        {
-            driver.Close();
-        }
-
-        private void FillDataForLogin()
-        {
-            loginLineEdit.SendKeys(myEmail);
-            nextButton.Click();
-
-            wait.Until(d => driver.FindElement(By.Id("password")));
-
-            passwordLineEdit = driver.FindElement(By.Id("password"));
-            passwordLineEdit.SendKeys(myPassword);
-        }
     }
 }

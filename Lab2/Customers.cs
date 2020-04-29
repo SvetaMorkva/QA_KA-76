@@ -6,14 +6,22 @@ using System;
 
 namespace QA_Lab2
 {
-    [TestFixture]
+    [TestFixture("automotive")]
+    [TestFixture("education")]
+    [TestFixture("electronics")]
     public class Customers
     {
-        string url = "https://www.zoho.com/customers.html";
-        ChromeDriver driver;
-        IWebElement clearAll;
-        IWebElement articles;
-        SelectElement selectBoxIndustry;
+        private string url = "https://www.zoho.com/customers.html";
+        private string industry;
+        private ChromeDriver driver;
+        private IWebElement clearAll;
+        private IWebElement articles;
+        private SelectElement selectBoxIndustry;
+
+        public Customers(string _industry)
+        {
+            industry = _industry;
+        }
 
         [SetUp]
         public void Initialize()
@@ -27,14 +35,14 @@ namespace QA_Lab2
 
             wait.Until(d => driver.FindElements(By.CssSelector(".filter.industry")).Count > 0);
             selectBoxIndustry = new SelectElement(driver.FindElement(By.CssSelector(".filter.industry")));
-            selectBoxIndustry.SelectByValue("automobile");
+            selectBoxIndustry.SelectByValue(industry);
             wait.Until(d => !articles.Displayed);
         }
 
         [Test]
-        public void Customers_FilterByIndustry_ShouldLeaveAutomobileArticles()
+        public void FilterByIndustry_ShouldLeaveAutomotiveArticles()
         {
-            var articlesIndustry = driver.FindElements(By.CssSelector("[class*='automobile']"));
+            var articlesIndustry = driver.FindElements(By.CssSelector("[class*=" + industry + "]"));
 
             bool allIndustryArticlesDisplayed = true;
             foreach(var a in articlesIndustry)
@@ -50,13 +58,13 @@ namespace QA_Lab2
         }
 
         [Test]
-        public void Customers_FilterByIndustry_ShouldClearBeVisible()
+        public void FilterByIndustry_ShouldClearBeVisible()
         {
             Assert.IsTrue(clearAll.Enabled && clearAll.Displayed);
         }
 
         [Test]
-        public void Customers_ClearClick_ShouldUnsetSelect_RemoveClearAllButton()
+        public void ClearClick_ShouldUnsetSelect_RemoveClearAllButton()
         {
             clearAll.Click();
 

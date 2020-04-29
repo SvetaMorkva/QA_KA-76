@@ -9,16 +9,17 @@ namespace QA_Lab2
     [TestFixture]
     public class SignUp
     {
-        string url = "https://www.zoho.com/signup.html";
-        ChromeDriver driver;
-        WebDriverWait wait;
-        IWebElement signUpButton;
+        private string url = "https://www.zoho.com/signup.html";
+        private ChromeDriver driver;
+        private WebDriverWait wait;
+        private IWebElement signUpButton;
 
         [SetUp]
         public void Initialize()
         {
             driver = new ChromeDriver();
             driver.Navigate().GoToUrl(url);
+
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             signUpButton = driver.FindElement(By.CssSelector(".signupbtn"));
         }
@@ -31,7 +32,7 @@ namespace QA_Lab2
             signUpButton.Click();
 
             var errorMsg = driver.FindElements(By.CssSelector(".testdrivetext .field-msg"));
-            Assert.AreEqual(3, errorMsg.Count);
+
             bool errorsDisplayed = true;
             foreach (var e in errorMsg)
             {
@@ -41,6 +42,8 @@ namespace QA_Lab2
                     break;
                 }
             }
+
+            Assert.AreEqual(3, errorMsg.Count);
             Assert.IsTrue(errorsDisplayed);
         }
 
@@ -49,7 +52,9 @@ namespace QA_Lab2
         {
             var changeCountry = driver.FindElement(By.Id("zip-countryname-change"));
             wait.Until(d => changeCountry.Enabled);
+
             changeCountry.Click();
+
             Assert.IsTrue(driver.FindElement(By.Id("country")).Displayed);
         }
 
