@@ -35,7 +35,7 @@ namespace QA_Lab2
             wait.Until(d => driver.FindElement(By.CssSelector(".filter.industry")));
             selectBoxIndustry = new SelectElement(driver.FindElement(By.CssSelector(".filter.industry")));
             wait.Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(By.CssSelector(".filter.industry"))));
-            wait.Until(d => driver.FindElements(By.CssSelector("option[value=" + industry + "]")));
+            wait.Until(d => selectBoxIndustry.Options.Count > 50);
             selectBoxIndustry.SelectByValue(industry);
             wait.Until(d => driver.FindElements(By.CssSelector("div[class$='reset-filter']")).Count == 0);
         }
