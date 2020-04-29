@@ -33,9 +33,8 @@ namespace Lab2
             wait.Until(d => driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_clients.png']")));
             Thread.Sleep(3000);
             driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_clients.png']")).Click();
-            wait.Until(d => driver.FindElement(By.XPath("/html/body/div[2]/ul/ul/li[2]/div/a[2]")));
-            //hread.Sleep(3000);
-            driver.FindElement(By.XPath("/html/body/div[2]/ul/ul/li[2]/div/a[2]")).Click();
+            wait.Until(d => driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[2]/div/a[2]")));
+            driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[2]/div/a[2]")).Click();
 
             wait.Until(d => driver.FindElement(By.Id("clientCompany")));
             clientCompany = driver.FindElement(By.Id("clientCompany"));
@@ -58,8 +57,8 @@ namespace Lab2
             wait.Until(d => driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")));
             Thread.Sleep(3000);
             driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")).Click();
-        	wait.Until(d => driver.FindElement(By.XPath("/html/body/div[2]/ul/ul/li[5]/div/a[1]")));
-            driver.FindElement(By.XPath("/html/body/div[2]/ul/ul/li[5]/div/a[1]")).Click();
+            wait.Until(d => driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[5]/div/a[1]")));
+            driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[5]/div/a[1]")).Click();
 
             wait.Until(d => driver.FindElement(By.XPath("//*[@id='modal-content']/div[2]/div[1]/div/input")));
             driver.FindElement(By.XPath("//*[@id='modal-content']/div[2]/div[1]/div/input")).Click();
@@ -87,8 +86,8 @@ namespace Lab2
             wait.Until(d => driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")));
 
             driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")).Click();
-            wait.Until(d => driver.FindElement(By.XPath("/html/body/div[2]/ul/ul/li[5]/div/a[2]")));
-            driver.FindElement(By.XPath("/html/body/div[2]/ul/ul/li[5]/div/a[2]")).Click();
+            wait.Until(d => driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[5]/div/a[2]")));
+            driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[5]/div/a[2]")).Click();
 
             wait.Until(d => driver.FindElement(By.XPath("//*[@id='modal-content']/div[4]/div[2]/a")));
             driver.FindElement(By.XPath("//*[@id='modal-content']/div[4]/div[2]/a")).Click();
