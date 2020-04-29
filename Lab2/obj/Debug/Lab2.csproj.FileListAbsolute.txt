@@ -1,0 +1,17 @@
+D:\QA\QA_KA-76\Lab2\bin\Debug\Lab2.dll
+D:\QA\QA_KA-76\Lab2\bin\Debug\Lab2.pdb
+D:\QA\QA_KA-76\Lab2\bin\Debug\FluentAssertions.dll
+D:\QA\QA_KA-76\Lab2\bin\Debug\nunit.framework.dll
+D:\QA\QA_KA-76\Lab2\bin\Debug\WebDriver.dll
+D:\QA\QA_KA-76\Lab2\bin\Debug\WebDriver.Support.dll
+D:\QA\QA_KA-76\Lab2\bin\Debug\FluentAssertions.pdb
+D:\QA\QA_KA-76\Lab2\bin\Debug\FluentAssertions.xml
+D:\QA\QA_KA-76\Lab2\bin\Debug\nunit.framework.pdb
+D:\QA\QA_KA-76\Lab2\bin\Debug\nunit.framework.xml
+D:\QA\QA_KA-76\Lab2\bin\Debug\WebDriver.xml
+D:\QA\QA_KA-76\Lab2\bin\Debug\WebDriver.Support.xml
+D:\QA\QA_KA-76\Lab2\obj\Debug\Lab2.csprojAssemblyReference.cache
+D:\QA\QA_KA-76\Lab2\obj\Debug\Lab2.csproj.CoreCompileInputs.cache
+D:\QA\QA_KA-76\Lab2\obj\Debug\Lab2.csproj.CopyComplete
+D:\QA\QA_KA-76\Lab2\obj\Debug\Lab2.dll
+D:\QA\QA_KA-76\Lab2\obj\Debug\Lab2.pdb
