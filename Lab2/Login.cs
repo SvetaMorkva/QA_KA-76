@@ -1,28 +1,11 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
 
 namespace QA_Lab2
 {
     [TestFixture]
     public class Login : Base
     {
-        [Test]
-        public void WithoutFilling_ShouldMadeErrorVisible()
-        {
-            wait.Until(ExpectedConditions.ElementToBeClickable(nextButton));
-            nextButton.Click();
-
-            wait.Until(d => driver.FindElement(By.CssSelector("div[class$='errorlabel']")));
-            var errorMsg = driver.FindElement(By.CssSelector(".fielderror.errorlabel"));
-            var errorLineEdit = driver.FindElement(By.Id("login_id"));
-            System.Threading.Thread.Sleep(3000);
-
-            Assert.IsTrue(errorMsg.Displayed);
-        }
-
         [Test]
         public void PasswordEyeButton_ShouldMadePasswordVisible()
         {

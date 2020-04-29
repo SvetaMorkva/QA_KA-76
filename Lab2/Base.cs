@@ -9,8 +9,7 @@ namespace QA_Lab2
     public class Base
     {
         private string url = "https://accounts.zoho.eu/signin?servicename=ZohoHome&signupurl=https://www.zoho.com/signup.html";
-        public string myEmail2  = "sveta.morkva28@gmail.com";
-        public string myEmail = "svetam2428@gmail.com";
+        public string myEmail = "sveta.morkva28@gmail.com";
         private string myPassword = "ssss_1111";
         public ChromeDriver driver;
         public WebDriverWait wait;
