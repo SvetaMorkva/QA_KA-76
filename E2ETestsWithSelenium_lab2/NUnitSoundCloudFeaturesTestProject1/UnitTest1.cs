@@ -8,7 +8,7 @@ using OpenQA.Selenium.Interactions;
 using System.Collections.Generic;
 
 namespace NUnitSoundCloudFeaturesTestProject1
-{
+{   
     public class TurnOnMusicFromPlaylistTest
     {
         [SetUp]
@@ -57,13 +57,10 @@ namespace NUnitSoundCloudFeaturesTestProject1
         {
         }
 
-        [Test]
-        public void ShowUsersWhoHaveLikedTrackTest()
+        private IWebElement getLikeScoreLink(IWebDriver driver )
         {
-            var driver = new ChromeDriver();
             driver.Navigate().GoToUrl("https://soundcloud.com/discover");
             var wait = new WebDriverWait(driver, TimeSpan.FromMinutes(1));
-
             try
             {
                 string cookyButtonXpath = "//*[@id='app']/div[1]/div/div/div/button";
@@ -89,10 +86,20 @@ namespace NUnitSoundCloudFeaturesTestProject1
             trackLink.Click();
 
             //I have pressed the LikeScoreLink
-            string likeScoreXpath = "//*[@id='content']/div/div[3]/div[1]/div/div[1]/div/div/div[2]/ul/li[2]/a/span[2]";
+            string likeScoreXpath = "//*[@id='content']/div/div[3]/div[1]/div/div[1]/div/div/div[2]/ul/li[2]/a";
             var likeScoreLink = wait.Until(d => d.FindElement(By.XPath(likeScoreXpath)));
-            string likeScore = likeScoreLink.Text;
             new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(likeScoreXpath)));
+            return likeScoreLink;
+        }
+
+        [Test]
+        public void ShowUsersWhoHaveLikedTrackTest()
+        {
+            var driver = new ChromeDriver();
+            var wait = new WebDriverWait(driver, TimeSpan.FromMinutes(1));
+
+            IWebElement likeScoreLink = getLikeScoreLink(driver);
+            string likeScore = likeScoreLink.Text;
             likeScoreLink.Click();
 
             if (likeScore[0] != '0')
@@ -102,6 +109,29 @@ namespace NUnitSoundCloudFeaturesTestProject1
                 if (amountOfUsersWhoLikedTheTrack.Count == 0) Assert.Fail("Error: LikeScore = " + likeScore + " but amountOfUsersWhoLikedTheTrack = " + amountOfUsersWhoLikedTheTrack.Count );
             }
 
+            driver.Close();
+            Assert.Pass();
+        }
+
+        [Test]
+        public void SelectUserWhoLikedTrackTest()
+        {
+            var driver = new ChromeDriver();
+            var wait = new WebDriverWait(driver, TimeSpan.FromMinutes(1));
+
+            IWebElement likeScoreLink = getLikeScoreLink(driver);
+            string likeScore = likeScoreLink.Text;
+            likeScoreLink.Click();
+
+            if (likeScore[0] != '0')
+            {
+                string userWhoLikedTrackXpath = "//*[@id='content']/div/div/div[2]/div/div/ul/li[1]/div/div[1]/a";
+                var userWhoLikedTrackLink = wait.Until(d => d.FindElement(By.XPath(userWhoLikedTrackXpath)));
+                new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(userWhoLikedTrackXpath)));
+                userWhoLikedTrackLink.Click();
+            }
+
+            driver.Close();
             Assert.Pass();
         }
     }
