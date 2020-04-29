@@ -92,6 +92,61 @@ namespace NUnitSoundCloudFeaturesTestProject1
 
     }
 
+    public class SignIn
+    {
+        [SetUp]
+        public void Setup()
+        {
+        }
+
+        [Test]
+        public void SignInTest()
+        {
+            var driver = new ChromeDriver();
+            driver.Navigate().GoToUrl("https://soundcloud.com/discover");
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+
+            try
+            {
+                string cookyButtonXpath = "//*[@id='app']/div[1]/div/div/div/button";
+                var cookyButton = wait.Until(d => d.FindElement(By.XPath(cookyButtonXpath)));
+                new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(cookyButtonXpath)));
+                cookyButton.Click();
+
+            }
+            catch { }
+
+            string signInButtonXpath = "//*[@id='app']/header/div/div[3]/div[1]/button[1]";
+            var signInButton = wait.Until(d => d.FindElement(By.XPath(signInButtonXpath)));
+            new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(signInButtonXpath)));
+            signInButton.Click();
+
+
+            string signInIframeXpath = "//iframe[@class='webAuthContainer__iframe']";
+            var detailFrame = wait.Until(d => d.FindElement(By.XPath(signInIframeXpath)));
+            driver.SwitchTo().Frame(detailFrame);
+
+            Thread.Sleep(2000);
+            string signInEmailInputXpath = "//*[@id='sign_in_up_email']";
+            wait.Until(d => d.FindElement(By.XPath(signInEmailInputXpath))).SendKeys("voiceofreason@ukr.net");
+
+            string signInContinueButtonXpath = "//*[@id='sign_in_up_submit']";
+            new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(signInContinueButtonXpath))).Click();
+
+            Thread.Sleep(2000);
+            string signInPasswordInputXpath = "//*[@id='enter_password_field']";
+            wait.Until(d => d.FindElement(By.XPath(signInPasswordInputXpath))).SendKeys("catcatcatcat");
+
+            Thread.Sleep(2000);
+            string signInFinishButtonXpath = "//*[@id='enter_password_submit']";
+            new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(signInFinishButtonXpath))).Click();
+
+            driver.Quit();
+
+            Assert.Pass();
+        }
+
+    }
 
     public class SelectUserWhoLikedTheTrack
     {
