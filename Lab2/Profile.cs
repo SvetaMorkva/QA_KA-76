@@ -11,7 +11,7 @@ namespace QA_Lab2
     {
         private IWebElement editButton;
 
-       /* [Test]
+        [Test]
         public void EditClick_ShouldMadeLineEditVisible()
         {
             FillDataForLogin();
@@ -21,7 +21,7 @@ namespace QA_Lab2
             wait.Until(d => !editButton.Displayed);
             bool editLineIsVisible = true;
 
-            foreach(var p in profileEditLine)
+            foreach (var p in profileEditLine)
             {
                 if (!p.Displayed)
                 {
@@ -32,19 +32,20 @@ namespace QA_Lab2
 
             Assert.AreEqual(3, profileEditLine.Count);
             Assert.IsTrue(editLineIsVisible);
-        }*/
-        
+        }
+
         private void GoToProfile()
         {
             nextButton.Click();
 
-            wait.Until(d => driver.FindElement(By.Id("ztb-myaccount")));
+            wait.Until(d => driver.FindElement(By.CssSelector("[class*='ztb-p']")));
             driver.FindElement(By.CssSelector("[class*='ztb-p']")).Click();
             driver.FindElement(By.Id("ztb-myaccount")).Click();
             driver.Close();
             driver.SwitchTo().Window(driver.WindowHandles[0]);
             wait.Until(d => driver.FindElement(By.Id("editprofile")));
             editButton = driver.FindElement(By.Id("editprofile"));
+            wait.Until(d => editButton.Enabled && editButton.Displayed);
             editButton.Click();
         }
     }

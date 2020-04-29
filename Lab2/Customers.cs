@@ -14,8 +14,8 @@ namespace QA_Lab2
         private string url = "https://www.zoho.com/customers.html";
         private string industry;
         private ChromeDriver driver;
+        private WebDriverWait wait;
         private IWebElement clearAll;
-        private IWebElement articles;
         private SelectElement selectBoxIndustry;
 
         public Customers(string _industry)
@@ -28,15 +28,16 @@ namespace QA_Lab2
         {
             driver = new ChromeDriver();
             driver.Navigate().GoToUrl(url);
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
 
             clearAll = driver.FindElement(By.CssSelector(".reset-filter"));
-            articles = driver.FindElement(By.CssSelector("body .testimonial-block"));
 
-            wait.Until(d => driver.FindElements(By.CssSelector("option[value=" + industry + "]")));
+            wait.Until(d => driver.FindElement(By.CssSelector(".filter.industry")));
             selectBoxIndustry = new SelectElement(driver.FindElement(By.CssSelector(".filter.industry")));
+            wait.Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(By.CssSelector(".filter.industry"))));
+            wait.Until(d => driver.FindElements(By.CssSelector("option[value=" + industry + "]")));
             selectBoxIndustry.SelectByValue(industry);
-            wait.Until(d => !articles.Displayed);
+            wait.Until(d => driver.FindElements(By.CssSelector("div[class$='reset-filter']")).Count == 0);
         }
 
         [Test]
@@ -67,6 +68,8 @@ namespace QA_Lab2
         public void ClearClick_ShouldUnsetSelect_RemoveClearAllButton()
         {
             clearAll.Click();
+
+            wait.Until(d => driver.FindElements(By.CssSelector("div[class$='reset-filter']")));
 
             Assert.IsTrue(selectBoxIndustry.SelectedOption.Text == "Industry");
             Assert.IsTrue(!clearAll.Displayed);

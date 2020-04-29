@@ -9,7 +9,7 @@ namespace QA_Lab2
     [TestFixture]
     public class Login : Base
     {
-/*        [Test]
+        [Test]
         public void WithoutFilling_ShouldMadeErrorVisible()
         {
             wait.Until(ExpectedConditions.ElementToBeClickable(nextButton));
@@ -45,7 +45,7 @@ namespace QA_Lab2
             var userEmail = driver.FindElement(By.Id("ztb-user-id")).GetAttribute("ztooltip");
 
             Assert.AreEqual(myEmail, userEmail);
-        }*/
+        }
 
     }
 }

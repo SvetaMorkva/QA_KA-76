@@ -9,7 +9,8 @@ namespace QA_Lab2
     public class Base
     {
         private string url = "https://accounts.zoho.eu/signin?servicename=ZohoHome&signupurl=https://www.zoho.com/signup.html";
-        public string myEmail = "sveta.morkva28@gmail.com";
+        public string myEmail2  = "sveta.morkva28@gmail.com";
+        public string myEmail = "sdfghjk1213743@gmail.com";
         private string myPassword = "ssss_1111";
         public ChromeDriver driver;
         public WebDriverWait wait;
@@ -22,7 +23,7 @@ namespace QA_Lab2
         {
             driver = new ChromeDriver();
             driver.Navigate().GoToUrl(url);
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
 
             loginLineEdit = driver.FindElement(By.Id("login_id"));
             nextButton = driver.FindElement(By.Id("nextbtn"));
@@ -46,6 +47,7 @@ namespace QA_Lab2
             passwordLineEdit = driver.FindElement(By.Id("password"));
             System.Threading.Thread.Sleep(3000);
             wait.Until(d => passwordLineEdit.Displayed && passwordLineEdit.Enabled);
+            passwordLineEdit.Click();
             passwordLineEdit.SendKeys(myPassword);
         }
     }
