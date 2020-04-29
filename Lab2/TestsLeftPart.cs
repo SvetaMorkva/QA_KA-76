@@ -48,8 +48,6 @@ namespace Lab2
 
         [TestCase("Харьков", "kharkov")]
         [TestCase("Днепр", "dnepropetrovsk")]
-        [TestCase("Львов", "lvov")]
-        [TestCase("Одесса", "odessa")]
         public void TestChangeCity(string CityRus, string CityLatin)
         {
             WaitForFindElement(driver, By.ClassName("fa-caret-down")).Click();
@@ -100,7 +98,6 @@ namespace Lab2
         [TestCase("Киев", "дистанционный курс", 6)]
         [TestCase("Харьков", "курс подготовки к ielts", 8)]
         [TestCase("Днепр", "grammar express", 7)]
-        [TestCase("Одесса", "летний интенсив", 7)]
         public void TestViewCourses(string CityName, string OriginalCourse, int CoursesQuantity)
         {
             if (CityName != "Киев")
@@ -124,6 +121,18 @@ namespace Lab2
                 CoursesNames.Should().Contain(OriginalCourse);
                 CoursesNames.Should().HaveCount(CoursesQuantity);
             }
+        }
+
+        [Test]
+        public void TestGetCallCenterNumber()
+        {
+            WaitForFindElement(driver, By.XPath("//div[@class='right-part']/a[contains(text(), 'Контакты')]")).Click();
+            Thread.Sleep(1000);
+
+            string actual_number = WaitForFindElement(driver, By.CssSelector("#city_2166 .phone a")).Text;
+
+            using (new AssertionScope())
+                actual_number.Should().Be("0 800 750 167");
         }
     }
 }
