@@ -18,10 +18,10 @@ namespace WebDriverHomework
 
         //search
         [FindsBy(How = How.CssSelector, Using = ".TqC_a")]
-        public IWebElement searchButton;
+        private IWebElement searchButton;
 
         [FindsBy(How = How.CssSelector, Using = ".XTCLo")]
-        public IWebElement searchInput;
+        private IWebElement searchInput;
 
 
         //navbar

@@ -25,15 +25,15 @@ namespace WebDriverHomework
 
 
 
-        public static void waitUntilExists(IWebDriver driver, By selector)
+        public static void waitUntilExists(IWebDriver driver, string selector)
         {
-            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists(selector));
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists(By.CssSelector(selector)));
         }
 
-        public static IWebElement smartFind(IWebDriver driver, By selector)
+        public static IWebElement smartFind(IWebDriver driver, string selector)
         {
             waitUntilExists(driver, selector);
-            return driver.FindElement(selector);
+            return driver.FindElement(By.CssSelector(selector));
         }
 
 
@@ -52,19 +52,20 @@ namespace WebDriverHomework
             new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(driver => driver.Url == url);
 
 
-            smartFind(driver, By.CssSelector(".FBi-h+ .-MzZI .zyHYP")).SendKeys(username);
-            smartFind(driver, By.CssSelector(".-MzZI+ .-MzZI .zyHYP")).SendKeys(password);
-            smartFind(driver, By.CssSelector(".-MzZI+ .DhRcB")).Click();
+            smartFind(driver, ".FBi-h+ .-MzZI .zyHYP").SendKeys(username);
+            smartFind(driver, ".-MzZI+ .-MzZI .zyHYP").SendKeys(password);
+            smartFind(driver, ".-MzZI+ .DhRcB").Click();
 
             Thread.Sleep(3000);
 
             //There's a dumb notification dialog (-_-)
-            if (smartFind(driver, By.CssSelector(".piCib")).Displayed)
+            if (driver.FindElements(By.CssSelector(".piCib")).Count != 0)
             {
-                smartFind(driver, By.CssSelector(".HoLwm")).Click();
+                smartFind(driver, ".HoLwm").Click();
             }
 
-            waitUntilExists(driver, By.CssSelector(".Fifk5 ._6q-tv"));
+
+            waitUntilExists(driver, ".Fifk5 ._6q-tv");
             
             mainPage = new PageObject(driver);
 
@@ -82,14 +83,39 @@ namespace WebDriverHomework
         public void findNataliePortmanWithSearch()
         {
             mainPage.startSearchInput().SendKeys("natalieportman");
-            smartFind(driver, By.CssSelector(".yCE8d:nth-child(1)")).Click();
+            smartFind(driver, ".yCE8d:nth-child(1)").Click();
 
             new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(driver =>
                     driver.Url == "https://www.instagram.com/natalieportman/");
 
-            IWebElement verificationBadge = smartFind(driver, By.CssSelector(".coreSpriteVerifiedBadge"));
+            IWebElement verificationBadge = smartFind(driver, ".coreSpriteVerifiedBadge");
 
             Assert.IsTrue(verificationBadge.Displayed);
+        }
+
+        [Test]
+        public void sendMessageToAnotherAccount()
+        {
+            string messageReceiver = "et.irremissibile";
+
+            mainPage.openInboxPage();
+            //find and click a "new message" button
+            smartFind(driver, ".wpO6b").Click();
+            //find an input search field and paste the username
+            smartFind(driver, ".j_2Hd").SendKeys(messageReceiver);
+            //choose the first one suggested
+            smartFind(driver, ".-qQT3:nth-child(1) .HVWg4").Click();
+            //click "next"
+            smartFind(driver, ".cB_4K").Click();
+            //the dialog with the chosen person must be opened
+            smartFind(driver, ".vy6Bb").GetAttribute("innerHTML").Contains(messageReceiver);
+            //type a message
+            smartFind(driver, ".ItkAi textarea").SendKeys("wazzup");
+            smartFind(driver, ".ItkAi textarea").SendKeys(Keys.Enter);
+            //the message must be sent and there should be no "..." icon near the message
+            Thread.Sleep(3000);
+            
+            Assert.IsTrue(driver.FindElements(By.CssSelector(".FeN85")).Count == 0);
         }
     }
 }
