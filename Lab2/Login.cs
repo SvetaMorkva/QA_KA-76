@@ -17,7 +17,8 @@ namespace QA_Lab2
 
             wait.Until(d => driver.FindElement(By.CssSelector("div[class$='errorlabel']")));
             var errorMsg = driver.FindElement(By.CssSelector(".fielderror.errorlabel"));
-            var errorLineEdit = driver.FindElement(By.CssSelector(".textbox.errorborder"));
+            var errorLineEdit = driver.FindElement(By.Id("login_id"));
+            wait.Until(d => errorLineEdit.GetAttribute("class") == "textbox errorborder");
 
             Assert.IsTrue(errorMsg.Displayed && errorLineEdit.Displayed);
         }
