@@ -16,8 +16,13 @@ namespace WebDriverHomework
         }
 
 
+        //search
         [FindsBy(How = How.CssSelector, Using = ".TqC_a")]
-        private IWebElement search { get; }
+        public IWebElement searchButton;
+
+        [FindsBy(How = How.CssSelector, Using = ".XTCLo")]
+        public IWebElement searchInput;
+
 
         //navbar
         //.s4Iyt
@@ -73,7 +78,13 @@ namespace WebDriverHomework
         }
 
 
-
+        public IWebElement startSearchInput()
+        {
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(searchButton));
+            searchButton.Click();
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists(By.CssSelector(".XTCLo")));
+            return searchInput;
+        }
     }
 }
 

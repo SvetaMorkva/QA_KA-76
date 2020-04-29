@@ -14,6 +14,7 @@ namespace WebDriverHomework
     public class Tests
     {
         private IWebDriver driver;
+        private PageObject mainPage;
 
         private string url = "https://www.instagram.com/";
 
@@ -24,15 +25,15 @@ namespace WebDriverHomework
 
 
 
-        public static IWebElement smartFind(IWebDriver driver, By selector)
+        public static void waitUntilExists(IWebDriver driver, By selector)
         {
             new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists(selector));
-            return driver.FindElement(selector);
         }
 
-        public void waitUntilExists(IWebDriver driver, By selector)
+        public static IWebElement smartFind(IWebDriver driver, By selector)
         {
-            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists(selector));
+            waitUntilExists(driver, selector);
+            return driver.FindElement(selector);
         }
 
 
@@ -55,10 +56,17 @@ namespace WebDriverHomework
             smartFind(driver, By.CssSelector(".-MzZI+ .-MzZI .zyHYP")).SendKeys(password);
             smartFind(driver, By.CssSelector(".-MzZI+ .DhRcB")).Click();
 
+            Thread.Sleep(3000);
+
+            //There's a dumb notification dialog (-_-)
+            if (smartFind(driver, By.CssSelector(".piCib")).Displayed)
+            {
+                smartFind(driver, By.CssSelector(".HoLwm")).Click();
+            }
+
             waitUntilExists(driver, By.CssSelector(".Fifk5 ._6q-tv"));
             
-
-            var mainPage = new PageObject(driver);
+            mainPage = new PageObject(driver);
 
             driver.SwitchTo().Window(driver.WindowHandles.First());
         }
@@ -70,5 +78,18 @@ namespace WebDriverHomework
         }
 
 
+        [Test]
+        public void findNataliePortmanWithSearch()
+        {
+            mainPage.startSearchInput().SendKeys("natalieportman");
+            smartFind(driver, By.CssSelector(".yCE8d:nth-child(1)")).Click();
+
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(driver =>
+                    driver.Url == "https://www.instagram.com/natalieportman/");
+
+            IWebElement verificationBadge = smartFind(driver, By.CssSelector(".coreSpriteVerifiedBadge"));
+
+            Assert.IsTrue(verificationBadge.Displayed);
+        }
     }
 }
