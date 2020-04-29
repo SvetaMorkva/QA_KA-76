@@ -1,8 +1,10 @@
-﻿using System;
+using System;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using System.Threading;
+using System.Threading;
 
 namespace Lab2
 {
@@ -29,9 +31,10 @@ namespace Lab2
             driver.FindElement(By.Id("password")).SendKeys("!Q@W#E");
             driver.FindElement(By.CssSelector(".btn")).Click();
             wait.Until(d => driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_clients.png']")));
-
+            Thread.Sleep(3000);
             driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_clients.png']")).Click();
             wait.Until(d => driver.FindElement(By.LinkText("Client")));
+            Thread.Sleep(3000);
             driver.FindElement(By.LinkText("Client")).Click();
 
             wait.Until(d => driver.FindElement(By.Id("clientCompany")));
@@ -53,7 +56,7 @@ namespace Lab2
             driver.FindElement(By.Id("password")).SendKeys("!Q@W#E");
             driver.FindElement(By.CssSelector(".btn")).Click();
             wait.Until(d => driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")));
-
+            Thread.Sleep(3000);
             driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")).Click();
         	wait.Until(d => driver.FindElement(By.LinkText("Project")));
             driver.FindElement(By.LinkText("Project")).Click();
