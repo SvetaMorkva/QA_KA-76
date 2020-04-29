@@ -21,7 +21,7 @@ namespace WebDriverHomework
         private string username = "brandd1re";
         private string password = "ImaBitchImaBoss";
 
-        private string path = System.AppDomain.CurrentDomain.BaseDirectory + "Selenium";
+        //private string path = System.AppDomain.CurrentDomain.BaseDirectory + "Selenium";
 
 
 
@@ -44,7 +44,7 @@ namespace WebDriverHomework
         {
             var options = new ChromeOptions();
             options.AddArgument("start-maximized");
-            options.AddArguments(@"user-data-dir=" + path);
+            //options.AddArguments(@"user-data-dir=" + path);
 
             driver = new ChromeDriver(options);
             driver.Navigate().GoToUrl(url);
@@ -116,6 +116,29 @@ namespace WebDriverHomework
             Thread.Sleep(3000);
             
             Assert.IsTrue(driver.FindElements(By.CssSelector(".FeN85")).Count == 0);
+        }
+
+        [Test]
+        public void likeRandomPost()
+        {
+            string irra_url = "https://www.instagram.com/et.irremissibile/";
+            //lets open my main account and like the first post
+            driver.Navigate().GoToUrl(irra_url);
+            smartFind(driver, ".weEfm:nth-child(1) ._bz0w:nth-child(1) ._9AhH0").Click();
+
+            //check if the post has been already liked
+            if (smartFind(driver, ".ltpMr .fr66n .wpO6b svg").GetAttribute("aria-label") == "Unlike")
+            {
+                //gotta "re-like"
+                smartFind(driver, ".ltpMr .fr66n .wpO6b").Click();
+                Thread.Sleep(2000);
+            }
+            smartFind(driver, ".ltpMr .fr66n .wpO6b").Click();
+
+            //we should see the test account in the list of people who has liked this post
+            smartFind(driver, ".Nm9Fw button").Click();
+            Assert.AreEqual(username, smartFind(driver, ".rBNOH:nth-child(1) .IwRSH .eGOV_ div div div div")
+                    .GetAttribute("innerHTML"));
         }
     }
 }
