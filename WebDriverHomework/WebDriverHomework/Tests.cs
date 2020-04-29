@@ -194,10 +194,32 @@ namespace WebDriverHomework
             Assert.IsTrue(smartFind(driver, ".R19PB span").GetAttribute("innerHTML").Contains("s"));
         }
 
+        [Test]
+        public void followParticularAccount()
+        {
+            string irra_url = "https://www.instagram.com/et.irremissibile/";
+            //lets open my main account and like the first post
+            driver.Navigate().GoToUrl(irra_url);
+            string usernameToFollow = smartFind(driver, ".fDxYl").GetAttribute("innerHTML");
+
+            //press "follow" button
+            smartFind(driver, "._6VtSN").Click();
+            Thread.Sleep(1000);
+
+            //now lets check if this account appears in "following"
+            mainPage.openProfilePage();
+            Thread.Sleep(3000);
+
+            smartFind(driver, ".Y8-fY~ .Y8-fY+ .Y8-fY .-nal3").Click();
+            Assert.AreEqual(usernameToFollow, smartFind(driver, "._0imsa").GetAttribute("innerHTML"));
+
+        }
+
+
         [TestCase("Jim Morrison")]
-        [TestCase("Riley Reid")]
-        [TestCase("Marshall Mathers")]
-        [TestCase("Selenium Tester")]
+        //[TestCase("Riley Reid")]
+        //[TestCase("Marshall Mathers")]
+        //[TestCase("Selenium Tester")]
         public void changeAccountName(string newName)
         {
             mainPage.openProfilePage();
@@ -214,9 +236,9 @@ namespace WebDriverHomework
         }
 
         [TestCase("The legend")]
-        [TestCase("Super sexy little girl")]
-        [TestCase("Rap god")]
-        [TestCase("I have been beaten by my mum")]
+        //[TestCase("Super sexy little girl")]
+        //[TestCase("Rap god")]
+        //[TestCase("I have been beaten by my mum")]
         public void changeAccountBio(string newBio)
         {
             mainPage.openProfilePage();
@@ -233,9 +255,9 @@ namespace WebDriverHomework
         }
 
         [TestCase("heaven.org")]
-        [TestCase("pornhub.com")]
-        [TestCase("genius.com")]
-        [TestCase("dypka.ua")]
+        //[TestCase("pornhub.com")]
+        //[TestCase("genius.com")]
+        //[TestCase("dypka.ua")]
         public void changeAccountWebsite(string newWebsite)
         {
             mainPage.openProfilePage();
