@@ -1,0 +1,17 @@
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/UnitTest_lab2/UnitTest_lab2/bin/Debug/UnitTest_lab2.dll
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/UnitTest_lab2/UnitTest_lab2/bin/Debug/UnitTest_lab2.pdb
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/UnitTest_lab2/UnitTest_lab2/bin/Debug/nunit.framework.dll
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/UnitTest_lab2/UnitTest_lab2/bin/Debug/WebDriver.dll
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/UnitTest_lab2/UnitTest_lab2/bin/Debug/nunit.framework.pdb
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/UnitTest_lab2/UnitTest_lab2/bin/Debug/nunit.framework.xml
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/UnitTest_lab2/UnitTest_lab2/bin/Debug/WebDriver.xml
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/UnitTest_lab2/UnitTest_lab2/obj/Debug/UnitTest_lab2.csprojAssemblyReference.cache
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/UnitTest_lab2/UnitTest_lab2/obj/Debug/UnitTest_lab2.csproj.CoreCompileInputs.cache
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/UnitTest_lab2/UnitTest_lab2/obj/Debug/UnitTest_lab2.csproj.CopyComplete
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/UnitTest_lab2/UnitTest_lab2/obj/Debug/UnitTest_lab2.dll
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/UnitTest_lab2/UnitTest_lab2/obj/Debug/UnitTest_lab2.pdb
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/UnitTest_lab2/UnitTest_lab2/bin/Debug/FluentAssertions.dll
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/UnitTest_lab2/UnitTest_lab2/bin/Debug/WebDriver.Support.dll
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/UnitTest_lab2/UnitTest_lab2/bin/Debug/FluentAssertions.pdb
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/UnitTest_lab2/UnitTest_lab2/bin/Debug/FluentAssertions.xml
+/Users/anastasia/Documents/KPI/3курс/QA_KA-76/UnitTest_lab2/UnitTest_lab2/bin/Debug/WebDriver.Support.xml
