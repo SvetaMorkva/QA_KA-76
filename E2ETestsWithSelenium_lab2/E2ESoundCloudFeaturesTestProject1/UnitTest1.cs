@@ -18,6 +18,7 @@ namespace E2ESoundCloudFeaturesTestProject1
 
         [TestCase(1, 1, 1)]
         [TestCase(3, 2, 2)]
+        [TestCase(2, 1, 3)]
         public void TurnSongOnFromPlaylistTest(int selectedListOfPlaylists, int selectedPlaylist, int selectedTrack)
         {
             var driver = new ChromeDriver();
@@ -35,12 +36,12 @@ namespace E2ESoundCloudFeaturesTestProject1
             catch { }
 
             //select a playlist
-            string playlistXpath = "//body/div[@id='app']/div[contains(@class,'l-container l-content')]/div[@id='content']/div/div[contains(@class,'l-fluid-fixed')]/div[contains(@class,'sc-border-light-right l-main')]/div[contains(@class,'l-content')]/div[contains(@class,'modular-home-mixed-selection lazyLoadingList')]/ul[contains(@class,'lazyLoadingList__list sc-list-nostyle sc-clearfix')]/li[" + selectedListOfPlaylists + "]/div[1]/div[2]/div[1]/div[1]/div[1]/div[" + selectedPlaylist + "]/div[1]/div[1]/a[1]";
+            string playlistXpath = "//*[@id='content']/div/div/div[1]/div[2]/div/ul/li[" + selectedListOfPlaylists + "]/ div/div[2]/div[1]/div/div/div[" + selectedPlaylist + "]/div/div[2]/div[1]/a";
             var playlistLink = wait.Until(d => d.FindElement(By.XPath(playlistXpath)));
             playlistLink.Click();
 
-            //select a track
-            string trackXpath = "//div[contains(@class,'l-about-main')]//li[" + selectedTrack + "]//div[1]//div[1]//div[1]//span[1]";
+            //TurnOn a track from the playlist
+            string trackXpath = "//*[@id='content']/div/div[3]/div[1]/div/div[2]/div[2]/div/div[3]/div/ul/li[" + selectedTrack + "]/div";
             new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(trackXpath)));
             driver.FindElementByXPath(trackXpath).Click();
             driver.Quit();
@@ -165,7 +166,7 @@ namespace E2ESoundCloudFeaturesTestProject1
             catch { }
 
             //select a playlist
-            string playlistXpath = "//body/div[@id='app']/div[contains(@class,'l-container l-content')]/div[@id='content']/div/div[contains(@class,'l-fluid-fixed')]/div[contains(@class,'sc-border-light-right l-main')]/div[contains(@class,'l-content')]/div[contains(@class,'modular-home-mixed-selection lazyLoadingList')]/ul[contains(@class,'lazyLoadingList__list sc-list-nostyle sc-clearfix')]/li[" + selectedListOfPlaylists + "]/div[1]/div[2]/div[1]/div[1]/div[1]/div[" + selectedPlaylist + "]/div[1]/div[1]/a[1]";
+            string playlistXpath = "//*[@id='content']/div/div/div[1]/div[2]/div/ul/li[" + selectedListOfPlaylists + "]/ div/div[2]/div[1]/div/div/div[" + selectedPlaylist + "]/div/div[2]/div[1]/a";
             var playlistLink = wait.Until(d => d.FindElement(By.XPath(playlistXpath)));
             playlistLink.Click();
 
