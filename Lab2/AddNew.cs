@@ -32,8 +32,8 @@ namespace Lab2
             wait.Until(d => driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_clients.png']")));
 
             driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_clients.png']")).Click();
-            wait.Until(d => driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[2]/div/a[2]")));
             Thread.Sleep(2000);
+            wait.Until(d => driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[2]/div/a[2]")));            
             driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[2]/div/a[2]")).Click();
 
             wait.Until(d => driver.FindElement(By.Id("clientCompany")));
