@@ -3,9 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 namespace lab2
 {
@@ -40,7 +38,7 @@ namespace lab2
         [TearDown]
         public void quitDriver()
         {
-            // driver.Quit();
+            driver.Quit();
         }
 
         [Test]
