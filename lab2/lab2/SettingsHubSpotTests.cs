@@ -30,7 +30,7 @@ namespace lab2
 
             // go to Settings page
             System.Threading.Thread.Sleep(2000);
-            driver.FindElement(By.Id("navSetting")).Click();
+            driver.Navigate().GoToUrl("https://app.hubspot.com/crm-settings-task-reminders/7600578/tasks");
 
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
         }

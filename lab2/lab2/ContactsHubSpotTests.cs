@@ -50,10 +50,12 @@ namespace lab2
         }
 
         [Test]
+        [Obsolete]
         public void CreateContactTroughEmailOnly()
         {
             string contactEmail = randomStr + "@me.com";
 
+            wait.Until(ExpectedConditions.ElementIsVisible(createContactButton));
             driver.FindElement(createContactButton).Click();
             driver.FindElement(contactEmailInput).SendKeys(contactEmail);
 
