@@ -37,7 +37,7 @@ namespace ilMolinoTest
         [TestCase("//a[@class='box js-add-basket tit_558']")]
         [TestCase("//a[@class='box js-add-basket tit_576']")]
         [TestCase("//a[@class='box js-add-basket tit_560']")]
-        [TestCase("//a[@class='box js-add-basket tit_327853']")]
+      /*  [TestCase("//a[@class='box js-add-basket tit_327853']")]
         [TestCase("//a[@class='box js-add-basket tit_12935']")]
         [TestCase("//a[@class='box js-add-basket tit_987']")]
         [TestCase("//a[@class='box js-add-basket tit_39009']")]
@@ -54,7 +54,7 @@ namespace ilMolinoTest
         [TestCase("//a[@class='box js-add-basket tit_568']")]
         [TestCase("//a[@class='box js-add-basket tit_566']")]
         [TestCase("//a[@class='box js-add-basket tit_572']")]
-        [TestCase("//a[@class='box js-add-basket tit_554']")]
+        [TestCase("//a[@class='box js-add-basket tit_554']")]*/
         public void TestBuyPizzaInSiteIlMolino(string pizza)
         {
             _driver.FindElement(By.XPath("//div[@class='menu js_drop-menu']//a[@href='/delivery/pizza.html']")).Click();
@@ -192,6 +192,7 @@ namespace ilMolinoTest
             string expected = "(1)";
             Assert.AreEqual(expected, count);
         }
+        /*
         [TestCase("//a[@class='box js-add-basket tit_733']")]
         [TestCase("//a[@class='box js-add-basket tit_39093']")]
         [TestCase("//a[@class='box js-add-basket tit_1165168']")]
@@ -250,7 +251,7 @@ namespace ilMolinoTest
             string expected = "(1)";
             Assert.AreEqual(expected, count);
         }
-
+        */
         [TestCase ("EN")]
         public void TestLocalizationInSiteIlMolino(string expected)
         {
