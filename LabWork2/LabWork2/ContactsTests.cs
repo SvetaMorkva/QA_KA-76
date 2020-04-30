@@ -19,7 +19,7 @@ namespace LabWork2
             {
                 _hubSpot.Login("vzalevskyi24@gmail.com", "P8naM$HWNe?JLC2");
             }
-            int index = 39;
+            int index = 41;
 
             // act
             _hubSpot.CreateContact($"Test{index}", $"User{index}", $"test{index}@email.com", "Front-End developer");

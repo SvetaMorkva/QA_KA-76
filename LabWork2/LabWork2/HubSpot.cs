@@ -30,7 +30,7 @@ namespace LabWork2
             driver.FindElementById("loginBtn").Click();
 
             Thread.Sleep(15000);
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("account-menu")));
+            //wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("account-menu")));
 
             String[] currentUrlLParametres = driver.Url.Split('/');
             userID = currentUrlLParametres[currentUrlLParametres.Length - 1];
@@ -165,8 +165,8 @@ namespace LabWork2
             {
                 tasksCheckboxes_before[i].Click();
                 Thread.Sleep(10000);
-                wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("button[data-selenium-test='delete-dialog-confirm-button']")));
-                driver.FindElementByCssSelector("button[data-selenium-test='delete-dialog-confirm-button']").Click();
+                wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("button[class='uiButton private-button private-button--destructive private-button--default private-button--non-link']")));
+                driver.FindElementByCssSelector("button[class='uiButton private-button private-button--destructive private-button--default private-button--non-link']").Click();
 
             }
 
