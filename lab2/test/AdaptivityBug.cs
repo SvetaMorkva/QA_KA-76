@@ -6,6 +6,8 @@ namespace lab2
 {
     public class AdaptivityBug
     {
+        // string url = "https://www.kpi.ua/";
+
         /*
             The following tests are written according to scenerios
             defined in the bug_in_adaptivity.feature file
@@ -15,10 +17,11 @@ namespace lab2
         // public void TestSearchIcon()
         // {
         //     var driver = new ChromeDriver();
-        //     driver.Navigate().GoToUrl("https://www.kpi.ua/");
+        //     driver.Navigate().GoToUrl(url);
         //     new Actions(driver)
         //         .SendKeys(Keys.Control).SendKeys(Keys.Add)
         //         .Perform();
+            // driver.Close();
         // }
 
         // public void ZoomIn()

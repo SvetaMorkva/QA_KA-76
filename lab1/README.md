@@ -23,7 +23,7 @@ The project is built using .NET Core on the Linux machine, Ubuntu 18.04. Follow 
 
 2. Create a *test* folder and execute `dotnet new xunit`. This produces two files: test.csproj and UnitTest1.cs.
 
-3. The test project cannot currently test the types in DoublyLinkedList and VersionComparator, and requires a project reference to the lab1 project. To add a project reference, use the `dotnet add reference` command:
-    dotnet add reference /lab1/lab1.csproj
+3. The test project cannot currently test the types in DoublyLinkedList and VersionComparator, and requires a project reference to the lab1 project. To add a project reference, run the following command in the CLI:
+    `dotnet add reference /lab1/lab1.csproj`
 
 4. To run tests use `dotnet test` command.
