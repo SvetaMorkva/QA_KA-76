@@ -1,21 +1,3 @@
-/*const {setWorldConstructor} = require('cucumber');
-const chrome = require('selenium-webdriver/chrome');
-const {Capabilities} = require('selenium-webdriver');
-require('chromedriver');
-
-async function browserChromeCreator() {
-    const caps = new Capabilities();
-    caps.setPageLoadStrategy("normal");
-    try {
-        this.driver = await new Builder()
-            .withCapabilities(caps)
-            .forBrowser('chrome')
-            .build()
-    } catch (e) {
-        console.log('Browser not working ' + e);
-    }
-}
-*/
 
 const { setWorldConstructor } = require('cucumber')
 const seleniumWebdriver = require('selenium-webdriver')
@@ -25,7 +7,7 @@ setDefaultTimeout(60 * 1000);
 
 function CustomWorld() {
     this.driver = new seleniumWebdriver.Builder()
-        .forBrowser('chrome')
+        .forBrowser('firefox')
         .build()
 
     // Returns a promise that resolves to the element

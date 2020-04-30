@@ -1,6 +1,5 @@
 const assert = require('assert').strict;
 const { Given, When, Then } = require('cucumber');
-const chrome = require('selenium-webdriver/chrome');
 const {By} = require('selenium-webdriver');
 
 
