@@ -17,9 +17,9 @@ namespace Lab2
         public WebDriverWait wait;
         public IJavaScriptExecutor executor;
 
-        private string testingEmail = "foyon89001@whmailtop.com";
+        private string testingEmail = "hivawom996@whmailtop.com";
         private string testingPass = "sepiajet";
-        private string testingAccountUrl = "https://crm.zoho.com/crm/org714214671/";
+        private string testingAccountUrl = "https://crm.zoho.com/crm/org714226421/";
 
 
         private string taskToSearch = "";
@@ -238,25 +238,65 @@ namespace Lab2
         }
 
 
-        //[Test, Order(6)]
-        public void PreferencesEdit_ShouldEditDataFormat()
+        [Test, Order(6)]
+        public void SmartChat_ShouldOpenTab()
         {
-            driver.Navigate().GoToUrl("https://accounts.zoho.com/home#setting/preference");
+            //arrange
+            driver.Manage().Window.Maximize();
+            driver.Navigate().GoToUrl(testingAccountUrl + "tab/Home/begin");
             wait.Until(driver => (executor.ExecuteScript("return document.readyState").Equals("complete")));
+
+            //act
+            IWebElement body = driver.FindElement(By.XPath("//body[@class=\"crmBodyWin\"]"), 10);
+            body.SendKeys(Keys.Control + Keys.Space);
+            IWebElement smartChatWindow = driver.FindElement(By.Id("wms-hysearch"), 10);
+            wait.Until(dr => smartChatWindow.Displayed && smartChatWindow.Enabled);
+            var searchHeaders = driver.FindElements(By.ClassName("wms-hysearch-resheading"));
+
+            //assert
+            Assert.IsTrue(searchHeaders.First().Text == "Chats");
+            Assert.IsTrue(searchHeaders.Last().Text == "Contacts");
+            
+        }
+
+        [Test, Order(7)]
+        public void Status_ShouldChangeAccountStatus()
+        {
+            //arrange
+            driver.Manage().Window.Maximize();
+            driver.Navigate().GoToUrl(testingAccountUrl + "tab/Home/begin");
+            wait.Until(driver => (executor.ExecuteScript("return document.readyState").Equals("complete")));
+
+            //act
+            IWebElement menuBar = driver.FindElement(By.XPath("//div[@id=\"wms_menubar\"]/span[@title=\"Contacts\"]"), 10);
+            menuBar.Click();
+            System.Threading.Thread.Sleep(2000);
+            IWebElement contactsMenu = driver.FindElement(By.XPath("//div[@id=\"wms_menu\"]"), 10);
+            wait.Until(dr => contactsMenu.Displayed && contactsMenu.Enabled);
+            IWebElement statusDiv = driver.FindElement(By.XPath("//div[@id=\"wms_menu_userstatus\"]"), 10);
+            statusDiv.Click();
+            System.Threading.Thread.Sleep(2000);
+            IWebElement statusEditor = driver.FindElement(By.Id("wms_menu_statuseditor"), 10);
+            wait.Until(dr => statusEditor.Displayed && statusEditor.Enabled);
+            statusEditor.SendKeys(Keys.Control + "a");
+            System.Threading.Thread.Sleep(2000);
+            statusEditor.SendKeys("test status");
+            System.Threading.Thread.Sleep(2000);
+            statusEditor.SendKeys(Keys.Enter);
             System.Threading.Thread.Sleep(2000);
 
-            IWebElement dataFormatInput = driver.FindElement(By.Id("dateformatid"), 10);
-            executor.ExecuteScript("arguments[0].click();", dataFormatInput);
-
-
-
+            //assert
+            string status = driver.FindElement(By.XPath("//div[@id=\"wms_menu_userstatus\"]"), 10).Text;
+            Assert.IsTrue(status == "test status");
         }
+
+
         [OneTimeTearDown]
         public void CleanUp()
         {
-            //IWebElement signOut = driver.FindElement(By.ClassName("pp_expand_signout"), 10);
-            //executor.ExecuteScript("arguments[0].click();", signOut);
-            //System.Threading.Thread.Sleep(4000);
+            IWebElement signOut = driver.FindElement(By.ClassName("pp_expand_signout"), 10);
+            executor.ExecuteScript("arguments[0].click();", signOut);
+            System.Threading.Thread.Sleep(4000);
             driver.Quit();
         }
     }
