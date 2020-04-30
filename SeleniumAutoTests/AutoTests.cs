@@ -101,7 +101,7 @@ namespace SeleniumAutoTests
 			try
 			{
 				var error = driver.FindElement(By.XPath("//div[@class = 'validation-summary-valid']/ul/li[1]"));
-				var errorMessage = "�� �������� ������� ����� ������������ �� �������� ���������� �������, ���������� ��������� ��������� ����� ����� ���������";
+				var errorMessage = "Вы добавили слишком много комментариев за короткий промежуток времени, пожалуйста подождите некоторое время перед отправкой";
 				Assert.AreEqual(errorMessage, error.Text);
 			}
 			catch (Exception)
