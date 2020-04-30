@@ -36,19 +36,25 @@ namespace Lab2
             var pass = "strongPassword1234!!";
             var phone = "0504319992";
 
-            IWebElement nameField = driver.FindElementById("namefield");
-            IWebElement emailField = driver.FindElementById("email");
-            IWebElement passField = driver.FindElementByName("password");
-            IWebElement phoneField = driver.FindElementById("mobile");
-            IWebElement termsCheckbox = driver.FindElementById("signup-termservice");
-            IWebElement getStartedButton = driver.FindElementById("signupbtn");
+            IWebElement cookieclose = driver.FindElement(By.ClassName("cookieClose"), 5);
 
-            //act
+            IWebElement nameField = driver.FindElement(By.Id("namefield"), 5);
+            IWebElement emailField = driver.FindElement(By.Id("email"), 5);
+            IWebElement passField = driver.FindElement(By.Name("password"), 5);
+            IWebElement phoneField = driver.FindElement(By.Id("mobile"), 5);
+            IWebElement termsCheckbox = driver.FindElement(By.Id("signup-termservice"), 5);
+            IWebElement getStartedButton = driver.FindElement(By.Id("signupbtn"), 5);
+
+            //act 
+            cookieclose.Click();
             nameField.SendKeys(name);
             emailField.SendKeys(email);
             passField.SendKeys(pass);
             wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("signup-termservice")));
             phoneField.SendKeys(phone);
+
+            System.Threading.Thread.Sleep(2000);
+
             termsCheckbox.Click();
             getStartedButton.Click();
 
