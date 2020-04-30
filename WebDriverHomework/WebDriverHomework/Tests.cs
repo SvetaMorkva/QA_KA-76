@@ -3,8 +3,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 
@@ -20,9 +18,6 @@ namespace WebDriverHomework
 
         private string username = "brandd1re";
         private string password = "ImaBitchImaBoss";
-
-        //private string path = System.AppDomain.CurrentDomain.BaseDirectory + "Selenium";
-
 
 
         public static void waitUntilExists(IWebDriver driver, string selector)
@@ -44,14 +39,13 @@ namespace WebDriverHomework
         {
             var options = new ChromeOptions();
             options.AddArgument("start-maximized");
-            //options.AddArguments(@"user-data-dir=" + path);
 
             driver = new ChromeDriver(options);
             driver.Navigate().GoToUrl(url);
 
             new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(driver => driver.Url == url);
 
-
+            //login
             smartFind(driver, ".FBi-h+ .-MzZI .zyHYP").SendKeys(username);
             smartFind(driver, ".-MzZI+ .-MzZI .zyHYP").SendKeys(password);
             smartFind(driver, ".-MzZI+ .DhRcB").Click();
@@ -79,38 +73,38 @@ namespace WebDriverHomework
         }
 
 
-        [Test]
-        public void findNataliePortmanWithSearch()
+        [TestCase("natalieportman")]
+        public void findTheCelebrity_TheFirstSearchResultShouldHaveTheVerifiedBadgeInProfile(string celebrity)
         {
-            mainPage.startSearchInput().SendKeys("natalieportman");
+            mainPage.startSearchInput().SendKeys(celebrity);
+            //choose the first search result
             smartFind(driver, ".yCE8d:nth-child(1)").Click();
+            //wait until the profile is loaded
+            waitUntilExists(driver, ".fDxYl");
 
-            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(driver =>
-                    driver.Url == "https://www.instagram.com/natalieportman/");
+            // Wow, you found an easter egg! Just text me in telegram @irremissibile
+            // Your dream reward (1 chocolate bar) is waiting for you
 
-            IWebElement verificationBadge = smartFind(driver, ".coreSpriteVerifiedBadge");
-
-            Assert.IsTrue(verificationBadge.Displayed);
+            Assert.IsTrue(smartFind(driver, ".coreSpriteVerifiedBadge").Displayed);
         }
 
-        [Test]
-        public void sendMessageToAnotherAccount()
-        {
-            string messageReceiver = "et.irremissibile";
 
+        [TestCase("et.irremissibile", "wazzup")]
+        public void findTheParticularUserAndSendAMessage_ShouldBeNoErrorsInCorrespondingInboxChat(string targetUser, string message)
+        {
             mainPage.openInboxPage();
             //find and click a "new message" button
             smartFind(driver, ".wpO6b").Click();
             //find an input search field and paste the username
-            smartFind(driver, ".j_2Hd").SendKeys(messageReceiver);
+            smartFind(driver, ".j_2Hd").SendKeys(targetUser);
             //choose the first one suggested
             smartFind(driver, ".-qQT3:nth-child(1) .HVWg4").Click();
             //click "next"
             smartFind(driver, ".cB_4K").Click();
-            //the dialog with the chosen person must be opened
-            smartFind(driver, ".vy6Bb").GetAttribute("innerHTML").Contains(messageReceiver);
+            //the chat with the chosen person must be opened
+            smartFind(driver, ".vy6Bb").GetAttribute("innerHTML").Contains(targetUser);
             //type a message
-            smartFind(driver, ".ItkAi textarea").SendKeys("wazzup");
+            smartFind(driver, ".ItkAi textarea").SendKeys(message);
             smartFind(driver, ".ItkAi textarea").SendKeys(Keys.Enter);
             //the message must be sent and there should be no "..." icon near the message
             Thread.Sleep(3000);
@@ -118,12 +112,16 @@ namespace WebDriverHomework
             Assert.IsTrue(driver.FindElements(By.CssSelector(".FeN85")).Count == 0);
         }
 
-        [Test]
-        public void likeRandomPost()
+
+        [TestCase("et.irremissibile")]
+        public void likeTheUsersMostRecentPost_TestAccountShouldAppearInTheListOfPeopleWhoHasLikedThisPost(string targetUser)
         {
-            string irra_url = "https://www.instagram.com/et.irremissibile/";
-            //lets open my main account and like the first post
-            driver.Navigate().GoToUrl(irra_url);
+            mainPage.startSearchInput().SendKeys(targetUser);
+            //choose the first search result
+            smartFind(driver, ".yCE8d:nth-child(1)").Click();
+            //wait until the profile is loaded
+            waitUntilExists(driver, ".fDxYl");
+            //click the most recent post
             smartFind(driver, ".weEfm:nth-child(1) ._bz0w:nth-child(1) ._9AhH0").Click();
 
             //check if the post has been already liked
@@ -142,14 +140,16 @@ namespace WebDriverHomework
                     .GetAttribute("innerHTML"));
         }
 
-        [Test]
-        public void commentRandomPost()
+
+        [TestCase("et.irremissibile", "Малышка любит дилера")]
+        public void commentTheUsersMostRecentPost_TestCommentMustAppearInTheCommentsSection(string targetUser, string comment)
         {
-            string comment = "Малышка любит дилера";
-            string irra_url = "https://www.instagram.com/et.irremissibile/";
-            
-            //lets open my main account and like the first post
-            driver.Navigate().GoToUrl(irra_url);
+            mainPage.startSearchInput().SendKeys(targetUser);
+            //choose the first search result
+            smartFind(driver, ".yCE8d:nth-child(1)").Click();
+            //wait until the profile is loaded
+            waitUntilExists(driver, ".fDxYl");
+            //click the most recent post
             smartFind(driver, ".weEfm:nth-child(1) ._bz0w:nth-child(1) ._9AhH0").Click();
 
             //write and send the comment
@@ -163,11 +163,10 @@ namespace WebDriverHomework
             Assert.AreEqual(comment, smartFind(driver, ".Mr508:last-child .C4VMK span").GetAttribute("innerHTML"));
         }
 
-        [Test]
-        public void shareRandomPost()
-        {
-            string messageReceiver = "et.irremissibile";
 
+        [TestCase("et.irremissibile")]
+        public void shareRandomPostFromExploreToTargetUser_PostShouldAppearInTheChatWithTargetUser(string targetUser)
+        {
             mainPage.openExplorePage();
 
             //open and share the first post in "explore"
@@ -176,7 +175,7 @@ namespace WebDriverHomework
             smartFind(driver, ".HVWg4 .-qQT3:nth-child(1)").Click();
 
             //find an input search field and paste the username
-            smartFind(driver, ".j_2Hd").SendKeys(messageReceiver);
+            smartFind(driver, ".j_2Hd").SendKeys(targetUser);
             Thread.Sleep(1000);
             //choose the first one suggested
             smartFind(driver, ".-qQT3:nth-child(1) .eGOV_:nth-child(2)").Click();
@@ -199,24 +198,26 @@ namespace WebDriverHomework
                     "Вы отправили публикацию".Equals(smartFind(driver, ".R19PB span").GetAttribute("innerHTML")));
         }
 
-        [Test]
-        public void followParticularAccount()
+
+        [TestCase("et.irremissibile")]
+        public void followTargetUser_TargetUserShouldAppearInTheListOfFollowingPeople(string targetUser)
         {
-            string irra_url = "https://www.instagram.com/et.irremissibile/";
-            //lets open my main account and like the first post
-            driver.Navigate().GoToUrl(irra_url);
-            string usernameToFollow = smartFind(driver, ".fDxYl").GetAttribute("innerHTML");
+            mainPage.startSearchInput().SendKeys(targetUser);
+            //choose the first search result
+            smartFind(driver, ".yCE8d:nth-child(1)").Click();
+            //wait until the profile is loaded
+            waitUntilExists(driver, ".fDxYl");
 
             //press "follow" button
             smartFind(driver, "._6VtSN").Click();
             Thread.Sleep(1000);
 
-            //now lets check if this account appears in "following"
+            //now lets check if this account appears in the "following"
             mainPage.openProfilePage();
             Thread.Sleep(3000);
 
             smartFind(driver, ".Y8-fY~ .Y8-fY+ .Y8-fY .-nal3").Click();
-            Assert.AreEqual(usernameToFollow, smartFind(driver, "._0imsa").GetAttribute("innerHTML"));
+            Assert.AreEqual(targetUser, smartFind(driver, "._0imsa").GetAttribute("innerHTML"));
 
         }
 
@@ -225,7 +226,7 @@ namespace WebDriverHomework
         //[TestCase("Riley Reid")]
         //[TestCase("Marshall Mathers")]
         //[TestCase("Selenium Tester")]
-        public void changeAccountName(string newName)
+        public void changeAccountName_NewNameShouldBeDisplayedInTheProfile(string newName)
         {
             mainPage.openProfilePage();
             smartFind(driver, ".thEYr button").Click();
@@ -240,11 +241,12 @@ namespace WebDriverHomework
             Assert.AreEqual(newName, smartFind(driver, ".rhpdm").GetAttribute("innerHTML"));
         }
 
+
         [TestCase("The legend")]
         //[TestCase("Super sexy little girl")]
         //[TestCase("Rap god")]
         //[TestCase("I have been beaten by my mum")]
-        public void changeAccountBio(string newBio)
+        public void changeAccountBio_NewBioShouldBeDisplayedInTheProfile(string newBio)
         {
             mainPage.openProfilePage();
             smartFind(driver, ".thEYr button").Click();
@@ -259,11 +261,12 @@ namespace WebDriverHomework
             Assert.AreEqual(newBio, smartFind(driver, ".-vDIg span").GetAttribute("innerHTML"));
         }
 
+
         [TestCase("heaven.org")]
         //[TestCase("pornhub.com")]
         //[TestCase("genius.com")]
         //[TestCase("dypka.ua")]
-        public void changeAccountWebsite(string newWebsite)
+        public void changeAccountWebsite_NewWebsiteShouldBeDisplayedInTheProfile(string newWebsite)
         {
             mainPage.openProfilePage();
             smartFind(driver, ".thEYr button").Click();

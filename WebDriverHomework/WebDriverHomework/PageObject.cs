@@ -19,25 +19,18 @@ namespace WebDriverHomework
         //search
         [FindsBy(How = How.CssSelector, Using = ".TqC_a")]
         private IWebElement searchButton;
-
         [FindsBy(How = How.CssSelector, Using = ".XTCLo")]
         private IWebElement searchInput;
 
-
         //navbar
-        //.s4Iyt
         [FindsBy(How = How.CssSelector, Using = ".Fifk5:nth-child(1) a")]
         private IWebElement homeButton;
-        //.xWeGp
         [FindsBy(How = How.CssSelector, Using = ".Fifk5:nth-child(2) a")]
         private IWebElement inboxButton;
-
         [FindsBy(How = How.CssSelector, Using = ".Fifk5:nth-child(3) a")]
         private IWebElement exploreButton;
-
         [FindsBy(How = How.CssSelector, Using = ".Fifk5:nth-child(4) a")]
         private IWebElement activityButton;
-
         [FindsBy(How = How.CssSelector, Using = ".Fifk5:nth-child(5) a")]
         private IWebElement profileButton;
 
