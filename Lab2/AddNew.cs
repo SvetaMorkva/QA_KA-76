@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using System.Threading;
 
 namespace Lab2
 {
@@ -32,6 +33,7 @@ namespace Lab2
 
             driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_clients.png']")).Click();
             wait.Until(d => driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[2]/div/a[2]")));
+            Thread.Sleep(2000);
             driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[2]/div/a[2]")).Click();
 
             wait.Until(d => driver.FindElement(By.Id("clientCompany")));
@@ -55,6 +57,7 @@ namespace Lab2
             wait.Until(d => driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")));
 
             driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")).Click();
+            Thread.Sleep(2000);
             wait.Until(d => driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[5]/div/a[1]")));
             driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[5]/div/a[1]")).Click();
 
@@ -84,6 +87,7 @@ namespace Lab2
             wait.Until(d => driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")));
 
             driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")).Click();
+            Thread.Sleep(2000);
             wait.Until(d => driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[5]/div/a[2]")));
             driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[5]/div/a[2]")).Click();
 
@@ -104,7 +108,7 @@ namespace Lab2
         [TearDown]
         public void CleanUp()
         {
-            driver.Close();
+            driver.Quit();
         }
     }
 }
