@@ -95,6 +95,7 @@ namespace lab2
         {
             System.Threading.Thread.Sleep(4000);
             driver.FindElement(createContactButton).Click();
+            System.Threading.Thread.Sleep(2000);
             driver.FindElement(contactEmailInput).SendKeys(randomStr);
             wait.Until(ExpectedConditions.ElementIsVisible(createButton));
             driver.FindElement(createButton).Click();
