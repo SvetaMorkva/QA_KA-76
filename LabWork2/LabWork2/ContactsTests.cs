@@ -19,7 +19,7 @@ namespace LabWork2
             {
                 _hubSpot.Login("vzalevskyi24@gmail.com", "P8naM$HWNe?JLC2");
             }
-            int index = 32;
+            int index = 35;
 
             // act
             _hubSpot.CreateContact($"Test{index}", $"User{index}", $"test{index}@email.com", "Front-End developer");
@@ -72,7 +72,7 @@ namespace LabWork2
             {
                 _hubSpot.Login("vzalevskyi24@gmail.com", "P8naM$HWNe?JLC2");
             }
-            int contactID = 501;
+            int contactID = 851;
             int amount2Delete = 1;
             int deletedAmount = _hubSpot.DeleteTask(contactID, amount2Delete);
 
@@ -88,7 +88,7 @@ namespace LabWork2
             {
                 _hubSpot.Login("vzalevskyi24@gmail.com", "P8naM$HWNe?JLC2");
             }
-            int contactID = 501;
+            int contactID = 851;
             String lastName2ChangeFor = "TestSecondName";
 
             _hubSpot.EditContactLastName(contactID, lastName2ChangeFor);

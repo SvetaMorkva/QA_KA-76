@@ -17,7 +17,7 @@ namespace LabWork2
             driver.Navigate().GoToUrl("https://app.hubspot.com/login");
 
 
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(100));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             wait.Until(ExpectedConditions.ElementIsVisible(By.Id("username")));
 
             var username = driver.FindElementById("username");
@@ -29,7 +29,7 @@ namespace LabWork2
             password_field.SendKeys(password);
             driver.FindElementById("loginBtn").Click();
 
-            wait.Until(ExpectedConditions.ElementIsVisible(By.Id("hs-nav-v4")));
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("account-menu")));
 
             String[] currentUrlLParametres = driver.Url.Split('/');
             userID = currentUrlLParametres[currentUrlLParametres.Length - 1];
@@ -52,7 +52,7 @@ namespace LabWork2
         public void CreateContact(String firstName, String lastName, String email, String jobTitle = "", String phoneNumber = "")
         {
             driver.Navigate().GoToUrl("https://app.hubspot.com/contacts/");
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             wait.Until(ExpectedConditions.ElementIsVisible(By.ClassName("ReactTable")));
 
             driver.FindElementByCssSelector("button[data-button-use='primary']").Click();
@@ -75,7 +75,7 @@ namespace LabWork2
         public void CreateComany(String domainName, String name, String description = " ")
         {
             driver.Navigate().GoToUrl($"https://app.hubspot.com/contacts/{userID}/companies/");
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             wait.Until(ExpectedConditions.ElementIsVisible(By.ClassName("ReactTable")));
 
             driver.FindElementByCssSelector("button[data-button-use='primary']").Click();
@@ -93,10 +93,10 @@ namespace LabWork2
         }
 
         [Obsolete]
-        public void CreateTask(String taskName, String taskDetails = "", String contactID = "501")
+        public void CreateTask(String taskName, String taskDetails = "", String contactID = "851")
         {
             driver.Navigate().GoToUrl($"https://app.hubspot.com/contacts/7486179/contact/{contactID}/");
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("button[data-selenium-test='create-engagement-task-button']")));
 
             driver.FindElementByCssSelector("button[data-selenium-test='create-engagement-task-button']").Click();
@@ -112,7 +112,7 @@ namespace LabWork2
         public int DeleteContact(int amount2Delete)
         {
             driver.Navigate().GoToUrl("https://app.hubspot.com/contacts/");
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             wait.Until(ExpectedConditions.ElementIsVisible(By.ClassName("ReactTable")));
 
             wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("span[class='private-checkbox__indicator']")));
@@ -150,7 +150,7 @@ namespace LabWork2
         public int DeleteTask(int contactID, int amount2Delete)
         {
             driver.Navigate().GoToUrl($"https://app.hubspot.com/contacts/{userID}/contact/{contactID}/");
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("span[data-selenium-test='timeline-editable-title']")));
 
             var tasksCheckboxes_before = driver.FindElementsByCssSelector("button[data-selenium-test='timeline-header-actions__delete']");
@@ -177,7 +177,7 @@ namespace LabWork2
         public void EditContactLastName(int contactID, String newLastName)
         {
             driver.Navigate().GoToUrl($"https://app.hubspot.com/contacts/{userID}/contact/{contactID}/");
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("input[data-selenium-test='property-input-lastname']")));
 
             driver.FindElementByCssSelector("input[data-selenium-test='property-input-lastname']").Click();
@@ -196,9 +196,9 @@ namespace LabWork2
         {
 
             driver.Navigate().GoToUrl($"https://app.hubspot.com/contacts/{userID}/contact/{contactID}/");
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[data-selenium-test='timeline-editable-section']")));
-            Thread.Sleep(5000);
+            Thread.Sleep(10000);
 
             var tasksCheckboxes_before = driver.FindElementsByCssSelector("div[data-selenium-test='timeline-editable-section']");
 
@@ -222,9 +222,9 @@ namespace LabWork2
         {
 
             driver.Navigate().GoToUrl($"https://app.hubspot.com/contacts/{userID}/contact/{contactID}/");
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[data-selenium-test='timeline-editable-section']")));
-            Thread.Sleep(5000);
+            Thread.Sleep(10000);
 
             var tasksCheckboxes_before = driver.FindElementsByCssSelector("div[data-selenium-test='timeline-editable-section']");
 
@@ -248,9 +248,9 @@ namespace LabWork2
         {
 
             driver.Navigate().GoToUrl($"https://app.hubspot.com/contacts/{userID}/contact/{contactID}/");
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[data-selenium-test='timeline-editable-section']")));
-            Thread.Sleep(5000);
+            Thread.Sleep(10000);
             var tasksCheckboxes_before = driver.FindElementsByCssSelector("div[data-selenium-test='timeline-editable-section']");
 
             driver.FindElementByCssSelector("button[data-selenium-test='create-engagement-logged-call-button']").Click();
@@ -272,7 +272,7 @@ namespace LabWork2
         public string SearchInGoogle(int contactID)
         {
             driver.Navigate().GoToUrl($"https://app.hubspot.com/contacts/{userID}/contact/{contactID}/");
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("button[data-selenium-test='create-engagement-logged-call-button']")));
 
             driver.FindElementByCssSelector("button[data-selenium-test='profile-settings-actions-btn']").Click();
@@ -289,7 +289,7 @@ namespace LabWork2
         public void SignOut()
         {
             driver.Navigate().GoToUrl("https://app.hubspot.com/");
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("account-menu")));
 
             driver.FindElementById("account-menu").Click();

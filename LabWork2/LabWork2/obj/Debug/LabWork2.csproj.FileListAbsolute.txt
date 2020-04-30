@@ -16,3 +16,21 @@ C:\Users\Vladyslav Zalevskyi\source\repos\LabWork2\LabWork2\obj\Debug\LabWork2.c
 C:\Users\Vladyslav Zalevskyi\source\repos\LabWork2\LabWork2\obj\Debug\LabWork2.csproj.CopyComplete
 C:\Users\Vladyslav Zalevskyi\source\repos\LabWork2\LabWork2\obj\Debug\LabWork2.dll
 C:\Users\Vladyslav Zalevskyi\source\repos\LabWork2\LabWork2\obj\Debug\LabWork2.pdb
+D:\Knowledge6(prb)\qa_course\QA_KA-76\LabWork2\LabWork2\bin\Debug\NUnit3.TestAdapter.dll
+D:\Knowledge6(prb)\qa_course\QA_KA-76\LabWork2\LabWork2\bin\Debug\NUnit3.TestAdapter.pdb
+D:\Knowledge6(prb)\qa_course\QA_KA-76\LabWork2\LabWork2\bin\Debug\nunit.engine.dll
+D:\Knowledge6(prb)\qa_course\QA_KA-76\LabWork2\LabWork2\bin\Debug\nunit.engine.api.dll
+D:\Knowledge6(prb)\qa_course\QA_KA-76\LabWork2\LabWork2\bin\Debug\LabWork2.dll
+D:\Knowledge6(prb)\qa_course\QA_KA-76\LabWork2\LabWork2\bin\Debug\LabWork2.pdb
+D:\Knowledge6(prb)\qa_course\QA_KA-76\LabWork2\LabWork2\bin\Debug\nunit.framework.dll
+D:\Knowledge6(prb)\qa_course\QA_KA-76\LabWork2\LabWork2\bin\Debug\WebDriver.dll
+D:\Knowledge6(prb)\qa_course\QA_KA-76\LabWork2\LabWork2\bin\Debug\WebDriver.Support.dll
+D:\Knowledge6(prb)\qa_course\QA_KA-76\LabWork2\LabWork2\bin\Debug\nunit.framework.pdb
+D:\Knowledge6(prb)\qa_course\QA_KA-76\LabWork2\LabWork2\bin\Debug\nunit.framework.xml
+D:\Knowledge6(prb)\qa_course\QA_KA-76\LabWork2\LabWork2\bin\Debug\WebDriver.xml
+D:\Knowledge6(prb)\qa_course\QA_KA-76\LabWork2\LabWork2\bin\Debug\WebDriver.Support.xml
+D:\Knowledge6(prb)\qa_course\QA_KA-76\LabWork2\LabWork2\obj\Debug\LabWork2.csprojAssemblyReference.cache
+D:\Knowledge6(prb)\qa_course\QA_KA-76\LabWork2\LabWork2\obj\Debug\LabWork2.csproj.CoreCompileInputs.cache
+D:\Knowledge6(prb)\qa_course\QA_KA-76\LabWork2\LabWork2\obj\Debug\LabWork2.csproj.CopyComplete
+D:\Knowledge6(prb)\qa_course\QA_KA-76\LabWork2\LabWork2\obj\Debug\LabWork2.dll
+D:\Knowledge6(prb)\qa_course\QA_KA-76\LabWork2\LabWork2\obj\Debug\LabWork2.pdb

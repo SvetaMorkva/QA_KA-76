@@ -17,7 +17,7 @@ namespace LabWork2
             {
                 _hubSpot.Login("vzalevskyi24@gmail.com", "P8naM$HWNe?JLC2");
             }
-            int contactID = 501;
+            int contactID = 851;
             String meetingDescription = "Meeting Descripti1on";
 
             int result = _hubSpot.LogMeeting(contactID, meetingDescription);
@@ -35,7 +35,7 @@ namespace LabWork2
             {
                 _hubSpot.Login("vzalevskyi24@gmail.com", "P8naM$HWNe?JLC2");
             }
-            int contactID = 501;
+            int contactID = 851;
             String callDescription = "Call Descriptio1n";
 
             int result = _hubSpot.LogCall(contactID, callDescription);
@@ -53,7 +53,7 @@ namespace LabWork2
             {
                 _hubSpot.Login("vzalevskyi24@gmail.com", "P8naM$HWNe?JLC2");
             }
-            int contactID = 501;
+            int contactID = 851;
             String emailDescription = "Email Descript1ion";
 
             int result = _hubSpot.LogEmail(contactID, emailDescription);
