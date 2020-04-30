@@ -31,7 +31,7 @@ namespace SeleniumAutoTests
 
 		public void Dispose()
 		{
-			driver.Close();
+			driver.Quit();
 		}
 
 		public static void waitUntilExistsByXPath(IWebDriver driver, string selector)
@@ -74,7 +74,7 @@ namespace SeleniumAutoTests
 			input.Submit();
 
 			var actual = driver.FindElement(By.XPath("//div[contains(@class, 'content-container')]/h1")).GetAttribute("innerText").Trim();
-			var expected = "Данные профиля изменены";
+			var expected = "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 			Assert.Equal(expected, actual);
 		}
 
@@ -84,7 +84,7 @@ namespace SeleniumAutoTests
 			driver.Navigate().GoToUrl(homepage + "private/");
 			driver.FindElement(By.XPath("//a[@href ='/private/files-downloaded/']")).Click();
 			var actual = driver.FindElement(By.TagName("h1")).GetAttribute("innerText").Trim();
-			var expected = "Мои скачанные файлы";
+			var expected = "пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ";
 			Assert.Equal(expected, actual);
 		}
 
@@ -102,7 +102,7 @@ namespace SeleniumAutoTests
 			try
 			{
 				var error = driver.FindElement(By.XPath("//div[@class = 'validation-summary-valid']/ul/li[1]"));
-				var errorMessage = "Вы добавили слишком много комментариев за короткий промежуток времени, пожалуйста подождите некоторое время перед отправкой";
+				var errorMessage = "пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 				Assert.Equal(errorMessage, error.Text);
 			}
 			catch (Exception)
