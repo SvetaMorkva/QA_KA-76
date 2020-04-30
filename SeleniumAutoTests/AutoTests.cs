@@ -187,9 +187,15 @@ namespace SeleniumAutoTests
 			input.SendKeys(status);
 
 			smartFind(driver, "//fieldset[@class = 'buttons']/a[contains(@class, 'blue')]").Click();
-			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
-			var actual = smartFind(driver, "//div[@class = 'headline-text']").GetAttribute("innerText").Trim();
-			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
+			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
+			string actual = null;
+			int iter = 0;
+			do
+			{
+				 actual = smartFind(driver, "//div[@class = 'headline-text']").GetAttribute("innerText").Trim();
+			  	 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
+			} while (actual == null && ++iter < 5);
+			
 			var expected = status;
 			Assert.AreEqual(expected, actual);
 		}
