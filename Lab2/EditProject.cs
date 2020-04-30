@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace Lab2
 {
-    [TestFixture]
+    //[TestFixture]
     class EditProject
     {
         string url = "https://app.knackbusiness.com/login";
@@ -20,7 +20,7 @@ namespace Lab2
             return driver.FindElement(selector);
         }
 
-        [SetUp]
+        //[SetUp]
         public void Initialize()
         {
             driver = new ChromeDriver();
@@ -28,7 +28,7 @@ namespace Lab2
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
         }
 
-        [Test]
+       // [Test]
         public void EditProject_ShouldUpdate()
         {
             driver.FindElement(By.Id("email")).SendKeys("l.khylenko@gmail.com");
@@ -61,7 +61,7 @@ namespace Lab2
             Assert.IsTrue(clientMsg.Displayed);
         }
 
-        [TearDown]
+        //[TearDown]
         public void CleanUp()
         {
             driver.Close();
