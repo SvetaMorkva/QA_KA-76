@@ -30,6 +30,12 @@ namespace lab2
             driver.FindElement(By.Id("loginBtn")).Submit();
         }
 
+        [TearDown]
+        public void quitDriver()
+        {
+            driver.Quit();
+        }
+
         [Test]
         public void CreateTask()
         {
@@ -59,7 +65,7 @@ namespace lab2
         {
             driver.FindElement(By.Id("navSetting")).Click(); // go to Settings page
             driver.FindElement(By.CssSelector("a[data-selenium-id='Basic info']")).Click();
-            driver.FindElement(By.CssSelector("span[class='UIIcon__IconContent-sc-1ngbkfp-0 hJvPJd']")).Click();
+            driver.FindElement(By.XPath("//span[@data-test-id='edit-name']/span")).Click();
 
             string randomName = randomStr;
             string randomSurname = randomStr + "Surname";

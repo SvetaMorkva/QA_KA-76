@@ -1,7 +1,9 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -18,6 +20,8 @@ namespace lab2
         private readonly By createButton = By.CssSelector("button[data-selenium-test='base-dialog-confirm-btn']");
 
         private readonly string randomStr = Path.GetRandomFileName().Replace(".", "");
+        Random rand = new Random();
+        WebDriverWait wait;
 
 
         [SetUp]
@@ -35,6 +39,14 @@ namespace lab2
             // go to Contacts page
             driver.FindElement(By.Id("nav-primary-contacts-branch")).Click();
             driver.FindElement(By.Id("nav-secondary-contacts")).Click();
+
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
+        }
+
+        [TearDown]
+        public void quitDriver()
+        {
+            driver.Quit();
         }
 
         [Test]
@@ -65,8 +77,53 @@ namespace lab2
             driver.FindElement(createButton).Click();
 
             By errorElem = By.CssSelector("i18n-string[data-key='customerDataProperties.PropertyInput.errorMessageInvalidEmail']");
-            System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> invalidEmailError = driver.FindElements(errorElem);
+            var invalidEmailError = driver.FindElements(errorElem);
+
             Assert.AreEqual(1, invalidEmailError.Count());
+        }
+
+        private List<string> getAllContactsEmails()
+        {
+            By emailsElemsSelector = By.CssSelector("a[class='private-link uiLinkWithoutUnderline uiLinkDark text-left truncate-text']");
+            IWebElement[] emailsElems = driver.FindElements(emailsElemsSelector).ToArray();
+
+            var emailsList = new List<string>();
+
+            foreach (IWebElement emailElem in emailsElems)
+            {
+                emailsList.Add(emailElem.GetAttribute("textContent"));
+            }
+            return emailsList;
+        }
+
+        [Test]
+        [Obsolete]
+        public void DeleteRandomContact()
+        {
+            List<string> emailsList = getAllContactsEmails();
+
+            // choose random email to delete
+            int index = rand.Next(0, emailsList.Count);
+            string emailToDelete = emailsList[index];
+
+            // delete contact with the index
+            By checkSelector = By.CssSelector("span[class='private-checkbox__indicator']");
+            IWebElement[] checksElems =  driver.FindElements(checkSelector).ToArray();
+            checksElems[index+1].Click();
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("span[data-icon-name='delete']")));
+            driver.FindElement(By.CssSelector("span[data-icon-name='delete']")).Click();
+
+            driver.FindElement(By.CssSelector("textarea[data-selenium-test='delete-dialog-match']")).SendKeys("1");
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("button[data-selenium-test='delete-dialog-confirm-button']")));
+            driver.FindElement(By.CssSelector("button[data-selenium-test='delete-dialog-confirm-button']")).Click();
+
+            System.Threading.Thread.Sleep(1000);
+            List<string> emailsListAfterDel = getAllContactsEmails();
+
+            Assert.IsFalse(emailsListAfterDel.Contains(emailToDelete));
+            // Assert.AreEqual(emailToDelete, emailsListAfterDel);
         }
 
 
