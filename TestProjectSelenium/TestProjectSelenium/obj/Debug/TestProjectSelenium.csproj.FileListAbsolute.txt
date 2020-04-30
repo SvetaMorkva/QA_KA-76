@@ -9,3 +9,4 @@ C:\Users\Bataisk\RiderProjects\QA-selelium_lab1\TestProjectSelenium\TestProjectS
 C:\Users\Bataisk\RiderProjects\QA-selelium_lab1\TestProjectSelenium\TestProjectSelenium\obj\Debug\TestProjectSelenium.csproj.CopyComplete
 C:\Users\Bataisk\RiderProjects\QA-selelium_lab1\TestProjectSelenium\TestProjectSelenium\obj\Debug\TestProjectSelenium.dll
 C:\Users\Bataisk\RiderProjects\QA-selelium_lab1\TestProjectSelenium\TestProjectSelenium\obj\Debug\TestProjectSelenium.pdb
+C:\Users\Bataisk\RiderProjects\QA-selelium_lab1\TestProjectSelenium\TestProjectSelenium\bin\Debug\nunit.framework.pdb
