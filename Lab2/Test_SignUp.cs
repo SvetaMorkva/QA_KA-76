@@ -46,7 +46,11 @@ namespace Lab2
             IWebElement getStartedButton = driver.FindElement(By.Id("signupbtn"), 5);
 
             //act 
-            cookieclose.Click();
+            if(cookieclose.Displayed && cookieclose.Enabled)
+            {
+                cookieclose.Click();
+            }
+
             nameField.SendKeys(name);
             emailField.SendKeys(email);
             passField.SendKeys(pass);
