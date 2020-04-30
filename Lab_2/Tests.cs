@@ -6,6 +6,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Lab_2
 {
@@ -17,6 +18,7 @@ namespace Lab_2
 
         private IWebElement WaitForFindElement(IWebDriver driver, By selector)
         {
+            Thread.Sleep(500);
             new WebDriverWait(driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(selector));
             return driver.FindElement(selector);
         }
@@ -32,6 +34,8 @@ namespace Lab_2
             new WebDriverWait(driver, TimeSpan.FromSeconds(5)).Until(d => d.Url.Contains(_url));
 
             WaitForFindElement(driver, By.XPath("//a[contains(text(), 'Формуляр')]")).Click();
+            Thread.Sleep(3000);
+            WaitForFindElement(driver, By.CssSelector("input[name='bor_id']")).Click();
             WaitForFindElement(driver, By.CssSelector("input[name='bor_id']")).SendKeys("11753089");
             WaitForFindElement(driver, By.CssSelector("input[name='bor_verification']")).SendKeys("watermelob");
             WaitForFindElement(driver, By.CssSelector("input[alt='Ввійти']")).Click();
