@@ -58,9 +58,9 @@ namespace WebDriverHomework
                 smartFind(driver, ".HoLwm").Click();
             }
 
+            Thread.Sleep(10000);
+            //waitUntilExists(driver, ".Fifk5 ._6q-tv");
 
-            waitUntilExists(driver, ".Fifk5 ._6q-tv");
-            
             mainPage = new PageObject(driver);
 
             driver.SwitchTo().Window(driver.WindowHandles.First());

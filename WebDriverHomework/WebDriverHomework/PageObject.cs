@@ -67,7 +67,6 @@ namespace WebDriverHomework
         public PageObject openProfilePage()
         {
             new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(profileButton));
-            Thread.Sleep(5000);
             profileButton.Click();
             return this;
         }
