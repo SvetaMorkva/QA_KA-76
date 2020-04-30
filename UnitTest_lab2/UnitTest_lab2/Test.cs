@@ -194,7 +194,6 @@ namespace UnitTest_lab2
 
         }
 
-        [TestCase("ProcessFirst", "http://processfirst.fr/")]
         [TestCase("Amdocs","https://www.amdocs.com/")]
         [TestCase("TSI", "https://tsintegr.com/")]
         public void PartnersLink(string expected_company, string url)
