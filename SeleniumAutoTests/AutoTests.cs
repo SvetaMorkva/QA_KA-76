@@ -145,9 +145,19 @@ namespace SeleniumAutoTests
 			input.SendKeys(comment);
 			input.Submit();
 
-			var actual = driver.FindElement(By.XPath($"//div[@data-sender-id = '{profileId}']/div[contains(@class, 'bb')]")).GetAttribute("innerText").Trim();
-			var expected = comment;
-			Assert.AreEqual(expected, actual);
+			try
+			{
+				var error = driver.FindElement(By.XPath("//div[@class = 'validation-summary-valid']/ul/li[1]"));
+				var errorMessage = "Вы добавили слишком много комментариев за короткий промежуток времени, пожалуйста подождите некоторое время перед отправкой";
+				Assert.AreEqual(errorMessage, error.Text);
+			}
+			catch (Exception)
+			{
+
+				var actual = driver.FindElement(By.XPath($"//div[@data-sender-id = '{profileId}']/div[contains(@class, 'bb')]")).GetAttribute("innerText").Trim();
+				var expected = comment;
+				Assert.AreEqual(expected, actual);
+			}
 
 		}
 
