@@ -91,7 +91,7 @@ namespace lab2
         [Obsolete]
         public void AttemptCreatingContactWithInvalidEmail()
         {
-            System.Threading.Thread.Sleep(3000);
+            System.Threading.Thread.Sleep(4000);
             driver.FindElement(createContactButton).Click();
             driver.FindElement(contactEmailInput).SendKeys(randomStr);
             wait.Until(ExpectedConditions.ElementIsVisible(createButton));
