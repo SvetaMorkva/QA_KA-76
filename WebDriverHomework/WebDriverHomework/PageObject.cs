@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Threading;
 
 namespace WebDriverHomework
 {
@@ -66,6 +67,7 @@ namespace WebDriverHomework
         public PageObject openProfilePage()
         {
             new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(profileButton));
+            Thread.Sleep(5000);
             profileButton.Click();
             return this;
         }
