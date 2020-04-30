@@ -30,10 +30,10 @@ namespace TestProjectSelenium
             _driver.Navigate().GoToUrl("https://dtf.ru");
             _driver.FindElementByXPath("//div[@class='main_menu__auth l-ml-10 lm-ml-10 l-mr-40 lm-mr-0']").Click();
             
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            Thread.Sleep(5000);
             _driver.FindElementByXPath("(//div[@class='social-auth__label'])[3]/..").Click();
-            
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
+
+            Thread.Sleep(3000);
             _driver.FindElementByXPath("(//input[@placeholder='Почта'])[1]")
                 .SendKeys("hesoyam7ripazha@gmail.com");
             _driver.FindElementByXPath("(//input[@placeholder='Пароль'])[1]")
@@ -80,7 +80,7 @@ namespace TestProjectSelenium
             string expectedText = "Some random text";
             
             // go to creation page
-            _driver.FindElementByXPath("//div[@air-module='module.creationButton']").Click();
+            _driver.FindElementByXPath("//div[@air-module='module.creationButton']/a").Click();
             Thread.Sleep(3000);
             
             // Select Rubric
@@ -109,7 +109,7 @@ namespace TestProjectSelenium
             string expectedText = "Draft I want to publish";
 
             // Create draft
-            _driver.FindElementByXPath("//div[@air-module='module.creationButton']").Click();
+            _driver.FindElementByXPath("//div[@air-module='module.creationButton']/a").Click();
             Thread.Sleep(3000);
             
             // Select rubric
