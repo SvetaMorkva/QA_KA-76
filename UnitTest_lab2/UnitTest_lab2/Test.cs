@@ -73,8 +73,13 @@ namespace UnitTest_lab2
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
             WaitandFindElement(driver, By.CssSelector(_partner_selector)).Click();
             WaitandFindElement(driver, By.CssSelector(_partner_selector)).Click();
-            
             js.ExecuteScript("window.scrollBy(0,250)", "");
+            Thread.Sleep(2000);
+            WaitandFindElement(driver, By.CssSelector("jdiv.hoverl_6R")).Click();
+            Thread.Sleep(2000);
+            WaitandFindElement(driver, By.CssSelector("#jivo_close_button")).Click();
+
+            //js.ExecuteScript("window.scrollBy(0,250)", "");
             
             WaitandFindElement(driver, By.CssSelector($"#mp-catalog-item-{n} div")).Click();
 
@@ -101,8 +106,8 @@ namespace UnitTest_lab2
             Thread.Sleep(1000);
             WaitandFindElement(driver, By.CssSelector("input[ type = text]")).SendKeys(expected_company);
             WaitandFindElement(driver, By.CssSelector(".startSearch-btn")).Click();
+            Thread.Sleep(5000);
 
-    
             Actions action = new Actions(driver);
             action.MoveToElement(WaitandFindElement(driver, By.CssSelector("#mp-catalog-item-1 div"))).Perform();
 
@@ -133,6 +138,7 @@ namespace UnitTest_lab2
             SelectElement SelectCountry = new SelectElement(driver.FindElement(By.Id("mp-catalog-filter-select-country")));
             SelectCountry.SelectByText("Ukraine");
 
+            Thread.Sleep(5000);
             Actions action1 = new Actions(driver);
             action1.MoveToElement(WaitandFindElement(driver, By.CssSelector("#mp-catalog-item-1 div"))).Perform();
             string actual_company1 = WaitandFindElement(driver, By.CssSelector("#mp-catalog-item-1 .mp-catalog-item-description-full-title")).Text;
@@ -185,8 +191,8 @@ namespace UnitTest_lab2
             action.MoveToElement(element).Perform();
             WaitandFindElement(driver, By.CssSelector("#block-mainmenu li:nth-of-type(5) div.main-menu-submenu-row div:nth-child(2)  li:nth-child(1)  a")).Click();
             WaitandFindElement(driver, By.CssSelector("img[alt = 'Creatio']")).Click();
-            
-         
+            Thread.Sleep(2000);
+
             using (new AssertionScope())
             {
                 driver.Url.Should().Be(_url); 
@@ -194,6 +200,7 @@ namespace UnitTest_lab2
 
         }
 
+        [TestCase("ProcessFirst", "http://processfirst.fr/")]
         [TestCase("Amdocs","https://www.amdocs.com/")]
         [TestCase("TSI", "https://tsintegr.com/")]
         public void PartnersLink(string expected_company, string url)
@@ -204,13 +211,17 @@ namespace UnitTest_lab2
             WaitandFindElement(driver, By.CssSelector(_partner_selector)).Click();
 
             js.ExecuteScript("window.scrollBy(0,250)", "");
+            WaitandFindElement(driver, By.CssSelector("jdiv.hoverl_6R")).Click();
+            Thread.Sleep(2000);
+            WaitandFindElement(driver, By.CssSelector("#jivo_close_button")).Click();
 
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             WaitandFindElement(driver, By.CssSelector("input[ type = text]")).SendKeys(expected_company);
             WaitandFindElement(driver, By.CssSelector(".startSearch-btn")).Click();
 
             WaitandFindElement(driver, By.CssSelector("#mp-catalog-item-1 div")).Click();
             js.ExecuteScript("window.scrollBy(0,250)", "");
+            
             WaitandFindElement(driver, By.CssSelector(".group-app-developer a")).Click();
             driver.SwitchTo().Window(driver.WindowHandles.Last());
 
