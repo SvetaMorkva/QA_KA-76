@@ -1,10 +1,8 @@
-using System;
+﻿using System;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
-using System.Threading;
-using System.Threading;
 
 namespace Lab2
 {
@@ -31,9 +29,8 @@ namespace Lab2
             driver.FindElement(By.Id("password")).SendKeys("!Q@W#E");
             driver.FindElement(By.CssSelector(".btn")).Click();
             wait.Until(d => driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_clients.png']")));
-            Thread.Sleep(3000);
+
             driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_clients.png']")).Click();
-            Thread.Sleep(3000);
             wait.Until(d => driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[2]/div/a[2]")));
             driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[2]/div/a[2]")).Click();
 
@@ -56,10 +53,9 @@ namespace Lab2
             driver.FindElement(By.Id("password")).SendKeys("!Q@W#E");
             driver.FindElement(By.CssSelector(".btn")).Click();
             wait.Until(d => driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")));
-            Thread.Sleep(3000);
+
             driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")).Click();
             wait.Until(d => driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[5]/div/a[1]")));
-            Thread.Sleep(3000);
             driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[5]/div/a[1]")).Click();
 
             wait.Until(d => driver.FindElement(By.XPath("//*[@id='modal-content']/div[2]/div[1]/div/input")));
@@ -89,7 +85,6 @@ namespace Lab2
 
             driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")).Click();
             wait.Until(d => driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[5]/div/a[2]")));
-            Thread.Sleep(3000);
             driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[5]/div/a[2]")).Click();
 
             wait.Until(d => driver.FindElement(By.XPath("//*[@id='modal-content']/div[4]/div[2]/a")));
@@ -109,7 +104,7 @@ namespace Lab2
         [TearDown]
         public void CleanUp()
         {
-            driver.Quit();
+            driver.Close();
         }
     }
 }

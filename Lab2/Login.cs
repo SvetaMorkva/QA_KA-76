@@ -59,7 +59,7 @@ namespace Lab2
         [TearDown]
         public void CleanUp()
         {
-            driver.Quit();
+            driver.Close();
         }
 
     }

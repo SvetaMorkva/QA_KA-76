@@ -61,6 +61,7 @@
     <Compile Include="LogOut.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UpdatePassword.cs" />
+    <Compile Include="UserInformation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
