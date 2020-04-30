@@ -52,6 +52,13 @@ namespace Lab2
             nextButton = driver.FindElement(By.Id("nextbtn"), 5);
             nextButton.Click();
 
+            IWebElement skipWarningbtn = driver.FindElement(By.ClassName("skip_btn"), 5);
+            if(skipWarningbtn != null)
+            {
+                skipWarningbtn.Click();
+                System.Threading.Thread.Sleep(2000);
+            }
+
             //assert
             string userEmail = driver.FindElement(By.Id("ztb-user-id"), 10).GetAttribute("ztooltip");
             Assert.AreEqual(testingEmail, userEmail, "Couldn't login");
@@ -172,9 +179,61 @@ namespace Lab2
 
         }
 
+        [Test, Order(5)]
+        public void ProfileEdit_ShouldEditPersonalData()
+        {
+            //arrange
+            driver.Manage().Window.Maximize();
+            driver.Navigate().GoToUrl("https://accounts.zoho.com/home#profile/personal");
+            wait.Until(driver => ((IJavaScriptExecutor)driver).ExecuteScript("return document.readyState").Equals("complete"));
+            System.Threading.Thread.Sleep(2000);
+            IWebElement editprofileBtn = driver.FindElement(By.Id("editprofile"), 10);
+
+            editprofileBtn.Click();
+
+            string fName = "fNmame";
+            string sName = "sName";
+            string nName = "nName";
+
+            IWebElement firstNameInput = driver.FindElement(By.Id("profile_Fname_edit"), 5);
+            IWebElement secondNameInput = driver.FindElement(By.Id("profile_Lname_edit"), 5);
+            IWebElement nickNameInput = driver.FindElement(By.Id("profile_nickname"), 5);
+
+            IWebElement saveBtn = driver.FindElement(By.Id("saveprofile"), 5);
+
+            string fullNameLabel = "";
+            string nickNameLabel = "";
+
+            //act
+            firstNameInput.Clear();
+            firstNameInput.SendKeys(fName);
+
+            secondNameInput.Clear();
+            secondNameInput.SendKeys(sName);
+
+            nickNameInput.Clear();
+            nickNameInput.SendKeys(nName);
+
+            saveBtn.Click();
+
+            //assert
+            System.Threading.Thread.Sleep(2000);
+            fullNameLabel = driver.FindElement(By.Id("profile_name_edit"), 5).GetAttribute("value");
+            nickNameLabel = driver.FindElement(By.Id("profile_nickname"), 5).GetAttribute("value");
+
+            Assert.IsTrue(fullNameLabel == (fName + " " + sName), $"Full name incorrect: got:{fullNameLabel}");
+            Assert.IsTrue(nickNameLabel == nName, $"Nick name incorrect: got:{nickNameLabel}");
+
+        }
+
+
         [OneTimeTearDown]
         public void CleanUp()
         {
+            //IWebElement signOut = driver.FindElement(By.ClassName("pp_expand_signout"), 10);
+            //IJavaScriptExecutor executor = (IJavaScriptExecutor)driver;
+            //executor.ExecuteScript("arguments[0].click();", signOut);
+            //System.Threading.Thread.Sleep(4000);
             driver.Quit();
         }
     }
