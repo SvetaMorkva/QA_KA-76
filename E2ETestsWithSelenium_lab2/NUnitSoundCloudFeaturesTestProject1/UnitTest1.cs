@@ -7,7 +7,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using System.Collections.Generic;
 
-namespace NUnitSoundCloudFeaturesTestProject1
+namespace E2ESoundCloudFeaturesTestProject1
 {   
     public class TurnOnMusicFromPlaylistTest
     {
@@ -126,18 +126,15 @@ namespace NUnitSoundCloudFeaturesTestProject1
             var detailFrame = wait.Until(d => d.FindElement(By.XPath(signInIframeXpath)));
             driver.SwitchTo().Frame(detailFrame);
 
-            Thread.Sleep(2000);
             string signInEmailInputXpath = "//*[@id='sign_in_up_email']";
             wait.Until(d => d.FindElement(By.XPath(signInEmailInputXpath))).SendKeys("voiceofreason@ukr.net");
 
             string signInContinueButtonXpath = "//*[@id='sign_in_up_submit']";
             new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(signInContinueButtonXpath))).Click();
 
-            Thread.Sleep(2000);
             string signInPasswordInputXpath = "//*[@id='enter_password_field']";
             wait.Until(d => d.FindElement(By.XPath(signInPasswordInputXpath))).SendKeys("catcatcatcat");
 
-            Thread.Sleep(2000);
             string signInFinishButtonXpath = "//*[@id='enter_password_submit']";
             new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(signInFinishButtonXpath))).Click();
 

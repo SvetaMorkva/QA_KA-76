@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GusB6718IkkrerC1ViBBm2Ypn27Sby1OiOj6zvS/BD+N3d+mJzO7ZQxTJcoH/ek6767e5232IXkRSqLENbWGrA==",
+  "dgSpecHash": "vshdYTXzw5NomuX80mDTDXD77MdZE2WEO4sb1m3veXu7B1x0HPuFv5iClwLOFZRcOKIvjPQ/OK0WbgI3PrOZDA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Yarik\\Desktop\\Institute\\Csharp\\QA_KA-76\\E2ETestsWithSelenium_lab2\\NUnitSoundCloudFeaturesTestProject1\\NUnitSoundCloudFeaturesTestProject1.csproj",
+  "projectFilePath": "C:\\Users\\Yarik\\Desktop\\Institute\\Csharp\\QA_KA-76\\E2ETestsWithSelenium_lab2\\NUnitSoundCloudFeaturesTestProject1\\E2ESoundCloudFeaturesTestProject1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Yarik\\.nuget\\packages\\microsoft.codecoverage\\16.6.1\\microsoft.codecoverage.16.6.1.nupkg.sha512",
     "C:\\Users\\Yarik\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",

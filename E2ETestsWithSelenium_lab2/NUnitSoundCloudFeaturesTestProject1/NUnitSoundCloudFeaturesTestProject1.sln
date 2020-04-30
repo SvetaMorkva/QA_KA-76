@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitSoundCloudFeaturesTestProject1", "NUnitSoundCloudFeaturesTestProject1.csproj", "{6213E463-7F39-412A-AED9-4D22A0AFAD0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E2ESoundCloudFeaturesTestProject1", "E2ESoundCloudFeaturesTestProject1.csproj", "{6213E463-7F39-412A-AED9-4D22A0AFAD0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
