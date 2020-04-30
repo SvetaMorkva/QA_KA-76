@@ -80,17 +80,17 @@ namespace lab2
             Random rand = new Random();
 
             List<string> tasksList = getAllTasksNames();
-            int index;
+                        int index;
             try
             {
-                index = rand.Next(0, emailsList.Count - 1);
+                index = rand.Next(0, tasksList.Count - 1);
             }
             catch
             {
                 Assert.Pass();
             }
 
-            index = rand.Next(0, emailsList.Count - 1);
+            index = rand.Next(0, tasksList.Count - 1);
             string taskToSearchFor = tasksList[index];
 
             driver.FindElement(By.CssSelector("input[data-selenium-test='list-search-input']")).SendKeys(taskToSearchFor);
