@@ -12,7 +12,7 @@ namespace ilMolinoTest
     {
         private IWebDriver _driver;
         private string _url = "https://ilmolino.ua/delivery.html";
-
+        
         [SetUp]
         public void SetUp()
         {
@@ -32,29 +32,6 @@ namespace ilMolinoTest
         
         [TestCase("//a[@class='box js-add-basket tit_1165015']")]
         [TestCase("//a[@class='box js-add-basket tit_1165008']")]
-        [TestCase("//a[@class='box js-add-basket tit_557']")]
-        [TestCase("//a[@class='box js-add-basket tit_176024']")]
-        [TestCase("//a[@class='box js-add-basket tit_558']")]
-        [TestCase("//a[@class='box js-add-basket tit_576']")]
-        [TestCase("//a[@class='box js-add-basket tit_560']")]
-      /*  [TestCase("//a[@class='box js-add-basket tit_327853']")]
-        [TestCase("//a[@class='box js-add-basket tit_12935']")]
-        [TestCase("//a[@class='box js-add-basket tit_987']")]
-        [TestCase("//a[@class='box js-add-basket tit_39009']")]
-        [TestCase("//a[@class='box js-add-basket tit_1163516']")]
-        [TestCase("//a[@class='box js-add-basket tit_567']")]
-        [TestCase("//a[@class='box js-add-basket tit_1252']")]
-        [TestCase("//a[@class='box js-add-basket tit_562']")]
-        [TestCase("//a[@class='box js-add-basket tit_577']")]
-        [TestCase("//a[@class='box js-add-basket tit_565']")]
-        [TestCase("//a[@class='box js-add-basket tit_1159951']")]
-        [TestCase("//a[@class='box js-add-basket tit_5216']")]
-        [TestCase("//a[@class='box js-add-basket tit_559']")]
-        [TestCase("//a[@class='box js-add-basket tit_569']")]
-        [TestCase("//a[@class='box js-add-basket tit_568']")]
-        [TestCase("//a[@class='box js-add-basket tit_566']")]
-        [TestCase("//a[@class='box js-add-basket tit_572']")]
-        [TestCase("//a[@class='box js-add-basket tit_554']")]*/
         public void TestBuyPizzaInSiteIlMolino(string pizza)
         {
             _driver.FindElement(By.XPath("//div[@class='menu js_drop-menu']//a[@href='/delivery/pizza.html']")).Click();
@@ -149,15 +126,6 @@ namespace ilMolinoTest
         }
         
         [TestCase("//a[@class='box js-add-basket tit_1165205']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165308']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165165']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165163']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165164']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165166']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165307']")]
-        [TestCase("//a[@class='box js-add-basket tit_713']")]
-        [TestCase("//a[@class='box js-add-basket tit_5173']")]
-        [TestCase("//a[@class='box js-add-basket tit_1163606']")]
         public void TestBuyDessertInSiteIlMolino(string dessert)
         {
             _driver.FindElement(By.XPath("//a[@class='menu-item-2331']")).Click();
@@ -171,16 +139,6 @@ namespace ilMolinoTest
         }
 
         [TestCase("//a[@class='box js-add-basket tit_1165004']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165005']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165006']")]
-        [TestCase("//a[@class='box js-add-basket tit_829']")]
-        [TestCase("//a[@class='box js-add-basket tit_5443']")]
-        [TestCase("//a[@class='box js-add-basket tit_1163511']")]
-        [TestCase("//a[@class='box js-add-basket tit_710']")]
-        [TestCase("//a[@class='box js-add-basket tit_1162353']")]
-        [TestCase("//a[@class='box js-add-basket tit_7372']")]
-        [TestCase("//a[@class='box js-add-basket tit_709']")]
-        [TestCase("//a[@class='box js-add-basket tit_706']")]
         public void TestBuyMainDishesInSiteIlMolino(string mainDishes)
         {
             _driver.FindElement(By.XPath("//a[@class='menu-item-2348']")).Click();
@@ -192,53 +150,8 @@ namespace ilMolinoTest
             string expected = "(1)";
             Assert.AreEqual(expected, count);
         }
-        /*
+
         [TestCase("//a[@class='box js-add-basket tit_733']")]
-        [TestCase("//a[@class='box js-add-basket tit_39093']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165168']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165167']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165254']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165253']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165252']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165265']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165266']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165269']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165268']")]
-        [TestCase("//a[@class='box js-add-basket tit_3352']")]
-        [TestCase("//a[@class='box js-add-basket tit_733']")]
-        [TestCase("//a[@class='box js-add-basket tit_733']")]
-        [TestCase("//a[@class='box js-add-basket tit_733']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165250']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165251']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165249']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165245']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165027']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165028']")]
-        [TestCase("//a[@class='box js-add-basket tit_1163491']")]
-        [TestCase("//a[@class='box js-add-basket tit_1165241']")]
-        [TestCase("//a[@class='box js-add-basket tit_1163492']")]
-        [TestCase("//a[@class='box js-add-basket tit_1164622']")]
-        [TestCase("//a[@class='box js-add-basket tit_1163495']")]
-        [TestCase("//a[@class='box js-add-basket tit_1163498']")]
-        [TestCase("//a[@class='box js-add-basket tit_1163496']")]
-        [TestCase("//a[@class='box js-add-basket tit_1163506']")]
-        [TestCase("//a[@class='box js-add-basket tit_1163500']")]
-        [TestCase("//a[@class='box js-add-basket tit_1163505']")]
-        [TestCase("//a[@class='box js-add-basket tit_1163503']")]
-        [TestCase("//a[@class='box js-add-basket tit_1163502']")]
-        [TestCase("//a[@class='box js-add-basket tit_1163514']")]
-        [TestCase("//a[@class='box js-add-basket tit_1163513']")]
-        [TestCase("//a[@class='box js-add-basket tit_725']")]
-        [TestCase("//a[@class='box js-add-basket tit_724']")]
-        [TestCase("//a[@class='box js-add-basket tit_723']")]
-        [TestCase("//a[@class='box js-add-basket tit_722']")]
-        [TestCase("//a[@class='box js-add-basket tit_38765']")]
-        [TestCase("//a[@class='box js-add-basket tit_38767']")]
-        [TestCase("//a[@class='box js-add-basket tit_38764']")]
-        [TestCase("//a[@class='box js-add-basket tit_38766']")]
-        [TestCase("//a[@class='box js-add-basket tit_739']")]
-        [TestCase("//a[@class='box js-add-basket tit_1163488']")]
-        [TestCase("//a[@class='box js-add-basket tit_1163490']")]
         [TestCase("//a[@class='box js-add-basket tit_1163499']")]
         public void TestBuyBeveragesInSiteIlMolino(string beverages)
         {
@@ -251,7 +164,7 @@ namespace ilMolinoTest
             string expected = "(1)";
             Assert.AreEqual(expected, count);
         }
-        */
+
         [TestCase ("EN")]
         public void TestLocalizationInSiteIlMolino(string expected)
         {
