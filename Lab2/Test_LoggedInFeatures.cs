@@ -80,7 +80,7 @@ namespace Lab2
             string contact = contactList[rnd.Next(contactList.Count)];
 
             driver.Navigate().GoToUrl(testingAccountUrl + "tab/Activities/create?sub_module=Tasks");
-            wait.Until(driver => (executor.ExecuteScript("return document.readyState").Equals("complete"));
+            wait.Until(driver => (executor.ExecuteScript("return document.readyState").Equals("complete")));
 
             IWebElement subjectInput = driver.FindElement(By.Id("Crm_Tasks_SUBJECT"), 5);
             IWebElement dueDateInput = driver.FindElement(By.Id("Crm_Tasks_DUEDATE"), 5);
@@ -100,7 +100,7 @@ namespace Lab2
 
             //assert
             System.Threading.Thread.Sleep(5000); // wait for task to create
-            wait.Until(driver => (executor.ExecuteScript("return document.readyState").Equals("complete"));
+            wait.Until(driver => (executor.ExecuteScript("return document.readyState").Equals("complete")));
             string subjectLabel = driver.FindElement(By.Id("subvalue_SUBJECT"), 10).Text;
             string dueLabel = driver.FindElement(By.Id("subvalue_DUEDATE"), 5).Text;
             string contactLabel = driver.FindElement(By.Id("subvalue_CONTACTID"), 5).Text;
@@ -117,7 +117,7 @@ namespace Lab2
             System.Threading.Thread.Sleep(8000); // wait for task to create
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl(testingAccountUrl + "tab/Activities");
-            wait.Until(driver => (executor.ExecuteScript("return document.readyState").Equals("complete"));
+            wait.Until(driver => (executor.ExecuteScript("return document.readyState").Equals("complete")));
 
 
             //act
@@ -144,7 +144,7 @@ namespace Lab2
             //arange
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl(testingAccountUrl + "tab/Activities");
-            wait.Until(driver => (executor.ExecuteScript("return document.readyState").Equals("complete"));
+            wait.Until(driver => (executor.ExecuteScript("return document.readyState").Equals("complete")));
             IWebElement taskToDelete = null;
             IWebElement customizeTools = null;
             IWebElement deleteBtn = null;
@@ -187,7 +187,7 @@ namespace Lab2
             //arrange
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("https://accounts.zoho.com/home#profile/personal");
-            wait.Until(driver => (executor.ExecuteScript("return document.readyState").Equals("complete"));
+            wait.Until(driver => (executor.ExecuteScript("return document.readyState").Equals("complete")));
             System.Threading.Thread.Sleep(2000);
             IWebElement editprofileBtn = driver.FindElement(By.Id("editprofile"), 10);
 
@@ -233,7 +233,7 @@ namespace Lab2
         public void PreferencesEdit_ShouldEditDataFormat()
         {
             driver.Navigate().GoToUrl("https://accounts.zoho.com/home#setting/preference");
-            wait.Until(driver => (executor.ExecuteScript("return document.readyState").Equals("complete"));
+            wait.Until(driver => (executor.ExecuteScript("return document.readyState").Equals("complete")));
             System.Threading.Thread.Sleep(2000);
 
             IWebElement dataFormatInput = driver.FindElement(By.Id("dateformatid"), 10);
