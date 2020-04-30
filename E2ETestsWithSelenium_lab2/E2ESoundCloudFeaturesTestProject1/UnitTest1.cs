@@ -45,8 +45,9 @@ namespace E2ESoundCloudFeaturesTestProject1
 
             //TurnOn a track from the playlist
             string trackXpath = "//*[@id='content']/div/div[3]/div[1]/div/div[2]/div[2]/div/div[3]/div/ul/li[" + selectedTrack + "]/div";
+            var trackButton = wait.Until(d => d.FindElement(By.XPath(trackXpath)));
             new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(trackXpath)));
-            driver.FindElement(By.XPath(playlistXpath)).Click();
+            trackButton.Click();
 
             Assert.Pass();
         }
@@ -131,7 +132,7 @@ namespace E2ESoundCloudFeaturesTestProject1
 
             }
             catch { }
-
+            
             string signInButtonXpath = "//*[@id='app']/header/div/div[3]/div[1]/button[1]";
             var signInButton = wait.Until(d => d.FindElement(By.XPath(signInButtonXpath)));
             new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(signInButtonXpath)));
