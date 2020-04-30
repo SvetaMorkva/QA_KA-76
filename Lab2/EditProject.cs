@@ -14,6 +14,12 @@ namespace Lab2
         ChromeDriver driver;
         WebDriverWait wait;
 
+        private IWebElement WaitForFindElement(IWebDriver driver, By selector)
+        {
+            new WebDriverWait(driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(selector));
+            return driver.FindElement(selector);
+        }
+
         [SetUp]
         public void Initialize()
         {
@@ -37,10 +43,11 @@ namespace Lab2
             Thread.Sleep(3000);
             wait.Until(d => driver.FindElement(By.XPath("/html/body/div[12]/div/div[5]/a[1]")));
             driver.FindElement(By.XPath("/html/body/div[12]/div/div[5]/a[1]")).Click();
-		
+
             Thread.Sleep(3000);
-            wait.Until(d => driver.FindElement(By.XPath("//a[text()='Edit']")));
-            driver.FindElement(By.XPath("//a[text()='Edit']")).Click();
+            WaitForFindElement(driver, By.XPath("//a[text()='Edit']")).Click();
+            //wait.Until(d => driver.FindElement(By.XPath("//a[text()='Edit']")));
+            //driver.FindElement(By.XPath("//a[text()='Edit']")).Click();
 
             wait.Until(d => driver.FindElement(By.XPath("//*[@id='modal-content']/div[3]/div/div[1]/span[3]/button[2]")));
             driver.FindElement(By.XPath("//*[@id='modal-content']/div[3]/div/div[1]/span[3]/button[2]")).Click();
@@ -53,11 +60,11 @@ namespace Lab2
 
             Assert.IsTrue(clientMsg.Displayed);
         }
-	    
+
         [TearDown]
         public void CleanUp()
         {
-            driver.Quit();
+            driver.Close();
         }
     }
 }
