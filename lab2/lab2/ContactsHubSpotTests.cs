@@ -72,6 +72,7 @@ namespace lab2
             // wait.Until(ExpectedConditions.ElementIsVisible(createContactButton));
             System.Threading.Thread.Sleep(4000);
             driver.FindElement(createContactButton).Click();
+            wait.Until(ExpectedConditions.ElementIsVisible(contactEmailInput));
             driver.FindElement(contactEmailInput).SendKeys(contactEmail);
 
             // wait.Until(ExpectedConditions.ElementIsVisible(createButton));
