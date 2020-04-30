@@ -15,7 +15,7 @@ namespace lab2
         private readonly string email = "olha.pashnieva@gmail.com";
         private readonly string password = "QALab123456";
 
-        private readonly By createContactButton = By.CssSelector("button[data-selenium-test='new-object-button']");
+        private readonly By createContactButton = By.CssSelector("button[data-button-use='primary']");
         private readonly By contactEmailInput = By.CssSelector("input[data-selenium-test='property-input-email']");
         private readonly By createButton = By.CssSelector("button[data-selenium-test='base-dialog-confirm-btn']");
 
@@ -69,7 +69,8 @@ namespace lab2
         {
             string contactEmail = randomStr + "@me.com";
 
-            wait.Until(ExpectedConditions.ElementIsVisible(createContactButton));
+            // wait.Until(ExpectedConditions.ElementIsVisible(createContactButton));
+            System.Threading.Thread.Sleep(4000);
             driver.FindElement(createContactButton).Click();
             driver.FindElement(contactEmailInput).SendKeys(contactEmail);
 
@@ -110,7 +111,7 @@ namespace lab2
             List<string> emailsList = getAllContactsEmails();
 
             // choose random email to delete
-            int index = rand.Next(0, emailsList.Count);
+            int index = rand.Next(0, emailsList.Count-1);
             string emailToDelete = emailsList[index];
 
             // delete contact with the index
