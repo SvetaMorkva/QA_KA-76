@@ -17,9 +17,9 @@ namespace Lab2
         public WebDriverWait wait;
         public IJavaScriptExecutor executor;
 
-        private string testingEmail = "nesiwew667@tmajre.com";
+        private string testingEmail = "foyon89001@whmailtop.com";
         private string testingPass = "sepiajet";
-        private string testingAccountUrl = "https://crm.zoho.com/crm/org714205043/";
+        private string testingAccountUrl = "https://crm.zoho.com/crm/org714214671/";
 
 
         private string taskToSearch = "";
@@ -54,7 +54,16 @@ namespace Lab2
             nextButton = driver.FindElement(By.Id("nextbtn"), 5);
             nextButton.Click();
 
-            IWebElement skipWarningbtn = driver.FindElement(By.ClassName("skip_btn"), 5);
+            IWebElement skipWarningbtn = null;
+            try
+            {
+                skipWarningbtn = driver.FindElement(By.ClassName("skip_btn"), 5);
+            }
+            catch (WebDriverException ex) 
+            {
+                //do nothing
+            }
+
             if(skipWarningbtn != null)
             {
                 skipWarningbtn.Click();
