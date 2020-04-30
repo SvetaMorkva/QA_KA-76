@@ -95,4 +95,3 @@
 /home/pavlo/Documents/QA_KA-76/lab2/test/obj/Debug/netcoreapp3.1/test.pdb
 /home/pavlo/Documents/QA_KA-76/lab2/test/obj/Debug/netcoreapp3.1/test.genruntimeconfig.cache
 /home/pavlo/Documents/QA_KA-76/lab2/test/bin/Debug/netcoreapp3.1/WebDriver.dll
-/home/pavlo/Documents/QA_KA-76/lab2/test/bin/Debug/netcoreapp3.1/test

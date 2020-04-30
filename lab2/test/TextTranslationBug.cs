@@ -6,18 +6,18 @@ using OpenQA.Selenium.Support.UI;
 
 namespace lab2
 {
-    public class SearchIconBug : IDisposable
+    public class TextTranslationBug : IDisposable
     {
         /*
             The following tests are written according to scenerios
-            defined in the bug_in_search.feature file
+            defined in the bug_with_text_translation.feature file
             in the lab2/specs/features directory
         */
         IWebDriver driver;
         string url = "https://www.kpi.ua/";
         
         // Setup code.
-        public SearchIconBug()
+        public TextTranslationBug()
         {
             var options = new ChromeOptions();
             options.AddArgument("start-maximized");
@@ -34,12 +34,8 @@ namespace lab2
         }
 
         [Fact]
-        public void TestSearchIcon()
+        public void ThereShouldOnlyBeEnglish()
         {
-            // Click on the 'Відпочинок' icon
-            driver.FindElement(By.XPath("//a[@class='icon relax']")).Click();
-            // Click on the search icon (magnifier)
-            driver.FindElement(By.XPath("//a[@id='main-nav-search-link']")).Click();
         }
     }
 }
