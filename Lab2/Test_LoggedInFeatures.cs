@@ -16,9 +16,9 @@ namespace Lab2
         public ChromeDriver driver;
         public WebDriverWait wait;
 
-        private string testingEmail = "reloho4213@whmailtop.com";
+        private string testingEmail = "nesiwew667@tmajre.com";
         private string testingPass = "sepiajet";
-        private string testingAccountUrl = "https://crm.zoho.eu/crm/org20070584675/";
+        private string testingAccountUrl = "https://crm.zoho.com/crm/org714205043/";
 
 
         private string taskToSearch = "";
@@ -27,7 +27,6 @@ namespace Lab2
         public void Initialize()
         {
             ChromeOptions options = new ChromeOptions();
-            options.AddArguments("--disable-extensions"); // to disable extension
             options.AddArguments("--disable-notifications"); // to disable notification
             options.AddArguments("--disable-application-cache"); // to disable cache
 
@@ -42,13 +41,15 @@ namespace Lab2
             //arange
             IWebElement loginLineEdit = driver.FindElement(By.Id("login_id"));
             IWebElement nextButton = driver.FindElement(By.Id("nextbtn"));
-            IWebElement passwordLineEdit = driver.FindElement(By.Id("password"), 10);
 
             //act
             loginLineEdit.SendKeys(testingEmail);
             nextButton.Click();
-            wait.Until(d => passwordLineEdit.Displayed && passwordLineEdit.Enabled);
+            System.Threading.Thread.Sleep(5000);
+            IWebElement passwordLineEdit = driver.FindElement(By.Id("password"), 10);
             passwordLineEdit.SendKeys(testingPass);
+            System.Threading.Thread.Sleep(1000);
+            nextButton = driver.FindElement(By.Id("nextbtn"), 5);
             nextButton.Click();
 
             //assert
@@ -89,6 +90,7 @@ namespace Lab2
             saveBtn.Click();
 
             //assert
+            System.Threading.Thread.Sleep(5000); // wait for task to create
             wait.Until(driver => ((IJavaScriptExecutor)driver).ExecuteScript("return document.readyState").Equals("complete"));
             string subjectLabel = driver.FindElement(By.Id("subvalue_SUBJECT"), 10).Text;
             string dueLabel = driver.FindElement(By.Id("subvalue_DUEDATE"), 5).Text;
