@@ -78,6 +78,7 @@ namespace WebDriverHomework
         {
             mainPage.startSearchInput().SendKeys(celebrity);
             //choose the first search result
+            Thread.Sleep(5000);
             smartFind(driver, ".yCE8d:nth-child(1)").Click();
             //wait until the profile is loaded
             waitUntilExists(driver, ".fDxYl");
@@ -98,6 +99,7 @@ namespace WebDriverHomework
             //find an input search field and paste the username
             smartFind(driver, ".j_2Hd").SendKeys(targetUser);
             //choose the first one suggested
+            Thread.Sleep(5000);
             smartFind(driver, ".-qQT3:nth-child(1) .HVWg4").Click();
             //click "next"
             smartFind(driver, ".cB_4K").Click();
@@ -118,6 +120,7 @@ namespace WebDriverHomework
         {
             mainPage.startSearchInput().SendKeys(targetUser);
             //choose the first search result
+            Thread.Sleep(5000);
             smartFind(driver, ".yCE8d:nth-child(1)").Click();
             //wait until the profile is loaded
             waitUntilExists(driver, ".fDxYl");
@@ -146,6 +149,7 @@ namespace WebDriverHomework
         {
             mainPage.startSearchInput().SendKeys(targetUser);
             //choose the first search result
+            Thread.Sleep(5000);
             smartFind(driver, ".yCE8d:nth-child(1)").Click();
             //wait until the profile is loaded
             waitUntilExists(driver, ".fDxYl");
@@ -176,7 +180,7 @@ namespace WebDriverHomework
 
             //find an input search field and paste the username
             smartFind(driver, ".j_2Hd").SendKeys(targetUser);
-            Thread.Sleep(1000);
+            Thread.Sleep(5000);
             //choose the first one suggested
             smartFind(driver, ".-qQT3:nth-child(1) .eGOV_:nth-child(2)").Click();
             //click "send"
@@ -204,6 +208,7 @@ namespace WebDriverHomework
         {
             mainPage.startSearchInput().SendKeys(targetUser);
             //choose the first search result
+            Thread.Sleep(5000);
             smartFind(driver, ".yCE8d:nth-child(1)").Click();
             //wait until the profile is loaded
             waitUntilExists(driver, ".fDxYl");
@@ -229,6 +234,7 @@ namespace WebDriverHomework
         public void changeAccountName_NewNameShouldBeDisplayedInTheProfile(string newName)
         {
             mainPage.openProfilePage();
+            Thread.Sleep(5000);
             smartFind(driver, ".thEYr button").Click();
             smartFind(driver, "#pepName").Click();
             smartFind(driver, "#pepName").Clear();
@@ -249,6 +255,7 @@ namespace WebDriverHomework
         public void changeAccountBio_NewBioShouldBeDisplayedInTheProfile(string newBio)
         {
             mainPage.openProfilePage();
+            Thread.Sleep(5000);
             smartFind(driver, ".thEYr button").Click();
             smartFind(driver, "#pepBio").Click();
             smartFind(driver, "#pepBio").Clear();
@@ -269,6 +276,7 @@ namespace WebDriverHomework
         public void changeAccountWebsite_NewWebsiteShouldBeDisplayedInTheProfile(string newWebsite)
         {
             mainPage.openProfilePage();
+            Thread.Sleep(5000);
             smartFind(driver, ".thEYr button").Click();
             smartFind(driver, "#pepWebsite").Click();
             smartFind(driver, "#pepWebsite").Clear();

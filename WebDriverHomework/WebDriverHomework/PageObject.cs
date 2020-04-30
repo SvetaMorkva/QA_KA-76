@@ -74,7 +74,9 @@ namespace WebDriverHomework
 
         public IWebElement startSearchInput()
         {
+            Thread.Sleep(5000);
             new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(searchButton));
+            Thread.Sleep(5000);
             searchButton.Click();
             new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists(By.CssSelector(".XTCLo")));
             return searchInput;
