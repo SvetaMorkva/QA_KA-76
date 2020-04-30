@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -44,7 +44,7 @@ namespace Lab2
             wait.Until(d => driver.FindElement(By.XPath("/html/body/div[12]/div/div[5]/a[1]")));
             driver.FindElement(By.XPath("/html/body/div[12]/div/div[5]/a[1]")).Click();
 
-            Thread.Sleep(3000);
+            //Thread.Sleep(3000);
             WaitForFindElement(driver, By.XPath("//a[text()='Edit']")).Click();
             //wait.Until(d => driver.FindElement(By.XPath("//a[text()='Edit']")));
             //driver.FindElement(By.XPath("//a[text()='Edit']")).Click();
@@ -64,7 +64,7 @@ namespace Lab2
         [TearDown]
         public void CleanUp()
         {
-            driver.Close();
+            driver.Quit();
         }
     }
 }
