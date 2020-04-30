@@ -70,6 +70,7 @@ namespace lab2
         public void ChangeAccountName()
         {
             By accNameField = By.CssSelector("input[class='form-control private-form__control']");
+            System.Threading.Thread.Sleep(2000);
             driver.FindElement(By.CssSelector("a[data-selenium-id='Account defaults']")).Click();
             driver.FindElement(accNameField).Clear();
             driver.FindElement(accNameField).SendKeys(randomStr);

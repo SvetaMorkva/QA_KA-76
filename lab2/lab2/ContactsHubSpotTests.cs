@@ -111,7 +111,17 @@ namespace lab2
             List<string> emailsList = getAllContactsEmails();
 
             // choose random email to delete
-            int index = rand.Next(0, emailsList.Count-1);
+            int index;
+            try
+            {
+                index = rand.Next(0, emailsList.Count - 1);
+            }
+            catch
+            {
+                Assert.Pass();
+            }
+
+            index = rand.Next(0, emailsList.Count - 1);
             string emailToDelete = emailsList[index];
 
             // delete contact with the index
