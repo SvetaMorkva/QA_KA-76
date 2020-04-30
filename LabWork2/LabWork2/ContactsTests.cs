@@ -19,7 +19,7 @@ namespace LabWork2
             {
                 _hubSpot.Login("vzalevskyi24@gmail.com", "P8naM$HWNe?JLC2");
             }
-            int index = 41;
+            int index = 77;
 
             // act
             _hubSpot.CreateContact($"Test{index}", $"User{index}", $"test{index}@email.com", "Front-End developer");
@@ -79,23 +79,6 @@ namespace LabWork2
             Assert.AreEqual(deletedAmount, amount2Delete);
         }
 
-        [Test]
-        [Obsolete]
-        public void TestEditContact()
-        {
-            _hubSpot.driver = new ChromeDriver();
-            if (!_hubSpot.IsLoggedIn())
-            {
-                _hubSpot.Login("vzalevskyi24@gmail.com", "P8naM$HWNe?JLC2");
-            }
-            int contactID = 851;
-            String lastName2ChangeFor = "TestSecondName";
-
-            _hubSpot.EditContactLastName(contactID, lastName2ChangeFor);
-
-            String newLastName = _hubSpot.driver.FindElementByCssSelector("input[data-selenium-test='property-input-lastname']").GetAttribute("value");
-            Assert.AreEqual(lastName2ChangeFor, newLastName);
-        }
         [TearDown]
         public void CleanUp()
         {

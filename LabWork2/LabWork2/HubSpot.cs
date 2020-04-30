@@ -188,6 +188,7 @@ namespace LabWork2
             driver.FindElementByCssSelector("input[data-selenium-test='property-input-lastname']").SendKeys(newLastName);
 
             wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("button[data-selenium-test='UniversalSaveBar-button-primary']")));
+            Thread.Sleep(2000);
             driver.FindElementByCssSelector("button[data-selenium-test='UniversalSaveBar-button-primary']").Click();
             Thread.Sleep(2000);
         }
