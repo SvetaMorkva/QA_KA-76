@@ -39,8 +39,8 @@ namespace Lab2
             driver.FindElement(By.XPath("/html/body/div[12]/div/div[5]/a[1]")).Click();
 		
             Thread.Sleep(3000);
-            wait.Until(d => driver.FindElement(By.XPath("//a[@href='../setup/project/19']")));
-            driver.FindElement(By.XPath("//a[@href='../setup/project/19']")).Click();
+            wait.Until(d => driver.FindElement(By.XPath("//a[text()='Edit']")));
+            driver.FindElement(By.XPath("//a[text()='Edit']")).Click();
 
             wait.Until(d => driver.FindElement(By.XPath("//*[@id='modal-content']/div[3]/div/div[1]/span[3]/button[2]")));
             driver.FindElement(By.XPath("//*[@id='modal-content']/div[3]/div/div[1]/span[3]/button[2]")).Click();
