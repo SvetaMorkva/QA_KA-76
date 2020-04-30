@@ -1,5 +1,5 @@
 using System;
-using Xunit;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.Diagnostics;
@@ -10,7 +10,8 @@ using System.Threading;
 
 namespace SeleniumAutoTests
 {
-	public class AutoTests : IDisposable
+	[TestFixture]
+	public class AutoTests
 	{
 		private string homepage = "https://www.twirpx.com/";
 		private string email = "wellcat@ukr.net";
@@ -19,7 +20,9 @@ namespace SeleniumAutoTests
 
 		private IWebDriver driver;
 
-		public AutoTests()
+
+		[SetUp]
+		public void TestInitialize()
 		{
 			driver = new ChromeDriver(Environment.CurrentDirectory);
 			driver.Navigate().GoToUrl(homepage);
@@ -29,11 +32,13 @@ namespace SeleniumAutoTests
 			input.Submit();
 		}
 
-		public void Dispose()
+		[TearDown]
+		public void TestFinalize()
 		{
 			driver.Quit();
 		}
 
+	
 		public static void waitUntilExistsByXPath(IWebDriver driver, string selector)
 		{
 			new WebDriverWait(driver, TimeSpan.FromSeconds(10)).
@@ -48,22 +53,16 @@ namespace SeleniumAutoTests
 
 
 
-		[Fact]
+		[Test]
 		public void TestLogin()
 		{
-			/*
-			driver.Navigate().GoToUrl(homepage);
-			driver.FindElement(By.Id("AuthEmail")).SendKeys(email);
-			driver.FindElement(By.Id("AuthPassword")).SendKeys(password);
-			driver.FindElement(By.TagName("button")).Click();
-	  */
 
 			var actual = driver.FindElement(By.XPath("//div[@class = 'welcome-box']/ul/li[1]/ins")).GetAttribute("innerText").Trim();
 			var expected = "wellcat";
-			Assert.Equal(expected, actual);
+			Assert.AreEqual(expected, actual);
 		}
 
-		[Fact]
+		[Test]
 		public void TestNewInfo()
 		{
 			driver.Navigate().GoToUrl(homepage + "private/");
@@ -74,21 +73,21 @@ namespace SeleniumAutoTests
 			input.Submit();
 
 			var actual = driver.FindElement(By.XPath("//div[contains(@class, 'content-container')]/h1")).GetAttribute("innerText").Trim();
-			var expected = "������ ������� ��������";
-			Assert.Equal(expected, actual);
+			var expected = "Данные профиля изменены";
+			Assert.AreEqual(expected, actual);
 		}
 
-		[Fact]
+		[Test]
 		public void TestLookAtDownloadedFiles()
 		{
 			driver.Navigate().GoToUrl(homepage + "private/");
 			driver.FindElement(By.XPath("//a[@href ='/private/files-downloaded/']")).Click();
 			var actual = driver.FindElement(By.TagName("h1")).GetAttribute("innerText").Trim();
-			var expected = "��� ��������� �����";
-			Assert.Equal(expected, actual);
+			var expected = "Мои скачанные файлы";
+			Assert.AreEqual(expected, actual);
 		}
 
-		[Fact]
+		[Test]
 		public void TestFAQAndLeaveComment()
 		{
 			driver.FindElement(By.XPath("//a[@href ='/about/faq/']")).Click();
@@ -103,19 +102,19 @@ namespace SeleniumAutoTests
 			{
 				var error = driver.FindElement(By.XPath("//div[@class = 'validation-summary-valid']/ul/li[1]"));
 				var errorMessage = "�� �������� ������� ����� ������������ �� �������� ���������� �������, ���������� ��������� ��������� ����� ����� ���������";
-				Assert.Equal(errorMessage, error.Text);
+				Assert.AreEqual(errorMessage, error.Text);
 			}
 			catch (Exception)
 			{
 
 				var actual = driver.FindElement(By.XPath($"//div[@data-sender-id = '{profileId}']/div[contains(@class, 'bb')]")).GetAttribute("innerText").Trim();
 				var expected = comment;
-				Assert.Equal(expected, actual);
+				Assert.AreEqual(expected, actual);
 			}
 			
 		}
 
-		[Fact]
+		[Test]
 		public void TestCreatePostInAccount()
 		{
 			driver.Navigate().GoToUrl(homepage + "private/");
@@ -131,9 +130,9 @@ namespace SeleniumAutoTests
 
 			var actual = driver.FindElement(By.XPath("//h1[@itemprop = 'name']")).GetAttribute("innerText").Trim();
 			var expected = title;
-			Assert.Equal(expected, actual);
+			Assert.AreEqual(expected, actual);
 		}
-		[Fact]
+		[Test]
 		public void TestAddCommentToProfile()
 		{
 			//Given
@@ -148,12 +147,12 @@ namespace SeleniumAutoTests
 
 			var actual = driver.FindElement(By.XPath($"//div[@data-sender-id = '{profileId}']/div[contains(@class, 'bb')]")).GetAttribute("innerText").Trim();
 			var expected = comment;
-			Assert.Equal(expected, actual);
+			Assert.AreEqual(expected, actual);
 
 		}
 
 
-		[Fact]
+		[Test]
 		public void TestAddOrEditStatus()
 		{
 			//a[@data-dispatch = 'userheadline-add']
@@ -178,13 +177,14 @@ namespace SeleniumAutoTests
 			input.SendKeys(status);
 
 			smartFind(driver, "//fieldset[@class = 'buttons']/a[contains(@class, 'blue')]").Click();
+			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
 			var actual = smartFind(driver, "//div[@class = 'headline-text']").GetAttribute("innerText").Trim();
 			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
 			var expected = status;
-			Assert.Equal(expected, actual);
+			Assert.AreEqual(expected, actual);
 		}
 
-		[Fact]
+		[Test]
 		public void TestDeleteStatusOrCheckDeleteButton()
 		{
 
@@ -211,7 +211,7 @@ namespace SeleniumAutoTests
 			{
 				var link = driver.FindElement(By.XPath("//a[@data-dispatch = 'userheadline-delete']"));
 				string display = link.GetCssValue("display");
-				Assert.Equal("none", display);
+				Assert.AreEqual("none", display);
 			}
 
 
