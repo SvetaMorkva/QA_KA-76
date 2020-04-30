@@ -1,4 +1,4 @@
-﻿<Properties StartupConfiguration="{16D6BAA0-71F5-4D0F-A344-6AFA7A010A14}|Модульные тесты">
+﻿<Properties>
   <MonoDevelop.Ide.Workbench ActiveDocument="UnitTest_lab2/Test.cs">
     <Files>
       <File FileName="UnitTest_lab2/Test.cs" Line="37" Column="8" />
@@ -7,7 +7,9 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="UnitTest_lab2" expanded="True">
-            <Node name="UnitTest_lab2" expanded="True" selected="True" />
+            <Node name="UnitTest_lab2" expanded="True">
+              <Node name="Test.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>

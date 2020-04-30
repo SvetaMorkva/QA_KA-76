@@ -36,6 +36,7 @@ namespace UnitTest_lab2
             driver.Navigate().GoToUrl(_url);
        
             WaitandFindElement(driver, By.CssSelector(" .eu-cookie-compliance-buttons button")).Click();
+            Thread.Sleep(5000);
             WaitandFindElement(driver, By.XPath("//button[@aria-label='Close']")).Click();
         }
 
