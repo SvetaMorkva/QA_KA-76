@@ -64,6 +64,7 @@ namespace lab2
 
             // verify contact is created
             By createdContactEmailSpan = By.CssSelector("span[data-selenium-test='highlightTitle']>span");
+            System.Threading.Thread.Sleep(3000);
             string createdContactEmail = driver.FindElement(createdContactEmailSpan).GetAttribute("textContent");
 
             Assert.AreEqual(contactEmail, createdContactEmail);
