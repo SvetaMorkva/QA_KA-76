@@ -11,6 +11,8 @@ namespace E2ESoundCloudFeaturesTestProject1
 {   
     public class TurnOnMusicFromPlaylistTest
     {
+        private IWebDriver driver;
+
         [SetUp]
         public void Setup()
         {
@@ -21,7 +23,7 @@ namespace E2ESoundCloudFeaturesTestProject1
         [TestCase(2, 1, 3)]
         public void TurnSongOnFromPlaylistTest(int selectedListOfPlaylists, int selectedPlaylist, int selectedTrack)
         {
-            var driver = new ChromeDriver();
+            driver = new ChromeDriver();
             driver.Navigate().GoToUrl("https://soundcloud.com/discover");
             var wait = new WebDriverWait(driver, TimeSpan.FromMinutes(1));
 
@@ -44,15 +46,22 @@ namespace E2ESoundCloudFeaturesTestProject1
             //TurnOn a track from the playlist
             string trackXpath = "//*[@id='content']/div/div[3]/div[1]/div/div[2]/div[2]/div/div[3]/div/ul/li[" + selectedTrack + "]/div";
             new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(trackXpath)));
-            driver.FindElementByXPath(trackXpath).Click();
-            driver.Quit();
+            driver.FindElement(By.XPath(playlistXpath)).Click();
 
             Assert.Pass();
+        }
+
+        [TearDown]
+        public void CleanUp()
+        {
+            driver.Quit();
         }
     }
 
     public class ScrollListOfPlaylists
     {
+        private IWebDriver driver;
+
         [SetUp]
         public void Setup()
         {
@@ -62,7 +71,7 @@ namespace E2ESoundCloudFeaturesTestProject1
         [TestCase(2)]
         public void ScrollListOfPlaylistsTest(int selectedListOfPlaylists)
         {
-            var driver = new ChromeDriver();
+            driver = new ChromeDriver();
             driver.Navigate().GoToUrl("https://soundcloud.com/discover");
             var wait = new WebDriverWait(driver, TimeSpan.FromMinutes(1));
 
@@ -86,14 +95,21 @@ namespace E2ESoundCloudFeaturesTestProject1
             new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(sliderBackwardButtonXpath)));
             sliderBackwardButton.Click();
 
-            driver.Quit();
             Assert.Pass();
+        }
+
+        [TearDown]
+        public void CleanUp()
+        {
+            driver.Quit();
         }
 
     }
 
     public class SignIn
     {
+        private IWebDriver driver;
+
         [SetUp]
         public void Setup()
         {
@@ -102,7 +118,7 @@ namespace E2ESoundCloudFeaturesTestProject1
         [Test]
         public void SignInTest()
         {
-            var driver = new ChromeDriver();
+            driver = new ChromeDriver();
             driver.Navigate().GoToUrl("https://soundcloud.com/discover");
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
@@ -138,15 +154,21 @@ namespace E2ESoundCloudFeaturesTestProject1
             string signInFinishButtonXpath = "//*[@id='enter_password_submit']";
             new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(signInFinishButtonXpath))).Click();
 
-            driver.Quit();
-
             Assert.Pass();
+        }
+
+        [TearDown]
+        public void CleanUp()
+        {
+            driver.Quit();
         }
 
     }
 
     public class SelectUserWhoLikedTheTrack
     {
+        private IWebDriver driver;
+        
         [SetUp]
         public void Setup()
         {
@@ -187,12 +209,12 @@ namespace E2ESoundCloudFeaturesTestProject1
         }
 
 
-        [TestCase(1,1,1)]
+        [TestCase(1, 1, 1)]
         [TestCase(1, 1, 2)]
-        [TestCase(1,2,1)]
+        [TestCase(1, 2, 1)]
         public void ShowUsersWhoHaveLikedTrackTest(int selectedListOfPlaylists, int selectedPlaylist, int selectedTrack)
         {
-            var driver = new ChromeDriver();
+            driver = new ChromeDriver();
             var wait = new WebDriverWait(driver, TimeSpan.FromMinutes(1));
 
             IWebElement likeScoreLink = getLikeScoreLink(driver, selectedListOfPlaylists, selectedPlaylist, selectedTrack);
@@ -203,17 +225,16 @@ namespace E2ESoundCloudFeaturesTestProject1
             {
                 var lu = wait.Until(d => d.FindElement(By.XPath("//*[@id='content']/div/div/div[2]/div/div/ul")));
                 IList<IWebElement> amountOfUsersWhoLikedTheTrack = lu.FindElements(By.TagName("li"));
-                if (amountOfUsersWhoLikedTheTrack.Count == 0) Assert.Fail("Error: LikeScore = " + likeScore + " but amountOfUsersWhoLikedTheTrack = " + amountOfUsersWhoLikedTheTrack.Count );
+                if (amountOfUsersWhoLikedTheTrack.Count == 0) Assert.Fail("Error: LikeScore = " + likeScore + " but amountOfUsersWhoLikedTheTrack = " + amountOfUsersWhoLikedTheTrack.Count);
             }
 
-            driver.Quit();
             Assert.Pass();
         }
 
         [Test]
         public void SelectUserWhoLikedTrackTest()
         {
-            var driver = new ChromeDriver();
+            driver = new ChromeDriver();
             var wait = new WebDriverWait(driver, TimeSpan.FromMinutes(1));
 
             IWebElement likeScoreLink = getLikeScoreLink(driver, 1, 1, 1);
@@ -228,9 +249,15 @@ namespace E2ESoundCloudFeaturesTestProject1
                 userWhoLikedTrackLink.Click();
             }
 
-            driver.Quit();
             Assert.Pass();
         }
+
+        [TearDown]
+        public void CleanUp()
+        {
+            driver.Quit();
+        }
+
     }
 
 }
