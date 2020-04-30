@@ -44,6 +44,12 @@ namespace Lab2
 
             Assert.AreEqual(myName, userName);
         }
+        
+        [TearDown]
+        public void CleanUp()
+        {
+            driver.Quit();
+        }
 
     }
 }
