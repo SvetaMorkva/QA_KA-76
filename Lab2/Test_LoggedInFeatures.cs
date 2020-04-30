@@ -102,7 +102,7 @@ namespace Lab2
         public void Search_ShouldDisplaySearchResult()
         {
             //arrange
-            System.Threading.Thread.Sleep(10000); // wait for task to create
+            System.Threading.Thread.Sleep(8000); // wait for task to create
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl(testingAccountUrl + "tab/Activities");
             wait.Until(driver => ((IJavaScriptExecutor)driver).ExecuteScript("return document.readyState").Equals("complete"));

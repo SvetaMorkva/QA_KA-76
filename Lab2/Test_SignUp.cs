@@ -29,7 +29,7 @@ namespace Lab2
         {
             // arrange
             var date = DateTime.Now;
-            string mock = date.Hour.ToString() + date.Minute.ToString();
+            string mock = date.Hour.ToString() + date.Minute.ToString() + date.Second.ToString();
 
             var name = "Name" + mock;
             var email = "username" + mock + "@gmail.com";
