@@ -37,6 +37,7 @@ namespace lab2
             driver.FindElement(By.Id("loginBtn")).Submit();
 
             // go to Contacts page
+            System.Threading.Thread.Sleep(2000);
             driver.FindElement(By.Id("nav-primary-contacts-branch")).Click();
             driver.FindElement(By.Id("nav-secondary-contacts")).Click();
 

@@ -30,6 +30,7 @@ namespace lab2
             driver.FindElement(By.Id("loginBtn")).Submit();
 
             // go to Tasks page
+            System.Threading.Thread.Sleep(2000);
             driver.FindElement(By.Id("nav-primary-sales-branch")).Click();
             driver.FindElement(By.Id("nav-secondary-tasks")).Click();
         }

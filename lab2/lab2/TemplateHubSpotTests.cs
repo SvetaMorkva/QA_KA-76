@@ -29,6 +29,7 @@ namespace lab2
             driver.FindElement(By.Id("loginBtn")).Submit();
 
             // go to Templates page
+            System.Threading.Thread.Sleep(2000);
             driver.FindElement(By.Id("nav-primary-conversations-branch")).Click();
             driver.FindElement(By.Id("nav-secondary-templates")).Click();
 
