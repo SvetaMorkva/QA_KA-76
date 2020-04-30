@@ -40,7 +40,7 @@ namespace lab2
             System.Threading.Thread.Sleep(2000);
             driver.Navigate().GoToUrl("https://app.hubspot.com/contacts/");
 
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
         }
 
         [TearDown]
@@ -74,7 +74,7 @@ namespace lab2
         [Obsolete]
         public void AttemptCreatingContactWithInvalidEmail()
         {
-            wait.Until(ExpectedConditions.ElementIsVisible(createContactButton));
+            System.Threading.Thread.Sleep(3000);
             driver.FindElement(createContactButton).Click();
             driver.FindElement(contactEmailInput).SendKeys(randomStr);
             wait.Until(ExpectedConditions.ElementIsVisible(createButton));
