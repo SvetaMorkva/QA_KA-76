@@ -90,9 +90,9 @@ namespace Lab2
             driver.FindElement(By.Id("email")).SendKeys("l.khylenko@gmail.com");
             driver.FindElement(By.Id("password")).SendKeys("!Q@W#E");
             driver.FindElement(By.CssSelector(".btn")).Click();
-            wait.Until(d => driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")));
-
-            driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")).Click();
+            //wait.Until(d => driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")));
+            WaitForFindElement(driver, By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")).Click();
+            //driver.FindElement(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")).Click();
             WaitForFindElement(driver, By.XPath("//*[@id='slide-out']/ul/li[5]/div/a[2]")).Click();
             //Thread.Sleep(2000);
             //wait.Until(d => driver.FindElement(By.XPath("//*[@id='slide-out']/ul/li[5]/div/a[2]")));
