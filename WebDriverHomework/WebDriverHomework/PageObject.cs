@@ -16,8 +16,8 @@ namespace WebDriverHomework
         }
 
 
-        //search
-        [FindsBy(How = How.CssSelector, Using = ".TqC_a")]
+        //search .coreSpriteSearchIcon .TqC_a
+        [FindsBy(How = How.CssSelector, Using = ".coreSpriteSearchIcon")]
         private IWebElement searchButton;
         [FindsBy(How = How.CssSelector, Using = ".XTCLo")]
         private IWebElement searchInput;
