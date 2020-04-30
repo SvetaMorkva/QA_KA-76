@@ -131,29 +131,56 @@ namespace E2ESoundCloudFeaturesTestProject1
                 cookyButton.Click();
 
             }
-            catch { }
-            
-            string signInButtonXpath = "//*[@id='app']/header/div/div[3]/div[1]/button[1]";
-            var signInButton = wait.Until(d => d.FindElement(By.XPath(signInButtonXpath)));
-            new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(signInButtonXpath)));
-            signInButton.Click();
+            catch {}
 
+            try
+            {
+                string signInButtonXpath = "//*[@id='app']/header/div/div[3]/div[1]/button[1]";
+                var signInButton = wait.Until(d => d.FindElement(By.XPath(signInButtonXpath)));
+                new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(signInButtonXpath)));
+                signInButton.Click();
+            }
+            catch { Assert.Fail("Error in signInButton"); }
 
-            string signInIframeXpath = "//iframe[@class='webAuthContainer__iframe']";
-            var detailFrame = wait.Until(d => d.FindElement(By.XPath(signInIframeXpath)));
-            driver.SwitchTo().Frame(detailFrame);
+            try
+            {
+                string signInIframeXpath = "//iframe[@class='webAuthContainer__iframe']";
+                var detailFrame = wait.Until(d => d.FindElement(By.XPath(signInIframeXpath)));
+                driver.SwitchTo().Frame(detailFrame);
+            }
+            catch { Assert.Fail("Error in detailFrame"); }
 
-            string signInEmailInputXpath = "//*[@id='sign_in_up_email']";
-            wait.Until(d => d.FindElement(By.XPath(signInEmailInputXpath))).SendKeys("voiceofreason@ukr.net");
+            try
+            {
+                string signInEmailInputXpath = "//*[@id='sign_in_up_email']";
+                wait.Until(d => d.FindElement(By.XPath(signInEmailInputXpath))).SendKeys("voiceofreason@ukr.net");
+            }
+            catch { Assert.Fail("Error in signInEmailInput"); }
 
-            string signInContinueButtonXpath = "//*[@id='sign_in_up_submit']";
-            new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(signInContinueButtonXpath))).Click();
+            try
+            {
+                string signInContinueButtonXpath = "//*[@id='sign_in_up_submit']";
+                var signInContinueButton = wait.Until(d => d.FindElement(By.XPath(signInContinueButtonXpath)));
+                new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(signInContinueButtonXpath)));
+                signInContinueButton.Click();
+            }
+            catch { Assert.Fail("Error in signInContinueButton"); }
 
-            string signInPasswordInputXpath = "//*[@id='enter_password_field']";
-            wait.Until(d => d.FindElement(By.XPath(signInPasswordInputXpath))).SendKeys("catcatcatcat");
+            try
+            {
+                string signInPasswordInputXpath = "//*[@id='enter_password_field']";
+                wait.Until(d => d.FindElement(By.XPath(signInPasswordInputXpath))).SendKeys("catcatcatcat");
+            }
+            catch { Assert.Fail("Error in signInPasswordInput"); }
 
-            string signInFinishButtonXpath = "//*[@id='enter_password_submit']";
-            new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(signInFinishButtonXpath))).Click();
+            try
+            {
+                string signInFinishButtonXpath = "//*[@id='enter_password_submit']";
+                var signInFinishButton = wait.Until(d => d.FindElement(By.XPath(signInFinishButtonXpath)));
+                new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(signInFinishButtonXpath)));
+                signInFinishButton.Click();
+            }
+            catch { Assert.Fail("Error in ignInFinishButton"); }
 
             Assert.Pass();
         }
