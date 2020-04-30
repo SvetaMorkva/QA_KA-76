@@ -38,7 +38,7 @@ namespace lab2
         [TearDown]
         public void quitDriver()
         {
-            driver.Quit();
+            // driver.Quit();
         }
 
         [Test]

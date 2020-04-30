@@ -49,6 +49,20 @@ namespace lab2
             driver.Quit();
         }
 
+        private List<string> getAllContactsEmails()
+        {
+            By emailsElemsSelector = By.CssSelector("a[class='private-link uiLinkWithoutUnderline uiLinkDark text-left truncate-text']");
+            IWebElement[] emailsElems = driver.FindElements(emailsElemsSelector).ToArray();
+
+            var emailsList = new List<string>();
+
+            foreach (IWebElement emailElem in emailsElems)
+            {
+                emailsList.Add(emailElem.GetAttribute("textContent"));
+            }
+            return emailsList;
+        }
+
         [Test]
         [Obsolete]
         public void CreateContactTroughEmailOnly()
@@ -59,15 +73,18 @@ namespace lab2
             driver.FindElement(createContactButton).Click();
             driver.FindElement(contactEmailInput).SendKeys(contactEmail);
 
-            wait.Until(ExpectedConditions.ElementIsVisible(createButton));
+            // wait.Until(ExpectedConditions.ElementIsVisible(createButton));
+            System.Threading.Thread.Sleep(3000);
             driver.FindElement(createButton).Click();
 
-            // verify contact is created
-            By createdContactEmailSpan = By.CssSelector("span[data-selenium-test='highlightTitle']>span");
-            System.Threading.Thread.Sleep(3000);
-            string createdContactEmail = driver.FindElement(createdContactEmailSpan).GetAttribute("textContent");
 
-            Assert.AreEqual(contactEmail, createdContactEmail);
+            // verify contact is created
+            System.Threading.Thread.Sleep(3000);
+            driver.Navigate().GoToUrl("https://app.hubspot.com/contacts/");
+            System.Threading.Thread.Sleep(3000);
+            List<string> emailsList = getAllContactsEmails();
+
+            Assert.IsTrue(emailsList.Contains(contactEmail));
         }
 
         [Test]
@@ -84,20 +101,6 @@ namespace lab2
             var invalidEmailError = driver.FindElements(errorElem);
 
             Assert.AreEqual(1, invalidEmailError.Count());
-        }
-
-        private List<string> getAllContactsEmails()
-        {
-            By emailsElemsSelector = By.CssSelector("a[class='private-link uiLinkWithoutUnderline uiLinkDark text-left truncate-text']");
-            IWebElement[] emailsElems = driver.FindElements(emailsElemsSelector).ToArray();
-
-            var emailsList = new List<string>();
-
-            foreach (IWebElement emailElem in emailsElems)
-            {
-                emailsList.Add(emailElem.GetAttribute("textContent"));
-            }
-            return emailsList;
         }
 
         [Test]
