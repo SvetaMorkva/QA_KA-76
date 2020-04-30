@@ -38,6 +38,7 @@ namespace E2ESoundCloudFeaturesTestProject1
             //select a playlist
             string playlistXpath = "//*[@id='content']/div/div/div[1]/div[2]/div/ul/li[" + selectedListOfPlaylists + "]/ div/div[2]/div[1]/div/div/div[" + selectedPlaylist + "]/div/div[2]/div[1]/a";
             var playlistLink = wait.Until(d => d.FindElement(By.XPath(playlistXpath)));
+            new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(playlistXpath)));
             playlistLink.Click();
 
             //TurnOn a track from the playlist
@@ -168,6 +169,7 @@ namespace E2ESoundCloudFeaturesTestProject1
             //select a playlist
             string playlistXpath = "//*[@id='content']/div/div/div[1]/div[2]/div/ul/li[" + selectedListOfPlaylists + "]/ div/div[2]/div[1]/div/div/div[" + selectedPlaylist + "]/div/div[2]/div[1]/a";
             var playlistLink = wait.Until(d => d.FindElement(By.XPath(playlistXpath)));
+            new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(playlistXpath)));
             playlistLink.Click();
 
             //I have opened the track
