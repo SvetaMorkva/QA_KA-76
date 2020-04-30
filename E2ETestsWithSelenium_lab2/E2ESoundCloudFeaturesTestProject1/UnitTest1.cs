@@ -16,8 +16,9 @@ namespace E2ESoundCloudFeaturesTestProject1
         {
         }
 
-        [Test]
-        public void TurnSongOnFromPlaylistTest()
+        [TestCase(1, 1, 1)]
+        [TestCase(3, 2, 2)]
+        public void TurnSongOnFromPlaylistTest(int selectedListOfPlaylists, int selectedPlaylist, int selectedTrack)
         {
             var driver = new ChromeDriver();
             driver.Navigate().GoToUrl("https://soundcloud.com/discover");
@@ -34,14 +35,11 @@ namespace E2ESoundCloudFeaturesTestProject1
             catch { }
 
             //select a playlist
-            int selectedListOfPlaylists = 1;
-            int selectedPlaylist = 1;
             string playlistXpath = "//body/div[@id='app']/div[contains(@class,'l-container l-content')]/div[@id='content']/div/div[contains(@class,'l-fluid-fixed')]/div[contains(@class,'sc-border-light-right l-main')]/div[contains(@class,'l-content')]/div[contains(@class,'modular-home-mixed-selection lazyLoadingList')]/ul[contains(@class,'lazyLoadingList__list sc-list-nostyle sc-clearfix')]/li[" + selectedListOfPlaylists + "]/div[1]/div[2]/div[1]/div[1]/div[1]/div[" + selectedPlaylist + "]/div[1]/div[1]/a[1]";
             var playlistLink = wait.Until(d => d.FindElement(By.XPath(playlistXpath)));
             playlistLink.Click();
 
             //select a track
-            int selectedTrack = 1;
             string trackXpath = "//div[contains(@class,'l-about-main')]//li[" + selectedTrack + "]//div[1]//div[1]//div[1]//span[1]";
             new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(trackXpath)));
             driver.FindElementByXPath(trackXpath).Click();
@@ -58,8 +56,9 @@ namespace E2ESoundCloudFeaturesTestProject1
         {
         }
 
-        [Test]
-        public void ScrollListOfPlaylistsTest()
+        [TestCase(1)]
+        [TestCase(2)]
+        public void ScrollListOfPlaylistsTest(int selectedListOfPlaylists)
         {
             var driver = new ChromeDriver();
             driver.Navigate().GoToUrl("https://soundcloud.com/discover");
@@ -75,7 +74,6 @@ namespace E2ESoundCloudFeaturesTestProject1
             }
             catch { }
 
-            int selectedListOfPlaylists = 1;
             string sliderFarwardButtonXpath = "//*[@id='content']/div/div/div[1]/div[2]/div/ul/li[" + selectedListOfPlaylists + "]/ div/div[2]/div[2]/button";
             var sliderFarwardButton = wait.Until(d => d.FindElement(By.XPath(sliderFarwardButtonXpath)));
             new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(sliderFarwardButtonXpath)));
@@ -152,7 +150,7 @@ namespace E2ESoundCloudFeaturesTestProject1
         {
         }
 
-        private IWebElement getLikeScoreLink(IWebDriver driver)
+        private IWebElement getLikeScoreLink(IWebDriver driver, int selectedListOfPlaylists, int selectedPlaylist, int selectedTrack)
         {
             driver.Navigate().GoToUrl("https://soundcloud.com/discover");
             var wait = new WebDriverWait(driver, TimeSpan.FromMinutes(1));
@@ -167,14 +165,11 @@ namespace E2ESoundCloudFeaturesTestProject1
             catch { }
 
             //select a playlist
-            int selectedListOfPlaylists = 1;
-            int selectedPlaylist = 1;
             string playlistXpath = "//body/div[@id='app']/div[contains(@class,'l-container l-content')]/div[@id='content']/div/div[contains(@class,'l-fluid-fixed')]/div[contains(@class,'sc-border-light-right l-main')]/div[contains(@class,'l-content')]/div[contains(@class,'modular-home-mixed-selection lazyLoadingList')]/ul[contains(@class,'lazyLoadingList__list sc-list-nostyle sc-clearfix')]/li[" + selectedListOfPlaylists + "]/div[1]/div[2]/div[1]/div[1]/div[1]/div[" + selectedPlaylist + "]/div[1]/div[1]/a[1]";
             var playlistLink = wait.Until(d => d.FindElement(By.XPath(playlistXpath)));
             playlistLink.Click();
 
             //I have opened the track
-            int selectedTrack = 2;
             string trackXpath = "/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[2]/div[2]/div[1]/div[3]/div[1]/ul[1]/li[" + selectedTrack + "]/div[1]/div[3]/a[2]";
             var trackLink = wait.Until(d => d.FindElement(By.XPath(trackXpath)));
             new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(trackXpath)));
@@ -189,13 +184,15 @@ namespace E2ESoundCloudFeaturesTestProject1
         }
 
 
-        [Test]
-        public void ShowUsersWhoHaveLikedTrackTest()
+        [TestCase(1,1,1)]
+        [TestCase(1, 1, 2)]
+        [TestCase(1,2,1)]
+        public void ShowUsersWhoHaveLikedTrackTest(int selectedListOfPlaylists, int selectedPlaylist, int selectedTrack)
         {
             var driver = new ChromeDriver();
             var wait = new WebDriverWait(driver, TimeSpan.FromMinutes(1));
 
-            IWebElement likeScoreLink = getLikeScoreLink(driver);
+            IWebElement likeScoreLink = getLikeScoreLink(driver, selectedListOfPlaylists, selectedPlaylist, selectedTrack);
             string likeScore = likeScoreLink.Text;
             likeScoreLink.Click();
 
@@ -216,7 +213,7 @@ namespace E2ESoundCloudFeaturesTestProject1
             var driver = new ChromeDriver();
             var wait = new WebDriverWait(driver, TimeSpan.FromMinutes(1));
 
-            IWebElement likeScoreLink = getLikeScoreLink(driver);
+            IWebElement likeScoreLink = getLikeScoreLink(driver, 1, 1, 1);
             string likeScore = likeScoreLink.Text;
             likeScoreLink.Click();
 

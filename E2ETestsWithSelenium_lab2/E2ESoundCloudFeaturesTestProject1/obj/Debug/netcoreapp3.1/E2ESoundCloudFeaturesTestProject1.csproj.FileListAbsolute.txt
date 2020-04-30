@@ -194,3 +194,4 @@ C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\E2ETestsWithSelenium_lab2\E2ESo
 C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\E2ETestsWithSelenium_lab2\E2ESoundCloudFeaturesTestProject1\obj\Debug\netcoreapp3.1\E2ESoundCloudFeaturesTestProject1.dll
 C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\E2ETestsWithSelenium_lab2\E2ESoundCloudFeaturesTestProject1\obj\Debug\netcoreapp3.1\E2ESoundCloudFeaturesTestProject1.pdb
 C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\E2ETestsWithSelenium_lab2\E2ESoundCloudFeaturesTestProject1\obj\Debug\netcoreapp3.1\E2ESoundCloudFeaturesTestProject1.genruntimeconfig.cache
+C:\Users\Yarik\Desktop\Institute\Csharp\QA_KA-76\E2ETestsWithSelenium_lab2\E2ESoundCloudFeaturesTestProject1\obj\Debug\netcoreapp3.1\E2ESoundCloudFeaturesTestProject1.csprojAssemblyReference.cache
