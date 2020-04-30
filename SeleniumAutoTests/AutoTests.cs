@@ -90,24 +90,24 @@ namespace SeleniumAutoTests
 		[Test]
 		public void TestFAQAndLeaveComment()
 		{
-			driver.FindElement(By.XPath("//a[@href ='/about/faq/']")).Click();
-			driver.FindElement(By.XPath("//div[@class = 'add-link']/a")).Click();
+			smartFind(driver, "//a[@href ='/about/faq/']").Click();
+			smartFind(driver, "//div[@class = 'add-link']/a").Click();
 			//sleep
 			//???
 			var comment = "Thanks for this site! Its great!";
-			var input = driver.FindElement(By.XPath("//textarea[@class = 'markItUpEditor']"));
+			var input = smartFind(driver, "//textarea[@class = 'markItUpEditor']");
 			input.SendKeys(comment);
 			input.Submit();
 			try
 			{
-				var error = driver.FindElement(By.XPath("//div[@class = 'validation-summary-valid']/ul/li[1]"));
+				var error = smartFind(driver, "//div[@class = 'validation-summary-valid']/ul/li[1]");
 				var errorMessage = "Вы добавили слишком много комментариев за короткий промежуток времени, пожалуйста подождите некоторое время перед отправкой";
 				Assert.AreEqual(errorMessage, error.Text);
 			}
 			catch (Exception)
 			{
 
-				var actual = driver.FindElement(By.XPath($"//div[@data-sender-id = '{profileId}']/div[contains(@class, 'bb')]")).GetAttribute("innerText").Trim();
+				var actual = smartFind(driver, $"//div[@data-sender-id = '{profileId}']/div[contains(@class, 'bb')]").GetAttribute("innerText").Trim();
 				var expected = comment;
 				Assert.AreEqual(expected, actual);
 			}
@@ -118,17 +118,17 @@ namespace SeleniumAutoTests
 		public void TestCreatePostInAccount()
 		{
 			driver.Navigate().GoToUrl(homepage + "private/");
-			driver.FindElement(By.XPath("//a[@href ='/post/add/']")).Click();
+			smartFind(driver, "//a[@href ='/post/add/']").Click();
 			var rand = new Random();
 			var title = "Test title" + rand.Next();
 			var text = "Test text" + rand.Next();
 
-			driver.FindElement(By.XPath("//input[@id = 'Title']")).SendKeys(title);
-			var input = driver.FindElement(By.XPath("//textarea[@id = 'BB']"));
+			smartFind(driver, "//input[@id = 'Title']").SendKeys(title);
+			var input = smartFind(driver, "//textarea[@id = 'BB']");
 			input.SendKeys(text);
 			input.Submit();
 
-			var actual = driver.FindElement(By.XPath("//h1[@itemprop = 'name']")).GetAttribute("innerText").Trim();
+			var actual = smartFind(driver, "//h1[@itemprop = 'name']").GetAttribute("innerText").Trim();
 			var expected = title;
 			Assert.AreEqual(expected, actual);
 		}
