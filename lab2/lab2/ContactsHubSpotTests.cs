@@ -59,9 +59,7 @@ namespace lab2
             driver.FindElement(createContactButton).Click();
             driver.FindElement(contactEmailInput).SendKeys(contactEmail);
 
-            // var createButtonClickable = waiterVar.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(createButton));
-            // createButtonClickable.Click();
-            System.Threading.Thread.Sleep(1000);
+            wait.Until(ExpectedConditions.ElementIsVisible(createButton));
             driver.FindElement(createButton).Click();
 
             // verify contact is created
@@ -72,10 +70,13 @@ namespace lab2
         }
 
         [Test]
+        [Obsolete]
         public void AttemptCreatingContactWithInvalidEmail()
         {
+            wait.Until(ExpectedConditions.ElementIsVisible(createContactButton));
             driver.FindElement(createContactButton).Click();
             driver.FindElement(contactEmailInput).SendKeys(randomStr);
+            wait.Until(ExpectedConditions.ElementIsVisible(createButton));
             driver.FindElement(createButton).Click();
 
             By errorElem = By.CssSelector("i18n-string[data-key='customerDataProperties.PropertyInput.errorMessageInvalidEmail']");
