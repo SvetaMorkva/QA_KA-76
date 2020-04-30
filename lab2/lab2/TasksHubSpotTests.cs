@@ -31,17 +31,7 @@ namespace lab2
 
             // go to Tasks page
             System.Threading.Thread.Sleep(2000);
-            try
-            {
-                driver.FindElement(By.Id("nav-primary-sales-branch")).Click();
-                driver.FindElement(By.Id("nav-secondary-tasks")).Click();
-            }
-            catch
-            {
-                driver.FindElement(By.ClassName("menu")).Click();
-                driver.FindElement(By.Id("nav-primary-sales-branch")).Click();
-                driver.FindElement(By.Id("nav-secondary-tasks")).Click();
-            }
+            driver.Navigate().GoToUrl("https://app.hubspot.com/contacts/7600578/tasks/");
         }
 
         [TearDown]

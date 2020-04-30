@@ -30,17 +30,7 @@ namespace lab2
 
             // go to Templates page
             System.Threading.Thread.Sleep(2000);
-            try
-            {
-                driver.FindElement(By.Id("nav-primary-conversations-branch")).Click();
-                driver.FindElement(By.Id("nav-secondary-templates")).Click();
-            }
-            catch
-            {
-                driver.FindElement(By.ClassName("menu")).Click();
-                driver.FindElement(By.Id("nav-primary-conversations-branch")).Click();
-                driver.FindElement(By.Id("nav-secondary-templates")).Click();
-            }
+            driver.Navigate().GoToUrl("https://app.hubspot.com/templates/7600578");
 
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
         }

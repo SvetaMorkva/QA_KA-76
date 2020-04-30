@@ -29,6 +29,7 @@ namespace lab2
             driver.FindElement(By.Id("loginBtn")).Submit();
 
             // go to Settings page
+            System.Threading.Thread.Sleep(2000);
             driver.FindElement(By.Id("navSetting")).Click();
 
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
