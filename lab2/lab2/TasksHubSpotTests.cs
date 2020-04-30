@@ -44,7 +44,7 @@ namespace lab2
         public void CreateTask()
         {
             // create a task
-            By createTaskButton = By.CssSelector("button[data-selenium-test='TasksHeaderView__add-task-btn']");
+            By createTaskButton = By.CssSelector("button[data-button-use='primary']");
             By taskTitleInput = By.CssSelector("input[data-selenium-test='property-input-hs_task_subject']");
             By createButton = By.CssSelector("button[data-selenium-test='CreateTaskSidebar__save-btn']");
 
