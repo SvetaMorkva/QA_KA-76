@@ -1,7 +1,17 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=71b8c073_002Dadb7_002D46d0_002D9a02_002D12265bad05ca/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="AddDraft" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::02BA74B4-AD96-42A4-A916-8DE475861272::.NETFramework,Version=v4.7.2::TestProjectSelenium.Tests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=87a73d06_002Dbe4d_002D4879_002Dbf9a_002Dfaedec5d4eb1/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="AddDraft #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::02BA74B4-AD96-42A4-A916-8DE475861272::.NETFramework,Version=v4.7.2::TestProjectSelenium.Tests.AddDraft&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ac8caa37_002D30a9_002D4b8c_002D8ef7_002Dc28ee70097c1/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="AddBookMark" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::02BA74B4-AD96-42A4-A916-8DE475861272::.NETFramework,Version=v4.7.2::TestProjectSelenium.Tests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c8f6f50a_002D312e_002D44b6_002Dbff4_002D63d4130ba46f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Tests #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
