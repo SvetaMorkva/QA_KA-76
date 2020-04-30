@@ -14,6 +14,12 @@ namespace Lab2
         string newPassword = "1234";
         ChromeDriver driver;
         WebDriverWait wait;
+        
+        private IWebElement WaitForFindElement(IWebDriver driver, By selector)
+        {
+            new WebDriverWait(driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(selector));
+            return driver.FindElement(selector);
+        }
 
         [SetUp]
         public void Initialize()
@@ -33,7 +39,8 @@ namespace Lab2
             wait.Until(d => driver.FindElement(By.ClassName("profileImage")));
             driver.FindElement(By.ClassName("profileImage")).Click();
 
-            wait.Until(d => driver.FindElement(By.XPath("//*[@id='accountsList']/div/a")));
+            WaitForFindElement(driver, By.XPath("//*[@id='accountsList']/div/a"));
+            //wait.Until(d => driver.FindElement(By.XPath("//*[@id='accountsList']/div/a")));
             IWebElement elem = new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='accountsList']/div/a")));
             ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].removeAttribute('margin-left')", elem);
             driver.FindElement(By.XPath("//*[@id='accountsList']/div/a")).Click();
