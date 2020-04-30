@@ -40,21 +40,13 @@
               "target": "Package",
               "version": "[16.5.0, )"
             },
-            "Selenium.Chrome.WebDriver": {
-              "target": "Package",
-              "version": "[2.46.0, )"
-            },
-            "Selenium.Support": {
-              "target": "Package",
-              "version": "[3.141.0, )"
-            },
             "Selenium.WebDriver": {
               "target": "Package",
               "version": "[3.141.0, )"
             },
-            "coverlet.collector": {
+            "Selenium.WebDriver.ChromeDriver": {
               "target": "Package",
-              "version": "[1.2.0, )"
+              "version": "[81.0.4044.6900, )"
             },
             "xunit": {
               "target": "Package",

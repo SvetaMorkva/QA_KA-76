@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "I7yMDfZHUHSwo38CwHa3O+pf5YMlA77uzKzq3b1NI5JcT9AlcaQZHrke4tofoQG7MnD4wkl1DMAY/x1AnDWB2A==",
+  "dgSpecHash": "yzPSO2hxommTFr3HVmzhx1RdmmmohsBc7zS5RL35JxW9w0ytqArJHv6qx6BB5jZuEBK5QbepTU4wnymafGD9og==",
   "success": true,
   "projectFilePath": "/home/pavlo/Documents/QA_KA-76/lab2/test/test.csproj",
   "expectedPackageFiles": [
-    "/home/pavlo/.nuget/packages/coverlet.collector/1.2.0/coverlet.collector.1.2.0.nupkg.sha512",
     "/home/pavlo/.nuget/packages/microsoft.codecoverage/16.5.0/microsoft.codecoverage.16.5.0.nupkg.sha512",
     "/home/pavlo/.nuget/packages/microsoft.csharp/4.3.0/microsoft.csharp.4.3.0.nupkg.sha512",
     "/home/pavlo/.nuget/packages/microsoft.net.test.sdk/16.5.0/microsoft.net.test.sdk.16.5.0.nupkg.sha512",
@@ -32,9 +31,8 @@
     "/home/pavlo/.nuget/packages/runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/home/pavlo/.nuget/packages/runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/home/pavlo/.nuget/packages/runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
-    "/home/pavlo/.nuget/packages/selenium.chrome.webdriver/2.46.0/selenium.chrome.webdriver.2.46.0.nupkg.sha512",
-    "/home/pavlo/.nuget/packages/selenium.support/3.141.0/selenium.support.3.141.0.nupkg.sha512",
     "/home/pavlo/.nuget/packages/selenium.webdriver/3.141.0/selenium.webdriver.3.141.0.nupkg.sha512",
+    "/home/pavlo/.nuget/packages/selenium.webdriver.chromedriver/81.0.4044.6900/selenium.webdriver.chromedriver.81.0.4044.6900.nupkg.sha512",
     "/home/pavlo/.nuget/packages/system.appcontext/4.3.0/system.appcontext.4.3.0.nupkg.sha512",
     "/home/pavlo/.nuget/packages/system.buffers/4.3.0/system.buffers.4.3.0.nupkg.sha512",
     "/home/pavlo/.nuget/packages/system.collections/4.3.0/system.collections.4.3.0.nupkg.sha512",

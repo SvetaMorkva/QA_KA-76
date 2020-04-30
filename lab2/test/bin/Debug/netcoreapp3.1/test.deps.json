@@ -9,10 +9,8 @@
       "test/1.0.0": {
         "dependencies": {
           "Microsoft.NET.Test.Sdk": "16.5.0",
-          "Selenium.Chrome.WebDriver": "2.46.0",
-          "Selenium.Support": "3.141.0",
           "Selenium.WebDriver": "3.141.0",
-          "coverlet.collector": "1.2.0",
+          "Selenium.WebDriver.ChromeDriver": "81.0.4044.6900",
           "xunit": "2.4.0",
           "xunit.runner.visualstudio": "2.4.0"
         },
@@ -20,7 +18,6 @@
           "test.dll": {}
         }
       },
-      "coverlet.collector/1.2.0": {},
       "Microsoft.CodeCoverage/16.5.0": {
         "runtime": {
           "lib/netcoreapp1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {
@@ -430,18 +427,6 @@
       "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
-      "Selenium.Chrome.WebDriver/2.46.0": {},
-      "Selenium.Support/3.141.0": {
-        "dependencies": {
-          "Selenium.WebDriver": "3.141.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/WebDriver.Support.dll": {
-            "assemblyVersion": "3.141.0.0",
-            "fileVersion": "3.141.0.0"
-          }
-        }
-      },
       "Selenium.WebDriver/3.141.0": {
         "dependencies": {
           "Newtonsoft.Json": "10.0.3"
@@ -453,6 +438,7 @@
           }
         }
       },
+      "Selenium.WebDriver.ChromeDriver/81.0.4044.6900": {},
       "System.AppContext/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -1178,13 +1164,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "coverlet.collector/1.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-ZB+EGXsVBIn8cew7D3S2c+rgIlokKv1dSwsXEoiFQaNXF/BSxp9Rlfz/jV1ehSWH5XpLitfRxFNW3ok7uPDOXA==",
-      "path": "coverlet.collector/1.2.0",
-      "hashPath": "coverlet.collector.1.2.0.nupkg.sha512"
-    },
     "Microsoft.CodeCoverage/16.5.0": {
       "type": "package",
       "serviceable": true,
@@ -1374,26 +1353,19 @@
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "hashPath": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512"
     },
-    "Selenium.Chrome.WebDriver/2.46.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Gkh70CERkAIcjK4LAKmftKDnh2knRRw2c6BnnI9xhFMA4nbaoGTyxf8416gzLdGu9IeeoTe7xkTS9vWQRCZt9A==",
-      "path": "selenium.chrome.webdriver/2.46.0",
-      "hashPath": "selenium.chrome.webdriver.2.46.0.nupkg.sha512"
-    },
-    "Selenium.Support/3.141.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-F4sxMCXGyqWtbw5qsniJRgza2UsBnslHwFgNA2p7hPxvJhqg73lyXu/ZscJ7FSfRvq3eJrosysv92+4sZ3vWsg==",
-      "path": "selenium.support/3.141.0",
-      "hashPath": "selenium.support.3.141.0.nupkg.sha512"
-    },
     "Selenium.WebDriver/3.141.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-wPqzXO3f79DzqauTZSzLMKiaBCN0Z2Mv7KvWP+hnV6EL88zh/pJJnFtdIR1X5wa3hsTOpF/bBJs45rz7kArsiA==",
       "path": "selenium.webdriver/3.141.0",
       "hashPath": "selenium.webdriver.3.141.0.nupkg.sha512"
+    },
+    "Selenium.WebDriver.ChromeDriver/81.0.4044.6900": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UQ1BIbA+XkjwsX9j8bDDtucNgMRdpnxuxjer37SuOpztjpgVA/5dOAPfGePjm36kT+NNb4mDsxqhKcKM6b14ow==",
+      "path": "selenium.webdriver.chromedriver/81.0.4044.6900",
+      "hashPath": "selenium.webdriver.chromedriver.81.0.4044.6900.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",
