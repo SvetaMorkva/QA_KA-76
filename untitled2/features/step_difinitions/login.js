@@ -40,6 +40,8 @@ Then('I redirect to security page', async function() {
         const currentURL = await this.driver.getCurrentUrl();
         const idx = currentURL.indexOf('member_token=');
         assert.equal(currentURL.slice(0, idx), `https://www.opencart.com/index.php?route=account/security&`);
+    } catch (e) {
+        console.log(e);
     } finally {
         await this.driver.findElement(By.xpath("//a[@class = 'btn btn-black navbar-btn' and text() = 'Logout']")).click();
         await this.driver.quit();
@@ -73,7 +75,10 @@ Then('I get a notification wrong password or name', async function() {
         const currentURL = await this.driver.getCurrentUrl();
         const idx = currentURL.indexOf('member_token=');
         assert.notEqual(currentURL.slice(0, idx), `https://www.opencart.com/index.php?route=account/security&`);
-    } finally {
+    } catch (e) {
+        console.log(e);
+    }
+    finally {
         await this.driver.quit();
     }
 });

@@ -41,7 +41,10 @@ Then('I see Account details', async function() {
         const idx = accountURL.indexOf('member_token=');
         const token = accountURL.slice(idx+13);
         assert.equal(accountURL.slice(0, idx), 'https://www.opencart.com/index.php?route=account/account&');
-    } finally {
+    } catch (e) {
+        console.log(e);
+    }
+    finally {
         await this.driver.findElement(By.xpath("//a[@class = 'btn btn-black navbar-btn' and text() = 'Logout']")).click();
         await this.driver.quit();
     }

@@ -26,7 +26,10 @@ Then("I show my username 'Art-kart-1122'", async function() {
     try {
         const username = await this.driver.findElement(By.id('input-username'));
         assert.equal(await username.getAttribute('value'), 'Art-kart-1122');
-    } finally {
+    } catch (e) {
+        console.log(e);
+    }
+    finally {
         await this.driver.findElement(By.xpath("//a[@class = 'btn btn-black navbar-btn' and text() = 'Logout']")).click();
         await this.driver.quit();
     }
@@ -54,6 +57,8 @@ Then('I show message successful', async function () {
     try {
         const message = await this.driver.findElement(By.xpath("//div[@class = 'alert alert-success']"));
         assert.ok(message);
+    } catch (e) {
+        console.log(e);
     } finally {
         await this.driver.findElement(By.xpath("//a[@class = 'btn btn-black navbar-btn' and text() = 'Logout']")).click();
         await this.driver.quit();
@@ -73,6 +78,8 @@ Then('I show warning message', async function() {
     try {
         const warn = await this.driver.findElement(By.xpath("//div[@class = 'text-danger']"));
         assert.ok(warn);
+    } catch (e) {
+        console.log(e);
     } finally {
         await this.driver.findElement(By.xpath("//a[@class = 'btn btn-black navbar-btn' and text() = 'Logout']")).click();
         await this.driver.quit();
