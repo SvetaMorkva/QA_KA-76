@@ -12,7 +12,7 @@ namespace ilMolinoTest
     {
         private IWebDriver _driver;
         private string _url = "https://ilmolino.ua/delivery.html";
-        
+
         [SetUp]
         public void SetUp()
         {
@@ -29,9 +29,10 @@ namespace ilMolinoTest
         {
             _driver.Quit();
         }
-        
+
         [TestCase("//a[@class='box js-add-basket tit_1165015']")]
         [TestCase("//a[@class='box js-add-basket tit_1165008']")]
+        [TestCase("//a[@class='box js-add-basket tit_557']")]
         public void TestBuyPizzaInSiteIlMolino(string pizza)
         {
             _driver.FindElement(By.XPath("//div[@class='menu js_drop-menu']//a[@href='/delivery/pizza.html']")).Click();
@@ -39,11 +40,10 @@ namespace ilMolinoTest
             _driver.FindElement(By.XPath(pizza)).Click();
             Thread.Sleep(3000);
             string count = _driver.FindElement(By.XPath("//span[@class='js-lb-basket-qty']")).Text;
-            Thread.Sleep(2000);
             string expected = "(1)";
             Assert.AreEqual(expected, count);
         }
-        
+
         [Test]
         public void TestBuyPizzaAndSaladInSiteIlMolino()
         {
@@ -56,7 +56,6 @@ namespace ilMolinoTest
             _driver.FindElement(By.XPath("//a[@class='box js-add-basket tit_1165002']")).Click();
             Thread.Sleep(3000);
             string count = _driver.FindElement(By.XPath("//span[@class='js-lb-basket-qty']")).Text;
-            Thread.Sleep(2000);
             string expected = "(2)";
             Assert.AreEqual(expected, count);
         }
@@ -69,15 +68,13 @@ namespace ilMolinoTest
             _driver.FindElement(By.XPath("//a[@class='box js-add-basket tit_577']")).Click();
             Thread.Sleep(3000);
             string count = _driver.FindElement(By.XPath("//span[@class='js-lb-basket-qty']")).Text;
-            Thread.Sleep(2000);
             string expected = "(1)";
             Assert.AreEqual(expected, count);
         }
-        
+
         [Test]
-        public void TestBuyTwoPizzaOneTypeInSiteIlMolino ()
+        public void TestBuyTwoPizzaOneTypeInSiteIlMolino()
         {
-            Thread.Sleep(2000);
             _driver.FindElement(By.XPath("//a[@class='menu-item-2325']")).Click();
             Thread.Sleep(2000);
             _driver.FindElement(By.XPath("//a[@class='box js-add-basket tit_1165015']")).Click();
@@ -89,11 +86,10 @@ namespace ilMolinoTest
             _driver.FindElement(By.XPath("//div//a[@class='plus js-btn-basket-plus']")).Click();
             Thread.Sleep(2000);
             string count = _driver.FindElement(By.XPath("//span[@class='js-lb-basket-qty']")).Text;
-            Thread.Sleep(2000);
             string expected = "(2)";
             Assert.AreEqual(expected, count);
         }
-        
+
         [Test]
         public void TestBuyPizzaWithIngredientsInSiteIlMolino()
         {
@@ -107,7 +103,6 @@ namespace ilMolinoTest
             Thread.Sleep(3000);
             string expectedPrice = "264";
             string price = _driver.FindElement(By.XPath("//span[@class='js-lb-price']")).Text;
-            Thread.Sleep(2000);
             Assert.AreEqual(expectedPrice, price);
         }
 
@@ -120,12 +115,13 @@ namespace ilMolinoTest
             _driver.FindElement(By.XPath(soup)).Click();
             Thread.Sleep(3000);
             string count = _driver.FindElement(By.XPath("//span[@class='js-lb-basket-qty']")).Text;
-            Thread.Sleep(2000);
             string expected = "(1)";
             Assert.AreEqual(expected, count);
         }
-        
+
         [TestCase("//a[@class='box js-add-basket tit_1165205']")]
+        [TestCase("//a[@class='box js-add-basket tit_1165308']")]
+        [TestCase("//a[@class='box js-add-basket tit_1165165']")]
         public void TestBuyDessertInSiteIlMolino(string dessert)
         {
             _driver.FindElement(By.XPath("//a[@class='menu-item-2331']")).Click();
@@ -133,12 +129,13 @@ namespace ilMolinoTest
             _driver.FindElement(By.XPath(dessert)).Click();
             Thread.Sleep(3000);
             string count = _driver.FindElement(By.XPath("//span[@class='js-lb-basket-qty']")).Text;
-            Thread.Sleep(2000);
             string expected = "(1)";
             Assert.AreEqual(expected, count);
         }
 
         [TestCase("//a[@class='box js-add-basket tit_1165004']")]
+        [TestCase("//a[@class='box js-add-basket tit_1165005']")]
+        [TestCase("//a[@class='box js-add-basket tit_1165006']")]
         public void TestBuyMainDishesInSiteIlMolino(string mainDishes)
         {
             _driver.FindElement(By.XPath("//a[@class='menu-item-2348']")).Click();
@@ -146,13 +143,13 @@ namespace ilMolinoTest
             _driver.FindElement(By.XPath(mainDishes)).Click();
             Thread.Sleep(3000);
             string count = _driver.FindElement(By.XPath("//span[@class='js-lb-basket-qty']")).Text;
-            Thread.Sleep(2000);
             string expected = "(1)";
             Assert.AreEqual(expected, count);
         }
 
         [TestCase("//a[@class='box js-add-basket tit_733']")]
         [TestCase("//a[@class='box js-add-basket tit_1163499']")]
+        [TestCase("//a[@class='box js-add-basket tit_1165168']")]
         public void TestBuyBeveragesInSiteIlMolino(string beverages)
         {
             _driver.FindElement(By.XPath("//a[@class='menu-item-2332']")).Click();
@@ -160,23 +157,23 @@ namespace ilMolinoTest
             _driver.FindElement(By.XPath(beverages)).Click();
             Thread.Sleep(3000);
             string count = _driver.FindElement(By.XPath("//span[@class='js-lb-basket-qty']")).Text;
-            Thread.Sleep(2000);
             string expected = "(1)";
             Assert.AreEqual(expected, count);
         }
 
-        [TestCase ("EN")]
-        public void TestLocalizationInSiteIlMolino(string expected)
+        [TestCase("EN", "//div[@class='lang_bl']//div//a[@href='/en/delivery.html']")]
+        [TestCase("RU", "//div[@class='lang_bl']//div//a[@href='/ru/delivery.html']")]
+        [TestCase("UA", "//div//a[@class='lang_opt']")]
+        public void TestLocalizationInSiteIlMolino(string expected, string langage)
         {
             Thread.Sleep(2000);
-            _driver.FindElement(By.XPath("//div[@class=\"lang_bl\"]")).Click();
+            _driver.FindElement(By.XPath("//div[@class='lang_bl']")).Click();
             Thread.Sleep(2000);
-            _driver.FindElement(By.XPath("//div[@class=\"lang_bl\"]//div//a[@href=\"/en/delivery.html\"]")).Click();
+            _driver.FindElement(By.XPath(langage)).Click();
             Thread.Sleep(2000);
-            _driver.FindElement(By.XPath("//div/a[@title=\"Краща мережа ресторанів\"]")).Click();
+            _driver.FindElement(By.XPath("//div/a[@title='Краща мережа ресторанів']")).Click();
             Thread.Sleep(3000);
-            var result = _driver.FindElement(By.XPath("//div[@class=\"lang_bl\"]//span//span")).Text;
-            Thread.Sleep(2000);
+            var result = _driver.FindElement(By.XPath("//div[@class='lang_bl']//span//span")).Text;
             Assert.AreEqual(expected, result);
         }
 
