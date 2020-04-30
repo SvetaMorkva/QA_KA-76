@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Yarik\\Desktop\\Institute\\Csharp\\QA_KA-76\\E2ETestsWithSelenium_lab2\\NUnitSoundCloudFeaturesTestProject1\\E2ESoundCloudFeaturesTestProject1.csproj": {}
+    "C:\\Users\\Yarik\\Desktop\\Institute\\Csharp\\QA_KA-76\\E2ETestsWithSelenium_lab2\\E2ESoundCloudFeaturesTestProject1\\E2ESoundCloudFeaturesTestProject1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Yarik\\Desktop\\Institute\\Csharp\\QA_KA-76\\E2ETestsWithSelenium_lab2\\NUnitSoundCloudFeaturesTestProject1\\E2ESoundCloudFeaturesTestProject1.csproj": {
+    "C:\\Users\\Yarik\\Desktop\\Institute\\Csharp\\QA_KA-76\\E2ETestsWithSelenium_lab2\\E2ESoundCloudFeaturesTestProject1\\E2ESoundCloudFeaturesTestProject1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Yarik\\Desktop\\Institute\\Csharp\\QA_KA-76\\E2ETestsWithSelenium_lab2\\NUnitSoundCloudFeaturesTestProject1\\E2ESoundCloudFeaturesTestProject1.csproj",
+        "projectUniqueName": "C:\\Users\\Yarik\\Desktop\\Institute\\Csharp\\QA_KA-76\\E2ETestsWithSelenium_lab2\\E2ESoundCloudFeaturesTestProject1\\E2ESoundCloudFeaturesTestProject1.csproj",
         "projectName": "E2ESoundCloudFeaturesTestProject1",
-        "projectPath": "C:\\Users\\Yarik\\Desktop\\Institute\\Csharp\\QA_KA-76\\E2ETestsWithSelenium_lab2\\NUnitSoundCloudFeaturesTestProject1\\E2ESoundCloudFeaturesTestProject1.csproj",
+        "projectPath": "C:\\Users\\Yarik\\Desktop\\Institute\\Csharp\\QA_KA-76\\E2ETestsWithSelenium_lab2\\E2ESoundCloudFeaturesTestProject1\\E2ESoundCloudFeaturesTestProject1.csproj",
         "packagesPath": "C:\\Users\\Yarik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Yarik\\Desktop\\Institute\\Csharp\\QA_KA-76\\E2ETestsWithSelenium_lab2\\NUnitSoundCloudFeaturesTestProject1\\obj\\",
+        "outputPath": "C:\\Users\\Yarik\\Desktop\\Institute\\Csharp\\QA_KA-76\\E2ETestsWithSelenium_lab2\\E2ESoundCloudFeaturesTestProject1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Yarik\\AppData\\Roaming\\NuGet\\NuGet.Config",
