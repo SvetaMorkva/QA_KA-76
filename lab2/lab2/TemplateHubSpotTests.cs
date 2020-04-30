@@ -30,8 +30,17 @@ namespace lab2
 
             // go to Templates page
             System.Threading.Thread.Sleep(2000);
-            driver.FindElement(By.Id("nav-primary-conversations-branch")).Click();
-            driver.FindElement(By.Id("nav-secondary-templates")).Click();
+            try
+            {
+                driver.FindElement(By.Id("nav-primary-conversations-branch")).Click();
+                driver.FindElement(By.Id("nav-secondary-templates")).Click();
+            }
+            catch
+            {
+                driver.FindElement(By.ClassName("menu")).Click();
+                driver.FindElement(By.Id("nav-primary-conversations-branch")).Click();
+                driver.FindElement(By.Id("nav-secondary-templates")).Click();
+            }
 
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
         }

@@ -38,8 +38,17 @@ namespace lab2
 
             // go to Contacts page
             System.Threading.Thread.Sleep(2000);
-            driver.FindElement(By.Id("nav-primary-contacts-branch")).Click();
-            driver.FindElement(By.Id("nav-secondary-contacts")).Click();
+            try
+            {
+                driver.FindElement(By.Id("nav-primary-contacts-branch")).Click();
+                driver.FindElement(By.Id("nav-secondary-contacts")).Click();
+            }
+            catch
+            {
+                driver.FindElement(By.ClassName("menu")).Click();
+                driver.FindElement(By.Id("nav-primary-contacts-branch")).Click();
+                driver.FindElement(By.Id("nav-secondary-contacts")).Click();
+            }
 
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
         }

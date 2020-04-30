@@ -31,8 +31,17 @@ namespace lab2
 
             // go to Tasks page
             System.Threading.Thread.Sleep(2000);
-            driver.FindElement(By.Id("nav-primary-sales-branch")).Click();
-            driver.FindElement(By.Id("nav-secondary-tasks")).Click();
+            try
+            {
+                driver.FindElement(By.Id("nav-primary-sales-branch")).Click();
+                driver.FindElement(By.Id("nav-secondary-tasks")).Click();
+            }
+            catch
+            {
+                driver.FindElement(By.ClassName("menu")).Click();
+                driver.FindElement(By.Id("nav-primary-sales-branch")).Click();
+                driver.FindElement(By.Id("nav-secondary-tasks")).Click();
+            }
         }
 
         [TearDown]
