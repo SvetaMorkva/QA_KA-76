@@ -1,5 +1,5 @@
 ﻿Feature: List of products in productBasket
-	In order to simplify shoping
+	In order to simplify shopping
 	As a customer
 	I want to see products in my productBasket
 
