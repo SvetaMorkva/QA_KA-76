@@ -64,11 +64,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PageObject\BeveragesPage.cs" />
+    <Compile Include="PageObject\DessertPage.cs" />
+    <Compile Include="PageObject\HitPizzaPage.cs" />
+    <Compile Include="PageObject\MainDishesPage.cs" />
+    <Compile Include="PageObject\MilanoPage.cs" />
     <Compile Include="PageObject\PizzaPage.cs" />
     <Compile Include="PageObject\MainPage.cs" />
     <Compile Include="PageObject\SaladsPage.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="PageObject\SoupPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

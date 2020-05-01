@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace ilMolinoSite.PageObjects
+namespace IlMolinoSite.PageObject
 {
     class SaladsPage
     {
