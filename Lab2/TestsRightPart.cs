@@ -48,16 +48,10 @@ namespace Lab2
         [TestCase("Listening")]
         public void TestViewNewsOnTopic(string Topic)
         {
-            WaitForFindElement(driver, By.ClassName("fa-caret-down")).Click();
-            Thread.Sleep(2000);
-            WaitForFindElement(driver, By.XPath($"//ul[@class='categories']//a[text()='{Topic}']")).Click();
-            Thread.Sleep(5000);
+            var journalPage = new JournalPage(driver);
 
-            List<IWebElement> CategoryElements = new List<IWebElement>();
-            CategoryElements.AddRange(driver.FindElements(By.CssSelector(".article-block-category a")));
-            List<string> CategoryElementsName = new List<string>();
-            foreach (IWebElement element in CategoryElements)
-                CategoryElementsName.Add(element.Text.Trim().ToLower());
+            journalPage.SelectTopic(Topic);
+            List<string> CategoryElementsName = journalPage.GetArticlesCategories();
 
             using (new AssertionScope())
             {
@@ -69,9 +63,11 @@ namespace Lab2
         [Test]
         public void TestRedirectToAppStore()
         {
-            WaitForFindElement(driver, By.CssSelector(".mobile_app:nth-of-type(2) a")).Click();
+            var journalPage = new JournalPage(driver);
+
+            journalPage.GoToAppStore();
             driver.SwitchTo().Window(driver.WindowHandles.Last());
-            string actual_name = WaitForFindElement(driver, By.TagName("h1")).Text;
+            string actual_name = journalPage.GetAppName();
 
             using (new AssertionScope())
                 actual_name.Should().Contain("Green Forest");
@@ -81,17 +77,10 @@ namespace Lab2
         [TestCase("Homophones")]
         public void TestViewProjectsonTopic(string Topic)
         {
-            WaitForFindElement(driver, By.ClassName("projects")).Click();
-            WaitForFindElement(driver, By.XPath($"//div[@class='journal-page projects']//a[contains(text(), '{Topic}')]")).Click();
+            var journalPage = new JournalPage(driver);
 
-            Thread.Sleep(3000);
-
-            WaitForFindElement(driver, By.CssSelector(".article-block-title a")).Click();
-            List<IWebElement> CategoryElements = new List<IWebElement>();
-            CategoryElements.AddRange(driver.FindElements(By.CssSelector(".article-page .article-block-category a")));
-            List<string> CategoryElementsName = new List<string>();
-            foreach (IWebElement element in CategoryElements)
-                CategoryElementsName.Add(element.Text.Trim().ToLower());
+            journalPage.SelectCategory(Topic);
+            List<string> CategoryElementsName = journalPage.GetFirstArticleCategories();
 
             using (new AssertionScope())
                 CategoryElementsName.Should().Contain(Topic.ToLower());
