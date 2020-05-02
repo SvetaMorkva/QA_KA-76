@@ -12,75 +12,57 @@ namespace QA_Lab2
     [TestFixture("electronics")]
     public class Customers
     {
-        private string url = "https://www.zoho.com/customers.html";
-        private string industry;
-        private ChromeDriver driver;
-        private WebDriverWait wait;
-        private IWebElement clearAll;
-        private SelectElement selectBoxIndustry;
+        private readonly string industryValue;
+        CustomerPage _CustomerPage;
+        ChromeDriver Driver;
 
         public Customers(string _industry)
         {
-            industry = _industry;
+            industryValue = _industry;
         }
 
         [SetUp]
         public void Initialize()
         {
-            driver = new ChromeDriver();
-            driver.Navigate().GoToUrl(url);
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+            Driver = new ChromeDriver();
+            _CustomerPage = new CustomerPage(Driver);
 
-            clearAll = driver.FindElement(By.CssSelector(".reset-filter"));
-
-            wait.Until(d => driver.FindElement(By.CssSelector(".filter.industry")));
-            selectBoxIndustry = new SelectElement(driver.FindElement(By.CssSelector(".filter.industry")));
-            wait.Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(By.CssSelector(".filter.industry"))));
-            wait.Until(d => selectBoxIndustry.Options.Count > 50);
-            selectBoxIndustry.SelectByValue(industry);
-            wait.Until(d => driver.FindElements(By.CssSelector("div[class$='reset-filter']")).Count == 0);
+            _CustomerPage
+                .OpenCustomerPage()
+                .SelectValueInIndustryDropDown(industryValue)
+                .WaitUntiTransparentClearAllButtonDisappeared();
         }
 
         [Test]
-        public void FilterByIndustry_ShouldLeaveAutomotiveArticles()
+        public void FilterByIndustry_ShouldLeaveSelectedIndustryArticles()
         {
-            var articlesIndustry = driver.FindElements(By.CssSelector("[class*=" + industry + "]"));
+            _CustomerPage.GetArticlesOfSelectedIndustry(industryValue);
 
-            bool allIndustryArticlesDisplayed = true;
-            foreach(var a in articlesIndustry)
-            {
-                if (!a.Displayed)
-                {
-                    allIndustryArticlesDisplayed = false;
-                    break;
-                }
-            }
-
-            Assert.IsTrue(allIndustryArticlesDisplayed);
+            Assert.IsTrue(_CustomerPage.ArticlesOfSelectedIndustryIsVisible());
         }
 
         [Test]
         public void FilterByIndustry_ShouldClearBeVisible()
         {
-            Assert.IsTrue(clearAll.Enabled && clearAll.Displayed);
+            Assert.IsTrue(_CustomerPage.ClearAllButtonIsVisible);
         }
 
         [Test]
         public void ClearClick_ShouldUnsetSelect_RemoveClearAllButton()
         {
-            Actions actions = new Actions(driver);
-            actions.MoveToElement(clearAll, 1, 1).Click().Build().Perform();
+            _CustomerPage
+                .OnClearAllButtonClick()
+                .WaitUntiTransparentClearAllButtonCreated();
 
-            wait.Until(d => driver.FindElements(By.CssSelector("div[class$='reset-filter']")));
-
-            Assert.IsTrue(!clearAll.Displayed);
-            Assert.IsTrue(selectBoxIndustry.SelectedOption.Text == "Industry");
+            Assert.IsTrue(
+                _CustomerPage.CheckTextOfIndustryDropDown("Industry") 
+                && ! _CustomerPage.ClearAllButton.Displayed);
         }
 
         [TearDown]
         public void CleanUp()
         {
-            driver.Quit();
+            Driver.Quit();
         }
     }
 }
