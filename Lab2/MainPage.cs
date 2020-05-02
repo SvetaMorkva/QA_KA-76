@@ -9,6 +9,7 @@ namespace Lab2
     public class MainPage
     {
         private IWebDriver driver;
+        private WebDriverWait wait;
 
         public MainPage(IWebDriver driver)
         {
@@ -28,7 +29,8 @@ namespace Lab2
 
         public MainPage GoToLeftPart()
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+
             wait.Until(ExpectedConditions.ElementToBeClickable(LeftPart));
             LeftPart.Click();
             Thread.Sleep(3000);
@@ -39,7 +41,8 @@ namespace Lab2
 
         public MainPage GoToRightPart()
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+
             wait.Until(ExpectedConditions.ElementToBeClickable(RightPart));
             RightPart.Click();
             return this;
