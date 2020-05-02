@@ -35,9 +35,8 @@ namespace Lab2
             driver.Navigate().GoToUrl(_url);
             new WebDriverWait(driver, TimeSpan.FromSeconds(5)).Until(d => d.Url == _url);
 
-            WaitForFindElement(driver, By.CssSelector(".left a")).Click();
-            Thread.Sleep(3000);
-            WaitForFindElement(driver ,By.CssSelector(".cities-popup li:nth-of-type(1)")).Click();
+            var mainPage = new MainPage(driver);
+            mainPage.GoToLeftPart();
         }
 
         [TearDown]

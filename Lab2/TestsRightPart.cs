@@ -33,8 +33,8 @@ namespace Lab2
             driver.Navigate().GoToUrl(_url);
             new WebDriverWait(driver, TimeSpan.FromSeconds(5)).Until(d => d.Url == _url);
 
-            WaitForFindElement(driver, By.CssSelector(".right a")).Click();
-            Thread.Sleep(1000);
+            var mainPage = new MainPage(driver);
+            mainPage.GoToRightPart();
         }
 
         [TearDown]

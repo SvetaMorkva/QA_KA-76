@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainPage.cs" />
     <Compile Include="TestsLeftPart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestsRightPart.cs" />
