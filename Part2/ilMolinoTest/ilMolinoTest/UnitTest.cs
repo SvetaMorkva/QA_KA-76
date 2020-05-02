@@ -137,9 +137,10 @@ namespace ilMolinoTest
             Assert.IsTrue(flags, "There is no item in the box");
         }
         
-        [Test]
-        public void TestBuyPizzaWithIngredientsInSiteIlMolino()
+        [TestCase ("+ Філе курки - 47 грн")]
+        public void TestBuyPizzaWithIngredientsInSiteIlMolino(string ingredient)
         {
+            bool flags = false;
             string url = "https://ilmolino.ua/delivery/pizza/milano.html";
             _driver.Navigate().GoToUrl(url);
             var milanoPage = new MilanoPage(_driver);
@@ -151,6 +152,7 @@ namespace ilMolinoTest
             Thread.Sleep(3000);
             string expectedPrice = "264";
             string price = milanoPage.Price;
+            flags = expectedPrice == price && milanoPage.CheckListIngredients(ingredient);
             Assert.AreEqual(expectedPrice, price, "There is no item in the box");
         }
         
@@ -258,7 +260,7 @@ namespace ilMolinoTest
             }
             Assert.IsTrue(flags, "There is no item in the box");
         }
-        
+
         [TestCase("EN", "EN")]
         [TestCase("RU", "RU")]
         [TestCase("UA", "UA")]
