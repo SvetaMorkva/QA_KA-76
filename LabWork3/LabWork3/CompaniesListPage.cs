@@ -47,18 +47,18 @@ namespace LabWork3.Pages
 
         public CompanyPage AddCompany(String domain, String name, String description = " ")
         {
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(ADD_COMPANY_BUTTON_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(ADD_COMPANY_BUTTON_CSS)));
             AddCompanyButton.Click();
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(DOMAIN_NAME_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(DOMAIN_NAME_CSS)));
 
             domainName.SendKeys(domain);
             companyName.SendKeys(name);
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(COMPANY_DESCRIPTION_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(COMPANY_DESCRIPTION_CSS)));
             companyDescription.SendKeys(description);
 
             createCompanyButton.Click();
 
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementIsVisible(By.CssSelector(CompanyPage.COMPANY_TITLE_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementIsVisible(By.CssSelector(CompanyPage.COMPANY_TITLE_CSS)));
             return new CompanyPage(_driver);
         }
 

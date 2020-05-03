@@ -122,7 +122,7 @@ namespace LabWork3.Pages
             {
                 deleteTaskButtons[i].Click();
                 Thread.Sleep(10000);
-                new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementIsVisible(By.CssSelector(CONFIRM_TASK_DELETION_CSS)));
+                new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementIsVisible(By.CssSelector(CONFIRM_TASK_DELETION_CSS)));
                 confirmTasksDeletionButton.Click();
             }
 
@@ -133,7 +133,7 @@ namespace LabWork3.Pages
         public GoogleSearchResultsPage SearchInGoogle()
         {
             profileSettingsButton.Click();
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(SEARCH_IN_GOOGLE_BUTTON_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(SEARCH_IN_GOOGLE_BUTTON_CSS)));
             searchInGoogleButton.Click();
             Thread.Sleep(5000);
             _driver.SwitchTo().Window(_driver.WindowHandles[1]);
@@ -143,19 +143,19 @@ namespace LabWork3.Pages
         public string GetGoogleSearchLink()
         {
             profileSettingsButton.Click();
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(SEARCH_IN_GOOGLE_BUTTON_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(SEARCH_IN_GOOGLE_BUTTON_CSS)));
             return searchInGoogleButton.GetAttribute("href");
         }
 
         public ContactPage LogMeeting(String meetingDesription)
         {
             createEventButton.Click();
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(ADD_MEETING_EVENT_BUTTON_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(ADD_MEETING_EVENT_BUTTON_CSS)));
             AddMeetingButton.Click();
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(EVENT_TITLE_FIELD_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(EVENT_TITLE_FIELD_CSS)));
             eventTitleField.SendKeys(meetingDesription);
 
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(SAVE_EVENT_BUTTON_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(SAVE_EVENT_BUTTON_CSS)));
             saveEventButton.Click();
             Thread.Sleep(2000);
 
@@ -165,12 +165,12 @@ namespace LabWork3.Pages
         public ContactPage LogCall(String meetingDesription)
         {
             createEventButton.Click();
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(ADD_CALL_EVENT_BUTTON_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(ADD_CALL_EVENT_BUTTON_CSS)));
             addCallButton.Click();
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(EVENT_TITLE_FIELD_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(EVENT_TITLE_FIELD_CSS)));
             eventTitleField.SendKeys(meetingDesription);
 
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(SAVE_EVENT_BUTTON_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(SAVE_EVENT_BUTTON_CSS)));
             saveEventButton.Click();
             Thread.Sleep(2000);
 
@@ -181,12 +181,12 @@ namespace LabWork3.Pages
         public ContactPage LogEmail(String meetingDesription)
         {
             createEventButton.Click();
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(ADD_EMAIL_EVENT_BUTTON_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(ADD_EMAIL_EVENT_BUTTON_CSS)));
             addEmailButton.Click();
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(EVENT_TITLE_FIELD_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(EVENT_TITLE_FIELD_CSS)));
             eventTitleField.SendKeys(meetingDesription);
 
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(SAVE_EVENT_BUTTON_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(SAVE_EVENT_BUTTON_CSS)));
             saveEventButton.Click();
             Thread.Sleep(2000);
 
@@ -195,7 +195,7 @@ namespace LabWork3.Pages
 
         public IList<IWebElement> GetAllEvents()
         {
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementIsVisible(By.CssSelector(ALL_EVENTS_TITLES_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementIsVisible(By.CssSelector(ALL_EVENTS_TITLES_CSS)));
             Thread.Sleep(10000);
             return allEvents;
         }

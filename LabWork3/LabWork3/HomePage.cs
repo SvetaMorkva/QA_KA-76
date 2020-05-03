@@ -38,24 +38,24 @@ namespace LabWork3.Pages
         public CompaniesListPage OpenCompaniesList(int userID = 7486179)
         {
             _driver.Navigate().GoToUrl($"https://app.hubspot.com/contacts/{userID}/companies/");
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementIsVisible(By.ClassName(CompaniesListPage.COMPANIES_TABLE_CLASSNAME)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementIsVisible(By.ClassName(CompaniesListPage.COMPANIES_TABLE_CLASSNAME)));
             return new CompaniesListPage(_driver);
         }
 
         public ContactsListPage OpenContactsList()
         {
             _driver.Navigate().GoToUrl("https://app.hubspot.com/contacts/");
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementIsVisible(By.ClassName(CompaniesListPage.COMPANIES_TABLE_CLASSNAME)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementIsVisible(By.ClassName(CompaniesListPage.COMPANIES_TABLE_CLASSNAME)));
             return new ContactsListPage(_driver);
         }
 
         public LoginPage SignOut()
         {
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementIsVisible(By.Id(ACCOUNT_MENU_ID)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementIsVisible(By.Id(ACCOUNT_MENU_ID)));
             accountMenu.Click();
             signOut.Click();
 
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementIsVisible(By.Id(LoginPage.USER_NAME_TEXT_FIELD_ID)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementIsVisible(By.Id(LoginPage.USER_NAME_TEXT_FIELD_ID)));
             return new LoginPage(_driver);
         }
 

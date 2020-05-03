@@ -46,7 +46,7 @@ namespace LabWork3.Pages
             passwordField.Clear();
             passwordField.SendKeys(password);
             loginButton.Click();
-            Thread.Sleep(10000);
+            Thread.Sleep(20000);
             return new HomePage(_driver);
         }
     }

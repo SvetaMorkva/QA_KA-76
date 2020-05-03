@@ -67,18 +67,18 @@ namespace LabWork3.Pages
         {
 
             createContactButton.Click();
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(EMAIL_FIELD_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(EMAIL_FIELD_CSS)));
 
             emailField.SendKeys(email);
             firstnameField.SendKeys(firstName);
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(JOBTITLE_FIELD_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(JOBTITLE_FIELD_CSS)));
 
             jotTitleField.SendKeys(jobTitle);
             phoneField.SendKeys(phoneNumber);
 
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(CREATE_BUTTON_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(CREATE_BUTTON_CSS)));
             createButton.Click();
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementIsVisible(By.CssSelector(ContactPage.CONTACT_TITLE_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementIsVisible(By.CssSelector(ContactPage.CONTACT_TITLE_CSS)));
 
             return new ContactPage(_driver);
         }
@@ -101,11 +101,11 @@ namespace LabWork3.Pages
             {
                 checkboxes2Delete[i].Click();
             }
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(DELETE_CONTACTS_BUTTON_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(DELETE_CONTACTS_BUTTON_CSS)));
             deleteContacts.Click();
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(CONFIRT_DELETION_TEXTAREA_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(CONFIRT_DELETION_TEXTAREA_CSS)));
             confirmDeleteion.SendKeys(amount2Delete.ToString());
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(DELETE_BUTTON_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(DELETE_BUTTON_CSS)));
             deleteButton.Click();
             Thread.Sleep(2000);
 
@@ -115,7 +115,7 @@ namespace LabWork3.Pages
         public ContactPage OpenContactPage(int contactID)
         {
             _driver.Navigate().GoToUrl($"https://app.hubspot.com/contacts/7486179/contact/{contactID}/");
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(ContactPage.CREATE_TASK_BUTTON_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(60*5)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(ContactPage.CREATE_TASK_BUTTON_CSS)));
             return new ContactPage(_driver);
         }
 

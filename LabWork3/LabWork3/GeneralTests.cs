@@ -27,7 +27,7 @@ namespace LabWork3
             var greeting_page = loginPage
                 .LoadLoginPage()
                 .Login("vzalevskyi24@gmail.com", "P8naM$HWNe?JLC2");
-
+            
             // assert
             Assert.AreEqual("https://app.hubspot.com/getting-started/7486179", greeting_page.GetCurrntUrl());
         }
