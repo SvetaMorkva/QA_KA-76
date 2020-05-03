@@ -41,9 +41,8 @@ namespace LabWork3.Pages
 
         public CompaniesListPage OpenCompaniesList()
         {
-            //new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(OPEN_MENU_CSS)));
-            //openMenu.Click();
-            _driver.FindElement(By.CssSelector(OPEN_MENU_CSS)).Click();
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists(By.CssSelector(OPEN_MENU_CSS)));
+            openMenu.Click();
             openCompaniesListButton.Click();
             new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementIsVisible(By.ClassName(CompaniesListPage.COMPANIES_TABLE_CLASSNAME)));
             return new CompaniesListPage(_driver);
@@ -51,9 +50,8 @@ namespace LabWork3.Pages
 
         public ContactsListPage OpenContactsList()
         {
-            //new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(OPEN_MENU_CSS)));
-            //openMenu.Click();
-            _driver.FindElement(By.CssSelector(OPEN_MENU_CSS)).Click();
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists(By.CssSelector(OPEN_MENU_CSS)));
+            openMenu.Click();
             openContactsListButton.Click();
             new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementIsVisible(By.ClassName(ContactsListPage.CONTACTS_TABLE_CLASSNAME)));
             return new ContactsListPage(_driver);
