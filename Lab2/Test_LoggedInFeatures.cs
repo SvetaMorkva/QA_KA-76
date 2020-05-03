@@ -7,6 +7,9 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 
+using Lab2.Pages;
+
+
 
 namespace Lab2
 {
@@ -17,9 +20,9 @@ namespace Lab2
         public WebDriverWait wait;
         public IJavaScriptExecutor executor;
 
-        private string testingEmail = "hivawom996@whmailtop.com";
+        private string testingEmail = "liniha1437@whmailtop.com";
         private string testingPass = "sepiajet";
-        private string testingAccountUrl = "https://crm.zoho.com/crm/org714226421/";
+        private string testingAccountUrl = "https://crm.zoho.com/crm/org714368552/";
 
 
         private string taskToSearch = "";
@@ -32,7 +35,7 @@ namespace Lab2
             options.AddArguments("--disable-application-cache"); // to disable cache
 
             driver = new ChromeDriver(options);
-            driver.Navigate().GoToUrl("https://accounts.zoho.eu/signin?servicename=ZohoHome&signupurl=https://www.zoho.com/signup.html");
+            driver.Manage().Window.Maximize();
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
             executor = (IJavaScriptExecutor)driver;
         }
@@ -41,38 +44,15 @@ namespace Lab2
         public void LoginWindow_ShouldLogin()
         {
             //arange
-            IWebElement loginLineEdit = driver.FindElement(By.Id("login_id"));
-            IWebElement nextButton = driver.FindElement(By.Id("nextbtn"));
-
+            LogInPage logInPage = new LogInPage(driver, wait);
+            logInPage.GoToUrl();
             //act
-            loginLineEdit.SendKeys(testingEmail);
-            nextButton.Click();
-            System.Threading.Thread.Sleep(5000);
-            IWebElement passwordLineEdit = driver.FindElement(By.Id("password"), 10);
-            passwordLineEdit.SendKeys(testingPass);
-            System.Threading.Thread.Sleep(1000);
-            nextButton = driver.FindElement(By.Id("nextbtn"), 5);
-            nextButton.Click();
 
-            IWebElement skipWarningbtn = null;
-            try
-            {
-                skipWarningbtn = driver.FindElement(By.ClassName("skip_btn"), 5);
-            }
-            catch (WebDriverException ex) 
-            {
-                //do nothing
-            }
-
-            if(skipWarningbtn != null)
-            {
-                skipWarningbtn.Click();
-                System.Threading.Thread.Sleep(2000);
-            }
+            logInPage.LogIn(testingEmail, testingPass);
 
             //assert
-            string userEmail = driver.FindElement(By.Id("ztb-user-id"), 10).GetAttribute("ztooltip");
-            Assert.AreEqual(testingEmail, userEmail, "Couldn't login");
+            System.Threading.Thread.Sleep(3000);
+            Assert.AreEqual(testingEmail, logInPage.EmailAfterLogin, "Couldn't login");
         }
 
         [Test, Order(2)]
@@ -83,110 +63,55 @@ namespace Lab2
             Random rnd = new Random();
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             taskToSearch = "Test Task (" + new string(Enumerable.Repeat(chars, 5).Select(s => s[rnd.Next(s.Length)]).ToArray()) + ")";
+
             dateNow.AddDays(5);
             string dateToString = dateNow.ToString("MMM d, yyyy");
             List<string> contactList = new List<string> { "Kris Marrier (Sample) ", "Sage Wieser (Sample) ", "Mitsue Tollner (Sample) ", "James Venere (Sample) " };
             string contact = contactList[rnd.Next(contactList.Count)];
 
-            driver.Navigate().GoToUrl(testingAccountUrl + "tab/Activities/create?sub_module=Tasks");
-            wait.Until(driver => (executor.ExecuteScript("return document.readyState").Equals("complete")));
-
-            IWebElement subjectInput = driver.FindElement(By.Id("Crm_Tasks_SUBJECT"), 5);
-            IWebElement dueDateInput = driver.FindElement(By.Id("Crm_Tasks_DUEDATE"), 5);
-            IWebElement dueDateLabelDummy = driver.FindElement(By.Id("Crm_Tasks_DUEDATE_label"), 5);
-            IWebElement contactInput = driver.FindElement(By.Id("Crm_Tasks_CONTACTID"), 5);
-            IWebElement saveBtn = driver.FindElement(By.Id("saveTasksBtn"), 5);
+            CreateTaskPage taskCreationPage = new CreateTaskPage(driver, wait);
+            taskCreationPage.GoToUrl(testingAccountUrl + "tab/Activities/create?sub_module=Tasks");
 
             //act
-            subjectInput.SendKeys(taskToSearch);
-            dueDateInput.SendKeys(dateToString);
-            dueDateLabelDummy.Click();
-            contactInput.Click();
-            IWebElement contactUIList = driver.FindElement(By.XPath($"//ul[@class=\"ui-menu ui-widget ui-widget-content ui-autocomplete ui-front lookupFieldULlist\"]/li/a/span[text()=\"{contact}\"]"), 5);
-            wait.Until(dr => contactUIList.Displayed);
-            contactUIList.Click();
-            saveBtn.Click();
-
+            taskCreationPage.CreateTask(taskToSearch, dateToString, contact);
+            
             //assert
             System.Threading.Thread.Sleep(5000); // wait for task to create
-            wait.Until(driver => (executor.ExecuteScript("return document.readyState").Equals("complete")));
-            string subjectLabel = driver.FindElement(By.Id("subvalue_SUBJECT"), 10).Text;
-            string dueLabel = driver.FindElement(By.Id("subvalue_DUEDATE"), 5).Text;
-            string contactLabel = driver.FindElement(By.Id("subvalue_CONTACTID"), 5).Text;
-
-            Assert.IsTrue(subjectLabel == taskToSearch, $"Subject's name do not match, got: {subjectLabel}");
-            Assert.IsTrue(dueLabel == dateToString, $"Due date do not match, got: {dueLabel}");
-            Assert.IsTrue(contactLabel == contact.TrimEnd(), $"Contacts do not match, got: {contactLabel}");
+            Assert.AreEqual(taskToSearch , taskCreationPage.subjectLabelValue, "Subject's name do not match");
+            Assert.AreEqual(dateToString, taskCreationPage.dueLabelValue, "Due date do not match");
+            Assert.AreEqual(contact.TrimEnd(), taskCreationPage.contactLabelValue, "Contacts do not match");
         }
 
         [Test, Order(3)]
         public void Search_ShouldDisplaySearchResult()
         {
             //arrange
-            System.Threading.Thread.Sleep(8000); // wait for task to create
-            driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl(testingAccountUrl + "tab/Activities");
-            wait.Until(driver => (executor.ExecuteScript("return document.readyState").Equals("complete")));
-
+            System.Threading.Thread.Sleep(8000); // wait for task to create and appear on page (thanks, zoho)
+            ActivitiesPage activitiesPage = new ActivitiesPage(driver, wait);
+            activitiesPage.GoToUrl(testingAccountUrl + "tab/Activities");
 
             //act
-            ReadOnlyCollection<IWebElement> tasksList = driver.FindElements(By.XPath("//ul[@id=\"RelatedTo_Container\"]/li/div/div/div/span/a/span[@id=\"Subject\"]"));
+            bool found = activitiesPage.SearchForTask(taskToSearch);
 
             //assert
-            bool taskFound = false;
-            string actualTaskName = "";
-            foreach(var task in tasksList)
-            {
-                if(task.Text == taskToSearch)
-                {
-                    actualTaskName = task.Text;
-                    taskFound = true;
-                }
-            }
-
-            Assert.IsTrue(taskFound, $"Task wasn't found: expected:{taskToSearch}, got: {actualTaskName}");
+            Assert.IsTrue(found, $"Task wasn't found: expected:{taskToSearch}");
         }
 
         [Test, Order(4)]
         public void Delete_ShouldDeleteTask()
         {
             //arange
-            driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl(testingAccountUrl + "tab/Activities");
-            wait.Until(driver => (executor.ExecuteScript("return document.readyState").Equals("complete")));
-            IWebElement taskToDelete = null;
-            IWebElement customizeTools = null;
-            IWebElement deleteBtn = null;
-            IWebElement popUpDelete = null;
+            ActivitiesPage activitiesPage = new ActivitiesPage(driver, wait);
+            activitiesPage.GoToUrl(testingAccountUrl + "tab/Activities");
 
             System.Threading.Thread.Sleep(2000);
-            //act  //ul[@id="RelatedTo_Container"]/li/div/div/div/span/a[span[@title="Test Task (ZUPG2)"]]
-            taskToDelete = driver.FindElement(By.XPath($"//ul[@id=\"RelatedTo_Container\"]/li/div/div/div/span/a[span[@title=\"{taskToSearch}\"]]"), 10);
-            taskToDelete.Click();
-            customizeTools = driver.FindElement(By.Id("CustomizeTools"), 10); 
-            customizeTools.Click();
-
-            deleteBtn = driver.FindElement(By.XPath("//a[@name=\"Delete2\"]"), 10);
-            executor.ExecuteScript("arguments[0].click();", deleteBtn);
-
-            System.Threading.Thread.Sleep(2000);
-            popUpDelete = driver.FindElement(By.Id("deleteButton"), 10);
-            popUpDelete.Click();
-
+            //act
+            activitiesPage.DeleteTask(taskToSearch);
             System.Threading.Thread.Sleep(5000);
 
             //assert
-            bool taskFound = false;
-            ReadOnlyCollection<IWebElement> tasksList = driver.FindElements(By.XPath("//ul[@id=\"RelatedTo_Container\"]/li/div/div/div/span/a/span[@id=\"Subject\"]"));
-            foreach (var task in tasksList)
-            {
-                if (task.Text == taskToSearch)
-                {
-                    taskFound = true;
-                }
-            }
-
-            Assert.IsFalse(taskFound, "Task wasn't deleted");
+            bool found = activitiesPage.SearchForTask(taskToSearch);
+            Assert.IsFalse(found, "Task wasn't deleted");
 
         }
 
@@ -194,47 +119,20 @@ namespace Lab2
         public void ProfileEdit_ShouldEditPersonalData()
         {
             //arrange
-            driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl("https://accounts.zoho.com/home#profile/personal");
-            wait.Until(driver => (executor.ExecuteScript("return document.readyState").Equals("complete")));
-            System.Threading.Thread.Sleep(2000);
-            IWebElement editprofileBtn = driver.FindElement(By.Id("editprofile"), 10);
-
-            editprofileBtn.Click();
-
             string fName = "fNmame";
             string sName = "sName";
             string nName = "nName";
-
-            IWebElement firstNameInput = driver.FindElement(By.Id("profile_Fname_edit"), 5);
-            IWebElement secondNameInput = driver.FindElement(By.Id("profile_Lname_edit"), 5);
-            IWebElement nickNameInput = driver.FindElement(By.Id("profile_nickname"), 5);
-
-            IWebElement saveBtn = driver.FindElement(By.Id("saveprofile"), 5);
-
-            string fullNameLabel = "";
-            string nickNameLabel = "";
+            ProfilePage profilePage = new ProfilePage(driver, wait);
+            profilePage.GoToUrl();
 
             //act
-            firstNameInput.Clear();
-            firstNameInput.SendKeys(fName);
-
-            secondNameInput.Clear();
-            secondNameInput.SendKeys(sName);
-
-            nickNameInput.Clear();
-            nickNameInput.SendKeys(nName);
-
-            saveBtn.Click();
+            System.Threading.Thread.Sleep(2000);
+            profilePage.EditProfile(fName, sName, nName);
+            System.Threading.Thread.Sleep(2000);
 
             //assert
-            System.Threading.Thread.Sleep(2000);
-            fullNameLabel = driver.FindElement(By.Id("profile_name_edit"), 5).GetAttribute("value");
-            nickNameLabel = driver.FindElement(By.Id("profile_nickname"), 5).GetAttribute("value");
-
-            Assert.IsTrue(fullNameLabel == (fName + " " + sName), $"Full name incorrect: got:{fullNameLabel}");
-            Assert.IsTrue(nickNameLabel == nName, $"Nick name incorrect: got:{nickNameLabel}");
-
+            Assert.AreEqual((fName + " " + sName), profilePage.fullNameLabelValue, "Full name incorrect");
+            Assert.AreEqual(nName, profilePage.nickNameLabelValue, "Nick name incorrect");
         }
 
 
@@ -242,61 +140,37 @@ namespace Lab2
         public void SmartChat_ShouldOpenTab()
         {
             //arrange
-            driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl(testingAccountUrl + "tab/Home/begin");
-            wait.Until(driver => (executor.ExecuteScript("return document.readyState").Equals("complete")));
+            HomePage homePage = new HomePage(driver, wait);
+            homePage.GoToUrl(testingAccountUrl + "tab/Home/begin");
 
             //act
-            IWebElement body = driver.FindElement(By.XPath("//body[@class=\"crmBodyWin\"]"), 10);
-            body.SendKeys(Keys.Control + Keys.Space);
-            IWebElement smartChatWindow = driver.FindElement(By.Id("wms-hysearch"), 10);
-            wait.Until(dr => smartChatWindow.Displayed && smartChatWindow.Enabled);
-            var searchHeaders = driver.FindElements(By.ClassName("wms-hysearch-resheading"));
+            homePage.OpenSmartChat();
 
             //assert
-            Assert.IsTrue(searchHeaders.First().Text == "Chats");
-            Assert.IsTrue(searchHeaders.Last().Text == "Contacts");
-            
+            bool opened = homePage.IsSmartChatOpened();
+            Assert.IsTrue(opened, "Smart chat not opened");
         }
 
         [Test, Order(7)]
         public void Status_ShouldChangeAccountStatus()
         {
             //arrange
-            driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl(testingAccountUrl + "tab/Home/begin");
-            wait.Until(driver => (executor.ExecuteScript("return document.readyState").Equals("complete")));
+            HomePage homePage = new HomePage(driver, wait);
+            homePage.GoToUrl(testingAccountUrl + "tab/Home/begin");
+            string status = "test status " + DateTime.Now.ToString("MMM d, yyyy");
 
             //act
-            IWebElement menuBar = driver.FindElement(By.XPath("//div[@id=\"wms_menubar\"]/span[@title=\"Contacts\"]"), 10);
-            menuBar.Click();
-            System.Threading.Thread.Sleep(2000);
-            IWebElement contactsMenu = driver.FindElement(By.XPath("//div[@id=\"wms_menu\"]"), 10);
-            wait.Until(dr => contactsMenu.Displayed && contactsMenu.Enabled);
-            IWebElement statusDiv = driver.FindElement(By.XPath("//div[@id=\"wms_menu_userstatus\"]"), 10);
-            statusDiv.Click();
-            System.Threading.Thread.Sleep(2000);
-            IWebElement statusEditor = driver.FindElement(By.Id("wms_menu_statuseditor"), 10);
-            wait.Until(dr => statusEditor.Displayed && statusEditor.Enabled);
-            statusEditor.SendKeys(Keys.Control + "a");
-            System.Threading.Thread.Sleep(2000);
-            statusEditor.SendKeys("test status");
-            System.Threading.Thread.Sleep(2000);
-            statusEditor.SendKeys(Keys.Enter);
-            System.Threading.Thread.Sleep(2000);
-
+            homePage.OpenStatusBar();
+            homePage.ChangeStatus(status);
             //assert
-            string status = driver.FindElement(By.XPath("//div[@id=\"wms_menu_userstatus\"]"), 10).Text;
-            Assert.IsTrue(status == "test status");
+            Assert.AreEqual(status, homePage.statusValue, "Status not set");
         }
 
 
         [OneTimeTearDown]
         public void CleanUp()
         {
-            IWebElement signOut = driver.FindElement(By.ClassName("pp_expand_signout"), 10);
-            executor.ExecuteScript("arguments[0].click();", signOut);
-            System.Threading.Thread.Sleep(4000);
+            var tmp = driver.Manage().Cookies.AllCookies;
             driver.Quit();
         }
     }

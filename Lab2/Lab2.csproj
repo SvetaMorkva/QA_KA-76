@@ -55,6 +55,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\ActivitiesPage.cs" />
+    <Compile Include="Pages\CreateTaskPage.cs" />
+    <Compile Include="Pages\HomePage.cs" />
+    <Compile Include="Pages\LogInPage.cs" />
+    <Compile Include="Pages\ProfilePage.cs" />
+    <Compile Include="Pages\SignUpPage.cs" />
     <Compile Include="Test_LoggedInFeatures.cs" />
     <Compile Include="Test_SignUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
