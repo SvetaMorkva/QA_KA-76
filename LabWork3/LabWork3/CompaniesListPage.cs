@@ -11,7 +11,6 @@ namespace LabWork3.Pages
 
         public const string COMPANIES_MENU_ID = "nav-secondary-companies";
         public const string ADD_COMPANY_BUTTON_CSS = "button[data-selenium-test='new-object-button']";
-        public const string DATA_WINDOW_ID = "UIFormControl-26";
         public const string DOMAIN_NAME_CSS = "input[data-field='domain']";
         public const string COMPANY_NAME_CSS = "input[data-field='name']";
         public const string COMPANY_DESCRIPTION_CSS = "textarea[data-field='description']";
@@ -50,7 +49,7 @@ namespace LabWork3.Pages
         {
             new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(ADD_COMPANY_BUTTON_CSS)));
             AddCompanyButton.Click();
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementIsVisible(By.Id(DATA_WINDOW_ID)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(DOMAIN_NAME_CSS)));
 
             domainName.SendKeys(domain);
             companyName.SendKeys(name);

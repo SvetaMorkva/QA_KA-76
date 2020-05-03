@@ -5,7 +5,7 @@ using System;
 
 namespace LabWork3.Pages
 {
-    public class GreetinPage
+    public class HomePage
     {
         private IWebDriver _driver;
 
@@ -31,7 +31,7 @@ namespace LabWork3.Pages
         [FindsBy(How = How.Id, Using = CONTACTS_MENU_ID)]
         public IWebElement openContactsListButton;
 
-        public GreetinPage(IWebDriver driver)
+        public HomePage(IWebDriver driver)
         {
             _driver = driver;
             PageFactory.InitElements(driver, this);

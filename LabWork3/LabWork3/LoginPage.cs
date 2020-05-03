@@ -39,7 +39,7 @@ namespace LabWork3.Pages
             return this;
         }
 
-        public GreetinPage Login(String username, string password)
+        public HomePage Login(String username, string password)
         {
             usernameField.Clear();
             usernameField.SendKeys(username);
@@ -47,7 +47,7 @@ namespace LabWork3.Pages
             passwordField.SendKeys(password);
             loginButton.Click();
             Thread.Sleep(10000);
-            return new GreetinPage(_driver);
+            return new HomePage(_driver);
         }
     }
 }
