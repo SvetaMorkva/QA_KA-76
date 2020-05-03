@@ -4,64 +4,52 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 
+using Lab2.PageObjects;
+
 namespace QA_Lab2
 {
     [TestFixture]
     public class SignUp
     {
-        private string url = "https://www.zoho.com/signup.html";
-        private ChromeDriver driver;
-        private WebDriverWait wait;
-        private IWebElement signUpButton;
+        private ChromeDriver Driver;
+        private SignupPage _SignUpPage;
 
         [SetUp]
         public void Initialize()
         {
-            driver = new ChromeDriver();
-            driver.Navigate().GoToUrl(url);
+            Driver = new ChromeDriver();
+            _SignUpPage = new SignupPage(Driver);
 
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
-            signUpButton = driver.FindElement(By.CssSelector(".signupbtn"));
+            _SignUpPage
+                .OpenSignUpPage()
+                .WaitUntilSignUpButtonClickable();
         }
         
 
         [Test]
         public void SignUp_WithoutFilling_ShouldMadeErrorVisible()
         {
-            System.Threading.Thread.Sleep(7000);
-            signUpButton.Click();
+            _SignUpPage
+                .OnSignUpButtonClick()
+                .WaitUntilErrorMsgCreated();
 
-            wait.Until(d => driver.FindElements(By.CssSelector(".testdrivetext .field-msg")).Count == 3);
-            var errorMsg = driver.FindElements(By.CssSelector(".testdrivetext .field-msg"));
-
-            bool errorsDisplayed = true;
-            foreach (var e in errorMsg)
-            {
-                if (!e.Displayed)
-                {
-                    errorsDisplayed = false;
-                    break;
-                }
-            }
-
-            Assert.IsTrue(errorsDisplayed);
+            
+            Assert.IsTrue( _SignUpPage.CheckThatErrorMsgIsVisible() );
         }
 
         [Test]
         public void SignUp_ChangeCountry_ShouldMadeCountryVisible()
         {
-            var changeCountry = driver.FindElement(By.Id("zip-countryname-change"));
-            wait.Until(d => changeCountry.Enabled);
+            _SignUpPage
+                .OnChangeCountryButtonClick();
 
-            changeCountry.Click();
-
-            Assert.IsTrue(driver.FindElement(By.Id("country")).Displayed);
+            Assert.IsTrue( _SignUpPage.ChangeCountryDropDownIsVisible );
         }
 
         [TearDown]
         public void CleanUp()
         {
-            driver.Quit();
+            Driver.Quit();
         }
     }
 }

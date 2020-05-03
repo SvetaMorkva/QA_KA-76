@@ -5,7 +5,7 @@ using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections.Generic;
 
-namespace QA_Lab2
+namespace Lab2.PageObjects
 {
     class CustomerPage
     {

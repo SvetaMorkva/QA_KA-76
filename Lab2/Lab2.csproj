@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Base.cs" />
     <Compile Include="PageObjects\CustomerPage.cs" />
+    <Compile Include="PageObjects\SignupPage.cs" />
     <Compile Include="Profile.cs" />
     <Compile Include="Customers.cs" />
     <Compile Include="Login.cs" />

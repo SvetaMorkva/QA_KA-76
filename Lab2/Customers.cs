@@ -1,9 +1,6 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium.Interactions;
-using System;
+using Lab2.PageObjects;
 
 namespace QA_Lab2
 {
