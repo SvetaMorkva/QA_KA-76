@@ -15,6 +15,8 @@ namespace LabWork3
         public void TestInitialize()
         {
             driver = new ChromeDriver();
+            driver.Manage().Window.Maximize();
+
         }
 
         [Test]
