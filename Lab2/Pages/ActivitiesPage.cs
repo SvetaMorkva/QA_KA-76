@@ -49,7 +49,7 @@ namespace Lab2.Pages
             var taskToDelete = findTaskToDelete(taskName);
             taskToDelete.Click();
             System.Threading.Thread.Sleep(3000);
-            customizeTools.Click();
+            ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", customizeTools);
             ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", deleteBtn);
 
             System.Threading.Thread.Sleep(2000);

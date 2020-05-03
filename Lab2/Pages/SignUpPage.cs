@@ -65,7 +65,7 @@ namespace Lab2.Pages
             passField.SendKeys(password);
             phoneField.SendKeys(phone);
             _wait.Until(ExpectedConditions.ElementToBeClickable(termsCheckbox));
-
+            System.Threading.Thread.Sleep(1000);
             termsCheckbox.Click();
             signUpButton.Click();
         }
