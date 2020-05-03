@@ -107,6 +107,9 @@ namespace Lab2.PageObjects
         {
             new WebDriverWait(driver, TimeSpan.FromSeconds(20))
                 .Until(d => driver.FindElements(By.CssSelector("div[class$='reset-filter']")));
+
+            System.Threading.Thread.Sleep(2000);
+
             return this;
         }
     }

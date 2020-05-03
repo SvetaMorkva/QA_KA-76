@@ -18,14 +18,17 @@ namespace Lab2.PageObjects
             PageFactory.InitElements(browser, this);
         }
 
-        public string UserAccountEmail => UserAccountEmailLabel.Text;
-
         [FindsBy(How = How.CssSelector, Using = "[class*='ztb-p']")]
         public IWebElement UserAccountButton { get; set; }
 
         [FindsBy(How = How.Id, Using = "ztb-user-id")]
         public IWebElement UserAccountEmailLabel { get; set; }
 
+        [FindsBy(How = How.Id, Using = "ztb-myaccount")]
+        public IWebElement ToMyAccountButton { get; set; }
+
+
+        public string UserAccountEmail => UserAccountEmailLabel.Text;
 
         // act method
 
@@ -39,6 +42,14 @@ namespace Lab2.PageObjects
             return this;
         }
 
+        public UserAppsPage GoToMyAccountSettings()
+        {
+            new WebDriverWait(driver, TimeSpan.FromSeconds(20)).Until(ExpectedConditions.ElementToBeClickable(ToMyAccountButton));
+
+            Actions actions = new Actions(driver);
+            actions.MoveToElement(ToMyAccountButton, 1, 1).Click().Build().Perform();
+            return this;
+        }
 
         //additional method - for usability
 
@@ -48,5 +59,6 @@ namespace Lab2.PageObjects
 
             return this;
         }
+
     }
 }
