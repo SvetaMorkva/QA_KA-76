@@ -13,10 +13,10 @@ namespace LabWork3.Pages
         public const string SING_OUT_ID = "signout";
         public const string CONTACTS_MENU_ID = "nav-secondary-contacts";
         public const string COMPANIES_MENU_ID = "nav-secondary-companies";
-        public const string OPEN_MENU_ID = "nav-primary-contacts-branch";
+        public const string OPEN_MENU_CSS = ".expandable:nth-child(2) > #nav-primary-contacts-branch";
 
 
-        [FindsBy(How = How.Id, Using = OPEN_MENU_ID)]
+        [FindsBy(How = How.CssSelector, Using = OPEN_MENU_CSS)]
         public IWebElement openMenu;
 
         [FindsBy(How = How.Id, Using = ACCOUNT_MENU_ID)]
@@ -41,7 +41,7 @@ namespace LabWork3.Pages
 
         public CompaniesListPage OpenCompaniesList()
         {
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementIsVisible(By.Id(OPEN_MENU_ID)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementIsVisible(By.CssSelector(OPEN_MENU_CSS)));
             openMenu.Click();
             openCompaniesListButton.Click();
             new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementIsVisible(By.ClassName(CompaniesListPage.COMPANIES_TABLE_CLASSNAME)));
@@ -50,7 +50,7 @@ namespace LabWork3.Pages
 
         public ContactsListPage OpenContactsList()
         {
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementIsVisible(By.Id(OPEN_MENU_ID)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementIsVisible(By.CssSelector(OPEN_MENU_CSS)));
             openMenu.Click();
             openContactsListButton.Click();
             new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementIsVisible(By.ClassName(ContactsListPage.CONTACTS_TABLE_CLASSNAME)));
