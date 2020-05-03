@@ -122,6 +122,7 @@ namespace Lab2_pages.Pages
 
             new WebDriverWait(_driver, TimeSpan.FromSeconds(100)).Until(ExpectedConditions.ElementIsVisible(By.XPath(("/html/body/div[12]/div/div[5]/a[1]"))));
             notification.Click();
+            System.Threading.Thread.Sleep(500);
 
             return new UpdatePassword(_driver);
         }
