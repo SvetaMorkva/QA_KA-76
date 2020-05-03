@@ -54,6 +54,7 @@ namespace SeleniumAutoTests.PageObjects
 
 		internal object ChangeInfo(string newUsername)
 		{
+			SeleniumHelper.waitFor(driver, ChangeInfoLink);
 			ChangeInfoLink.Click();
 			ChangeInfoTitle.Clear();
 			ChangeInfoTitle.SendKeys(newUsername);
@@ -64,6 +65,7 @@ namespace SeleniumAutoTests.PageObjects
 
 		internal void GoToDownloadedFiles()
 		{
+			SeleniumHelper.waitFor(driver, DownloadedFilesLink);
 			DownloadedFilesLink.Click();
 		}
 
