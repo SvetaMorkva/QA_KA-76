@@ -72,6 +72,7 @@ namespace Lab2
             CreateTaskPage taskCreationPage = new CreateTaskPage(driver, wait);
             taskCreationPage.GoToUrl(testingAccountUrl + "tab/Activities/create?sub_module=Tasks");
 
+            System.Threading.Thread.Sleep(3000);
             //act
             taskCreationPage.CreateTask(taskToSearch, dateToString, contact);
             
@@ -91,6 +92,7 @@ namespace Lab2
             activitiesPage.GoToUrl(testingAccountUrl + "tab/Activities");
 
             //act
+
             bool found = activitiesPage.SearchForTask(taskToSearch);
 
             //assert

@@ -62,6 +62,7 @@ namespace Lab2.Pages
 
         public bool SearchForTask(string taskName)
         {
+            System.Threading.Thread.Sleep(3000);
             foreach (var task in tasksList)
             {
                 if (task.Text == taskName)

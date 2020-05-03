@@ -66,7 +66,7 @@ namespace Lab2.Pages
             IWebElement contactUIList = _driver.FindElement(By.XPath($"//ul[@class=\"ui-menu ui-widget ui-widget-content ui-autocomplete ui-front lookupFieldULlist\"]/li/a/span[text()=\"{contact}\"]"), 5);
             _wait.Until(dr => contactUIList.Displayed);
             contactUIList.Click();
-            System.Threading.Thread.Sleep(2000);
+            System.Threading.Thread.Sleep(3000);
             saveBtn.Click();
         }
     }   
