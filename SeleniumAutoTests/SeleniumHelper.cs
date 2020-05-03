@@ -20,7 +20,7 @@ namespace SeleniumAutoTests
 		}
 		public static void waitFor(IWebDriver driver, IWebElement element)
 		{
-			new WebDriverWait(driver, TimeSpan.FromSeconds(2))
+			new WebDriverWait(driver, TimeSpan.FromSeconds(20))
 			.Until(ExpectedConditions.ElementToBeClickable(element));
 		}
 	}
