@@ -6,6 +6,7 @@ using System.Diagnostics;
 using OpenQA.Selenium.Support.UI;
 using System.Linq;
 using System.Threading;
+using SeleniumAutoTests.PageObjects;
 
 
 namespace SeleniumAutoTests
@@ -25,11 +26,9 @@ namespace SeleniumAutoTests
 		public void TestInitialize()
 		{
 			driver = new ChromeDriver(Environment.CurrentDirectory);
+			var home = new HomePage(driver);
 			driver.Navigate().GoToUrl(homepage);
-			driver.FindElement(By.Id("AuthEmail")).SendKeys(email);
-			var input = driver.FindElement(By.Id("AuthPassword"));
-			input.SendKeys(password);
-			input.Submit();
+			home.Login(email, password);
 		}
 
 		[TearDown]
@@ -38,26 +37,14 @@ namespace SeleniumAutoTests
 			driver.Quit();
 		}
 
-	
-		public static void waitUntilExistsByXPath(IWebDriver driver, string selector)
-		{
-			new WebDriverWait(driver, TimeSpan.FromSeconds(10)).
-				Until(ExpectedConditions.ElementExists(By.XPath(selector)));
-		}
-		public static IWebElement smartFind(IWebDriver driver, string selector)
-		{
-			waitUntilExistsByXPath(driver, selector);
-			return driver.FindElement(By.XPath(selector));
-		}
-
 
 
 
 		[Test]
 		public void TestLogin()
 		{
-
-			var actual = driver.FindElement(By.XPath("//div[@class = 'welcome-box']/ul/li[1]/ins")).GetAttribute("innerText").Trim();
+			var home = new HomePage(driver);
+			var actual = home.GetUserName();
 			var expected = "wellcat";
 			Assert.AreEqual(expected, actual);
 		}
@@ -65,14 +52,10 @@ namespace SeleniumAutoTests
 		[Test]
 		public void TestNewInfo()
 		{
-			driver.Navigate().GoToUrl(homepage + "private/");
-			driver.FindElement(By.XPath("//a[@href ='/private/info-update/']")).Click();
-			var input = driver.FindElement(By.Name("Title"));
-			input.Clear();
-			input.SendKeys("wellcat");
-			input.Submit();
-
-			var actual = driver.FindElement(By.XPath("//div[contains(@class, 'content-container')]/h1")).GetAttribute("innerText").Trim();
+			var home = new HomePage(driver);
+			var profile = new ProfilePage(driver);
+			home.GoToProfilePage();
+			var actual = profile.ChangeInfo("wellcat");
 			var expected = "Данные профиля изменены";
 			Assert.AreEqual(expected, actual);
 		}
@@ -80,9 +63,11 @@ namespace SeleniumAutoTests
 		[Test]
 		public void TestLookAtDownloadedFiles()
 		{
-			driver.Navigate().GoToUrl(homepage + "private/");
-			driver.FindElement(By.XPath("//a[@href ='/private/files-downloaded/']")).Click();
-			var actual = driver.FindElement(By.TagName("h1")).GetAttribute("innerText").Trim();
+			var home = new HomePage(driver);
+			var profile = new ProfilePage(driver);
+			home.GoToProfilePage();
+			profile.GoToDownloadedFiles();
+			var actual = profile.GetDownloadedFilesTitle();
 			var expected = "Мои скачанные файлы";
 			Assert.AreEqual(expected, actual);
 		}
@@ -90,26 +75,24 @@ namespace SeleniumAutoTests
 		[Test]
 		public void TestFAQAndLeaveComment()
 		{
-			smartFind(driver, "//a[@href ='/about/faq/']").Click();
-			smartFind(driver, "//div[@class = 'add-link']/a").Click();
-			//sleep
-			//???
+			var home = new HomePage(driver);
+			var faq = new FAQPage(driver);
+			home.GoToFAQPage();
 			var comment = "Thanks for this site! Its great!";
-			var input = smartFind(driver, "//textarea[@class = 'markItUpEditor']");
-			input.SendKeys(comment);
-			input.Submit();
+		
+
 			try
 			{
-				var error = smartFind(driver, "//div[@class = 'validation-summary-valid']/ul/li[1]");
-				var errorMessage = "Вы добавили слишком много комментариев за короткий промежуток времени, пожалуйста подождите некоторое время перед отправкой";
-				Assert.AreEqual(errorMessage, error.Text);
+				var actual = faq.LeaveComment(comment);
+				var expected = comment;
+				Assert.AreEqual(expected, actual);
+
 			}
 			catch (Exception)
 			{
-
-				var actual = smartFind(driver, $"//div[@data-sender-id = '{profileId}']/div[contains(@class, 'bb')]").GetAttribute("innerText").Trim();
-				var expected = comment;
-				Assert.AreEqual(expected, actual);
+				var error = faq.GetErrorMessage();
+				var errorMessage = "Вы не можете оставить комментарий на этой странице";
+				Assert.AreEqual(errorMessage, error);
 			}
 			
 		}
@@ -117,46 +100,53 @@ namespace SeleniumAutoTests
 		[Test]
 		public void TestCreatePostInAccount()
 		{
-			driver.Navigate().GoToUrl(homepage + "private/");
-			smartFind(driver, "//a[@href ='/post/add/']").Click();
+			var home = new HomePage(driver);
+			var profile = new ProfilePage(driver);
+			home.GoToProfilePage();
+
 			var rand = new Random();
 			var title = "Test title" + rand.Next();
 			var text = "Test text" + rand.Next();
 
-			smartFind(driver, "//input[@id = 'Title']").SendKeys(title);
-			var input = smartFind(driver, "//textarea[@id = 'BB']");
-			input.SendKeys(text);
-			input.Submit();
+			profile.GoToCreatePost();
+			try
+			{
 
-			var actual = smartFind(driver, "//h1[@itemprop = 'name']").GetAttribute("innerText").Trim();
+
+			profile.CreatePost(title, text);
+			var actual = profile.GetPostTitle();	
 			var expected = title;
 			Assert.AreEqual(expected, actual);
+			}
+			catch (Exception)
+			{
+				var error = profile.GetErrorMessage();
+				var errorMessage = "Вы не можете создавать новые посты";
+				Assert.AreEqual(errorMessage, error);
+			}
 		}
 		[Test]
 		public void TestAddCommentToProfile()
 		{
-			//Given
-			driver.Navigate().GoToUrl(homepage + $"user/{profileId}/");
-			//When
-			driver.FindElement(By.XPath("//div[@class = 'add-link']/a")).Click();
-			//Then
+			var home = new HomePage(driver);
+			var publicAcc = new PublicProfilePage(driver);
+			home.GoToPublicProfilePage();
+
 			var comment = "Greate bro, thanks!";
-			var input = driver.FindElement(By.XPath("//textarea[@class = 'markItUpEditor']"));
-			input.SendKeys(comment);
-			input.Submit();
+
 
 			try
 			{
-				var error = driver.FindElement(By.XPath("//div[@class = 'validation-summary-valid']/ul/li[1]"));
-				var errorMessage = "Вы добавили слишком много комментариев за короткий промежуток времени, пожалуйста подождите некоторое время перед отправкой";
-				Assert.AreEqual(errorMessage, error.Text);
+				var actual = publicAcc.LeaveComment(comment);
+				var expected = comment;
+				Assert.AreEqual(expected, actual);
+
 			}
 			catch (Exception)
 			{
-
-				var actual = driver.FindElement(By.XPath($"//div[@data-sender-id = '{profileId}']/div[contains(@class, 'bb')]")).GetAttribute("innerText").Trim();
-				var expected = comment;
-				Assert.AreEqual(expected, actual);
+				var error = publicAcc.GetErrorMessage();
+				var errorMessage = "Вы не можете оставить комментарий на этой странице";
+				Assert.AreEqual(errorMessage, error);
 			}
 
 		}
@@ -165,37 +155,15 @@ namespace SeleniumAutoTests
 		[Test]
 		public void TestAddOrEditStatus()
 		{
-			//a[@data-dispatch = 'userheadline-add']
-			driver.Navigate().GoToUrl(homepage + $"user/{profileId}/");
-			IWebElement link;
-			try
-			{
-				driver.FindElement(By.XPath("//div[@data-empty = 'True']"));
-				link = smartFind(driver, "//a[@data-dispatch = 'userheadline-add']");
-			}
-			catch (Exception)
-			{
-				link = smartFind(driver, "//a[@data-dispatch = 'userheadline-edit']");
-			}
-			link.Click();
-			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
 
-			var status = "My cool status";
-			var input = smartFind(driver, "//fieldset/textarea");
+			var home = new HomePage(driver);
+			var publicAcc = new PublicProfilePage(driver);
 
-			input.Clear();
-			input.SendKeys(status);
+			home.GoToPublicProfilePage();
 
-			smartFind(driver, "//fieldset[@class = 'buttons']/a[contains(@class, 'blue')]").Click();
-			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
-			string actual = null;
-			int iter = 0;
-			do
-			{
-				 actual = smartFind(driver, "//div[@class = 'headline-text']").GetAttribute("innerText").Trim();
-			  	 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
-			} while (actual == null && ++iter < 5);
-			
+			string status = "My cool status";
+			var actual = publicAcc.AddOrEditStatus(status);
+	
 			var expected = status;
 			Assert.AreEqual(expected, actual);
 		}
@@ -203,34 +171,21 @@ namespace SeleniumAutoTests
 		[Test]
 		public void TestDeleteStatusOrCheckDeleteButton()
 		{
+			var home = new HomePage(driver);
+			var publicAcc = new PublicProfilePage(driver);
 
-			driver.Navigate().GoToUrl(homepage + $"user/{profileId}/");
-
+			home.GoToPublicProfilePage();
+		
 			try
 			{
-				var status = driver.FindElement(By.XPath("//div[@data-empty = 'False']"));
-				driver.FindElement(By.XPath("//a[@data-dispatch = 'userheadline-delete']")).Click();
-				IAlert jsAlert = driver.SwitchTo().Alert();
-				jsAlert.Accept();
-				//check  driver.FindElement(By.XPath("//div[@class = 'headline-text']")) is null
-				try
-				{
-					driver.FindElement(By.XPath("//div[@class = 'headline-text']"));
-					Assert.True(true);
-				}
-				catch (NoSuchElementException ex)
-				{
-					Assert.True(false);
-				}
+				bool isDeleted = publicAcc.DeleteComment();
+				Assert.True(isDeleted);
 			}
 			catch (Exception)
 			{
-				var link = driver.FindElement(By.XPath("//a[@data-dispatch = 'userheadline-delete']"));
-				string display = link.GetCssValue("display");
+				string display = publicAcc.GetDeleteButtonDisplayProperty();
 				Assert.AreEqual("none", display);
 			}
-
-
 		}
 
 	}
