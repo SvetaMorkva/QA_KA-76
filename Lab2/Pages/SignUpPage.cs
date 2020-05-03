@@ -52,9 +52,12 @@ namespace Lab2.Pages
 
         public void SkipCookies()
         {
-            if (cookieCloseBtn.Displayed && cookieCloseBtn.Enabled)
+            if(cookieCloseBtn != null)
             {
-                cookieCloseBtn.Click();
+                if (cookieCloseBtn.Displayed && cookieCloseBtn.Enabled)
+                {
+                    cookieCloseBtn.Click();
+                }
             }
         }
 
