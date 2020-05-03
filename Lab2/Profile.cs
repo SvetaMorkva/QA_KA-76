@@ -8,7 +8,7 @@ namespace QA_Lab2
     {
         private IWebElement editButton;
 
-        [Test]
+/*        [Test]
         public void EditClick_ShouldMadeLineEditVisible()
         {
             FillDataForLogin();
@@ -29,9 +29,9 @@ namespace QA_Lab2
 
             Assert.AreEqual(3, profileEditLine.Count);
             Assert.IsTrue(editLineIsVisible);
-        }
+        }*/
 
-        private void GoToProfile()
+/*        private void GoToProfile()
         {
             nextButton.Click();
 
@@ -51,6 +51,6 @@ namespace QA_Lab2
             wait.Until(d => editButton.Enabled && editButton.Displayed);
 
             editButton.Click();
-        }
+        }*/
     }
 }

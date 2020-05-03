@@ -1,6 +1,8 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 
+using Lab2.PageObjects;
+
 namespace QA_Lab2
 {
     [TestFixture]
@@ -9,27 +11,33 @@ namespace QA_Lab2
         [Test]
         public void PasswordEyeButton_ShouldMadePasswordVisible()
         {
-            FillDataForLogin();
-            System.Threading.Thread.Sleep(3000);
-            driver.FindElement(By.CssSelector("[class$='show_hide_password']")).Click();
-            System.Threading.Thread.Sleep(2000);
+            LoginPage _LoginPage = new LoginPage(Driver);
 
-            wait.Until(d => driver.FindElements(By.CssSelector("[class$='show_hide_password']")).Count == 0);
-            var iconShow = driver.FindElement(By.CssSelector(".icon-show"));
+            _LoginPage
+                .WaitUntilShowPasswordButtonClickable()
+                .OnShowPasswordButtonClick()
+                .WaitUntilHidePasswordButtonClickable();
 
-            Assert.IsTrue(iconShow.Displayed && passwordLineEdit.GetAttribute("type") == "text");
+            Assert.IsTrue( 
+                _LoginPage.CheckTypeOfDataInPasswordLineEdit("text")
+                &&  _LoginPage.HidePasswordIconIsVisible);
         }
 
         [Test]
         public void ValidEmailAndPassword_ShouldEnterInAccount()
         {
-            FillDataForLogin();
-            nextButton.Click();
+            LoginPage _LoginPage = new LoginPage(Driver);
 
-            wait.Until(d => driver.FindElement(By.CssSelector("[class*='ztb-p']")));
-            var userEmail = driver.FindElement(By.Id("ztb-user-id")).GetAttribute("ztooltip");
+            _LoginPage
+                .OnNextButtonClick();
 
-            Assert.AreEqual(myEmail, userEmail);
+            UserAppsPage _UserAppsPage = new UserAppsPage(Driver);
+
+            _UserAppsPage
+                .OnUserAccountButtonClick()
+                .WaitUntilUserAccountEmailClickable();
+
+            Assert.AreEqual( _LoginPage.myEmail, _UserAppsPage.UserAccountEmail );
         }
 
     }

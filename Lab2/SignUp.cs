@@ -24,7 +24,7 @@ namespace QA_Lab2
         
 
         [Test]
-        public void SignUp_WithoutFilling_ShouldMadeErrorVisible()
+        public void WithoutFilling_ShouldMadeErrorVisible()
         {
             _SignUpPage
                 .OnSignUpButtonClick()
@@ -35,7 +35,7 @@ namespace QA_Lab2
         }
 
         [Test]
-        public void SignUp_ChangeCountry_ShouldMadeCountryVisible()
+        public void ChangeCountry_ShouldMadeCountryVisible()
         {
             _SignUpPage
                 .OnChangeCountryButtonClick();
