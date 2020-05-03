@@ -13,11 +13,6 @@ namespace LabWork3.Pages
         public const string SING_OUT_ID = "signout";
         public const string CONTACTS_MENU_ID = "nav-secondary-contacts";
         public const string COMPANIES_MENU_ID = "nav-secondary-companies";
-        public const string OPEN_MENU_CSS = ".expandable:nth-child(2) > #nav-primary-contacts-branch";
-
-
-        [FindsBy(How = How.CssSelector, Using = OPEN_MENU_CSS)]
-        public IWebElement openMenu;
 
         [FindsBy(How = How.Id, Using = ACCOUNT_MENU_ID)]
         public IWebElement accountMenu;
@@ -39,21 +34,18 @@ namespace LabWork3.Pages
 
         public String GetCurrntUrl() => _driver.Url;
 
-        public CompaniesListPage OpenCompaniesList()
+
+        public CompaniesListPage OpenCompaniesList(int userID = 7486179)
         {
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists(By.CssSelector(OPEN_MENU_CSS)));
-            openMenu.Click();
-            openCompaniesListButton.Click();
+            _driver.Navigate().GoToUrl($"https://app.hubspot.com/contacts/{userID}/companies/");
             new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementIsVisible(By.ClassName(CompaniesListPage.COMPANIES_TABLE_CLASSNAME)));
             return new CompaniesListPage(_driver);
         }
 
         public ContactsListPage OpenContactsList()
         {
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists(By.CssSelector(OPEN_MENU_CSS)));
-            openMenu.Click();
-            openContactsListButton.Click();
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementIsVisible(By.ClassName(ContactsListPage.CONTACTS_TABLE_CLASSNAME)));
+            _driver.Navigate().GoToUrl("https://app.hubspot.com/contacts/");
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementIsVisible(By.ClassName(CompaniesListPage.COMPANIES_TABLE_CLASSNAME)));
             return new ContactsListPage(_driver);
         }
 
