@@ -55,8 +55,8 @@ namespace Lab2_pages.Pages
         [FindsBy(How = How.XPath, Using = "//*[@id='accountsList']/div/a")]
         public IWebElement accountList;
 
-        [FindsBy(How = How.XPath, Using = "/html/body/div[12]/div/div[5]/a[1]")]
-        public IWebElement notification;
+        //[FindsBy(How = How.XPath, Using = "/html/body/div[12]/div/div[5]/a[1]")]
+        //public IWebElement notification;
         
 
         public String GetCurrntUrl() => _driver.Url;
@@ -120,8 +120,8 @@ namespace Lab2_pages.Pages
             ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].removeAttribute('margin-left')", accountList);
             accountList.Click();
 
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(100)).Until(ExpectedConditions.ElementIsVisible(By.XPath(("/html/body/div[12]/div/div[5]/a[1]"))));
-            notification.Click();
+            //new WebDriverWait(_driver, TimeSpan.FromSeconds(100)).Until(ExpectedConditions.ElementIsVisible(By.XPath(("/html/body/div[12]/div/div[5]/a[1]"))));
+            //notification.Click();
             System.Threading.Thread.Sleep(500);
 
             return new UpdatePassword(_driver);
