@@ -33,9 +33,9 @@ namespace Lab2_pages.Pages
 
         public UpdatePassword ChangePassword(String mypass, String newpass)
         {
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id='modal-content']/div[5]/div[2]/a")));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(100)).Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='modal-content']/div[5]/div[2]/a")));
             changePassBtn.Click();
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='userUpdatePasswordCurrent']")));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(100)).Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='userUpdatePasswordCurrent']")));
             userUpdatePasswordCurrent.SendKeys(mypass);
             userPasswordNew.SendKeys(newpass);
             userPasswordConfirm.SendKeys(newpass);
