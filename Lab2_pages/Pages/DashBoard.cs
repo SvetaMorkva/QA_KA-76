@@ -75,7 +75,8 @@ namespace Lab2_pages.Pages
         {
             new WebDriverWait(_driver, TimeSpan.FromSeconds(100)).Until(ExpectedConditions.ElementIsVisible(By.XPath("//img[@src='https://app.knackbusiness.com/assets/images/nav_projects.png']")));
             openProjectFeatures.Click();
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(100)).Until(ExpectedConditions.ElementToBeClickable(By.LinkText("Projects")));
+            System.Threading.Thread.Sleep(200);
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(100)).Until(ExpectedConditions.ElementExists(By.LinkText("Projects")));
             openProjectsList.Click();
             //new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='projectViewList']/table/thead/tr/th[7]/a")));
             return new ProjectListPage(_driver);
