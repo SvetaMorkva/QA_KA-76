@@ -10,7 +10,7 @@ namespace SeleniumAutoTests
 	{
 		public static void waitUntilExistsByXPath(IWebDriver driver, string selector)
 		{
-			new WebDriverWait(driver, TimeSpan.FromSeconds(5)).
+			new WebDriverWait(driver, TimeSpan.FromSeconds(2)).
 				Until(ExpectedConditions.ElementExists(By.XPath(selector)));
 		}
 		public static IWebElement smartFind(IWebDriver driver, string selector)
@@ -20,7 +20,7 @@ namespace SeleniumAutoTests
 		}
 		public static void waitFor(IWebDriver driver, IWebElement element)
 		{
-			new WebDriverWait(driver, TimeSpan.FromSeconds(5))
+			new WebDriverWait(driver, TimeSpan.FromSeconds(2))
 			.Until(ExpectedConditions.ElementToBeClickable(element));
 		}
 	}
