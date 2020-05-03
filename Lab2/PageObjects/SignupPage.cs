@@ -36,7 +36,9 @@ namespace Lab2.PageObjects
         [FindsBy(How = How.Id, Using = "emailfield")]
         public IWebElement EmailLineEdit { get; set; }
 
+
         public bool ChangeCountryDropDownIsVisible => ChangeCountryDropDown.Displayed && ChangeCountryDropDown.Enabled;
+
 
         // navigate
         public SignupPage OpenSignUpPage()
@@ -84,6 +86,8 @@ namespace Lab2.PageObjects
 
             EmailLineEdit.SendKeys("shfsg");
             EmailLineEdit.Clear();
+
+            System.Threading.Thread.Sleep(3000);
 
             return this;
         }
