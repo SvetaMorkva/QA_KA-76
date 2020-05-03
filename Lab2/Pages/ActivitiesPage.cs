@@ -53,7 +53,7 @@ namespace Lab2.Pages
             ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", deleteBtn);
 
             System.Threading.Thread.Sleep(2000);
-            popUpDelete.Click();
+            ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", popUpDelete);
         }
 
 
