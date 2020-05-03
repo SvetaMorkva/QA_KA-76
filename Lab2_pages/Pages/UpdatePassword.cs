@@ -33,6 +33,7 @@ namespace Lab2_pages.Pages
 
         public UpdatePassword ChangePassword(String mypass, String newpass)
         {
+            System.Threading.Thread.Sleep(100);
             new WebDriverWait(_driver, TimeSpan.FromSeconds(100)).Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='modal-content']/div[5]/div[2]/a")));
             changePassBtn.Click();
             new WebDriverWait(_driver, TimeSpan.FromSeconds(100)).Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='userUpdatePasswordCurrent']")));
