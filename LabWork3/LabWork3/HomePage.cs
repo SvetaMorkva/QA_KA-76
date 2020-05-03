@@ -41,7 +41,7 @@ namespace LabWork3.Pages
 
         public CompaniesListPage OpenCompaniesList()
         {
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementIsVisible(By.CssSelector(OPEN_MENU_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(OPEN_MENU_CSS)));
             openMenu.Click();
             openCompaniesListButton.Click();
             new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementIsVisible(By.ClassName(CompaniesListPage.COMPANIES_TABLE_CLASSNAME)));
@@ -50,7 +50,7 @@ namespace LabWork3.Pages
 
         public ContactsListPage OpenContactsList()
         {
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementIsVisible(By.CssSelector(OPEN_MENU_CSS)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(OPEN_MENU_CSS)));
             openMenu.Click();
             openContactsListButton.Click();
             new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementIsVisible(By.ClassName(ContactsListPage.CONTACTS_TABLE_CLASSNAME)));
