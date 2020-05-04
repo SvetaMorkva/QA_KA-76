@@ -4,6 +4,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
 
 namespace WebDriverHomework
@@ -113,6 +114,11 @@ namespace WebDriverHomework
                 Assert.IsTrue(inboxPage.isErrorAbsent());
             }
             catch (ElementClickInterceptedException e)
+            {
+                //just ignore this exception, it happens due to dumb notifications dialog
+                smartFind(driver, ".HoLwm").Click();
+            }
+            catch (TargetInvocationException e)
             {
                 //just ignore this exception, it happens due to dumb notifications dialog
                 smartFind(driver, ".HoLwm").Click();
