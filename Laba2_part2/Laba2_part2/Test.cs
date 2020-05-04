@@ -3,6 +3,7 @@ using FluentAssertions.Execution;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Threading;
 
@@ -12,6 +13,11 @@ namespace Laba2_part2
     class Test
     {
         private IWebDriver driver;
+        private IWebElement WaitForFindElement(IWebDriver driver, By selector)
+        {
+            new WebDriverWait(driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementToBeClickable(selector));
+            return driver.FindElement(selector);
+        }
         [Obsolete]
         [SetUp]
         public void TestInitialize()

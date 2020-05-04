@@ -29,14 +29,12 @@ namespace Laba2_part2
         [Obsolete]
         public Page GoToBouquetPage()
         {
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(BouquetPage));
             BouquetPage.Click();
             return this;
         }
         [Obsolete]
         public Page Selection()
         {
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(Arrow));
             Arrow.Click();
             return this;
         }
@@ -52,7 +50,6 @@ namespace Laba2_part2
         [Obsolete]
         public Page GoToFlowersPage()
         {
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(Flowers));
             Flowers.Click();
             return this;
         }
@@ -67,8 +64,7 @@ namespace Laba2_part2
         [Obsolete]
         public Page Buy()
         {
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(ButtonBuy));
-            ButtonBuy.Click();
+             ButtonBuy.Click();
             return this;
         }
         public string GetBasketPageTitle() => BasketPageTitle.Text;
@@ -83,7 +79,6 @@ namespace Laba2_part2
         [Obsolete]
         public Page GoToHomePage()
         {
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(HomePage));
             HomePage.Click();
             return this;
         }
@@ -96,7 +91,6 @@ namespace Laba2_part2
         [Obsolete]
         public Page GoToBasketPage()
         {
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(BasketPage));
             BasketPage.Click();
             return this;
         }
@@ -114,21 +108,18 @@ namespace Laba2_part2
         [Obsolete]
         public Page GoToFiveStep()
         {
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(FiveStepOrder));
             FiveStepOrder.Click();
             return this;
         }
         [Obsolete]
         public Page ChoosePayWay()
         {
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(PayWay));
             PayWay.Click();
             return this;
         }
         [Obsolete]
         public Page Submit()
         {
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(SubmitButton));
             SubmitButton.Click();
             return this;
         }
@@ -147,8 +138,7 @@ namespace Laba2_part2
         [Obsolete]
         public Page GoToContactPage()
         {
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(ContactPage));
-            ContactPage.Click();
+             ContactPage.Click();
             return this;
         }
         public string GetPhoneNumber()
