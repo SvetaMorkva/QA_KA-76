@@ -77,154 +77,168 @@ namespace WebDriverHomework
         [TestCase("natalieportman")]
         public void findTheCelebrity_TheFirstSearchResultShouldHaveTheVerifiedBadgeInProfile(string celebrity)
         {
-            try
+            ProfilePage profilePage = null;
+            while (profilePage == null)
             {
-                ProfilePage profilePage = homePage.searchUser(celebrity)
-                    .chooseTheFirstOneSuggested();
+                try
+                {
+                    profilePage = homePage.searchUser(celebrity)
+                        .chooseTheFirstOneSuggested();
+                    Thread.Sleep(5000);
+                }
+                catch (Exception e)
+                {
+                    //just ignore this exception, it happens due to dumb notifications dialog
+                    smartFind(driver, ".HoLwm").Click();
+                }
+            }            
+            Assert.IsTrue(profilePage.hasVerifiedBadge());
 
-                Thread.Sleep(5000);
-
-                Assert.IsTrue(profilePage.hasVerifiedBadge());
-
-                // Wow, you found an easter egg! Just text me in telegram @irremissibile
-                // Your dream reward (1 chocolate bar) is waiting for you
-            }
-            catch (ElementClickInterceptedException e)
-            {
-                //just ignore this exception, it happens due to dumb notifications dialog
-                smartFind(driver, ".HoLwm").Click();
-            }
+            // Wow, you found an easter egg! Just text me in telegram @irremissibile
+            // Your dream reward (1 chocolate bar) is waiting for you
         }
 
 
         [TestCase("et.irremissibile", "wazzup")]
         public void findTheParticularUserAndSendAMessage_ShouldBeNoErrorsInCorrespondingInboxChat(string targetUser, string message)
         {
-            try
+            InboxPage inboxPage = null;
+            while (inboxPage == null)
             {
-                InboxPage inboxPage = homePage.openInboxPage()
-                    .startNewMessageDialog()
-                    .searchAddressee(targetUser)
-                    .chooseTheFirstOneSuggested()
-                    .sendMessage(message);
+                try
+                {
+                    inboxPage = homePage.openInboxPage();
+                    Thread.Sleep(5000);
+                }
+                catch (Exception e)
+                {
+                    //just ignore this exception, it happens due to dumb notifications dialog
+                    smartFind(driver, ".HoLwm").Click();
+                }
+            }
 
-                Thread.Sleep(5000);
+            inboxPage.startNewMessageDialog()
+                        .searchAddressee(targetUser)
+                        .chooseTheFirstOneSuggested()
+                        .sendMessage(message);
+            Thread.Sleep(5000);
 
-                Assert.IsTrue(inboxPage.checkChat(targetUser));
-                Assert.IsTrue(inboxPage.isErrorAbsent());
-            }
-            catch (ElementClickInterceptedException e)
-            {
-                //just ignore this exception, it happens due to dumb notifications dialog
-                smartFind(driver, ".HoLwm").Click();
-            }
-            catch (TargetInvocationException e)
-            {
-                //just ignore this exception, it happens due to dumb notifications dialog
-                smartFind(driver, ".HoLwm").Click();
-            }
+            Assert.IsTrue(inboxPage.checkChat(targetUser));
+            Assert.IsTrue(inboxPage.isErrorAbsent());
         }
 
 
         [TestCase("et.irremissibile")]
         public void likeTheUsersMostRecentPost_TestAccountShouldAppearInTheListOfPeopleWhoHasLikedThisPost(string targetUser)
         {
-            try
+            ProfilePage profilePage = null;
+            while (profilePage == null)
             {
-                ProfilePage profilePage = homePage.searchUser(targetUser)
-                    .chooseTheFirstOneSuggested();
-                Thread.Sleep(5000);
-
-                PostPage postPage = profilePage.openMostRecentPost();
-                Thread.Sleep(5000);
-
-                postPage.likePost();
-                Thread.Sleep(5000);
-
-                postPage.openListOfPeopleWhoLiked();
-                Thread.Sleep(5000);
-
-                Assert.AreEqual(username, smartFind(driver, ".rBNOH:nth-child(1) .IwRSH .eGOV_ div div div div").GetAttribute("innerHTML"));
+                try
+                {
+                    profilePage = homePage.searchUser(targetUser)
+                        .chooseTheFirstOneSuggested();
+                    Thread.Sleep(5000);
+                }
+                catch (Exception e)
+                {
+                    //just ignore this exception, it happens due to dumb notifications dialog
+                    smartFind(driver, ".HoLwm").Click();
+                }
             }
-            catch (ElementClickInterceptedException e)
-            {
-                //just ignore this exception, it happens due to dumb notifications dialog
-                smartFind(driver, ".HoLwm").Click();
-            }
+            PostPage postPage = profilePage.openMostRecentPost();
+            Thread.Sleep(5000);
+
+            postPage.likePost();
+            Thread.Sleep(5000);
+
+            postPage.openListOfPeopleWhoLiked();
+            Thread.Sleep(5000);
+
+            Assert.AreEqual(username, smartFind(driver, ".rBNOH:nth-child(1) .IwRSH .eGOV_ div div div div").GetAttribute("innerHTML"));
         }
 
 
         [TestCase("et.irremissibile", "Малышка любит дилера")]
         public void commentTheUsersMostRecentPost_TestCommentMustAppearInTheCommentsSection(string targetUser, string comment)
         {
-            try
+            ProfilePage profilePage = null;
+            while (profilePage == null)
             {
-                ProfilePage profilePage = homePage.searchUser(targetUser)
-                    .chooseTheFirstOneSuggested();
-                Thread.Sleep(5000);
-
-                PostPage postPage = profilePage.openMostRecentPost();
-                Thread.Sleep(5000);
-
-                postPage.sendComment(comment);
-                Thread.Sleep(5000);
-
-                Assert.IsTrue(postPage.isLastComment(comment));
+                try
+                {
+                    profilePage = homePage.searchUser(targetUser)
+                        .chooseTheFirstOneSuggested();
+                    Thread.Sleep(5000);
+                }
+                catch (Exception e)
+                {
+                    //just ignore this exception, it happens due to dumb notifications dialog
+                    smartFind(driver, ".HoLwm").Click();
+                }
             }
-            catch (ElementClickInterceptedException e)
-            {
-                //just ignore this exception, it happens due to dumb notifications dialog
-                smartFind(driver, ".HoLwm").Click();
-            }
+            PostPage postPage = profilePage.openMostRecentPost();
+            Thread.Sleep(5000);
+
+            postPage.sendComment(comment);
+            Thread.Sleep(5000);
+
+            Assert.IsTrue(postPage.isLastComment(comment));
         }
 
 
         [TestCase("et.irremissibile")]
         public void shareRandomPostFromExploreToTargetUser_PostShouldAppearInTheChatWithTargetUser(string targetUser)
         {
-            try
+            PostPage postPage = null;
+            while (postPage == null)
             {
-                PostPage postPage = homePage.openExplorePage()
-                    .openFirstPost();
-                Thread.Sleep(5000);
-
-                HomePage h1 = postPage.sharePostToUser(targetUser)
-                    .close();
-                Thread.Sleep(5000);
-
-                InboxPage inboxPage = h1.openInboxPage();
-
-                Assert.IsTrue(inboxPage.lastMessageTimeContains("s") || inboxPage.lastMessageTimeContains("с"));
-                Assert.IsTrue(inboxPage.lastMessageInfoContains("You sent a post") || inboxPage.lastMessageInfoContains("Вы отправили публикацию"));
+                try
+                {
+                    postPage = homePage.openExplorePage()
+                        .openFirstPost();
+                    Thread.Sleep(5000);
+                }
+                catch (Exception e)
+                {
+                    //just ignore this exception, it happens due to dumb notifications dialog
+                    smartFind(driver, ".HoLwm").Click();
+                }
             }
-            catch (ElementClickInterceptedException e)
-            {
-                //just ignore this exception, it happens due to dumb notifications dialog
-                smartFind(driver, ".HoLwm").Click();
-            }
+            HomePage h1 = postPage.sharePostToUser(targetUser)
+                .close();
+            Thread.Sleep(5000);
+
+            InboxPage inboxPage = h1.openInboxPage();
+
+            Assert.IsTrue(inboxPage.lastMessageTimeContains("s") || inboxPage.lastMessageTimeContains("с"));
+            Assert.IsTrue(inboxPage.lastMessageInfoContains("You sent a post") || inboxPage.lastMessageInfoContains("Вы отправили публикацию"));
         }
 
 
         [TestCase("et.irremissibile")]
         public void followTargetUser_TargetUserShouldAppearInTheListOfFollowingPeople(string targetUser)
         {
-            try
+            ProfilePage profilePage = null;
+            while (profilePage == null)
             {
-                ProfilePage profilePage = homePage.searchUser(targetUser)
-                    .chooseTheFirstOneSuggested();
-                Thread.Sleep(5000);
-
-                profilePage.follow()
-                    .openProfilePage();
-                Thread.Sleep(5000);
-
-                Assert.IsTrue(profilePage.isPresentInFollowing(targetUser));
+                try
+                {
+                    profilePage = homePage.searchUser(targetUser)
+                        .chooseTheFirstOneSuggested();
+                    Thread.Sleep(5000);
+                }
+                catch (ElementClickInterceptedException e)
+                {
+                    //just ignore this exception, it happens due to dumb notifications dialog
+                    smartFind(driver, ".HoLwm").Click();
+                }
             }
-            catch (ElementClickInterceptedException e)
-            {
-                //just ignore this exception, it happens due to dumb notifications dialog
-                smartFind(driver, ".HoLwm").Click();
-            }
+            profilePage.follow()
+                .openProfilePage();
+            Thread.Sleep(5000);
+
+            Assert.IsTrue(profilePage.isPresentInFollowing(targetUser));
         }
 
 
@@ -234,26 +248,29 @@ namespace WebDriverHomework
         //[TestCase("Selenium Tester")]
         public void changeAccountName_NewNameShouldBeDisplayedInTheProfile(string newName)
         {
-            try
+            ProfileSettingsPage settingsPage = null;
+            while (settingsPage == null)
             {
-                ProfileSettingsPage settingsPage = homePage.openProfilePage()
-                    .openProfileSettingsPage();
-                Thread.Sleep(5000);
-
-                settingsPage.sendName(newName);
-                Thread.Sleep(3000);
-                settingsPage.clickSubmit();
-
-                ProfilePage profilePage = settingsPage.openProfilePage();
-                Thread.Sleep(5000);
-
-                Assert.IsTrue(profilePage.profileNameEquals(newName));
+                try
+                {
+                    settingsPage = homePage.openProfilePage()
+                        .openProfileSettingsPage();
+                    Thread.Sleep(5000);
+                }
+                catch (Exception e)
+                {
+                    //just ignore this exception, it happens due to dumb notifications dialog
+                    smartFind(driver, ".HoLwm").Click();
+                }
             }
-            catch (ElementClickInterceptedException e)
-            {
-                //just ignore this exception, it happens due to dumb notifications dialog
-                smartFind(driver, ".HoLwm").Click();
-            }
+            settingsPage.sendName(newName);
+            Thread.Sleep(3000);
+            settingsPage.clickSubmit();
+
+            ProfilePage profilePage = settingsPage.openProfilePage();
+            Thread.Sleep(5000);
+
+            Assert.IsTrue(profilePage.profileNameEquals(newName));
         }
 
 
@@ -263,26 +280,29 @@ namespace WebDriverHomework
         //[TestCase("I have been beaten by my mum")]
         public void changeAccountBio_NewBioShouldBeDisplayedInTheProfile(string newBio)
         {
-            try
+            ProfileSettingsPage settingsPage = null;
+            while (settingsPage == null)
             {
-                ProfileSettingsPage settingsPage = homePage.openProfilePage()
-                    .openProfileSettingsPage();
-                Thread.Sleep(5000);
-
-                settingsPage.sendBio(newBio);
-                Thread.Sleep(3000);
-                settingsPage.clickSubmit();
-
-                ProfilePage profilePage = settingsPage.openProfilePage();
-                Thread.Sleep(5000);
-
-                Assert.IsTrue(profilePage.profileBioEquals(newBio));
+                try
+                {
+                    settingsPage = homePage.openProfilePage()
+                        .openProfileSettingsPage();
+                    Thread.Sleep(5000);
+                }
+                catch (Exception e)
+                {
+                    //just ignore this exception, it happens due to dumb notifications dialog
+                    smartFind(driver, ".HoLwm").Click();
+                }
             }
-            catch (ElementClickInterceptedException e)
-            {
-                //just ignore this exception, it happens due to dumb notifications dialog
-                smartFind(driver, ".HoLwm").Click();
-            }            
+            settingsPage.sendBio(newBio);
+            Thread.Sleep(3000);
+            settingsPage.clickSubmit();
+
+            ProfilePage profilePage = settingsPage.openProfilePage();
+            Thread.Sleep(5000);
+
+            Assert.IsTrue(profilePage.profileBioEquals(newBio));
         }
 
 
@@ -292,26 +312,29 @@ namespace WebDriverHomework
         //[TestCase("dypka.ua")]
         public void changeAccountWebsite_NewWebsiteShouldBeDisplayedInTheProfile(string newWebsite)
         {
-            try
+            ProfileSettingsPage settingsPage = null;
+            while (settingsPage == null)
             {
-                ProfileSettingsPage settingsPage = homePage.openProfilePage()
-                    .openProfileSettingsPage();
-                Thread.Sleep(5000);
-
-                settingsPage.sendWebsite(newWebsite);
-                Thread.Sleep(3000);
-                settingsPage.clickSubmit();
-
-                ProfilePage profilePage = settingsPage.openProfilePage();
-                Thread.Sleep(5000);
-
-                Assert.IsTrue(profilePage.profileWebsiteEquals(newWebsite));
+                try
+                {
+                    settingsPage = homePage.openProfilePage()
+                        .openProfileSettingsPage();
+                    Thread.Sleep(5000);
+                }
+                catch (Exception e)
+                {
+                    //just ignore this exception, it happens due to dumb notifications dialog
+                    smartFind(driver, ".HoLwm").Click();
+                }
             }
-            catch (ElementClickInterceptedException e)
-            {
-                //just ignore this exception, it happens due to dumb notifications dialog
-                smartFind(driver, ".HoLwm").Click();
-            }
+            settingsPage.sendWebsite(newWebsite);
+            Thread.Sleep(3000);
+            settingsPage.clickSubmit();
+
+            ProfilePage profilePage = settingsPage.openProfilePage();
+            Thread.Sleep(5000);
+
+            Assert.IsTrue(profilePage.profileWebsiteEquals(newWebsite));
         }
     }
 }
