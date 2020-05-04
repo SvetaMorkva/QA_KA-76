@@ -59,11 +59,17 @@ namespace lab2
             }
 
             driver.Navigate().GoToUrl($"{url}/en");
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10))
+                .Until(d => d.Url == $"{url}/en");
+
             kpiUaPage_ua = kpiUaPage_ua.clickOnHeaderIcon(id);
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10))
+                .Until(d => d.Url != $"{url}/en#{id}");
+
             for(int i=1; i <= 3; i++)
             {
                 new WebDriverWait(driver, TimeSpan.FromSeconds(10))
-                .Until(d => d.Url != $"{url}/en");
+                    .Until(d => d.Url != $"{url}/en");
                 kpiUaPage_ua.clickOnTheIthLink(id, i);
                 actual += kpiUaPage_ua.Contains("//input");            
                 driver.Navigate().Back();
@@ -98,7 +104,7 @@ namespace lab2
         // }
 
         [Fact]
-        public void TestCampusLink()
+        public void CampusLinkShouldRedirectToAPageWithInputField()
         {
             // Arrange.
             var kpiUaPage_ua = new KpiUaPage(driver);
@@ -121,7 +127,7 @@ namespace lab2
         }
 
         [Fact]
-        public void TestMediaLink()
+        public void MediaLinkShouldRedirectToAPageWithListOfWebCams()
         {
             // Arrange.
             var kpiUaPage_ua = new KpiUaPage(driver);
