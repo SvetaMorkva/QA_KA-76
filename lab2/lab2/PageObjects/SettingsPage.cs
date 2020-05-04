@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Drawing;
 
 namespace lab2.PageObjects
 {
@@ -15,6 +16,7 @@ namespace lab2.PageObjects
             this.driver = driver;
             PageFactory.InitElements(driver, this);
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            driver.Manage().Window.Size = new Size(800, 400);
         }
 
         // basic info section related elements

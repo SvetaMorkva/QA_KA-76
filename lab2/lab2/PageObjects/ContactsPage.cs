@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using lab2.Utils;
+using System.Drawing;
 
 namespace lab2.PageObjects
 {
@@ -20,6 +21,7 @@ namespace lab2.PageObjects
             this.driver = driver;
             PageFactory.InitElements(driver, this);
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            driver.Manage().Window.Size = new Size(800, 400);
         }
 
         [FindsBy(How = How.CssSelector, Using = "button[data-button-use='primary']")]

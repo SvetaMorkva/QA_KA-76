@@ -3,6 +3,7 @@ using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ namespace lab2.PageObjects
             this.driver = driver;
             PageFactory.InitElements(driver, this);
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            driver.Manage().Window.Size = new Size(800, 400);
         }
 
         [FindsBy(How = How.CssSelector, Using = "button[class='uiButton private-button private-button--secondary private-button--default template-index-new-folder-button private-button--non-responsive private-button--non-link']")]

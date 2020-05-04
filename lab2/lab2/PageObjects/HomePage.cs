@@ -22,32 +22,6 @@ namespace lab2.PageObjects
             PageFactory.InitElements(driver, this);
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
         }
-        
-        // conversations -> templates
-        [FindsBy(How = How.Id, Using = "nav-primary-conversations-branch")]
-        public IWebElement conversationsPrimaryNav;
-
-        [FindsBy(How = How.Id, Using = "nav-secondary-templates")]
-        public IWebElement templatesSecondaryNav;
-
-        // contacts -> contacts
-        [FindsBy(How = How.Id, Using = "nav-primary-contacts-branch")]
-        public IWebElement contactsPrimaryNav;
-
-        [FindsBy(How = How.Id, Using = "nav-secondary-contacts")]
-        public IWebElement contactsSecondaryNav;
-
-        // sales -> tasks
-        [FindsBy(How = How.Id, Using = "nav-primary-sales-branch")]
-        public IWebElement salesPrimaryNav;
-
-        [FindsBy(How = How.Id, Using = "nav-secondary-tasks")]
-        public IWebElement tasksSecondaryNav;
-
-        // settings
-        [FindsBy(How = How.Id, Using = "navSetting")]
-        public IWebElement settingsNav;
-
 
         public HomePage GoToPage()
         {
@@ -62,39 +36,29 @@ namespace lab2.PageObjects
 
         public HomePage GoToTemplatesPage()
         {
-            wait.Until(ExpectedConditions.ElementToBeClickable(conversationsPrimaryNav));
-            conversationsPrimaryNav.Click();
-
-            wait.Until(ExpectedConditions.ElementToBeClickable(templatesSecondaryNav));
-            templatesSecondaryNav.Click();
+            System.Threading.Thread.Sleep(2000);
+            driver.Navigate().GoToUrl("https://app.hubspot.com/templates/7600578");
             return this;
         }
 
         public HomePage GoToContactsPage()
         {
-            wait.Until(ExpectedConditions.ElementToBeClickable(contactsPrimaryNav));
-            contactsPrimaryNav.Click();
-
-            wait.Until(ExpectedConditions.ElementToBeClickable(contactsSecondaryNav));
-            contactsSecondaryNav.Click();
+            System.Threading.Thread.Sleep(2000);
+            driver.Navigate().GoToUrl("https://app.hubspot.com/contacts/");
             return this;
         }
 
         public HomePage GoToTasksPage()
         {
-            wait.Until(ExpectedConditions.ElementToBeClickable(salesPrimaryNav));
-            salesPrimaryNav.Click();
-
-            wait.Until(ExpectedConditions.ElementToBeClickable(tasksSecondaryNav));
-            tasksSecondaryNav.Click();
+            System.Threading.Thread.Sleep(2000);
+            driver.Navigate().GoToUrl("https://app.hubspot.com/contacts/7600578/tasks/");
             return this;
         }
 
         public HomePage GoToSettingsPage()
         {
-            wait.Until(ExpectedConditions.ElementToBeClickable(settingsNav));
-            settingsNav.Click();
-
+            System.Threading.Thread.Sleep(2000);
+            driver.Navigate().GoToUrl("https://app.hubspot.com/settings");
             return this;
         }
 
