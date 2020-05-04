@@ -59,8 +59,9 @@ namespace lab2
             }
 
             driver.Navigate().GoToUrl($"{url}/en");
-            new WebDriverWait(driver, TimeSpan.FromSeconds(10))
-                .Until(d => d.Url == $"{url}/en");
+            Console.WriteLine(driver.Url);
+            // new WebDriverWait(driver, TimeSpan.FromSeconds(10))
+            //     .Until(d => d.Url == $"{url}/en");
 
             kpiUaPage_ua = kpiUaPage_ua.clickOnHeaderIcon(id);
             new WebDriverWait(driver, TimeSpan.FromSeconds(10))
