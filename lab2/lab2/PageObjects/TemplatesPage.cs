@@ -45,6 +45,7 @@ namespace lab2.PageObjects
 
         public TemplatesPage CreateFolder(string folderName)
         {
+            System.Threading.Thread.Sleep(2000);
             wait.Until(ExpectedConditions.ElementToBeClickable(createFolderButton));
             createFolderButton.Click();
 
