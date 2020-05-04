@@ -66,6 +66,7 @@ namespace lab2.PageObjects
         {
             wait.Until(ExpectedConditions.ElementToBeClickable(createContactButton));
             createContactButton.Click();
+            System.Threading.Thread.Sleep(2000);
             wait.Until(ExpectedConditions.ElementToBeClickable(contactEmailField));
             contactEmailField.SendKeys(email);
             return this;
