@@ -44,10 +44,10 @@ namespace SoundCloud_E2ETestProject
         [TestCase(1)]
         public void ScrollListOfPlaylists_FarwardAndBackwardScroll(int indexOfListOfPlaylists)
         {
-            HomePage playlistPage = new HomePage(_driver);
+            HomePage homePage = new HomePage(_driver);
             Thread.Sleep(sleepTime);
-            playlistPage.ScrollListOfPlaylistFarward(indexOfListOfPlaylists);
-            playlistPage.ScrollListOfPlaylistBackward(indexOfListOfPlaylists);
+            homePage.ScrollListOfPlaylistFarward(indexOfListOfPlaylists);
+            homePage.ScrollListOfPlaylistBackward(indexOfListOfPlaylists);
             Assert.Pass();
         }
 
