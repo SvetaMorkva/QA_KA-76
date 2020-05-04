@@ -51,8 +51,8 @@ namespace WebDriverHomework
             smartFind(driver, ".-MzZI+ .-MzZI .zyHYP").SendKeys(password);
             smartFind(driver, ".-MzZI+ .DhRcB").Click();
 
-            Thread.Sleep(5000);
-            //smartFind(driver, ".HoLwm").Click();
+            Thread.Sleep(10000);
+            smartFind(driver, ".HoLwm").Click();
             try
             {
                 smartFind(driver, ".Fifk5:nth-child(1) a").Click();
