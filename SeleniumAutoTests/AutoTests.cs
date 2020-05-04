@@ -26,6 +26,7 @@ namespace SeleniumAutoTests
 		public void TestInitialize()
 		{
 			driver = new ChromeDriver(Environment.CurrentDirectory);
+			driver.Manage().Window.Maximize();
 			var home = new HomePage(driver);
 			driver.Navigate().GoToUrl(homepage);
 			home.Login(email, password);
