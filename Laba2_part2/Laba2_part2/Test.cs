@@ -42,10 +42,10 @@ namespace Laba2_part2
             Thread.Sleep(300);
             WebPage.Selection();
             Thread.Sleep(300);
-            var flowername = WebPage.GetFlowerName();
+            var name = WebPage.GetTitle();
             using (new AssertionScope())
             {
-                flowername.Should().Be("Пионы 24");
+                name.Should().Be("Цветы");
             }
         }
         [Obsolete]

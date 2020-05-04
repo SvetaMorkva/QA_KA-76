@@ -20,10 +20,10 @@ namespace Laba2_part2
         //test1
         [FindsBy(How = How.XPath, Using = "/html/body/nav/div/div/div[1]/nav/div/ul/li[2]/a")]
         private IWebElement BouquetPage;
-        [FindsBy(How = How.XPath, Using = "/html / body / div[2] / div[1] / div[1] / ul / li[1] / span")]
-        private IWebElement Arrow;
-        [FindsBy(How = How.XPath, Using = "/html/body/div[2]/div[1]/div[1]/ul/li[1]/ul/li[1]/a")]
-        private IWebElement NextFlower;
+        [FindsBy(How = How.XPath, Using = "/html/body/div[2]/div[1]/div[1]/ul/li[1]/a")]
+        private IWebElement FlowersPage;
+        [FindsBy(How = How.XPath, Using = "/html/body/div[2]/h1")]
+        private IWebElement TitleFlower;
 
 
         [Obsolete]
@@ -35,10 +35,10 @@ namespace Laba2_part2
         [Obsolete]
         public Page Selection()
         {
-            Arrow.Click();
+            FlowersPage.Click();
             return this;
         }
-        public string GetFlowerName() => NextFlower.Text;
+        public string GetTitle() => TitleFlower.Text;
 
 
         //test2
