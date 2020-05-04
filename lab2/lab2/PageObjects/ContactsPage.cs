@@ -83,6 +83,7 @@ namespace lab2.PageObjects
         public ContactsPage checkContactToDelete(int index)
         {
             IWebElement[] checksElems = checkSelector.ToArray();
+            System.Threading.Thread.Sleep(3000);
             checksElems[index + 1].Click();
             return this;
         }
