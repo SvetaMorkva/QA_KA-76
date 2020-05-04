@@ -19,4 +19,12 @@ Prerequisites:
     `dotnet new console`
 2. To intsall Google Chrome web driver for Selenium run the following command in the CLI:
     `dotnet add package Selenium.WebDriver`
-
+3. To run specific tests for XUnit framework use the following commands
+    - Runs only one test, `XUnitNamespace.TestClass1.Test1`:
+        `dotnet test --filter DisplayName=XUnitNamespace.TestClass1.Test1`
+    - Runs all tests except `XUnitNamespace.TestClass1.Test1`:
+        `dotnet test --filter DisplayName!=XUnitNamespace.TestClass1.Test1`
+    - Runs tests whose display name contains `TestClass1`:
+        `dotnet test --filter DisplayName~TestClass1`
+    For more details read the docs: 
+    https://docs.microsoft.com/en-us/dotnet/core/testing/selective-unit-tests#xunit

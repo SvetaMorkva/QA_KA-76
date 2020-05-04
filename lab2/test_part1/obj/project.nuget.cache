@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yzPSO2hxommTFr3HVmzhx1RdmmmohsBc7zS5RL35JxW9w0ytqArJHv6qx6BB5jZuEBK5QbepTU4wnymafGD9og==",
+  "dgSpecHash": "1yqsqoORocATo0RM/s8mK9WOL2S9RUoIgXXOuqRHLOWTg0FeD6Xse71x99vI44Z9NWwO4H9SEAKeS3Fjpi/PgA==",
   "success": true,
-  "projectFilePath": "/home/pavlo/Documents/QA_KA-76/lab2/test/test.csproj",
+  "projectFilePath": "/home/pavlo/Documents/QA_KA-76/lab2/test_part1/test.csproj",
   "expectedPackageFiles": [
     "/home/pavlo/.nuget/packages/microsoft.codecoverage/16.5.0/microsoft.codecoverage.16.5.0.nupkg.sha512",
     "/home/pavlo/.nuget/packages/microsoft.csharp/4.3.0/microsoft.csharp.4.3.0.nupkg.sha512",

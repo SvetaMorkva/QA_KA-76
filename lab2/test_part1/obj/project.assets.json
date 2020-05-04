@@ -6052,11 +6052,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/pavlo/Documents/QA_KA-76/lab2/test/test.csproj",
+      "projectUniqueName": "/home/pavlo/Documents/QA_KA-76/lab2/test_part1/test.csproj",
       "projectName": "test",
-      "projectPath": "/home/pavlo/Documents/QA_KA-76/lab2/test/test.csproj",
+      "projectPath": "/home/pavlo/Documents/QA_KA-76/lab2/test_part1/test.csproj",
       "packagesPath": "/home/pavlo/.nuget/packages/",
-      "outputPath": "/home/pavlo/Documents/QA_KA-76/lab2/test/obj/",
+      "outputPath": "/home/pavlo/Documents/QA_KA-76/lab2/test_part1/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/pavlo/.nuget/NuGet/NuGet.Config"

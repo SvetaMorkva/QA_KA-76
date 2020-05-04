@@ -70,28 +70,28 @@ namespace lab2
             Assert.NotEqual(actual, expected);
         }
 
-        [Fact]
-        public void TestLibraLink()
-        {
-            // Arrange.
-            var kpiUaPage_ua = new KpiUaPage(driver);
-            string id = "libraModal";
-            string [] titles = new string[3];
-            titles[0] = "Науково-технічна бiблiотека ім. Г. І. Денисенка |";
-            titles[1] = "KPI01 - Простий пошук";
-            titles[2] = "ELAKPI: Home";
+        // [Fact]
+        // public void TestLibraLink()
+        // {
+        //     // Arrange.
+        //     var kpiUaPage_ua = new KpiUaPage(driver);
+        //     string id = "libraModal";
+        //     string [] titles = new string[3];
+        //     titles[0] = "Науково-технічна бiблiотека ім. Г. І. Денисенка |";
+        //     titles[1] = "KPI01 - Простий пошук";
+        //     titles[2] = "ELAKPI: Home";
 
-            // Act.
-            kpiUaPage_ua = kpiUaPage_ua.clickOnHeaderIcon(id);
+        //     // Act.
+        //     kpiUaPage_ua = kpiUaPage_ua.clickOnHeaderIcon(id);
 
-            for(int i=0; i<3; i++)
-            {
-                kpiUaPage_ua.clickOnTheIthLink(id, i+1);
-                // Assert.
-                Assert.True(driver.Title == titles[i]);
-                driver.Navigate().Back();
-            }
-        }
+        //     for(int i=0; i<3; i++)
+        //     {
+        //         kpiUaPage_ua.clickOnTheIthLink(id, i+1);
+        //         // Assert.
+        //         Assert.True(driver.Title == titles[i]);
+        //         driver.Navigate().Back();
+        //     }
+        // }
 
         [Fact]
         public void TestCampusLink()
