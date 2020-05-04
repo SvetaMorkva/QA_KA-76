@@ -57,7 +57,8 @@ namespace lab2
         public void ChangeAccountName()
         {
             System.Threading.Thread.Sleep(2000);
-            settings.accountDefaultsSection.Click();
+            driver.Navigate().GoToUrl("https://app.hubspot.com/settings/7600578/account-defaults/general");
+            // settings.accountDefaultsSection.Click();
             settings.EnterNewAccountName(randomStr);
 
             wait.Until(ExpectedConditions.ElementToBeClickable(settings.saveChangesButton));

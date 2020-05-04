@@ -25,7 +25,7 @@ namespace lab2.PageObjects
         [FindsBy(How = How.CssSelector, Using = "button[data-button-use='primary']")]
         public IWebElement createTaskButton;
 
-        [FindsBy(How = How.CssSelector, Using = "input[data-selenium-test='property-input-hs_task_subject']")]
+        [FindsBy(How = How.Id, Using = "UIFormControl-11")]
         public IWebElement taskTittleField;
 
         [FindsBy(How = How.CssSelector, Using = "button[data-selenium-test='CreateTaskSidebar__save-btn']")]
