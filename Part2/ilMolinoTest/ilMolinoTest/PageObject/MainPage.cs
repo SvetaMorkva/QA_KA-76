@@ -65,71 +65,85 @@ namespace IlMolinoSite.PageObject
             this._driver = driver;
         }
 
-        public void ClickOnBox()
+        public MainPage ClickOnBox()
         {
             _box.Click();
+            return this;
         }
 
-        public void ClickOnPizza()
+        public MainPage ClickOnPizza()
         {
             _pizza.Click();
+            return this;
         }
 
-        public void ClickOnDessert()
+        public MainPage ClickOnDessert()
         {
             _dessert.Click();
+            return this;
         }
-        public void ClickOnSalad()
+        public MainPage ClickOnSalad()
         {
             _salad.Click();
+            return this;
         }
-        public void ClickOnHitPizza()
+        public MainPage ClickOnHitPizza()
         {
             _hitPizza.Click();
+            return this;
         }
 
-        public void ClickOnSoup()
+        public MainPage ClickOnSoup()
         {
             _soup.Click();
+            return this;
         }
 
-        public void ClickOnMainDishes()
+        public MainPage ClickOnMainDishes()
         {
             _mainDishes.Click();
+            return this;
         }
 
-        public void ClickOnBeverages()
+        public MainPage ClickOnBeverages()
         {
             _beverages.Click();
+            return this;
         }
 
-        public void ClickOnMoney()
+        public MainPage ClickOnMoney()
         {
             _money.Click();
+            return this;
         }
 
-        public void ClickOnLangage()
+        public MainPage ClickOnLangage()
         {
             _langage.Click();
+            return this;
         }
 
-        public void ClickPluxInBox()
+        public MainPage ClickPluxInBox()
         {
             _plusInBox.Click();
+            return this;
         }
-        public void SelectEnglish()
+        public MainPage SelectEnglish()
         {
             _en.Click();
+            return this;
         }
 
-        public void SelectRussia()
+        public MainPage SelectRussia()
         {
             _ru.Click();
+            return this;
         }
 
-        public void SelectUkrainian()
+        public MainPage SelectUkrainian()
         {
             _ua.Click();
+            return this;
         }
 
         public string Langage
@@ -148,10 +162,11 @@ namespace IlMolinoSite.PageObject
             return result;
         }
 
-        public void RemoveElementWithListSpanElementInBox(string element)
+        public MainPage RemoveElementWithListSpanElementInBox(string element)
         {
             IWebElement tmp = _driver.FindElement(By.XPath("//span[@class='" + element + "']"));
             _spanElementInBox.Remove(tmp);
+            return this;
         }
     }
 }

@@ -25,14 +25,16 @@ namespace IlMolinoSite.PageObject
             this._driver = driver;
         }
 
-        public void ClickOnButtonAddIngredients()
+        public MilanoPage ClickOnButtonAddIngredients()
         {
             _buttonAddIngredients.Click();
+            return this;
         }
 
-        public void ClickOnPlusButtonChickenFillet()
+        public MilanoPage ClickOnPlusButtonChickenFillet()
         {
             _plusChickenFillet.Click();
+            return this;
         }
 
         public bool CheckListIngredients(string ingredient)

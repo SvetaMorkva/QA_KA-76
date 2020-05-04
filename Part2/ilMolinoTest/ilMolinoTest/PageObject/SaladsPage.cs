@@ -22,19 +22,22 @@ namespace IlMolinoSite.PageObject
             this._driver = driver;
         }
 
-        public void BuyVealSalad()
+        public SaladsPage BuyVealSalad()
         {
             _vealSalad.Click();
+            return this;
         }
 
-        public void BuySaladNicoise()
+        public SaladsPage BuySaladNicoise()
         {
             _saladNicoise.Click();
+            return this;
         }
 
-        public void BuyCaesarSaladWithChicken()
+        public SaladsPage BuyCaesarSaladWithChicken()
         {
             _caesarSaladWithChicken.Click();
+            return this;
         }
     }
 }

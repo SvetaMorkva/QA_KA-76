@@ -22,19 +22,22 @@ namespace IlMolinoSite.PageObject
             this._driver = driver;
         }
 
-        public void BuyPizzaVerona()
+        public PizzaPage BuyPizzaVerona()
         {
             _pizzaVerona.Click();
+            return this;
         }
 
-        public void BuyPizzaBarbuqueGourmet()
+        public PizzaPage BuyPizzaBarbuqueGourmet()
         {
             _pizzaBarbuqueGourmet.Click();
+            return this;
         }
 
-        public void BuyPizzaMargherita()
+        public PizzaPage BuyPizzaMargherita()
         {
             _pizzaMargherita.Click();
+            return this;
         }
     }
 }

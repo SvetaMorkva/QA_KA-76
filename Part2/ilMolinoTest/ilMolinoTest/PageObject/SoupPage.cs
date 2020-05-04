@@ -19,14 +19,16 @@ namespace IlMolinoSite.PageObject
             this._driver = driver;
         }
 
-        public void BuyChickenSoupWithPasta()
+        public SoupPage BuyChickenSoupWithPasta()
         {
             _chickenSoupWithPasta.Click();
+            return this;
         }
 
-        public void BuyTomatoSoup()
+        public SoupPage BuyTomatoSoup()
         {
             _tomatoSoup.Click();
+            return this;
         }
     }
 }

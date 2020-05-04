@@ -22,19 +22,22 @@ namespace IlMolinoSite.PageObject
             this._driver = driver;
         }
 
-        public void BuySyrnikiWithRaisins()
+        public DessertPage BuySyrnikiWithRaisins()
         {
             _syrnikiWithRaisins.Click();
+            return this;
         }
 
-        public void BuyVanillaClassicIceCream()
+        public DessertPage BuyVanillaClassicIceCream()
         {
             _vanillaClassicIceCream.Click();
+            return this;
         }
 
-        public void BuyDarkChocolateIceCream()
+        public DessertPage BuyDarkChocolateIceCream()
         {
             _darkChocolateIceCream.Click();
+            return this;
         }
     }
 }

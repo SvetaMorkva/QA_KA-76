@@ -22,19 +22,22 @@ namespace IlMolinoSite.PageObject
             this._driver = driver;
         }
 
-        public void BuyLimeLemonade()
+        public BeveragesPage BuyLimeLemonade()
         {
             _limeLemonade.Click();
+            return this;
         }
 
-        public void BuyBurn()
+        public BeveragesPage BuyBurn()
         {
             _burn.Click();
+            return this;
         }
 
-        public void BuyGingerNaturalTeaConcentrate()
+        public BeveragesPage BuyGingerNaturalTeaConcentrate()
         {
             _gingerNaturalTeaConcentrate.Click();
+            return this;
         }
     }
 }

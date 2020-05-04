@@ -23,19 +23,22 @@ namespace IlMolinoSite.PageObject
             this._driver = driver;
         }
 
-        public void BuyRavioliWithMushroomAndTofu()
+        public MainDishesPage BuyRavioliWithMushroomAndTofu()
         {
             _ravioliWithMushroomsAndTofu.Click();
+            return this;
         }
 
-        public void BuyPappardelleWithVealCheeks()
+        public MainDishesPage BuyPappardelleWithVealCheeks()
         {
             _pappardelleWithVealCheeks.Click();
+            return this;
         }
 
-        public void BuyDoradoWithVegetables()
+        public MainDishesPage BuyDoradoWithVegetables()
         {
-            _doradoWithVegetables.Click();           
+            _doradoWithVegetables.Click();
+            return this;
         }
     }
 }

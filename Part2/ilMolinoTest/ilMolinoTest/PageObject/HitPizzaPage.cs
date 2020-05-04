@@ -10,9 +10,10 @@ namespace IlMolinoSite.PageObject
         [FindsBy(How = How.XPath, Using = "//a[@class='box js-add-basket tit_577']")]
         private IWebElement _pizzaAmericana;
 
-        public void BuyPizzaAmericana()
+        public HitPizzaPage BuyPizzaAmericana()
         {
             _pizzaAmericana.Click();
+            return this;
         }
         public HitPizzaPage(IWebDriver driver)
         {
