@@ -15,7 +15,7 @@ namespace lab2.PageObjects
         {
             this.driver = driver;
             PageFactory.InitElements(driver, this);
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
             driver.Manage().Window.Size = new Size(800, 400);
         }
 

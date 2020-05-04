@@ -56,7 +56,7 @@ namespace lab2
         [Test]
         public void ChangeAccountName()
         {
-            settings.accountDefaultsSection.Click();
+            // settings.accountDefaultsSection.Click();
             settings.EnterNewAccountName(randomStr);
 
             wait.Until(ExpectedConditions.ElementToBeClickable(settings.saveChangesButton));
