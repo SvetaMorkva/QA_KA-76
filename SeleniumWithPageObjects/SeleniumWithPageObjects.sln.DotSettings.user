@@ -1,0 +1,21 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=5a3f6e34_002D77d0_002D4a2b_002D9c13_002D2310ce25dbd3/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestLogin" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::CD158729-6562-4229-B01C-AE1FB850220C::.NETFramework,Version=v4.7.2::SeleniumWithPageObjects.Tests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=bff0303d_002D4205_002D4b84_002Db8d2_002D92e6f3e004c0/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestsLogin" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;Or&gt;&#xD;
+      &lt;TestAncestor&gt;&#xD;
+        &lt;TestId&gt;NUnit3x::CD158729-6562-4229-B01C-AE1FB850220C::.NETFramework,Version=v4.7.2::SeleniumWithPageObjects.Tests.TestsLogin&lt;/TestId&gt;&#xD;
+      &lt;/TestAncestor&gt;&#xD;
+      &lt;TestAncestor&gt;&#xD;
+        &lt;TestId&gt;NUnit3x::CD158729-6562-4229-B01C-AE1FB850220C::.NETFramework,Version=v4.7.2::SeleniumWithPageObjects.Tests.AddRubricSubscription&lt;/TestId&gt;&#xD;
+      &lt;/TestAncestor&gt;&#xD;
+    &lt;/Or&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::CD158729-6562-4229-B01C-AE1FB850220C::.NETFramework,Version=v4.7.2::SeleniumWithPageObjects.Tests.AddDraft&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+  &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

@@ -1,0 +1,13 @@
+C:\Users\Bataisk\RiderProjects\QA-labs\SeleniumWithPageObjects\SeleniumWithPageObjects\obj\Debug\SeleniumWithPageObjects.csprojAssemblyReference.cache
+C:\Users\Bataisk\RiderProjects\QA-labs\SeleniumWithPageObjects\SeleniumWithPageObjects\obj\Debug\SeleniumWithPageObjects.csproj.CoreCompileInputs.cache
+C:\Users\Bataisk\RiderProjects\QA-labs\SeleniumWithPageObjects\SeleniumWithPageObjects\bin\Debug\SeleniumWithPageObjects.dll
+C:\Users\Bataisk\RiderProjects\QA-labs\SeleniumWithPageObjects\SeleniumWithPageObjects\bin\Debug\SeleniumWithPageObjects.pdb
+C:\Users\Bataisk\RiderProjects\QA-labs\SeleniumWithPageObjects\SeleniumWithPageObjects\bin\Debug\nunit.framework.dll
+C:\Users\Bataisk\RiderProjects\QA-labs\SeleniumWithPageObjects\SeleniumWithPageObjects\bin\Debug\WebDriver.dll
+C:\Users\Bataisk\RiderProjects\QA-labs\SeleniumWithPageObjects\SeleniumWithPageObjects\bin\Debug\nunit.framework.xml
+C:\Users\Bataisk\RiderProjects\QA-labs\SeleniumWithPageObjects\SeleniumWithPageObjects\bin\Debug\WebDriver.xml
+C:\Users\Bataisk\RiderProjects\QA-labs\SeleniumWithPageObjects\SeleniumWithPageObjects\obj\Debug\SeleniumWithPageObjects.csproj.CopyComplete
+C:\Users\Bataisk\RiderProjects\QA-labs\SeleniumWithPageObjects\SeleniumWithPageObjects\obj\Debug\SeleniumWithPageObjects.dll
+C:\Users\Bataisk\RiderProjects\QA-labs\SeleniumWithPageObjects\SeleniumWithPageObjects\obj\Debug\SeleniumWithPageObjects.pdb
+C:\Users\Bataisk\RiderProjects\QA-labs\SeleniumWithPageObjects\SeleniumWithPageObjects\bin\Debug\WebDriver.Support.dll
+C:\Users\Bataisk\RiderProjects\QA-labs\SeleniumWithPageObjects\SeleniumWithPageObjects\bin\Debug\WebDriver.Support.xml
