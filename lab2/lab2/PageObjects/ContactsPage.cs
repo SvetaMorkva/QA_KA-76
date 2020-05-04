@@ -21,7 +21,7 @@ namespace lab2.PageObjects
             this.driver = driver;
             PageFactory.InitElements(driver, this);
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
-            driver.Manage().Window.Size = new Size(800, 400);
+            driver.Manage().Window.Size = new Size(800, 600);
         }
 
         [FindsBy(How = How.CssSelector, Using = "button[data-button-use='primary']")]
@@ -86,6 +86,7 @@ namespace lab2.PageObjects
             IWebElement[] checksElems = checkSelector.ToArray();
             System.Threading.Thread.Sleep(3000);
             checksElems[index + 1].Click();
+            
             return this;
         }
 
