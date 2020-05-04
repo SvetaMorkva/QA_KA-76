@@ -5,46 +5,6 @@ using System.Threading;
 
 namespace SoundCloud_E2ETestProject
 {
-    public class PlaylistPageTest
-    {
-        private IWebDriver _driver;
-        private string _url = "https://soundcloud.com/user-876658341/sets/sunday-music-and-hot-coffee";
-
-        [SetUp]
-        public void Setup()
-        {
-            _driver = new ChromeDriver();
-            _driver.Navigate().GoToUrl(_url);
-        }
-
-        [TestCase(0)]
-        [TestCase(1)]
-        [TestCase(3)]
-        public void TurnOnTrack(int indexInTrackList)
-        {
-            PlaylistPage playlistPage = new PlaylistPage(_driver);
-            playlistPage.PlayTrack(indexInTrackList);
-            Assert.Pass();
-        }
-
-        [TestCase(0)]
-        [TestCase(1)]
-        [TestCase(3)]
-        public void GoToTrackPage(int indexInTrackList)
-        {
-            PlaylistPage playlistPage = new PlaylistPage(_driver);
-            Thread.Sleep(6000);
-            _driver.Navigate().GoToUrl(playlistPage.GetTrackURL(indexInTrackList));
-            Assert.Pass();
-        }
-
-        [TearDown]
-        public void CleanUp()
-        {
-            _driver.Quit();
-        }
-    }
-
     public class HomePageTest
     {
         private IWebDriver _driver;
@@ -63,9 +23,9 @@ namespace SoundCloud_E2ETestProject
         [TestCase(3)]
         public void GoToPlaylistPage(int indexInPlaulistList)
         {
-            HomePage playlistPage = new HomePage(_driver);
+            HomePage homePage = new HomePage(_driver);
             Thread.Sleep(6000);
-            _driver.Navigate().GoToUrl(playlistPage.GetPlaylistURL(indexInPlaulistList));
+            _driver.Navigate().GoToUrl(homePage.GetPlaylistPageURL(indexInPlaulistList));
             Assert.Pass();
         }
 
@@ -97,4 +57,75 @@ namespace SoundCloud_E2ETestProject
             _driver.Quit();
         }
     }
+
+    public class PlaylistPageTest
+    {
+        private IWebDriver _driver;
+        private string _url = "https://soundcloud.com/user-876658341/sets/sunday-music-and-hot-coffee";
+
+        [SetUp]
+        public void Setup()
+        {
+            _driver = new ChromeDriver();
+            _driver.Navigate().GoToUrl(_url);
+        }
+
+        [TestCase(0)]
+        [TestCase(1)]
+        [TestCase(3)]
+        public void TurnOnTrack(int indexInTrackList)
+        {
+            PlaylistPage playlistPage = new PlaylistPage(_driver);
+            Thread.Sleep(6000);
+            playlistPage.PlayTrack(indexInTrackList);
+            Assert.Pass();
+        }
+
+        [TestCase(0)]
+        [TestCase(1)]
+        [TestCase(3)]
+        public void GoToTrackPage(int indexInTrackList)
+        {
+            PlaylistPage playlistPage = new PlaylistPage(_driver);
+            Thread.Sleep(6000);
+            _driver.Navigate().GoToUrl(playlistPage.GetTrackPageURL(indexInTrackList));
+            Assert.Pass();
+        }
+
+        [TearDown]
+        public void CleanUp()
+        {
+            _driver.Quit();
+        }
+    }
+
+    public class TrackPageTest
+    {
+        private IWebDriver _driver;
+        private string _url = "https://soundcloud.com/ruucampbell/crossroads-heartsong-ruu?in=user-876658341/sets/sunday-music-and-hot-coffee";
+
+        [SetUp]
+        public void Setup()
+        {
+            _driver = new ChromeDriver();
+            _driver.Navigate().GoToUrl(_url);
+        }
+
+        [Test]
+        public void GoToLikePage()
+        {
+            TrackPage trackPage = new TrackPage(_driver);
+            Thread.Sleep(6000);
+            _driver.Navigate().GoToUrl(trackPage.GetLikePageURL());
+            Assert.Pass();
+        }
+
+        [TearDown]
+        public void CleanUp()
+        {
+            _driver.Quit();
+        }
+    }
+
+
 }
