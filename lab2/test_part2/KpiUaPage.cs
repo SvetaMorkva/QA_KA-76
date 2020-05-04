@@ -46,6 +46,8 @@ namespace lab2
             return this;
         }
 
+
+        public bool linkEnabled(string id, int i) => driver.FindElement(By.XPath($"//div[@id='{id}']//div//div/p[{i}]/a")).Enabled;
         public KpiUaPage clickOnTheIthLink(string id, int i)
         {
             driver.FindElement(By.XPath($"//div[@id='{id}']//div//div/p[{i}]/a")).Click();

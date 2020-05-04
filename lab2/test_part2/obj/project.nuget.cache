@@ -1,12 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "GuW5BLHS12NYEefds8+syL0pT9Q4ngqh2WCEVleb9bXQjxRxsREPg5b+jNUBb+hr7wiRnXpU6cMDjRp39YHajg==",
+  "dgSpecHash": "hLmPkgbsN2uNp3ITB0ps1z4JTWDVa395RC15KN+/4mRc0koX7HzcKc0ILjTGwoovmGKr+v3WzyVmil8D8vEgDg==",
   "success": true,
   "projectFilePath": "/home/pavlo/Documents/QA_KA-76/lab2/test_part2/test.csproj",
   "expectedPackageFiles": [
     "/home/pavlo/.nuget/packages/dotnetseleniumextras.pageobjects/3.11.0/dotnetseleniumextras.pageobjects.3.11.0.nupkg.sha512",
     "/home/pavlo/.nuget/packages/dotnetseleniumextras.pageobjects.core/3.12.0/dotnetseleniumextras.pageobjects.core.3.12.0.nupkg.sha512",
-    "/home/pavlo/.nuget/packages/languagedetection/1.2.0/languagedetection.1.2.0.nupkg.sha512",
     "/home/pavlo/.nuget/packages/microsoft.codecoverage/16.5.0/microsoft.codecoverage.16.5.0.nupkg.sha512",
     "/home/pavlo/.nuget/packages/microsoft.csharp/4.3.0/microsoft.csharp.4.3.0.nupkg.sha512",
     "/home/pavlo/.nuget/packages/microsoft.net.test.sdk/16.5.0/microsoft.net.test.sdk.16.5.0.nupkg.sha512",
@@ -108,16 +107,5 @@
     "/home/pavlo/.nuget/packages/xunit.extensibility.execution/2.4.0/xunit.extensibility.execution.2.4.0.nupkg.sha512",
     "/home/pavlo/.nuget/packages/xunit.runner.visualstudio/2.4.0/xunit.runner.visualstudio.2.4.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'LanguageDetection 1.2.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
-      "libraryId": "LanguageDetection",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  "logs": []
 }

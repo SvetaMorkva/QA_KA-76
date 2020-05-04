@@ -193,4 +193,3 @@
 /home/pavlo/Documents/QA_KA-76/lab2/test_part2/bin/Debug/netcoreapp3.1/zh-Hant/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
 /home/pavlo/Documents/QA_KA-76/lab2/test_part2/obj/Debug/netcoreapp3.1/test.csproj.CopyComplete
 /home/pavlo/Documents/QA_KA-76/lab2/test_part2/obj/Debug/netcoreapp3.1/test.genruntimeconfig.cache
-/home/pavlo/Documents/QA_KA-76/lab2/test_part2/bin/Debug/netcoreapp3.1/LanguageDetection.dll

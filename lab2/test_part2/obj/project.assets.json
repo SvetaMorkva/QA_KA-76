@@ -27,15 +27,6 @@
           "lib/netstandard2.0/SeleniumExtras.PageObjects.dll": {}
         }
       },
-      "LanguageDetection/1.2.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45/LanguageDetection.dll": {}
-        },
-        "runtime": {
-          "lib/net45/LanguageDetection.dll": {}
-        }
-      },
       "Microsoft.CodeCoverage/16.5.0": {
         "type": "package",
         "compile": {
@@ -1840,18 +1831,6 @@
         "lib/net40/SeleniumExtras.PageObjects.dll",
         "lib/net45/SeleniumExtras.PageObjects.dll",
         "lib/netstandard2.0/SeleniumExtras.PageObjects.dll"
-      ]
-    },
-    "LanguageDetection/1.2.0": {
-      "sha512": "kjRoYZNahh3Ot/HZO8Yh8lRjYagsnCOt82qnzKSOuVx51aWvguQ/p31+8ye9kR9nfWwyh3i8Xjq/16WPzcQpsg==",
-      "type": "package",
-      "path": "languagedetection/1.2.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "languagedetection.1.2.0.nupkg.sha512",
-        "languagedetection.nuspec",
-        "lib/net45/LanguageDetection.dll"
       ]
     },
     "Microsoft.CodeCoverage/16.5.0": {
@@ -6172,7 +6151,6 @@
     ".NETCoreApp,Version=v3.1": [
       "DotNetSeleniumExtras.PageObjects >= 3.11.0",
       "DotNetSeleniumExtras.PageObjects.Core >= 3.12.0",
-      "LanguageDetection >= 1.2.0",
       "Microsoft.NET.Test.Sdk >= 16.5.0",
       "Selenium.WebDriver >= 3.141.0",
       "Selenium.WebDriver.ChromeDriver >= 81.0.4044.6900",
@@ -6223,10 +6201,6 @@
             "target": "Package",
             "version": "[3.12.0, )"
           },
-          "LanguageDetection": {
-            "target": "Package",
-            "version": "[1.2.0, )"
-          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[16.5.0, )"
@@ -6266,17 +6240,5 @@
         "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'LanguageDetection 1.2.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
-      "libraryId": "LanguageDetection",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  }
 }
