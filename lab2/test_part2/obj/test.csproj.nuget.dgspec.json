@@ -1,0 +1,92 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/pavlo/Documents/QA_KA-76/lab2/test_part2/test.csproj": {}
+  },
+  "projects": {
+    "/home/pavlo/Documents/QA_KA-76/lab2/test_part2/test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/pavlo/Documents/QA_KA-76/lab2/test_part2/test.csproj",
+        "projectName": "test",
+        "projectPath": "/home/pavlo/Documents/QA_KA-76/lab2/test_part2/test.csproj",
+        "packagesPath": "/home/pavlo/.nuget/packages/",
+        "outputPath": "/home/pavlo/Documents/QA_KA-76/lab2/test_part2/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/pavlo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "DotNetSeleniumExtras.PageObjects": {
+              "target": "Package",
+              "version": "[3.11.0, )"
+            },
+            "DotNetSeleniumExtras.PageObjects.Core": {
+              "target": "Package",
+              "version": "[3.12.0, )"
+            },
+            "LanguageDetection": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.5.0, )"
+            },
+            "Selenium.WebDriver": {
+              "target": "Package",
+              "version": "[3.141.0, )"
+            },
+            "Selenium.WebDriver.ChromeDriver": {
+              "target": "Package",
+              "version": "[81.0.4044.6900, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
