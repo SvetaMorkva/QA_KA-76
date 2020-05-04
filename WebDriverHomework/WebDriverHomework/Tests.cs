@@ -51,14 +51,18 @@ namespace WebDriverHomework
             smartFind(driver, ".-MzZI+ .-MzZI .zyHYP").SendKeys(password);
             smartFind(driver, ".-MzZI+ .DhRcB").Click();
 
-            Thread.Sleep(20000);
-            smartFind(driver, ".HoLwm").Click();
-            Thread.Sleep(10000);
-            //There's a dumb notification dialog (-_-)
-            if (driver.FindElements(By.CssSelector(".RnEpo")).Count != 0)
+            Thread.Sleep(5000);
+            //smartFind(driver, ".HoLwm").Click();
+            try
             {
+                smartFind(driver, ".Fifk5:nth-child(1) a").Click();
+            } catch (Exception e)
+            {
+                //just ignore this exception, it happens due to dumb notifications dialog
                 smartFind(driver, ".HoLwm").Click();
             }
+            Thread.Sleep(5000);
+
 
             mainPage = new PageObject(driver);
             homePage = new HomePage(driver);
