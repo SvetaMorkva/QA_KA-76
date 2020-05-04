@@ -62,7 +62,7 @@ namespace lab2
             kpiUaPage_ua = kpiUaPage_ua.clickOnHeaderIcon(id);
             for(int i=1; i <= 3; i++)
             {
-                new WebDriverWait(driver, TimeSpan.FromSeconds(5))
+                new WebDriverWait(driver, TimeSpan.FromSeconds(10))
                 .Until(d => d.Url != $"{url}/en");
                 kpiUaPage_ua.clickOnTheIthLink(id, i);
                 actual += kpiUaPage_ua.Contains("//input");            
