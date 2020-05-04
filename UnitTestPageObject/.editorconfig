@@ -1,0 +1,4 @@
+﻿[*.{cs,vb}]
+
+# IDE0044: Добавить модификатор только для чтения
+dotnet_style_readonly_field = true:suggestion
