@@ -39,9 +39,7 @@ namespace Laba2_part2
         {
             var WebPage = new Page(driver);
             WebPage.GoToBouquetPage();
-            Thread.Sleep(300);
             WebPage.Selection();
-            Thread.Sleep(300);
             var name = WebPage.GetTitle();
             using (new AssertionScope())
             {

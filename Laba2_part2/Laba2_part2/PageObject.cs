@@ -18,7 +18,7 @@ namespace Laba2_part2
             PageFactory.InitElements(driver, this);
         }
         //test1
-        [FindsBy(How = How.XPath, Using = "/html/body/nav/div/div/div[1]/nav/div/ul/li[2]/a")]
+        [FindsBy(How = How.XPath, Using = "/html/body/nav/div/div/div[1]/nav/div/ul/li[3]/a")]
         private IWebElement BouquetPage;
         [FindsBy(How = How.XPath, Using = "/html/body/div[2]/div[1]/div[1]/ul/li[1]/a")]
         private IWebElement FlowersPage;
