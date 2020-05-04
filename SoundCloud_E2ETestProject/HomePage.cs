@@ -13,9 +13,6 @@ namespace SoundCloud_E2ETestProject
     {
         private IWebDriver _driver;
 
-        [FindsBy(How = How.XPath, Using = "//*[@id='app']/div[1]/div/div/div/button")]
-        private IWebElement cookiesButton { get; set; }
-
         [FindsBy(How = How.CssSelector, Using = "a.sc-link-dark.sc-type-light.playableTile__mainHeading.audibleTile__mainHeading.playableTile__heading.playableTile__audibleHeading.audibleTile__audibleHeading.sc-truncate.sc-font-light")]
         private IList<IWebElement> PlaylistsLink { get; set; }
 
@@ -29,14 +26,8 @@ namespace SoundCloud_E2ETestProject
         {
             _driver = driver;
             PageFactory.InitElements(driver, this);
-
-            try
-            {
-                new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(cookiesButton));
-                cookiesButton.Click();
-            }
-            catch { }
         }
+
 
         public string GetPlaylistPageURL(int index_Playlist)
         {

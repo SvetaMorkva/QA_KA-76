@@ -14,9 +14,6 @@ namespace SoundCloud_E2ETestProject
         private IWebDriver _driver;
         private WebDriverWait wait;
 
-        [FindsBy(How = How.XPath, Using = "//*[@id='app']/div[1]/div/div/div/button")]
-        private IWebElement cookiesButton { get; set; }
-
         [FindsBy(How = How.CssSelector, Using = "a.sc-ministats.sc-ministats-medium.sc-ministats-likes")]
         private IWebElement LikeScoreLink { get; set; }
 
@@ -25,13 +22,6 @@ namespace SoundCloud_E2ETestProject
             _driver = driver;
             wait = new WebDriverWait(_driver, TimeSpan.FromMinutes(1));
             PageFactory.InitElements(driver, this);
-
-            try
-            {
-                new WebDriverWait(driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(cookiesButton));
-                cookiesButton.Click();
-            }
-            catch { }
         }
 
         private TrackPage GoToElement(IWebElement element)

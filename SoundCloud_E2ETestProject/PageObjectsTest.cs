@@ -16,6 +16,8 @@ namespace SoundCloud_E2ETestProject
         {
             _driver = new ChromeDriver();
             _driver.Navigate().GoToUrl(_url);
+            CookiesNotification cookiesNotification = new CookiesNotification(_driver);
+            cookiesNotification.AllowCookies();
         }
 
 
@@ -70,6 +72,8 @@ namespace SoundCloud_E2ETestProject
         {
             _driver = new ChromeDriver();
             _driver.Navigate().GoToUrl(_url);
+            CookiesNotification cookiesNotification = new CookiesNotification(_driver);
+            cookiesNotification.AllowCookies();
         }
 
         [TestCase(0)]
@@ -112,6 +116,8 @@ namespace SoundCloud_E2ETestProject
         {
             _driver = new ChromeDriver();
             _driver.Navigate().GoToUrl(_url);
+            CookiesNotification cookiesNotification = new CookiesNotification(_driver);
+            cookiesNotification.AllowCookies();
         }
 
         [Test]
@@ -141,6 +147,8 @@ namespace SoundCloud_E2ETestProject
         {
             _driver = new ChromeDriver();
             _driver.Navigate().GoToUrl(_url);
+            CookiesNotification cookiesNotification = new CookiesNotification(_driver);
+            cookiesNotification.AllowCookies();
         }
 
         [TestCase(0)]
@@ -150,7 +158,7 @@ namespace SoundCloud_E2ETestProject
         {
             LikePage likePage = new LikePage(_driver);
             Thread.Sleep(sleepTime);
-            _driver.Navigate().GoToUrl(likePage.GetUserPage(indexOfUserWhoLiked));
+            _driver.Navigate().GoToUrl(likePage.GetUserPageURL(indexOfUserWhoLiked));
             Assert.Pass();
         }
 
