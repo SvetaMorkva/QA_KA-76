@@ -52,12 +52,12 @@ namespace WebDriverHomework
             smartFind(driver, ".-MzZI+ .-MzZI .zyHYP").SendKeys(password);
             smartFind(driver, ".-MzZI+ .DhRcB").Click();
 
-            Thread.Sleep(5000);
+            Thread.Sleep(3000);
             if (driver.FindElements(By.CssSelector(".RnEpo")).Count != 0)
             {
                 smartFind(driver, ".HoLwm").Click();
             }
-            Thread.Sleep(5000);
+            Thread.Sleep(3000);
 
 
             mainPage = new PageObject(driver);
@@ -84,12 +84,14 @@ namespace WebDriverHomework
                 {
                     profilePage = homePage.searchUser(celebrity)
                         .chooseTheFirstOneSuggested();
-                    Thread.Sleep(5000);
+                    Thread.Sleep(100);
                 }
                 catch (Exception e)
                 {
-                    //just ignore this exception, it happens due to dumb notifications dialog
-                    smartFind(driver, ".HoLwm").Click();
+                    if (driver.FindElements(By.CssSelector(".RnEpo")).Count != 0)
+                    {
+                        smartFind(driver, ".HoLwm").Click();
+                    }
                 }
             }            
             Assert.IsTrue(profilePage.hasVerifiedBadge());
@@ -108,12 +110,14 @@ namespace WebDriverHomework
                 try
                 {
                     inboxPage = homePage.openInboxPage();
-                    Thread.Sleep(5000);
+                    Thread.Sleep(100);
                 }
                 catch (Exception e)
                 {
-                    //just ignore this exception, it happens due to dumb notifications dialog
-                    smartFind(driver, ".HoLwm").Click();
+                    if (driver.FindElements(By.CssSelector(".RnEpo")).Count != 0)
+                    {
+                        smartFind(driver, ".HoLwm").Click();
+                    }
                 }
             }
 
@@ -138,12 +142,14 @@ namespace WebDriverHomework
                 {
                     profilePage = homePage.searchUser(targetUser)
                         .chooseTheFirstOneSuggested();
-                    Thread.Sleep(5000);
+                    Thread.Sleep(100);
                 }
                 catch (Exception e)
                 {
-                    //just ignore this exception, it happens due to dumb notifications dialog
-                    smartFind(driver, ".HoLwm").Click();
+                    if (driver.FindElements(By.CssSelector(".RnEpo")).Count != 0)
+                    {
+                        smartFind(driver, ".HoLwm").Click();
+                    }
                 }
             }
             PostPage postPage = profilePage.openMostRecentPost();
@@ -169,12 +175,14 @@ namespace WebDriverHomework
                 {
                     profilePage = homePage.searchUser(targetUser)
                         .chooseTheFirstOneSuggested();
-                    Thread.Sleep(5000);
+                    Thread.Sleep(100);
                 }
                 catch (Exception e)
                 {
-                    //just ignore this exception, it happens due to dumb notifications dialog
-                    smartFind(driver, ".HoLwm").Click();
+                    if (driver.FindElements(By.CssSelector(".RnEpo")).Count != 0)
+                    {
+                        smartFind(driver, ".HoLwm").Click();
+                    }
                 }
             }
             PostPage postPage = profilePage.openMostRecentPost();
@@ -197,12 +205,14 @@ namespace WebDriverHomework
                 {
                     postPage = homePage.openExplorePage()
                         .openFirstPost();
-                    Thread.Sleep(5000);
+                    Thread.Sleep(100);
                 }
                 catch (Exception e)
                 {
-                    //just ignore this exception, it happens due to dumb notifications dialog
-                    smartFind(driver, ".HoLwm").Click();
+                    if (driver.FindElements(By.CssSelector(".RnEpo")).Count != 0)
+                    {
+                        smartFind(driver, ".HoLwm").Click();
+                    }
                 }
             }
             HomePage h1 = postPage.sharePostToUser(targetUser)
@@ -226,12 +236,14 @@ namespace WebDriverHomework
                 {
                     profilePage = homePage.searchUser(targetUser)
                         .chooseTheFirstOneSuggested();
-                    Thread.Sleep(5000);
+                    Thread.Sleep(100);
                 }
                 catch (ElementClickInterceptedException e)
                 {
-                    //just ignore this exception, it happens due to dumb notifications dialog
-                    smartFind(driver, ".HoLwm").Click();
+                    if (driver.FindElements(By.CssSelector(".RnEpo")).Count != 0)
+                    {
+                        smartFind(driver, ".HoLwm").Click();
+                    }
                 }
             }
             profilePage.follow()
@@ -255,12 +267,14 @@ namespace WebDriverHomework
                 {
                     settingsPage = homePage.openProfilePage()
                         .openProfileSettingsPage();
-                    Thread.Sleep(5000);
+                    Thread.Sleep(100);
                 }
                 catch (Exception e)
                 {
-                    //just ignore this exception, it happens due to dumb notifications dialog
-                    smartFind(driver, ".HoLwm").Click();
+                    if (driver.FindElements(By.CssSelector(".RnEpo")).Count != 0)
+                    {
+                        smartFind(driver, ".HoLwm").Click();
+                    }
                 }
             }
             settingsPage.sendName(newName);
@@ -287,12 +301,14 @@ namespace WebDriverHomework
                 {
                     settingsPage = homePage.openProfilePage()
                         .openProfileSettingsPage();
-                    Thread.Sleep(5000);
+                    Thread.Sleep(100);
                 }
                 catch (Exception e)
                 {
-                    //just ignore this exception, it happens due to dumb notifications dialog
-                    smartFind(driver, ".HoLwm").Click();
+                    if (driver.FindElements(By.CssSelector(".RnEpo")).Count != 0)
+                    {
+                        smartFind(driver, ".HoLwm").Click();
+                    }
                 }
             }
             settingsPage.sendBio(newBio);
@@ -319,12 +335,14 @@ namespace WebDriverHomework
                 {
                     settingsPage = homePage.openProfilePage()
                         .openProfileSettingsPage();
-                    Thread.Sleep(5000);
+                    Thread.Sleep(100);
                 }
                 catch (Exception e)
                 {
-                    //just ignore this exception, it happens due to dumb notifications dialog
-                    smartFind(driver, ".HoLwm").Click();
+                    if (driver.FindElements(By.CssSelector(".RnEpo")).Count != 0)
+                    {
+                        smartFind(driver, ".HoLwm").Click();
+                    }
                 }
             }
             settingsPage.sendWebsite(newWebsite);
