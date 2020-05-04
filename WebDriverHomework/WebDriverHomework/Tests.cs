@@ -51,18 +51,10 @@ namespace WebDriverHomework
             smartFind(driver, ".-MzZI+ .-MzZI .zyHYP").SendKeys(password);
             smartFind(driver, ".-MzZI+ .DhRcB").Click();
 
-            Thread.Sleep(30000);
-
+            Thread.Sleep(5000);
+            smartFind(driver, ".HoLwm").Click();
             //There's a dumb notification dialog (-_-)
-            if (driver.FindElements(By.CssSelector(".piCib")).Count != 0)
-            {
-                smartFind(driver, ".HoLwm").Click();
-            }
-
-            if (driver.FindElements(By.CssSelector(".RnEpo")).Count != 0)
-            {
-                smartFind(driver, ".HoLwm").Click();
-            }
+            
 
             mainPage = new PageObject(driver);
             homePage = new HomePage(driver);
