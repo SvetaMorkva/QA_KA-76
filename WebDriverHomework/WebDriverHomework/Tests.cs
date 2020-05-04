@@ -51,7 +51,7 @@ namespace WebDriverHomework
             smartFind(driver, ".-MzZI+ .-MzZI .zyHYP").SendKeys(password);
             smartFind(driver, ".-MzZI+ .DhRcB").Click();
 
-            Thread.Sleep(3000);
+            Thread.Sleep(5000);
 
             //There's a dumb notification dialog (-_-)
             if (driver.FindElements(By.CssSelector(".piCib")).Count != 0)
@@ -59,8 +59,10 @@ namespace WebDriverHomework
                 smartFind(driver, ".HoLwm").Click();
             }
 
-            //Thread.Sleep(10000);
-            //waitUntilExists(driver, ".Fifk5 ._6q-tv");
+            if (driver.FindElements(By.CssSelector(".RnEpo")).Count != 0)
+            {
+                smartFind(driver, ".HoLwm").Click();
+            }
 
             mainPage = new PageObject(driver);
             homePage = new HomePage(driver);
