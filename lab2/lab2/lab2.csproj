@@ -56,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContactsHubSpotTests.cs" />
+    <Compile Include="PageObjects\ContactsPage.cs" />
+    <Compile Include="PageObjects\HomePage.cs" />
+    <Compile Include="PageObjects\LoginPage.cs" />
+    <Compile Include="PageObjects\SettingsPage.cs" />
+    <Compile Include="PageObjects\TasksPage.cs" />
+    <Compile Include="PageObjects\TemplatesPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SettingsHubSpotTests.cs" />
     <Compile Include="TasksHubSpotTests.cs" />
