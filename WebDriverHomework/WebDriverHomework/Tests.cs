@@ -13,6 +13,7 @@ namespace WebDriverHomework
     {
         private IWebDriver driver;
         private PageObject mainPage;
+        private HomePage homePage;
 
         private string url = "https://www.instagram.com/";
 
@@ -58,10 +59,11 @@ namespace WebDriverHomework
                 smartFind(driver, ".HoLwm").Click();
             }
 
-            Thread.Sleep(10000);
+            //Thread.Sleep(10000);
             //waitUntilExists(driver, ".Fifk5 ._6q-tv");
 
             mainPage = new PageObject(driver);
+            homePage = new HomePage(driver);
 
             driver.SwitchTo().Window(driver.WindowHandles.First());
         }
@@ -76,154 +78,101 @@ namespace WebDriverHomework
         [TestCase("natalieportman")]
         public void findTheCelebrity_TheFirstSearchResultShouldHaveTheVerifiedBadgeInProfile(string celebrity)
         {
-            mainPage.startSearchInput().SendKeys(celebrity);
-            //choose the first search result
+            ProfilePage profilePage = homePage.searchUser(celebrity)
+                .chooseTheFirstOneSuggested();
+
             Thread.Sleep(5000);
-            smartFind(driver, ".yCE8d:nth-child(1)").Click();
-            //wait until the profile is loaded
-            waitUntilExists(driver, ".fDxYl");
+
+            Assert.IsTrue(profilePage.hasVerifiedBadge());
 
             // Wow, you found an easter egg! Just text me in telegram @irremissibile
             // Your dream reward (1 chocolate bar) is waiting for you
-
-            Assert.IsTrue(smartFind(driver, ".coreSpriteVerifiedBadge").Displayed);
         }
 
 
         [TestCase("et.irremissibile", "wazzup")]
         public void findTheParticularUserAndSendAMessage_ShouldBeNoErrorsInCorrespondingInboxChat(string targetUser, string message)
         {
-            mainPage.openInboxPage();
-            //find and click a "new message" button
-            smartFind(driver, ".wpO6b").Click();
-            //find an input search field and paste the username
-            smartFind(driver, ".j_2Hd").SendKeys(targetUser);
-            //choose the first one suggested
+            InboxPage inboxPage = homePage.openInboxPage()
+                .startNewMessageDialog()
+                .searchAddressee(targetUser)
+                .chooseTheFirstOneSuggested()
+                .sendMessage(message);
+
             Thread.Sleep(5000);
-            smartFind(driver, ".-qQT3:nth-child(1) .HVWg4").Click();
-            //click "next"
-            smartFind(driver, ".cB_4K").Click();
-            //the chat with the chosen person must be opened
-            smartFind(driver, ".vy6Bb").GetAttribute("innerHTML").Contains(targetUser);
-            //type a message
-            smartFind(driver, ".ItkAi textarea").SendKeys(message);
-            smartFind(driver, ".ItkAi textarea").SendKeys(Keys.Enter);
-            //the message must be sent and there should be no "..." icon near the message
-            Thread.Sleep(3000);
-            
-            Assert.IsTrue(driver.FindElements(By.CssSelector(".FeN85")).Count == 0);
+
+            Assert.IsTrue(inboxPage.checkChat(targetUser));
+            Assert.IsTrue(inboxPage.isErrorAbsent());
         }
 
 
         [TestCase("et.irremissibile")]
         public void likeTheUsersMostRecentPost_TestAccountShouldAppearInTheListOfPeopleWhoHasLikedThisPost(string targetUser)
         {
-            mainPage.startSearchInput().SendKeys(targetUser);
-            //choose the first search result
+            ProfilePage profilePage = homePage.searchUser(targetUser)
+                .chooseTheFirstOneSuggested();
             Thread.Sleep(5000);
-            smartFind(driver, ".yCE8d:nth-child(1)").Click();
-            //wait until the profile is loaded
-            waitUntilExists(driver, ".fDxYl");
-            //click the most recent post
-            smartFind(driver, ".weEfm:nth-child(1) ._bz0w:nth-child(1) ._9AhH0").Click();
 
-            //check if the post has been already liked
-            if (smartFind(driver, ".ltpMr .fr66n .wpO6b svg").GetAttribute("aria-label") == "Unlike")
-            {
-                //gotta "re-like"
-                smartFind(driver, ".ltpMr .fr66n .wpO6b").Click();
-                Thread.Sleep(3000);
-            }
-            smartFind(driver, ".ltpMr .fr66n .wpO6b").Click();
-            Thread.Sleep(3000);
+            PostPage postPage = profilePage.openMostRecentPost();
+            Thread.Sleep(5000);
 
-            //we should see the test account in the list of people who has liked this post
-            smartFind(driver, ".Nm9Fw button").Click();
-            Assert.AreEqual(username, smartFind(driver, ".rBNOH:nth-child(1) .IwRSH .eGOV_ div div div div")
-                    .GetAttribute("innerHTML"));
+            postPage.likePost();
+            Thread.Sleep(5000);
+
+            postPage.openListOfPeopleWhoLiked();
+            Thread.Sleep(5000);
+
+            Assert.AreEqual(username, smartFind(driver, ".rBNOH:nth-child(1) .IwRSH .eGOV_ div div div div").GetAttribute("innerHTML"));
         }
 
 
         [TestCase("et.irremissibile", "Малышка любит дилера")]
         public void commentTheUsersMostRecentPost_TestCommentMustAppearInTheCommentsSection(string targetUser, string comment)
         {
-            mainPage.startSearchInput().SendKeys(targetUser);
-            //choose the first search result
-            Thread.Sleep(5000);
-            smartFind(driver, ".yCE8d:nth-child(1)").Click();
-            //wait until the profile is loaded
-            waitUntilExists(driver, ".fDxYl");
-            //click the most recent post
-            smartFind(driver, ".weEfm:nth-child(1) ._bz0w:nth-child(1) ._9AhH0").Click();
-
-            //write and send the comment
-            smartFind(driver, ".X7cDz textarea").Click();
-            smartFind(driver, ".X7cDz textarea").SendKeys(comment);
-            smartFind(driver, ".X7cDz textarea").SendKeys(Keys.Enter);
-
-            //Gotta wait for instagram to process the comment
+            ProfilePage profilePage = homePage.searchUser(targetUser)
+                .chooseTheFirstOneSuggested();
             Thread.Sleep(5000);
 
-            Assert.AreEqual(comment, smartFind(driver, ".Mr508:last-child .C4VMK span").GetAttribute("innerHTML"));
+            PostPage postPage = profilePage.openMostRecentPost();
+            Thread.Sleep(5000);
+
+            postPage.sendComment(comment);
+            Thread.Sleep(5000);
+
+            Assert.IsTrue(postPage.isLastComment(comment));
         }
 
 
         [TestCase("et.irremissibile")]
         public void shareRandomPostFromExploreToTargetUser_PostShouldAppearInTheChatWithTargetUser(string targetUser)
         {
-            mainPage.openExplorePage();
-
-            //open and share the first post in "explore"
-            smartFind(driver, ".-muEz+ .pKKVh ._9AhH0").Click();
-            smartFind(driver, ".ltpMr button:nth-child(3)").Click();
-            smartFind(driver, ".HVWg4 .-qQT3:nth-child(1)").Click();
-
-            //find an input search field and paste the username
-            smartFind(driver, ".j_2Hd").SendKeys(targetUser);
+            PostPage postPage = homePage.openExplorePage()
+                .openFirstPost();
             Thread.Sleep(5000);
-            //choose the first one suggested
-            smartFind(driver, ".-qQT3:nth-child(1) .eGOV_:nth-child(2)").Click();
-            //click "send"
-            smartFind(driver, ".cB_4K").Click();
 
-            //wait for instagram to process and close
+            HomePage h1 = postPage.sharePostToUser(targetUser)
+                .close();
             Thread.Sleep(5000);
-            smartFind(driver, ".fm1AK  ._8-yf5").Click();
 
-            //open inbox
-            mainPage.openInboxPage();
+            InboxPage inboxPage = h1.openInboxPage();
 
-            //then the last message should be "You sent a post" and time should be "N s" (n seconds ago)
-            //language dependent!!!
-            Assert.IsTrue(smartFind(driver, ".R19PB ~ time").GetAttribute("innerHTML").Contains("s") ||
-                    smartFind(driver, ".R19PB ~ time").GetAttribute("innerHTML").Contains("с"));
-
-            Assert.IsTrue("You sent a post".Equals(smartFind(driver, ".R19PB span").GetAttribute("innerHTML")) ||
-                    "Вы отправили публикацию".Equals(smartFind(driver, ".R19PB span").GetAttribute("innerHTML")));
+            Assert.IsTrue(inboxPage.lastMessageTimeContains("s") || inboxPage.lastMessageTimeContains("с"));
+            Assert.IsTrue(inboxPage.lastMessageInfoContains("You sent a post") || inboxPage.lastMessageInfoContains("Вы отправили публикацию"));
         }
 
 
         [TestCase("et.irremissibile")]
         public void followTargetUser_TargetUserShouldAppearInTheListOfFollowingPeople(string targetUser)
         {
-            mainPage.startSearchInput().SendKeys(targetUser);
-            //choose the first search result
+            ProfilePage profilePage = homePage.searchUser(targetUser)
+                .chooseTheFirstOneSuggested();
             Thread.Sleep(5000);
-            smartFind(driver, ".yCE8d:nth-child(1)").Click();
-            //wait until the profile is loaded
-            waitUntilExists(driver, ".fDxYl");
 
-            //press "follow" button
-            smartFind(driver, "._6VtSN").Click();
-            Thread.Sleep(1000);
+            profilePage.follow()
+                .openProfilePage();
+            Thread.Sleep(5000);
 
-            //now lets check if this account appears in the "following"
-            mainPage.openProfilePage();
-            Thread.Sleep(3000);
-
-            smartFind(driver, ".Y8-fY~ .Y8-fY+ .Y8-fY .-nal3").Click();
-            Assert.AreEqual(targetUser, smartFind(driver, "._0imsa").GetAttribute("innerHTML"));
-
+            Assert.IsTrue(profilePage.isPresentInFollowing(targetUser));
         }
 
 
@@ -233,18 +182,18 @@ namespace WebDriverHomework
         //[TestCase("Selenium Tester")]
         public void changeAccountName_NewNameShouldBeDisplayedInTheProfile(string newName)
         {
-            mainPage.openProfilePage();
+            ProfileSettingsPage settingsPage = homePage.openProfilePage()
+                .openProfileSettingsPage();
             Thread.Sleep(5000);
-            smartFind(driver, ".thEYr button").Click();
-            smartFind(driver, "#pepName").Click();
-            smartFind(driver, "#pepName").Clear();
-            smartFind(driver, "#pepName").SendKeys(newName);
-            Thread.Sleep(1000);
-            smartFind(driver, ".L3NKy").Click();
-            mainPage.openProfilePage();
-            Thread.Sleep(2000);
 
-            Assert.AreEqual(newName, smartFind(driver, ".rhpdm").GetAttribute("innerHTML"));
+            settingsPage.sendName(newName);
+            Thread.Sleep(3000);
+            settingsPage.clickSubmit();
+
+            ProfilePage profilePage = settingsPage.openProfilePage();
+            Thread.Sleep(5000);
+
+            Assert.IsTrue(profilePage.profileNameEquals(newName));
         }
 
 
@@ -254,18 +203,18 @@ namespace WebDriverHomework
         //[TestCase("I have been beaten by my mum")]
         public void changeAccountBio_NewBioShouldBeDisplayedInTheProfile(string newBio)
         {
-            mainPage.openProfilePage();
+            ProfileSettingsPage settingsPage = homePage.openProfilePage()
+                .openProfileSettingsPage();
             Thread.Sleep(5000);
-            smartFind(driver, ".thEYr button").Click();
-            smartFind(driver, "#pepBio").Click();
-            smartFind(driver, "#pepBio").Clear();
-            smartFind(driver, "#pepBio").SendKeys(newBio);
-            Thread.Sleep(1000);
-            smartFind(driver, ".L3NKy").Click();
-            mainPage.openProfilePage();
-            Thread.Sleep(2000);
 
-            Assert.AreEqual(newBio, smartFind(driver, ".-vDIg span").GetAttribute("innerHTML"));
+            settingsPage.sendBio(newBio);
+            Thread.Sleep(3000);
+            settingsPage.clickSubmit();
+
+            ProfilePage profilePage = settingsPage.openProfilePage();
+            Thread.Sleep(5000);
+
+            Assert.IsTrue(profilePage.profileBioEquals(newBio));
         }
 
 
@@ -275,18 +224,18 @@ namespace WebDriverHomework
         //[TestCase("dypka.ua")]
         public void changeAccountWebsite_NewWebsiteShouldBeDisplayedInTheProfile(string newWebsite)
         {
-            mainPage.openProfilePage();
+            ProfileSettingsPage settingsPage = homePage.openProfilePage()
+                .openProfileSettingsPage();
             Thread.Sleep(5000);
-            smartFind(driver, ".thEYr button").Click();
-            smartFind(driver, "#pepWebsite").Click();
-            smartFind(driver, "#pepWebsite").Clear();
-            smartFind(driver, "#pepWebsite").SendKeys(newWebsite);
-            Thread.Sleep(1000);
-            smartFind(driver, ".L3NKy").Click();
-            mainPage.openProfilePage();
-            Thread.Sleep(2000);
 
-            Assert.AreEqual(newWebsite, smartFind(driver, ".yLUwa").GetAttribute("innerHTML"));
+            settingsPage.sendWebsite(newWebsite);
+            Thread.Sleep(3000);
+            settingsPage.clickSubmit();
+
+            ProfilePage profilePage = settingsPage.openProfilePage();
+            Thread.Sleep(5000);
+
+            Assert.IsTrue(profilePage.profileWebsiteEquals(newWebsite));
         }
     }
 }

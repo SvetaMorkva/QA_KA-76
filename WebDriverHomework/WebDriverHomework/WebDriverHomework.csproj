@@ -55,6 +55,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivityPage.cs" />
+    <Compile Include="ExplorePage.cs" />
+    <Compile Include="HomePage.cs" />
+    <Compile Include="InboxPage.cs" />
+    <Compile Include="PostPage.cs" />
+    <Compile Include="ProfilePage.cs" />
+    <Compile Include="ProfileSettingsPage.cs" />
     <Compile Include="Tests.cs" />
     <Compile Include="PageObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
