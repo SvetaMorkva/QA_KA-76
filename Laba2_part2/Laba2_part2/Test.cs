@@ -39,7 +39,9 @@ namespace Laba2_part2
         {
             var WebPage = new Page(driver);
             WebPage.GoToBouquetPage();
+            Thread.Sleep(300);
             WebPage.Selection();
+            Thread.Sleep(300);
             var flowername = WebPage.GetFlowerName();
             using (new AssertionScope())
             {
@@ -103,11 +105,16 @@ namespace Laba2_part2
         {
         var WebPage = new Page(driver);
             driver.Navigate().GoToUrl("http://megacvet24.kiev.ua/9-gerber");
+            Thread.Sleep(300);
             WebPage.Buy();
+            Thread.Sleep(300);
             WebPage.GoToFiveStep();
+            Thread.Sleep(300);
             WebPage.ChoosePayWay();
+            Thread.Sleep(300);
             WebPage.Submit();
             var site = WebPage.GetSite();
+            Thread.Sleep(300);
             using (new AssertionScope())
             {
                 site.Should().Be("https://www.interkassa.com/");
