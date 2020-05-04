@@ -4,6 +4,7 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using lab2.Utils;
 
 namespace lab2.PageObjects
 {
@@ -70,15 +71,11 @@ namespace lab2.PageObjects
 
         public List<string> GetAllTasksList()
         {
+            System.Threading.Thread.Sleep(3000);
             IWebElement[] tasksElems = tasksElemsList.ToArray();
-
-            var tasksList = new List<string>();
-
-            foreach (IWebElement taskElem in tasksElems)
-            {
-                tasksList.Add(taskElem.GetAttribute("textContent"));
-            }
-            return tasksList;
+            UtilsSelenium u = new UtilsSelenium();
+            List<string> result = u.GetAllElemsList(tasksElems);
+            return result;
         }
     }
 }
