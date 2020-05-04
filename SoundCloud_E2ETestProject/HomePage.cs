@@ -38,7 +38,7 @@ namespace SoundCloud_E2ETestProject
             catch { }
         }
 
-        public string GetPlaylistURL(int index_Playlist)
+        public string GetPlaylistPageURL(int index_Playlist)
         {
             new WebDriverWait(_driver, TimeSpan.FromMinutes(1)).Until(ExpectedConditions.ElementToBeClickable(PlaylistsLink[index_Playlist]));
             return PlaylistsLink[index_Playlist].GetAttribute("href");
