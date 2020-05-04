@@ -1,37 +1,28 @@
-﻿using NUnit.Framework;
+﻿using lab2.PageObjects;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 namespace lab2
 {
     public class TasksTests
     {
         private IWebDriver driver;
-        private readonly string email = "olha.pashnieva@gmail.com";
-        private readonly string password = "QALab123456";
-
         private readonly string randomStr = Path.GetRandomFileName().Replace(".", "");
+        private TasksPage tasksPageObj;
 
         [SetUp]
         public void Setup()
         {
             driver = new ChromeDriver();
-            driver.Navigate().GoToUrl("https://app.hubspot.com/login");
+            driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
 
-            // login to HubSpot
-            driver.FindElement(By.Id("username")).SendKeys(email);
-            driver.FindElement(By.Id("password")).SendKeys(password);
-            driver.FindElement(By.Id("loginBtn")).Submit();
-
-            // go to Tasks page
-            System.Threading.Thread.Sleep(2000);
-            driver.Navigate().GoToUrl("https://app.hubspot.com/contacts/7600578/tasks/");
+            tasksPageObj = new TasksPage(driver);
+            tasksPageObj.GoToPage();
         }
 
         [TearDown]
@@ -43,61 +34,36 @@ namespace lab2
         [Test]
         public void CreateTask()
         {
-            // create a task
-            By createTaskButton = By.CssSelector("button[data-button-use='primary']");
-            By taskTitleInput = By.CssSelector("input[data-selenium-test='property-input-hs_task_subject']");
-            By createButton = By.CssSelector("button[data-selenium-test='CreateTaskSidebar__save-btn']");
-
-            driver.FindElement(createTaskButton).Click();
-            driver.FindElement(taskTitleInput).SendKeys(randomStr);
-            driver.FindElement(createButton).Click();
-
-            // verify task is created
+            tasksPageObj.CreateTask(randomStr);
+            tasksPageObj.clickCreate();
             System.Threading.Thread.Sleep(2000); // a task is added in a few seconds
-            By newestTaskTittle = By.CssSelector("a[data-selenium-test='task-subject-cell__link']>span>span>span");
-            string laskTastTittle = driver.FindElement(newestTaskTittle).GetAttribute("textContent");
+
+            string laskTastTittle = tasksPageObj.mostRecentTask.GetAttribute("textContent");
 
             Assert.AreEqual(randomStr, laskTastTittle);
         }
 
-        private List<string> getAllTasksNames()
-        {
-            By tasksSelector = By.CssSelector("a[data-selenium-test='task-subject-cell__link']>span>span>span");
-            IWebElement[] tasksElems = driver.FindElements(tasksSelector).ToArray();
-
-            var tasksList = new List<string>();
-
-            foreach (IWebElement taskElem in tasksElems)
-            {
-                tasksList.Add(taskElem.GetAttribute("textContent"));
-            }
-            return tasksList;
-        }
 
         [Test]
         public void CheckSearchByName()
         {
             Random rand = new Random();
 
-            List<string> tasksList = getAllTasksNames();
-                        int index;
-            try
-            {
-                index = rand.Next(0, tasksList.Count - 1);
-            }
-            catch
+            List<string> tasksList = tasksPageObj.GetAllTasksList();
+            int index;
+
+            if (tasksList.Count == 0)
             {
                 Assert.Pass();
             }
-
-            index = rand.Next(0, tasksList.Count - 1);
-            string taskToSearchFor = tasksList[index];
-
-            driver.FindElement(By.CssSelector("input[data-selenium-test='list-search-input']")).SendKeys(taskToSearchFor);
-            System.Threading.Thread.Sleep(1500);
-            string searchResult = driver.FindElement(By.CssSelector("a[data-selenium-test='task-subject-cell__link']>span>span>span")).GetAttribute("textContent");
-
-            Assert.AreEqual(taskToSearchFor, searchResult);
+            else
+            {
+                index = rand.Next(0, tasksList.Count - 1);
+                string taskToSearchFor = tasksList[index];
+                tasksPageObj.SerchForTask(taskToSearchFor);
+                string searchResult = tasksPageObj.mostRecentTask.GetAttribute("textContent");
+                Assert.AreEqual(taskToSearchFor, searchResult);
+            }
         }
 
     }
