@@ -23,8 +23,7 @@ namespace SoundCloud_E2ETestProject
         [FindsBy(How = How.CssSelector, Using = "div.trackItem.g-flex-row.sc-type-small.sc-type-light a.trackItem__trackTitle.sc-link-dark.sc-font-light")]
         private IList<IWebElement> TrackPageLink { get; set; }
 
-        [FindsBy(How = How.CssSelector, Using = "div.trackItem.g-flex-row.sc-type-small.sc-type-light span[class$='image__full g-opacity-transition']")]
-                                         
+        [FindsBy(How = How.CssSelector, Using = "div.trackItem.g-flex-row.sc-type-small.sc-type-light span[class$='image__full g-opacity-transition']")]                                 
         private IList<IWebElement> TrackPlayButton { get; set; }
 
         public PlaylistPage(IWebDriver driver)
