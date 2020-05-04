@@ -93,7 +93,9 @@ namespace WebDriverHomework
                         smartFind(driver, ".HoLwm").Click();
                     }
                 }
-            }            
+            }
+            Thread.Sleep(3000);
+
             Assert.IsTrue(profilePage.hasVerifiedBadge());
 
             // Wow, you found an easter egg! Just text me in telegram @irremissibile
@@ -120,6 +122,8 @@ namespace WebDriverHomework
                     }
                 }
             }
+            Thread.Sleep(3000);
+
 
             inboxPage.startNewMessageDialog()
                         .searchAddressee(targetUser)
@@ -152,6 +156,8 @@ namespace WebDriverHomework
                     }
                 }
             }
+            Thread.Sleep(3000);
+
             PostPage postPage = profilePage.openMostRecentPost();
             Thread.Sleep(5000);
 
@@ -185,6 +191,8 @@ namespace WebDriverHomework
                     }
                 }
             }
+            Thread.Sleep(3000);
+
             PostPage postPage = profilePage.openMostRecentPost();
             Thread.Sleep(5000);
 
@@ -215,6 +223,8 @@ namespace WebDriverHomework
                     }
                 }
             }
+            Thread.Sleep(3000);
+
             HomePage h1 = postPage.sharePostToUser(targetUser)
                 .close();
             Thread.Sleep(5000);
@@ -238,7 +248,7 @@ namespace WebDriverHomework
                         .chooseTheFirstOneSuggested();
                     Thread.Sleep(100);
                 }
-                catch (ElementClickInterceptedException e)
+                catch (Exception e)
                 {
                     if (driver.FindElements(By.CssSelector(".RnEpo")).Count != 0)
                     {
@@ -246,6 +256,8 @@ namespace WebDriverHomework
                     }
                 }
             }
+            Thread.Sleep(3000);
+
             profilePage.follow()
                 .openProfilePage();
             Thread.Sleep(5000);
@@ -277,6 +289,8 @@ namespace WebDriverHomework
                     }
                 }
             }
+            Thread.Sleep(3000);
+
             settingsPage.sendName(newName);
             Thread.Sleep(3000);
             settingsPage.clickSubmit();
@@ -311,6 +325,8 @@ namespace WebDriverHomework
                     }
                 }
             }
+            Thread.Sleep(3000);
+
             settingsPage.sendBio(newBio);
             Thread.Sleep(3000);
             settingsPage.clickSubmit();
@@ -345,6 +361,8 @@ namespace WebDriverHomework
                     }
                 }
             }
+            Thread.Sleep(3000);
+
             settingsPage.sendWebsite(newWebsite);
             Thread.Sleep(3000);
             settingsPage.clickSubmit();
