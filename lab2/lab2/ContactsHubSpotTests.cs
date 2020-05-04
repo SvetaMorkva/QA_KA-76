@@ -2,7 +2,6 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,7 +16,6 @@ namespace lab2
         private ContactsPage contactsPageObj;
 
         Random rand = new Random();
-        WebDriverWait wait;
 
         [SetUp]
         public void Setup()
