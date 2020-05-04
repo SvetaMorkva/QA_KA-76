@@ -20,8 +20,6 @@ namespace SoundCloud_E2ETestProject
         [FindsBy(How = How.CssSelector, Using = "a.sc-ministats.sc-ministats-medium.sc-ministats-likes")]
         private IWebElement LikeScoreLink { get; set; }
 
-        private IList<IWebElement> TrackPlayButton { get; set; }
-
         public TrackPage(IWebDriver driver)
         {
             _driver = driver;
