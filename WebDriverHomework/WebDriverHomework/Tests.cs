@@ -51,7 +51,7 @@ namespace WebDriverHomework
             smartFind(driver, ".-MzZI+ .-MzZI .zyHYP").SendKeys(password);
             smartFind(driver, ".-MzZI+ .DhRcB").Click();
 
-            Thread.Sleep(5000);
+            Thread.Sleep(30000);
 
             //There's a dumb notification dialog (-_-)
             if (driver.FindElements(By.CssSelector(".piCib")).Count != 0)
