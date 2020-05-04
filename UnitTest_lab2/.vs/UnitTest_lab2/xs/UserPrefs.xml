@@ -1,7 +1,7 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workbench ActiveDocument="UnitTest_lab2/Test.cs">
     <Files>
-      <File FileName="UnitTest_lab2/Test.cs" Line="37" Column="8" />
+      <File FileName="UnitTest_lab2/Test.cs" Line="93" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,14 +11,6 @@
               <Node name="Test.cs" selected="True" />
             </Node>
           </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="UnitTest_lab2" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>

@@ -21,7 +21,7 @@ namespace UnitTest_lab2
         
         private static IWebElement WaitandFindElement(IWebDriver driver, By selector)
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(5000);
             new WebDriverWait(driver, TimeSpan.FromSeconds(40)).Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(selector)));
             return driver.FindElement(selector);
         }
@@ -209,8 +209,9 @@ namespace UnitTest_lab2
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
             WaitandFindElement(driver, By.CssSelector(_partner_selector)).Click();
             WaitandFindElement(driver, By.CssSelector(_partner_selector)).Click();
-
+            Thread.Sleep(2000);
             js.ExecuteScript("window.scrollBy(0,250)", "");
+            Thread.Sleep(2000);
             WaitandFindElement(driver, By.CssSelector("jdiv.hoverl_6R")).Click();
             Thread.Sleep(2000);
             WaitandFindElement(driver, By.CssSelector("#jivo_close_button")).Click();
