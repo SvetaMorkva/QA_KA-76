@@ -61,7 +61,7 @@ namespace SoundCloud_E2ETestProject
             return this;
         }
 
-        public string GetTrackURL(int index_Track)
+        public string GetTrackPageURL(int index_Track)
         {
             GoToElement(TrackPageLink[index_Track]);
             return TrackPageLink[index_Track].GetAttribute("href");
