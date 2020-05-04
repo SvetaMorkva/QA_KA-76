@@ -94,7 +94,8 @@ namespace Lab2_pages.Pages
 
         public DashBoard LogOut()
         {
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(100)).Until(ExpectedConditions.ElementIsVisible(By.ClassName("profileImage")));
+
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(100)).Until(ExpectedConditions.ElementToBeClickable(By.ClassName("profileImage")));
             openProfileOptions.Click();
             new WebDriverWait(_driver, TimeSpan.FromSeconds(100)).Until(ExpectedConditions.ElementIsVisible(By.ClassName("accountsList")));
             logoutLink.Click();
