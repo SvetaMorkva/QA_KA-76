@@ -34,10 +34,10 @@ namespace Laba2_part2
             var WebPage = new Page(driver);
             WebPage.GoToBouquetPage();
             WebPage.Selection();
-            var nameclass = WebPage.GetArrowStatus();
+            var flowername = WebPage.GetFlowerName();
             using (new AssertionScope())
             {
-                nameclass.Should().Be("acc opened");
+                flowername.Should().Be("Пионы 24");
             }
         }
         [Obsolete]
@@ -101,7 +101,6 @@ namespace Laba2_part2
             WebPage.GoToFiveStep();
             WebPage.ChoosePayWay();
             WebPage.Submit();
-            Thread.Sleep(3000);
             var site = WebPage.GetSite();
             using (new AssertionScope())
             {

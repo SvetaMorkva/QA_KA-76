@@ -22,6 +22,9 @@ namespace Laba2_part2
         private IWebElement BouquetPage;
         [FindsBy(How = How.XPath, Using = "/html / body / div[2] / div[1] / div[1] / ul / li[1] / span")]
         private IWebElement Arrow;
+        [FindsBy(How = How.XPath, Using = "/html/body/div[2]/div[1]/div[1]/ul/li[1]/ul/li[1]/a")]
+        private IWebElement NextFlower;
+
 
         [Obsolete]
         public Page GoToBouquetPage()
@@ -37,12 +40,8 @@ namespace Laba2_part2
             Arrow.Click();
             return this;
         }
+        public string GetFlowerName() => NextFlower.Text;
 
-        public string GetArrowStatus()
-        {
-           var status = Arrow.GetAttribute("class");
-            return status;
-        }
 
         //test2
         [FindsBy(How = How.XPath, Using = "/html/body/div[2]/div[1]/div[2]/div[1]/div[2]/div/div[1]/h4/a")]
