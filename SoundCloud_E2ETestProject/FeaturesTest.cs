@@ -77,6 +77,41 @@ namespace SoundCloud_E2ETestProject
             Assert.Pass();
         }
 
+        [TearDown]
+        public void CleanUp()
+        {
+            _driver.Quit();
+        }
+    }
+
+    class TurnOnMusicFromPlaylistFeatureTest
+    {
+        private IWebDriver _driver;
+        private string _url = "https://soundcloud.com/discover";
+        private int sleepTime = 6000;
+
+        [SetUp]
+        public void Setup()
+        {
+            _driver = new ChromeDriver();
+            _driver.Navigate().GoToUrl(_url);
+            CookiesNotification cookiesNotification = new CookiesNotification(_driver);
+            cookiesNotification.AllowCookies();
+        }
+
+        [TestCase(0, 0)]
+        [TestCase(1, 0)]
+        public void TurnOnTrackFromPlaylistTest(int indexOfPlaylist, int indexOfTrack)
+        {
+            HomePage homePage = new HomePage(_driver);
+            Thread.Sleep(sleepTime);
+            _driver.Navigate().GoToUrl(homePage.GetPlaylistPageURL(indexOfPlaylist));
+
+            PlaylistPage playlistPage = new PlaylistPage(_driver);
+            playlistPage.PlayTrack(indexOfTrack);
+
+            Assert.Pass();
+        }
 
         [TearDown]
         public void CleanUp()
