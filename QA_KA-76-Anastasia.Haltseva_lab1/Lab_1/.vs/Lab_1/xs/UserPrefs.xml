@@ -3,8 +3,8 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Lab_1" expanded="True" selected="True">
-            <Node name="Lab_1" expanded="True" />
+          <Node name="Lab_1" expanded="True">
+            <Node name="Lab_1" expanded="True" selected="True" />
           </Node>
         </State>
       </Pad>
