@@ -26,3 +26,4 @@ C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\obj\Debug\Dr
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\obj\Debug\Dropbox.Api.Test.Infrastructure.csproj.CopyComplete
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\obj\Debug\Dropbox.Api.Test.Infrastructure.dll
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\obj\Debug\Dropbox.Api.Test.Infrastructure.pdb
+C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\obj\Debug\Dropbox.Api.Test.Infrastructure.csprojAssemblyReference.cache

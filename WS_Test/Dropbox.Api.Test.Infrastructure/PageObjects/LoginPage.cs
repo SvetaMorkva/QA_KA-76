@@ -41,7 +41,7 @@ namespace Dropbox.Api.Test.Infrastructure.PageObjects
             new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(LoginButton));
             LoginButton.Click();
 
-            new WebDriverWait(driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementToBeClickable(By.Id("gb_70")));
+            new WebDriverWait(driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists(By.Id("hplogo")));
 
             return new BasePage(driver);
         }
