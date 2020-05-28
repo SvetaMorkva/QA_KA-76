@@ -1,4 +1,5 @@
-﻿using TechTalk.SpecFlow;
+﻿using Dropbox.Api.Test.Infrastructure.DataModels;
+using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 using TestDropboxApi.DataModels;
 
@@ -29,7 +30,7 @@ namespace Dropbox.Api.Tests
         public FolderResponseDto ToFolderResponseDto(Table table)
         {
             var result = new FolderResponseDto();
-            result.metadata = table.CreateInstance<FolderMetadata>();
+            result.Metadata = table.CreateInstance<Metadata>();
             return result;
         }
 

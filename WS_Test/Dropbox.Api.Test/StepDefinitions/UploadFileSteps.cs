@@ -1,7 +1,9 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using Dropbox.Api.Test.Infrastructure.DataModels;
 using FluentAssertions;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
 using TestDropboxApi.ApiFacade;
 using TestDropboxApi.DataModels;
@@ -24,6 +26,18 @@ namespace Dropbox.Api.Test.StepDefinitions
             ContextHelper.AddToContext("FilePath", filePath);
         }
 
+        [Given(@"I also have folder in Dropbox")]
+        public void GivenIAlsoHaveFolderInDropbox(Base path)
+        {
+            var response = new DropboxApi().GetFileMetadata(path);
+            response.EnsureSuccessful();
+            var folder = response.Content<Metadata>();
+            string respath = folder.PathLower;
+
+            Assert.AreEqual(path.Path, respath);
+        }
+
+
         [When(@"I upload the file")]
         public void WhenIUploadTheFile(UploadFileDto uploadFile)
         {
@@ -32,6 +46,10 @@ namespace Dropbox.Api.Test.StepDefinitions
             var response = new DropboxApiContent().UploadFile(uploadFile, file);
             response.EnsureSuccessful();
             ContextHelper.AddToContext("LastApiResponse", response);
+
+            var uploadPath = new Base();
+            uploadPath.Path = uploadFile.Path;
+            ContextHelper.AddToContext("UploadedFilePath", uploadPath);
         }
 
         [Then(@"I should be able to get file info")]

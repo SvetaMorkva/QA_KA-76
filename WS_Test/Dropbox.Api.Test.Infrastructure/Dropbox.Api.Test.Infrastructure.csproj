@@ -119,6 +119,7 @@
     <Compile Include="DataModels\Base.cs" />
     <Compile Include="DataModels\CreateFolderDto.cs" />
     <Compile Include="DataModels\FileResponseDto.cs" />
+    <Compile Include="DataModels\Metadata.cs" />
     <Compile Include="DataModels\FolderResponseDto.cs" />
     <Compile Include="DataModels\UploadFileDto.cs" />
     <Compile Include="Extensions\RequestExtensions.cs" />

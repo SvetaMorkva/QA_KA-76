@@ -13,18 +13,7 @@ namespace Dropbox.Api.Test.StepDefinitions
 {
     [Binding]
     public class DownloadFileSteps
-    {
-        [Given(@"I have the '(.*)' file on my computer")]
-        public void GivenIHaveTheFileOnMyComputer(string fileName)
-        {
-            var filePath = GetFilePath(fileName);
-            File.Exists(filePath)
-                .Should()
-                .BeTrue($"expected {fileName} to exists with test fata files inside the {filePath}");
-
-            ContextHelper.AddToContext("FilePath", filePath);
-        }
-        
+    {        
         [When(@"I try to download the same file from my dropbox")]
         public void WhenITryToDownloadTheSameFileFromMyDropbox(Base path)
         {
@@ -93,17 +82,5 @@ namespace Dropbox.Api.Test.StepDefinitions
             return true;
         }
 
-
-        private string GetFilePath(string fileName)
-        {
-            string codeBase = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase)
-                              + Path.DirectorySeparatorChar
-                              + ConfigurationHelper.DefaultFilePath;
-            var uri = new UriBuilder(codeBase).Uri.Append(fileName);
-            string fullPath = Path.GetFullPath(Uri.UnescapeDataString(uri.AbsolutePath));
-
-            ScenarioContext.Current["DefaultFilePath"] = fullPath;
-            return fullPath;
-        }
     }
 }

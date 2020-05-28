@@ -17,7 +17,8 @@ namespace Dropbox.Api.Test.Infrastructure.Helpers
         {
             if (ConfigurationHelper.ShouldUseEnvVar)
             {
-                return Environment.GetEnvironmentVariable("SEXYASSDIMA_TOKEN");
+                //return Environment.GetEnvironmentVariable("SEXYASSDIMA_TOKEN");
+                return ConfigurationHelper.AuthorizationToken;
             }
             else
             {

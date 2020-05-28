@@ -50,7 +50,7 @@ namespace TestDropboxApi.ApiFacade
         }
 
 
-        public ApiResponse DeleteFolder(Base path)
+        public ApiResponse Delete(Base path)
         {
             var url = "files/delete_v2";
             var requestBody = JsonConvert.SerializeObject(path);

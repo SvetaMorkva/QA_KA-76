@@ -5,6 +5,8 @@ using TestDropboxApi.ApiFacade;
 using TestDropboxApi.DataModels;
 using TestDropboxApi.Extensions;
 using TestDropboxApi.Helpers;
+using Dropbox.Api.Test.Infrastructure.DataModels;
+using NUnit.Framework;
 
 namespace Dropbox.Api.Test.StepDefinitions
 {
@@ -16,6 +18,11 @@ namespace Dropbox.Api.Test.StepDefinitions
         {
             var response = new DropboxApi().CreateFolder(createFolderDto);
             response.EnsureSuccessful();
+
+            var path = new Base();
+            path.Path = createFolderDto.Path;
+            ContextHelper.AddToContext("folderPath", path);
+            
             ContextHelper.AddToContext("LastApiResponse", response);
         }
 
@@ -24,8 +31,8 @@ namespace Dropbox.Api.Test.StepDefinitions
         {
             var apiResponse = ContextHelper.GetFromContext<ApiResponse>("LastApiResponse");
             var actualFolderInfo = apiResponse.Content<FolderResponseDto>();
-            
-            actualFolderInfo.ShouldBeEquivalentTo(folderInfo, options => options.Including(f => f.metadata.Name));
+
+            Assert.IsTrue(actualFolderInfo.Metadata.Name.Contains(folderInfo.Metadata.Name));
         }
     }
 }

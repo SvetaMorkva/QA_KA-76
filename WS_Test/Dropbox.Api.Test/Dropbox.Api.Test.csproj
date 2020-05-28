@@ -129,9 +129,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpecflowHooks.cs" />
     <Compile Include="StepDefinitions\CreateFolderSteps.cs" />
+    <Compile Include="StepDefinitions\DeleteFileSteps.cs" />
     <Compile Include="StepDefinitions\DeleteFolderSteps.cs" />
     <Compile Include="StepDefinitions\DownloadFileSteps.cs" />
     <Compile Include="StepDefinitions\GetFileMetadataSteps.cs" />
+    <Compile Include="StepDefinitions\GetFolderAfterDeleteSteps.cs" />
     <Compile Include="StepDefinitions\GetListOfFilesSteps.cs" />
     <Compile Include="StepDefinitions\UploadFileSteps.cs" />
     <Compile Include="StepTransformations.cs" />
