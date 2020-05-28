@@ -15,37 +15,44 @@ namespace Dropbox.Api.Test.Infrastructure.Helpers
     {
         public static string GetToken()
         {
-            string email = ConfigurationHelper.Email;
-            string password = ConfigurationHelper.Password;
+            if (ConfigurationHelper.ShouldUseEnvVar)
+            {
+                return Environment.GetEnvironmentVariable("SEXYASSDIMA_TOKEN");
+            }
+            else
+            {
+                string email = ConfigurationHelper.Email;
+                string password = ConfigurationHelper.Password;
 
-            string oauth2Url = ConfigurationHelper.OAuth2Url;
-            string clientId = ConfigurationHelper.ClientId;
-            string redirectUri = ConfigurationHelper.RedirectUri;
-            string responseType = ConfigurationHelper.ResponseType;
+                string oauth2Url = ConfigurationHelper.OAuth2Url;
+                string clientId = ConfigurationHelper.ClientId;
+                string redirectUri = ConfigurationHelper.RedirectUri;
+                string responseType = ConfigurationHelper.ResponseType;
 
-            string url = oauth2Url + "?client_id=" + clientId + "&redirect_uri=" + redirectUri + "&response_type=" + responseType; 
+                string url = oauth2Url + "?client_id=" + clientId + "&redirect_uri=" + redirectUri + "&response_type=" + responseType;
 
-            var options = new ChromeOptions();
-            options.AddArgument("start-maximized");
+                var options = new ChromeOptions();
+                options.AddArgument("start-maximized");
 
-            var driver = new ChromeDriver(options);
-            driver.Navigate().GoToUrl(url);
+                var driver = new ChromeDriver(options);
+                driver.Navigate().GoToUrl(url);
 
-            _ = new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(dr => dr.Url == url);
+                _ = new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(dr => dr.Url == url);
 
-            var loginPage = new LoginPage(driver);
+                var loginPage = new LoginPage(driver);
 
-            string resultUrl = loginPage.Login(email, password).GetUrl();
+                string resultUrl = loginPage.Login(email, password).GetUrl();
 
-            string s = resultUrl.Substring(resultUrl.IndexOf('=') + 1);
-            string token = "Bearer " + s.Remove(s.IndexOf('&'));
+                string s = resultUrl.Substring(resultUrl.IndexOf('=') + 1);
+                string token = "Bearer " + s.Remove(s.IndexOf('&'));
 
 
-            driver.Quit();
+                driver.Quit();
 
-            Console.WriteLine(token);
+                Console.WriteLine(token);
 
-            return token;
+                return token;
+            }
         }
     }
 }

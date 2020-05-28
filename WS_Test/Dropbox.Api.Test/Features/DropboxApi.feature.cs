@@ -74,15 +74,15 @@ namespace Dropbox.Api.Test.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Get list of files")]
-        [NUnit.Framework.CategoryAttribute("Get")]
-        public virtual void GetListOfFiles()
+        [NUnit.Framework.DescriptionAttribute("1 Create a folder")]
+        [NUnit.Framework.CategoryAttribute("Create")]
+        public virtual void _1CreateAFolder()
         {
             string[] tagsOfScenario = new string[] {
-                    "Get"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get list of files", null, new string[] {
-                        "Get"});
-#line 4
+                    "Create"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1 Create a folder", null, new string[] {
+                        "Create"});
+#line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -103,13 +103,167 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Path"});
+                            "Path",
+                            "AutoRename"});
                 table1.AddRow(new string[] {
-                            "/testupload"});
-#line 5
- testRunner.When("I try to get the list of all existing files in a folder", ((string)(null)), table1, "When ");
+                            "/test",
+                            "true"});
+#line 6
+ testRunner.When("I try to create a folder", ((string)(null)), table1, "When ");
 #line hidden
-#line 8
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name"});
+                table2.AddRow(new string[] {
+                            "test"});
+#line 9
+ testRunner.Then("I should be able to see folder info", ((string)(null)), table2, "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("2 Upload a file")]
+        [NUnit.Framework.CategoryAttribute("Upload")]
+        public virtual void _2UploadAFile()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "Upload"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 Upload a file", null, new string[] {
+                        "Upload"});
+#line 15
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 16
+ testRunner.Given("I have \'MyPdf.pdf\' file to upload", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Path",
+                            "Mode",
+                            "AutoRename",
+                            "Mute"});
+                table3.AddRow(new string[] {
+                            "/testupload/MyPdf.pdf",
+                            "add",
+                            "true",
+                            "false"});
+#line 17
+ testRunner.When("I upload the file", ((string)(null)), table3, "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name"});
+                table4.AddRow(new string[] {
+                            "MyPdf.pdf"});
+#line 20
+ testRunner.Then("I should be able to get file info", ((string)(null)), table4, "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("3 Get file metadata")]
+        [NUnit.Framework.CategoryAttribute("Get")]
+        public virtual void _3GetFileMetadata()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "Get"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3 Get file metadata", null, new string[] {
+                        "Get"});
+#line 26
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Path"});
+                table5.AddRow(new string[] {
+                            "/testupload/MyPdf.pdf"});
+#line 27
+ testRunner.When("I try to get file\'s metadata that is stored in my dropbox", ((string)(null)), table5, "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name",
+                            "pathLower"});
+                table6.AddRow(new string[] {
+                            "MyPdf.pdf",
+                            "/testupload/MyPdf.pdf"});
+#line 30
+ testRunner.Then("I should be able to get the valid info", ((string)(null)), table6, "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("4 Get list of files")]
+        [NUnit.Framework.CategoryAttribute("Get")]
+        public virtual void _4GetListOfFiles()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "Get"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4 Get list of files", null, new string[] {
+                        "Get"});
+#line 36
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Path"});
+                table7.AddRow(new string[] {
+                            "/testupload"});
+#line 37
+ testRunner.When("I try to get the list of all existing files in a folder", ((string)(null)), table7, "When ");
+#line hidden
+#line 40
  testRunner.Then("I should get a valid list of files", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -117,169 +271,15 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Get file metadata")]
-        [NUnit.Framework.CategoryAttribute("Get")]
-        public virtual void GetFileMetadata()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "Get"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get file metadata", null, new string[] {
-                        "Get"});
-#line 11
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Path"});
-                table2.AddRow(new string[] {
-                            "/testupload/MyPdf.pdf"});
-#line 12
- testRunner.When("I try to get file\'s metadata that is stored in my dropbox", ((string)(null)), table2, "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Name",
-                            "pathLower"});
-                table3.AddRow(new string[] {
-                            "MyPdf.pdf",
-                            "/testupload/MyPdf.pdf"});
-#line 15
- testRunner.Then("I should be able to get the valid info", ((string)(null)), table3, "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Upload a file")]
-        [NUnit.Framework.CategoryAttribute("Upload")]
-        public virtual void UploadAFile()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "Upload"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Upload a file", null, new string[] {
-                        "Upload"});
-#line 20
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 21
- testRunner.Given("I have \'MyPdf.pdf\' file to upload", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Path",
-                            "Mode",
-                            "AutoRename",
-                            "Mute"});
-                table4.AddRow(new string[] {
-                            "/testupload/MyPdf.pdf",
-                            "add",
-                            "true",
-                            "false"});
-#line 22
- testRunner.When("I upload the file", ((string)(null)), table4, "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Name"});
-                table5.AddRow(new string[] {
-                            "MyPdf.pdf"});
-#line 25
- testRunner.Then("I should be able to get file info", ((string)(null)), table5, "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create a folder")]
-        [NUnit.Framework.CategoryAttribute("Create")]
-        public virtual void CreateAFolder()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "Create"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a folder", null, new string[] {
-                        "Create"});
-#line 30
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Path",
-                            "AutoRename"});
-                table6.AddRow(new string[] {
-                            "/test",
-                            "true"});
-#line 31
- testRunner.When("I try to create a folder", ((string)(null)), table6, "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Name"});
-                table7.AddRow(new string[] {
-                            "test"});
-#line 34
- testRunner.Then("I should be able to see folder info", ((string)(null)), table7, "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Download a file")]
+        [NUnit.Framework.DescriptionAttribute("5 Download a file")]
         [NUnit.Framework.CategoryAttribute("Download")]
-        public virtual void DownloadAFile()
+        public virtual void _5DownloadAFile()
         {
             string[] tagsOfScenario = new string[] {
                     "Download"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Download a file", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5 Download a file", null, new string[] {
                         "Download"});
-#line 39
+#line 44
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -299,17 +299,17 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 40
+#line 45
  testRunner.Given("I have the \'MyPdf.pdf\' file on my computer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                             "Path"});
                 table8.AddRow(new string[] {
                             "/testupload/MyPdf.pdf"});
-#line 41
+#line 46
  testRunner.When("I try to download the same file from my dropbox", ((string)(null)), table8, "When ");
 #line hidden
-#line 44
+#line 49
  testRunner.Then("these two files should be identical", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -317,15 +317,15 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Delete a folder")]
+        [NUnit.Framework.DescriptionAttribute("6 Delete a folder")]
         [NUnit.Framework.CategoryAttribute("Delete")]
-        public virtual void DeleteAFolder()
+        public virtual void _6DeleteAFolder()
         {
             string[] tagsOfScenario = new string[] {
                     "Delete"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete a folder", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("6 Delete a folder", null, new string[] {
                         "Delete"});
-#line 47
+#line 53
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -349,14 +349,14 @@ this.ScenarioInitialize(scenarioInfo);
                             "Path"});
                 table9.AddRow(new string[] {
                             "/test"});
-#line 48
+#line 54
  testRunner.When("I try to delete a folder", ((string)(null)), table9, "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name"});
                 table10.AddRow(new string[] {
                             "test"});
-#line 51
+#line 57
  testRunner.Then("I should be able to see the valid delete result", ((string)(null)), table10, "Then ");
 #line hidden
             }

@@ -20,5 +20,6 @@ namespace TestDropboxApi.Helpers
         public static string ClientId => ConfigurationManager.AppSettings["clientId"];
         public static string RedirectUri => ConfigurationManager.AppSettings["redirectUri"];
         public static string ResponseType => ConfigurationManager.AppSettings["responseType"];
+        public static bool ShouldUseEnvVar => Convert.ToBoolean(ConfigurationManager.AppSettings["shouldUseEnvVar"]);
     }
 }

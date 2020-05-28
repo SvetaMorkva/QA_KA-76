@@ -34,14 +34,13 @@ namespace Dropbox.Api.Test.Infrastructure.PageObjects
         public BasePage Login(string email, string password)
         {
             new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(EmailField));
-            EmailField.Click();
             EmailField.SendKeys(email);
             new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(PasswordField));
             PasswordField.SendKeys(password);
             new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(LoginButton));
             LoginButton.Click();
 
-            new WebDriverWait(driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists(By.Id("hplogo")));
+            new WebDriverWait(driver, TimeSpan.FromSeconds(60)).Until(ExpectedConditions.ElementExists(By.Id("hplogo")));
 
             return new BasePage(driver);
         }
