@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dropbox.Api.Test.Infrastructure.Helpers;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
@@ -19,7 +20,9 @@ namespace TestDropboxApi.Builders
         {
             _request = new HttpRequestMessage();
             BaseServiceUri = new Uri(url);
-            WithHeader("Authorization", ConfigurationHelper.AuthorizationToken);
+            //WithHeader("Authorization", ConfigurationHelper.AuthorizationToken);
+            string token = TokenHelper.GetToken();
+            WithHeader("Authorization", token);
         }
 
         public RequestBuilder WithHeaders(Dictionary<string, string> headers)

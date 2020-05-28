@@ -1,4 +1,3 @@
-C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\obj\Debug\Dropbox.Api.Test.Infrastructure.csproj.CoreCompileInputs.cache
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\bin\Debug\Dropbox.Api.Test.Infrastructure.dll
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\bin\Debug\Dropbox.Api.Test.Infrastructure.pdb
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\bin\Debug\BoDi.dll
@@ -10,6 +9,8 @@ C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\bin\Debug\Sy
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\bin\Debug\System.ValueTuple.dll
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\bin\Debug\TechTalk.SpecFlow.dll
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\bin\Debug\Utf8Json.dll
+C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\bin\Debug\WebDriver.dll
+C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\bin\Debug\WebDriver.Support.dll
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\bin\Debug\BoDi.pdb
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\bin\Debug\Google.Protobuf.pdb
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\bin\Debug\Google.Protobuf.xml
@@ -19,6 +20,9 @@ C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\bin\Debug\Sy
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\bin\Debug\TechTalk.SpecFlow.pdb
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\bin\Debug\TechTalk.SpecFlow.xml
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\bin\Debug\Utf8Json.xml
+C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\bin\Debug\WebDriver.xml
+C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\bin\Debug\WebDriver.Support.xml
+C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\obj\Debug\Dropbox.Api.Test.Infrastructure.csproj.CoreCompileInputs.cache
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\obj\Debug\Dropbox.Api.Test.Infrastructure.csproj.CopyComplete
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\obj\Debug\Dropbox.Api.Test.Infrastructure.dll
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test.Infrastructure\obj\Debug\Dropbox.Api.Test.Infrastructure.pdb

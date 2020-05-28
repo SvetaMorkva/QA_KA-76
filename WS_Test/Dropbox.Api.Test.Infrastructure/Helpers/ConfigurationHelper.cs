@@ -14,5 +14,11 @@ namespace TestDropboxApi.Helpers
         public static string AuthorizationToken => ConfigurationManager.AppSettings["token"];
         public static string DefaultFilePath => ConfigurationManager.AppSettings["defaultFilePath"];
 
+        public static string Email => ConfigurationManager.AppSettings["email"];
+        public static string Password => ConfigurationManager.AppSettings["password"];
+        public static string OAuth2Url => ConfigurationManager.AppSettings["oauth2Url"];
+        public static string ClientId => ConfigurationManager.AppSettings["clientId"];
+        public static string RedirectUri => ConfigurationManager.AppSettings["redirectUri"];
+        public static string ResponseType => ConfigurationManager.AppSettings["responseType"];
     }
 }

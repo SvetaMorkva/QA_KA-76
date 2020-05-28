@@ -43,3 +43,11 @@ Scenario: Download a file
 	| /testupload/MyPdf.pdf  |
 	Then these two files should be identical
 
+@Delete
+Scenario: Delete a folder
+	When I try to delete a folder
+	| Path  |
+	| /test |
+	Then I should be able to see the valid delete result
+	| Name  |
+	| test  |

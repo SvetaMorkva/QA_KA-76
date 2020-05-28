@@ -42,8 +42,18 @@ namespace TestDropboxApi.ApiFacade
         public ApiResponse CreateFolder(CreateFolderDto createFolderDto)
         {
             var url = "files/create_folder_v2";
-            Console.WriteLine(createFolderDto);
             var requestBody = JsonConvert.SerializeObject(createFolderDto);
+            return request.Uri(url)
+                .Method(HttpMethod.Post)
+                .WithBody(requestBody)
+                .Execute();
+        }
+
+
+        public ApiResponse DeleteFolder(Base path)
+        {
+            var url = "files/delete_v2";
+            var requestBody = JsonConvert.SerializeObject(path);
             return request.Uri(url)
                 .Method(HttpMethod.Post)
                 .WithBody(requestBody)

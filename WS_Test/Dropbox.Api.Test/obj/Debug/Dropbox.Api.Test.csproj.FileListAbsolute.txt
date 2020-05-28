@@ -1,10 +1,11 @@
-C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\obj\Debug\Dropbox.Api.Test.csprojAssemblyReference.cache
-C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\obj\Debug\Dropbox.Api.Test.csproj.CoreCompileInputs.cache
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.dll
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\NUnit3.TestAdapter.dll
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\NUnit3.TestAdapter.pdb
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\nunit.engine.dll
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\nunit.engine.api.dll
+C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\TestDataFiles\MyPdf.pdf
+C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\TestDataFiles\MyFile.pdf
+C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\Dropbox.Api.Test.dll.config
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\Dropbox.Api.Test.dll
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\Dropbox.Api.Test.pdb
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\BoDi.dll
@@ -19,6 +20,8 @@ C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\System.Threading.
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\System.ValueTuple.dll
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\TechTalk.SpecFlow.dll
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\Utf8Json.dll
+C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\WebDriver.dll
+C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\WebDriver.Support.dll
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\Newtonsoft.Json.dll
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\Dropbox.Api.Test.Infrastructure.pdb
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\BoDi.pdb
@@ -36,10 +39,11 @@ C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\TechTalk.SpecFlow
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\TechTalk.SpecFlow.xml
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.pdb
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\Utf8Json.xml
+C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\WebDriver.xml
+C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\WebDriver.Support.xml
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\obj\Debug\Dropbox.Api.Test.csprojAssemblyReference.cache
+C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\obj\Debug\Dropbox.Api.Test.csproj.CoreCompileInputs.cache
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\obj\Debug\Dropbox.Api.Test.csproj.CopyComplete
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\obj\Debug\Dropbox.Api.Test.dll
 C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\obj\Debug\Dropbox.Api.Test.pdb
-C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\Dropbox.Api.Test.dll.config
-C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\TestDataFiles\MyPdf.pdf
-C:\Users\ihnat\source\repos\WS_Test\Dropbox.Api.Test\bin\Debug\TestDataFiles\MyFile.pdf
