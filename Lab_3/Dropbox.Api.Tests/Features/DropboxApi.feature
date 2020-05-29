@@ -1,4 +1,4 @@
-﻿Feature: GetFileList
+﻿Feature: TestDropbox
 	
 @Get
 Scenario: Get all files
@@ -7,10 +7,15 @@ Scenario: Get all files
 
 @Upload
 Scenario: Upload a file
-	Given I have 'MyPdf.pdf' file to upload
+	Given I have 'IDA_Lab_5.pdf' file to upload
 	When I upload the file
-	| Path        | Mode | AutoRename | Mute  |
-	| /MyFile.pdf | add  | true       | false |
+	| Path		     | Mode | AutoRename | Mute  |
+	| /IDA_Lab_5.pdf | add  | true       | false |
 	Then I should be able to get file info
-	| Name       |
-	| MyFile.pdf |
+	| Name          |
+	| IDA_Lab_5.pdf |
+
+@Get
+Scenario: Get file metadata
+	When I want to get file 'IDA_Lab_5.pdf' metadata
+	Then I should be given valid file 'IDA_Lab_5.pdf' metadata

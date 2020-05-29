@@ -25,5 +25,14 @@ namespace TestDropboxApi.ApiFacade
             var requestBody = JsonConvert.SerializeObject(new Base());
             return request.Method(HttpMethod.Post).Uri(url).WithBody(requestBody).Execute();
         }
+
+        public ApiResponse GetFileMetadata(string fileName)
+        {
+            const string url = "files/get_metadata";
+            var path = new Base();
+            path.Path = $"/{fileName}";
+            var requestBody = JsonConvert.SerializeObject(path);
+            return request.Method(HttpMethod.Post).Uri(url).WithBody(requestBody).Execute();
+        }
     }
 }

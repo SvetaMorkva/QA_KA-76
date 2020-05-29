@@ -38,4 +38,13 @@ namespace TestDropboxApi.DataModels
         [JsonProperty("has_more")]
         public bool HasMore { get; set; }
     }
+
+    public class FileMetadataResponseDto: FileResponseDto
+    {
+        [JsonProperty(".tag")]
+        public string Tag { get; set; }
+
+        [JsonProperty("is_downloadable")]
+        public bool IsDownloadable { get; set; }
+    }
 }
