@@ -1,6 +1,6 @@
 # vscode stuff
-.vscode
+.vscode/
 
 # C# stuff
-/bin
-/obj
+**/bin
+**/obj

@@ -1,13 +1,10 @@
 # Lab 3
 ## Part 1
-Create test scenarios which will cover the next functionality inside Dropbox API:
-* Create folder
-* Add new file to the existing folder
-* Get file
-* Get list of files in the folder
-* Delete folder (delete file) – what will happen if you delete folder with a file inside
-
-* Try to get folder (file) after delete
+1. Refer to this API: https://www.dropbox.com/developers/documentation/http/overview
+2. Cover the next endpoints with tests (C# or JS) and execute in Cl:
+    * GetFileMetaData
+    * Delete file
+3. Create a postman collection with the requests
 
 ## Part 2
 Emphasize OOP principles used in the project:
@@ -15,9 +12,6 @@ Emphasize OOP principles used in the project:
 * Inheritance
 * Encapsulation
 * Abstraction 
-
-## Bonus task
-Implement authorization using OAuth 2.0 using https://www.dropbox.com/oauth2/authorize endpoint.
 
 # Project setup
 ## Install dependencies:
