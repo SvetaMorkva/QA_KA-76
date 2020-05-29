@@ -145,9 +145,9 @@
     <None Include="TestDataFiles\MyPdf.pdf" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Aropbox.Api.Tests.Infrastructure\Aropbox.Api.Tests.Infrastructure.csproj">
+    <ProjectReference Include="..\Aropbox.Api.Tests.Infrastructure\Dropbox.Api.Tests.Infrastructure.csproj">
       <Project>{ECBDD82F-D22F-4D48-9C43-E7D39A28FFFD}</Project>
-      <Name>Aropbox.Api.Tests.Infrastructure</Name>
+      <Name>Dropbox.Api.Tests.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

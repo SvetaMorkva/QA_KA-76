@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dropbox.Api.Tests", "Dropbox.Api.Tests\Dropbox.Api.Tests.csproj", "{FB3BBDE3-91BC-461F-93C0-FE0A4EAE11FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aropbox.Api.Tests.Infrastructure", "Aropbox.Api.Tests.Infrastructure\Aropbox.Api.Tests.Infrastructure.csproj", "{ECBDD82F-D22F-4D48-9C43-E7D39A28FFFD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dropbox.Api.Tests.Infrastructure", "Aropbox.Api.Tests.Infrastructure\Dropbox.Api.Tests.Infrastructure.csproj", "{ECBDD82F-D22F-4D48-9C43-E7D39A28FFFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
