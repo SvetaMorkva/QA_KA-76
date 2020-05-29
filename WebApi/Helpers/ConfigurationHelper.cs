@@ -11,7 +11,7 @@ namespace WebApi.Helpers
     {
         public static string ServiceUrl => ConfigurationManager.AppSettings["serviceUrl"];
         public static string ContentServiceUrl => ConfigurationManager.AppSettings["contentServiceUrl"];
-        public static string AuthorizationToken => Environment.GetEnvironmentVariable(ConfigurationHelper.envTokenVarName);
+        public static string AuthorizationToken => Environment.GetEnvironmentVariable(ConfigurationManager.AppSettings["envTokenVarName"]);
         public static string DefaultFilePath => ConfigurationManager.AppSettings["defaultFilePath"];
 
     }
