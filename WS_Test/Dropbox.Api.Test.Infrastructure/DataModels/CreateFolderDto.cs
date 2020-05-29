@@ -7,10 +7,8 @@ using Newtonsoft.Json;
 
 namespace TestDropboxApi.DataModels
 {
-    public class CreateFolderDto
+    public class CreateFolderDto : Base
     {
-        [JsonProperty("path")]
-        public string Path { get; set; }
         [JsonProperty("autorename")]
         public Boolean Autorename { get; set; }
     }

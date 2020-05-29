@@ -13,47 +13,51 @@ namespace Dropbox.Api.Test.Infrastructure.Helpers
 {
     public class TokenHelper
     {
+
+        private static string token = null;
         public static string GetToken()
         {
-            if (ConfigurationHelper.ShouldUseEnvVar)
+            if (token == null)
             {
-                //return Environment.GetEnvironmentVariable("SEXYASSDIMA_TOKEN");
-                return ConfigurationHelper.AuthorizationToken;
+                if (ConfigurationHelper.ShouldUseEnvVar)
+                {
+                    token = Environment.GetEnvironmentVariable(ConfigurationHelper.EnvTokenVarName);
+                }
+                else
+                {
+                    string email = ConfigurationHelper.Email;
+                    string password = ConfigurationHelper.Password;
+
+                    string oauth2Url = ConfigurationHelper.OAuth2Url;
+                    string clientId = ConfigurationHelper.ClientId;
+                    string redirectUri = ConfigurationHelper.RedirectUri;
+                    string responseType = ConfigurationHelper.ResponseType;
+
+                    string url = oauth2Url + "?client_id=" + clientId + "&redirect_uri=" + redirectUri + "&response_type=" + responseType;
+
+                    var options = new ChromeOptions();
+                    options.AddArgument("start-maximized");
+
+                    var driver = new ChromeDriver(options);
+                    driver.Navigate().GoToUrl(url);
+
+                    _ = new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(dr => dr.Url == url);
+
+                    var loginPage = new LoginPage(driver);
+
+                    string resultUrl = loginPage.Login(email, password).GetUrl();
+
+                    string s = resultUrl.Substring(resultUrl.IndexOf('=') + 1);
+                    string tok = "Bearer " + s.Remove(s.IndexOf('&'));
+
+
+                    driver.Quit();
+
+                    token = tok;
+                }
             }
-            else
-            {
-                string email = ConfigurationHelper.Email;
-                string password = ConfigurationHelper.Password;
 
-                string oauth2Url = ConfigurationHelper.OAuth2Url;
-                string clientId = ConfigurationHelper.ClientId;
-                string redirectUri = ConfigurationHelper.RedirectUri;
-                string responseType = ConfigurationHelper.ResponseType;
-
-                string url = oauth2Url + "?client_id=" + clientId + "&redirect_uri=" + redirectUri + "&response_type=" + responseType;
-
-                var options = new ChromeOptions();
-                options.AddArgument("start-maximized");
-
-                var driver = new ChromeDriver(options);
-                driver.Navigate().GoToUrl(url);
-
-                _ = new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(dr => dr.Url == url);
-
-                var loginPage = new LoginPage(driver);
-
-                string resultUrl = loginPage.Login(email, password).GetUrl();
-
-                string s = resultUrl.Substring(resultUrl.IndexOf('=') + 1);
-                string token = "Bearer " + s.Remove(s.IndexOf('&'));
-
-
-                driver.Quit();
-
-                Console.WriteLine(token);
-
-                return token;
-            }
+            return token;
         }
     }
 }
