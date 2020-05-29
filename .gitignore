@@ -7,4 +7,4 @@ Web_service_testing/Dropbox.API.Test.Infrastructure/bin/
 Web_service_testing/Dropbox.API.Test.Infrastructure/obj/
 
 #except this
-Web_service_testing/Dropbox.API.Test/bin/Debug/Dropbox.API.Test.dll
+!Web_service_testing/Dropbox.API.Test/bin/Debug/Dropbox.API.Test.dll
