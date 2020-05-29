@@ -25,3 +25,30 @@ C:\Users\Vladyslav Zalevskyi\source\repos\WebApiTesting\WebApiTesting\bin\Debug\
 C:\Users\Vladyslav Zalevskyi\source\repos\WebApiTesting\WebApiTesting\bin\Debug\FluentAssertions.dll
 C:\Users\Vladyslav Zalevskyi\source\repos\WebApiTesting\WebApiTesting\bin\Debug\FluentAssertions.pdb
 C:\Users\Vladyslav Zalevskyi\source\repos\WebApiTesting\WebApiTesting\bin\Debug\FluentAssertions.xml
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\bin\Debug\NUnit3.TestAdapter.dll
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\bin\Debug\NUnit3.TestAdapter.pdb
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\bin\Debug\nunit.engine.dll
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\bin\Debug\nunit.engine.api.dll
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\bin\Debug\WebApiTesting.dll
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\bin\Debug\WebApiTesting.pdb
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\bin\Debug\FluentAssertions.dll
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\bin\Debug\Newtonsoft.Json.dll
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\bin\Debug\nunit.framework.dll
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\bin\Debug\System.Security.AccessControl.dll
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\bin\Debug\System.Security.Permissions.dll
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\bin\Debug\System.Security.Principal.Windows.dll
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\bin\Debug\FluentAssertions.pdb
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\bin\Debug\FluentAssertions.xml
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\bin\Debug\Newtonsoft.Json.xml
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\bin\Debug\nunit.framework.pdb
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\bin\Debug\nunit.framework.xml
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\bin\Debug\System.Security.AccessControl.xml
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\bin\Debug\System.Security.Permissions.xml
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\bin\Debug\System.Security.Principal.Windows.xml
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\obj\Debug\WebApiTesting.csprojAssemblyReference.cache
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\obj\Debug\WebApiTesting.csproj.CoreCompileInputs.cache
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\obj\Debug\WebApiTesting.csproj.CopyComplete
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\obj\Debug\WebApiTesting.dll
+D:\Knowledge6(prb)\qa_course\QA_KA-76\WebApiTesting\WebApiTesting\obj\Debug\WebApiTesting.pdb

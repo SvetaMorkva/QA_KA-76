@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
-
-using System.IO;
-
 using System.Threading;
-using WebApiTesting.ApiFacade;
 using WebApiTesting.Extensions;
 using WebApiTesting.Helpers;
 

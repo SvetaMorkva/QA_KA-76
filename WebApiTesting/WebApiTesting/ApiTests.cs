@@ -51,7 +51,7 @@ namespace WebApiTesting
             var listOfFilesBefore = allFilesResponseBefore.Content<FileListResponseDto>();
 
             // act
-            var response = new DropboxApi().DeleteFile("/9.jpg");
+            var response = new DropboxApi().DeleteFile("/8.jpg");
             response.EnsureSuccessful();
 
             // assert

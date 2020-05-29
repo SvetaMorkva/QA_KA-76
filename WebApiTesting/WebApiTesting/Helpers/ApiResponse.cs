@@ -1,25 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System;
 using System.Net;
 using System.Net.Http;
 
 namespace WebApiTesting.Helpers
 {
-    public class ApiResponse
+    public class Response
     {
-        public ApiResponse(HttpResponseMessage responseMessage)
+        public HttpStatusCode StatusCode { get; }
+
+        public Response(HttpResponseMessage responseMessage)
         {
             StatusCode = responseMessage.StatusCode;
+        }
+        public virtual void EnsureSuccessful()
+        {
+            if ((int)StatusCode < 200 || (int)StatusCode >= 300)
+            {
+                throw new Exception(
+                    $"StatusCode is {StatusCode}");
+            }
+        }
+    }
+
+
+    public class ApiResponse : Response
+    {
+        public string ContentAsString { get; set; }
+
+        public ApiResponse(HttpResponseMessage responseMessage) : base(responseMessage)
+        {
             ContentAsString = responseMessage.Content.ReadAsStringAsync().Result;
         }
 
-        public HttpStatusCode StatusCode { get; }
-        public string ContentAsString { get; private set; }
         public JToken ContentAsJson => JToken.Parse(ContentAsString);
 
         public T Content<T>()
@@ -48,7 +62,7 @@ namespace WebApiTesting.Helpers
             }
         }
 
-        public void EnsureSuccessful()
+        public override void EnsureSuccessful()
         {
             if ((int)StatusCode < 200 || (int)StatusCode >= 300)
             {
