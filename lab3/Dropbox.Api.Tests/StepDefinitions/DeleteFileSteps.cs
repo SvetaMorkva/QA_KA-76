@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using System.Collections.Generic;
 using System.IO;
 using TechTalk.SpecFlow;
 using TestDropboxApi.ApiFacade;
@@ -14,15 +13,15 @@ namespace Dropbox.Api.Test.StepDefinitions
         [Given(@"I have nonempty dropbox folder")]
         public void GivenIHaveAtLeastFileInMyDropboxTestFolder()
         {
-            if (getAllDropboxFileNames().Count == 0){
+            if (AllFilenames.allDropboxFiles.Count == 0){
                 UploadFileDto uploadFile = new UploadFileDto
                 {
-                    Path = "/" + MyPdfTestFilePaths.originalPdfName,
+                    Path = "/" + OriginalTestFilePaths.originalPdfName,
                     Mode = "add",
                     Mute = false
                 };
 
-                MyPdfTestFilePaths myPdfPaths = new MyPdfTestFilePaths();
+                OriginalTestFilePaths myPdfPaths = new OriginalTestFilePaths();
                 var file = File.ReadAllBytes(myPdfPaths.GetFullPath());
 
                 var response = new DropboxApiContent().UploadFile(uploadFile, file);
@@ -33,25 +32,16 @@ namespace Dropbox.Api.Test.StepDefinitions
         [Then(@"I shoud be able to delete a file")]
         public void ThenIShoudBeAbleToDeleteAFile()
         {
-            var filesList = getAllDropboxFileNames();
+            var filesList = AllFilenames.allDropboxFiles;
             var fileToDelName = filesList[0].Name;
 
             var response = new DropboxApi().DeleteFile(fileToDelName);
             response.EnsureSuccessful();
             ContextHelper.AddToContext("LastApiResponse", response);
 
-            var filesListNew = getAllDropboxFileNames();
+            var filesListNew = AllFilenames.allDropboxFiles;
 
             Assert.IsFalse(filesListNew.Contains(filesList[0]));
-        }
-
-        private List<FileResponseDto> getAllDropboxFileNames()
-        {
-            var response = new DropboxApi().GetFilesList();
-            response.EnsureSuccessful();
-            ContextHelper.AddToContext("LastApiResponse", response);
-
-            return response.Content<FileListResponseDto>().Entries;
         }
     }
 }

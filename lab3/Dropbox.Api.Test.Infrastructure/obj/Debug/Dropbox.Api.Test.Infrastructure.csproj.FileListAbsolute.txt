@@ -54,3 +54,4 @@ C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab3\Dropbox.Api.Test.Infrastructure\bin\D
 C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab3\Dropbox.Api.Test.Infrastructure\bin\Debug\WebDriver.xml
 C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab3\Dropbox.Api.Test.Infrastructure\bin\Debug\WebDriver.Support.xml
 C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab3\Dropbox.Api.Test.Infrastructure\obj\Debug\Dropbox.Api.Test.Infrastructure.csproj.CopyComplete
+C:\Users\Olha\Desktop\GitHub\QA_KA-76\lab3\Dropbox.Api.Test.Infrastructure\obj\Debug\Dropbox.Api.Test.Infrastructure.csprojAssemblyReference.cache

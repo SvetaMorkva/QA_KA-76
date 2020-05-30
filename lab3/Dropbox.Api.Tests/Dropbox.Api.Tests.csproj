@@ -131,7 +131,7 @@
     <Compile Include="StepDefinitions\DeleteFileSteps.cs" />
     <Compile Include="StepDefinitions\GetFileMetadataSteps.cs" />
     <Compile Include="StepTransformations.cs" />
-    <Compile Include="TestFilesPaths.cs" />
+    <Compile Include="OopHw.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -11,16 +11,16 @@ namespace Dropbox.Api.Test.StepDefinitions
     public class GetFileMetadataSteps
     {
         private readonly string newFileName = Path.GetRandomFileName().Replace(".", "") + ".pdf";
-        private readonly string originalPdfName = MyPdfTestFilePaths.originalPdfName;
 
         [When(@"I uploaded a file")]
         public void WhenIUploadedAFile(UploadFileDto uploadFile)
         {
             // rename old pdf file to get a "new" one
-            MyPdfTestFilePaths myPdfPaths = new MyPdfTestFilePaths();
-            string originalPdfPath = myPdfPaths.GetFullPath();
-            string newFilePath = originalPdfPath.Substring(0, originalPdfPath.Length-originalPdfName.Length) + newFileName;
-            File.Copy(originalPdfPath, newFilePath);
+            OriginalTestFilePaths myPdfPaths = new OriginalTestFilePaths();
+            NewTestFilePaths newPdfPaths = new NewTestFilePaths(newFileName);
+            string newFilePath = newPdfPaths.GetFullPath();
+
+            File.Copy(myPdfPaths.GetFullPath(), newFilePath);
             ContextHelper.AddToContext("FilePath", newFilePath);
 
             //upload to dropbox
