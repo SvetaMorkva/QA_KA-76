@@ -19,7 +19,18 @@ namespace TestDropboxApi.ApiFacade
             request = new RequestBuilder(ConfigurationHelper.ServiceUrl);
         }
 
-        public ApiResponse GetFilesList()
+		public ApiResponse DeleteFile(string pathToFile)
+		{
+            const string url = "files/delete_v2";
+            var path = new Base(pathToFile);
+            var requestBody = JsonConvert.SerializeObject(path);
+            return request.Method(HttpMethod.Post)
+                .Uri(url)
+                .WithBody(requestBody)
+                .Execute();
+        }
+
+		public ApiResponse GetFilesList()
         {
             const string url = "files/list_folder";
             var requestBody = JsonConvert.SerializeObject(new Base());

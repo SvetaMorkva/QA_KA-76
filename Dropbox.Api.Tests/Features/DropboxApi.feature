@@ -10,12 +10,21 @@ Scenario: Upload a file
 	Given I have 'MyPdf.pdf' file to upload
 	When I upload the file
 	| Path        | Mode | AutoRename | Mute  |
-	| /MyFile.pdf | add  | true       | false |
+	| /MyPdf.pdf | add  | true       | false |
 	Then I should be able to get file info
 	| Name       |
-	| MyFile.pdf |
+	| MyPdf.pdf |
 
 @Get
 Scenario: Get metadata
-	When I try get file`s metatada
-	Then I should get valid metadata
+	When I try get 'MyPdf.pdf' file`s metatada
+	Then I should get valid file`s metadata
+	| Name       |
+	| MyPdf.pdf |
+
+
+
+@Delete
+Scenario: Delete file
+	When I try delete 'MyPdf.pdf' file
+	Then I should get no file info about 'MyPdf.pdf'

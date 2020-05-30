@@ -150,7 +150,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "AutoRename",
                             "Mute"});
                 table1.AddRow(new string[] {
-                            "/MyFile.pdf",
+                            "/MyPdf.pdf",
                             "add",
                             "true",
                             "false"});
@@ -160,7 +160,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name"});
                 table2.AddRow(new string[] {
-                            "MyFile.pdf"});
+                            "MyPdf.pdf"});
 #line 14
  testRunner.Then("I should be able to get file info", ((string)(null)), table2, "Then ");
 #line hidden
@@ -198,10 +198,53 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 20
- testRunner.When("I try get file`s metatada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I try get \'MyPdf.pdf\' file`s metatada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name"});
+                table3.AddRow(new string[] {
+                            "MyPdf.pdf"});
 #line 21
- testRunner.Then("I should get valid metadata", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should get valid file`s metadata", ((string)(null)), table3, "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Delete file")]
+        [NUnit.Framework.CategoryAttribute("Delete")]
+        public virtual void DeleteFile()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "Delete"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete file", null, new string[] {
+                        "Delete"});
+#line 28
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 29
+ testRunner.When("I try delete \'MyPdf.pdf\' file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 30
+ testRunner.Then("I should get no file info about \'MyPdf.pdf\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
