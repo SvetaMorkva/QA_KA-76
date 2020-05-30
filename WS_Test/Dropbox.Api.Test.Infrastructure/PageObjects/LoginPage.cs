@@ -3,7 +3,6 @@ using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Threading;
-using TestDropboxApi.DataModels;
 
 namespace Dropbox.Api.Test.Infrastructure.PageObjects
 {

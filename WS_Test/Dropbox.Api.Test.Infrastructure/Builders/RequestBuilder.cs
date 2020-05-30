@@ -20,7 +20,6 @@ namespace TestDropboxApi.Builders
         {
             _request = new HttpRequestMessage();
             BaseServiceUri = new Uri(url);
-            //WithHeader("Authorization", ConfigurationHelper.AuthorizationToken);
             string token = TokenHelper.GetToken();
             WithHeader("Authorization", token);
         }
@@ -66,13 +65,12 @@ namespace TestDropboxApi.Builders
             return this;
         }
 
-        public ApiResponse Execute()
+        public HttpResponseMessage Execute()
         {
             using (var httpClient = new HttpClient())
             {
                 _request.Headers.Referrer = _request.RequestUri;
-                var response = httpClient.SendAsync(_request, CancellationToken.None).Result;
-                return new ApiResponse(response);
+                return httpClient.SendAsync(_request, CancellationToken.None).Result;
             }
         }
     }

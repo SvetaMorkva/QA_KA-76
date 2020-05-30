@@ -1,13 +1,13 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 
-namespace TestDropboxApi.DataModels
+namespace Dropbox.Api.Test.Infrastructure.ResponseModels
 {
-    public class FileResponseDto
+    public class FileMetadataDto
     {
         [JsonProperty("name")]
         public string Name { get; set; }
@@ -25,17 +25,5 @@ namespace TestDropboxApi.DataModels
         public string Rev { get; set; }
         [JsonProperty("size")]
         public int Size { get; set; }
-        [JsonProperty("content_hash")]
-        public string ContentHash { get; set; }
-    }
-
-    public class FileListResponseDto
-    {
-        [JsonProperty("entries")]
-        public List<FileResponseDto> Entries { get; set; }
-        [JsonProperty("cursor")]
-        public string Cursor { get; set; }
-        [JsonProperty("has_more")]
-        public bool HasMore { get; set; }
     }
 }

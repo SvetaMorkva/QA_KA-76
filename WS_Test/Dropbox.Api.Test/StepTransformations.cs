@@ -1,43 +1,50 @@
-﻿using Dropbox.Api.Test.Infrastructure.DataModels;
+﻿using Dropbox.Api.Test.Infrastructure.Commands;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
-using TestDropboxApi.DataModels;
 
 namespace Dropbox.Api.Tests
 {
     [Binding]
     public class StepTransformations
     {
+        // DropboxAPI
+
         [StepArgumentTransformation]
-        public UploadFileDto ToUploadFileDto(Table table)
+        public CreateFolderRequest ToCreateFolderRequest(Table table)
         {
-            return table.CreateInstance<UploadFileDto>();
+            return table.CreateInstance<CreateFolderRequest>();
         }
 
         [StepArgumentTransformation]
-        public FileResponseDto ToFileResponseDto(Table table)
+        public GetMetadataRequest ToGetMetadataRequest(Table table)
         {
-            return table.CreateInstance<FileResponseDto>();
+            return table.CreateInstance<GetMetadataRequest>();
         }
 
         [StepArgumentTransformation]
-        public CreateFolderDto ToCreateFolderDto(Table table)
+        public ListFolderRequest ToListFolderRequest(Table table)
         {
-            return table.CreateInstance<CreateFolderDto>();
+            return table.CreateInstance<ListFolderRequest>();
         }
 
         [StepArgumentTransformation]
-        public FolderResponseDto ToFolderResponseDto(Table table)
+        public DeleteRequest TODeleteRequest(Table table)
         {
-            var result = new FolderResponseDto();
-            result.Metadata = table.CreateInstance<Metadata>();
-            return result;
+            return table.CreateInstance<DeleteRequest>();
+        }
+
+        // Content.DropboxAPI
+
+        [StepArgumentTransformation]
+        public UploadRequest ToUploadRequest(Table table)
+        {
+            return table.CreateInstance<UploadRequest>();
         }
 
         [StepArgumentTransformation]
-        public Base ToBase(Table table)
+        public DownloadRequest ToDownloadRequest(Table table)
         {
-            return table.CreateInstance<Base>();
+            return table.CreateInstance<DownloadRequest>();
         }
     }
 }

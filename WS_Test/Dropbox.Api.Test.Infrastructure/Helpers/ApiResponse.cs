@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Dropbox.Api.Test.Infrastructure.Commands;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -12,12 +13,17 @@ namespace TestDropboxApi.ApiFacade
 {
     public class ApiResponse
     {
-        public ApiResponse(HttpResponseMessage responseMessage)
+        public ApiResponse(RequestCommand request)
         {
+            HttpResponseMessage responseMessage = request.Execute();
+
             StatusCode = responseMessage.StatusCode;
             ContentAsString = responseMessage.Content.ReadAsStringAsync().Result;
             ContentAsByteArray = responseMessage.Content.ReadAsByteArrayAsync().Result;
         }
+
+
+
 
         public HttpStatusCode StatusCode { get; }
         public string ContentAsString { get; private set; }

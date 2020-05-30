@@ -2,11 +2,12 @@
 using TechTalk.SpecFlow;
 using FluentAssertions;
 using TestDropboxApi.ApiFacade;
-using TestDropboxApi.DataModels;
 using TestDropboxApi.Extensions;
 using TestDropboxApi.Helpers;
-using Dropbox.Api.Test.Infrastructure.DataModels;
 using NUnit.Framework;
+using Dropbox.Api.Test.Infrastructure.Commands;
+using Dropbox.Api.Test.Infrastructure.Helpers;
+using Dropbox.Api.Test.Infrastructure.ResponseModels;
 
 namespace Dropbox.Api.Test.StepDefinitions
 {
@@ -14,25 +15,25 @@ namespace Dropbox.Api.Test.StepDefinitions
     public class CreateFolderSteps
     {
         [When(@"I try to create a folder")]
-        public void WhenITryToCreateAFolder(CreateFolderDto createFolderDto)
+        public void WhenITryToCreateAFolder(CreateFolderRequest request)
         {
-            var response = new DropboxApi().CreateFolder(createFolderDto);
-            response.EnsureSuccessful();
+            ApiResponse response = new ApiResponse(request);
 
-            var path = new Base();
-            path.Path = createFolderDto.Path;
-            ContextHelper.AddToContext("folderPath", path);
-            
+            ContextHelper.AddToContext("CreateFolderRequest", request);
             ContextHelper.AddToContext("LastApiResponse", response);
         }
 
-        [Then(@"I should be able to see folder info")]
-        public void ThenIShouldBeAbleToSeeFolderInfo(FolderResponseDto folderInfo)
-        {
-            var apiResponse = ContextHelper.GetFromContext<ApiResponse>("LastApiResponse");
-            var actualFolderInfo = apiResponse.Content<FolderResponseDto>();
 
-            Assert.IsTrue(actualFolderInfo.Metadata.Name.Contains(folderInfo.Metadata.Name));
+        [Then(@"I should be able to see the valid create folder info")]
+        public void ThenIShouldBeAbleToSeeTheValidFolderInfo()
+        {
+            var response = ContextHelper.GetFromContext<ApiResponse>("LastApiResponse");
+            var request = ContextHelper.GetFromContext<CreateFolderRequest>("CreateFolderRequest");
+
+            var createFolderResultDto = response.Content<CreateFolderResultDto>();
+
+            // Contains due to autorename feature
+            Assert.IsTrue(createFolderResultDto.Metadata.PathDisplay.Contains(request.Path));
         }
     }
 }

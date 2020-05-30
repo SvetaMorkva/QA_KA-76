@@ -113,17 +113,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiFacade\DropboxApi.cs" />
-    <Compile Include="ApiFacade\DropboxApiContent.cs" />
     <Compile Include="Builders\RequestBuilder.cs" />
-    <Compile Include="DataModels\Base.cs" />
-    <Compile Include="DataModels\CreateFolderDto.cs" />
-    <Compile Include="DataModels\FileResponseDto.cs" />
-    <Compile Include="DataModels\Metadata.cs" />
-    <Compile Include="DataModels\FolderResponseDto.cs" />
-    <Compile Include="DataModels\UploadFileDto.cs" />
-    <Compile Include="Extensions\RequestExtensions.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Commands\CreateFolderRequest.cs" />
+    <Compile Include="Commands\DeleteRequest.cs" />
+    <Compile Include="Commands\DownloadRequest.cs" />
+    <Compile Include="Commands\GetMetadataRequest.cs" />
+    <Compile Include="Commands\ListFolderRequest.cs" />
+    <Compile Include="Commands\RequestCommand.cs" />
+    <Compile Include="Commands\UploadRequest.cs" />
     <Compile Include="Extensions\UriExtensions.cs" />
     <Compile Include="Helpers\ApiResponse.cs" />
     <Compile Include="Helpers\ConfigurationHelper.cs" />
@@ -132,6 +129,11 @@
     <Compile Include="PageObjects\BasePage.cs" />
     <Compile Include="PageObjects\LoginPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResponseModels\CreateFolderResultDto.cs" />
+    <Compile Include="ResponseModels\DeleteResultDto.cs" />
+    <Compile Include="ResponseModels\ListFolderResultDto.cs" />
+    <Compile Include="ResponseModels\FileMetadataDto.cs" />
+    <Compile Include="ResponseModels\MetadataDto.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

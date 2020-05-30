@@ -111,12 +111,8 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
  testRunner.When("I try to create a folder", ((string)(null)), table1, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Name"});
-                table2.AddRow(new string[] {
-                            "test"});
 #line 9
- testRunner.Then("I should be able to see folder info", ((string)(null)), table2, "Then ");
+ testRunner.Then("I should be able to see the valid create folder info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -131,7 +127,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Upload"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 Upload a file", null, new string[] {
                         "Upload"});
-#line 15
+#line 13
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -151,35 +147,31 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 16
+#line 14
  testRunner.Given("I have \'MyPdf.pdf\' file to upload", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "Path"});
-                table3.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "/testupload"});
-#line 17
- testRunner.Given("I also have folder in Dropbox", ((string)(null)), table3, "Given ");
+#line 15
+ testRunner.Given("I also have folder in Dropbox", ((string)(null)), table2, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                             "Path",
                             "Mode",
                             "AutoRename",
                             "Mute"});
-                table4.AddRow(new string[] {
+                table3.AddRow(new string[] {
                             "/testupload/MyPdf.pdf",
                             "add",
                             "true",
                             "false"});
-#line 20
- testRunner.When("I upload the file", ((string)(null)), table4, "When ");
+#line 18
+ testRunner.When("I upload the file", ((string)(null)), table3, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Name"});
-                table5.AddRow(new string[] {
-                            "MyPdf.pdf"});
-#line 23
- testRunner.Then("I should be able to get file info", ((string)(null)), table5, "Then ");
+#line 21
+ testRunner.Then("I should be able to get the valid upload file info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -194,7 +186,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Get"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3 Get file metadata", null, new string[] {
                         "Get"});
-#line 29
+#line 25
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -214,46 +206,46 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 30
+#line 26
  testRunner.Given("I have \'MyPdf.pdf\' file to upload", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                             "Path",
                             "AutoRename"});
-                table6.AddRow(new string[] {
-                            "/test",
+                table4.AddRow(new string[] {
+                            "/testupload",
                             "true"});
-#line 31
- testRunner.When("I try to create a folder", ((string)(null)), table6, "When ");
+#line 27
+ testRunner.When("I try to create a folder", ((string)(null)), table4, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "Path",
                             "Mode",
                             "AutoRename",
                             "Mute"});
-                table7.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "/testupload/MyPdf.pdf",
                             "add",
                             "true",
                             "false"});
-#line 34
- testRunner.When("I upload the file", ((string)(null)), table7, "When ");
+#line 30
+ testRunner.When("I upload the file", ((string)(null)), table5, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Path"});
-                table8.AddRow(new string[] {
-                            "/testupload/MyPdf.pdf"});
-#line 37
- testRunner.When("I try to get metadata", ((string)(null)), table8, "When ");
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Path",
+                            "IncludeMediaInfo",
+                            "IncludeDeleted",
+                            "IncludeHasExplicitSharedMembers"});
+                table6.AddRow(new string[] {
+                            "/testupload/MyPdf.pdf",
+                            "true",
+                            "true",
+                            "true"});
+#line 33
+ testRunner.When("I try to get metadata", ((string)(null)), table6, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Name",
-                            "pathLower"});
-                table9.AddRow(new string[] {
-                            "MyPdf.pdf",
-                            "/testupload/MyPdf.pdf"});
-#line 40
- testRunner.Then("I should be able to get the valid info", ((string)(null)), table9, "Then ");
+#line 36
+ testRunner.Then("I should be able to get the valid get metadata info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -268,7 +260,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Get"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4 Get list of files", null, new string[] {
                         "Get"});
-#line 46
+#line 41
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -288,52 +280,68 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 47
+#line 42
  testRunner.Given("I have \'MyPdf.pdf\' file to upload", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                             "Path",
                             "AutoRename"});
-                table10.AddRow(new string[] {
+                table7.AddRow(new string[] {
                             "/testupload",
                             "true"});
-#line 48
- testRunner.When("I try to create a folder", ((string)(null)), table10, "When ");
+#line 43
+ testRunner.When("I try to create a folder", ((string)(null)), table7, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                             "Path",
                             "Mode",
                             "AutoRename",
-                            "Mute"});
-                table11.AddRow(new string[] {
+                            "Mute",
+                            "StrictConfclict"});
+                table8.AddRow(new string[] {
                             "/testupload/MyPdf.pdf",
                             "add",
                             "true",
+                            "false",
                             "false"});
-#line 51
- testRunner.When("I upload the file", ((string)(null)), table11, "When ");
+#line 46
+ testRunner.When("I upload the file", ((string)(null)), table8, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                             "Path",
                             "Mode",
                             "AutoRename",
-                            "Mute"});
-                table12.AddRow(new string[] {
+                            "Mute",
+                            "StrictConflict"});
+                table9.AddRow(new string[] {
                             "/testupload/MyPdf2.pdf",
                             "add",
                             "true",
+                            "false",
                             "false"});
-#line 54
- testRunner.When("I upload the file", ((string)(null)), table12, "When ");
+#line 49
+ testRunner.When("I upload the file", ((string)(null)), table9, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Path"});
-                table13.AddRow(new string[] {
-                            "/testupload"});
-#line 57
- testRunner.When("I try to get the list of all existing files in a folder", ((string)(null)), table13, "When ");
+                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Path",
+                            "Recursive",
+                            "IncludeMediaInfo",
+                            "IncludeDeleted",
+                            "IncludeHasExplicitSharedMembers",
+                            "IncludeMountedFolders",
+                            "IncludeNonDownloadableFiles"});
+                table10.AddRow(new string[] {
+                            "/testupload",
+                            "false",
+                            "false",
+                            "false",
+                            "false",
+                            "false",
+                            "false"});
+#line 52
+ testRunner.When("I try to get the list of all existing files in a folder", ((string)(null)), table10, "When ");
 #line hidden
-#line 60
+#line 55
  testRunner.Then("I should get a valid list of files", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -349,7 +357,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Download"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5 Download a file", null, new string[] {
                         "Download"});
-#line 64
+#line 59
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -369,39 +377,39 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 65
+#line 60
  testRunner.Given("I have \'MyPdf.pdf\' file to upload", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                             "Path",
                             "AutoRename"});
-                table14.AddRow(new string[] {
+                table11.AddRow(new string[] {
                             "/testupload",
                             "true"});
-#line 66
- testRunner.When("I try to create a folder", ((string)(null)), table14, "When ");
+#line 61
+ testRunner.When("I try to create a folder", ((string)(null)), table11, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                             "Path",
                             "Mode",
                             "AutoRename",
                             "Mute"});
-                table15.AddRow(new string[] {
+                table12.AddRow(new string[] {
                             "/testupload/MyPdf.pdf",
                             "add",
                             "true",
                             "false"});
-#line 69
- testRunner.When("I upload the file", ((string)(null)), table15, "When ");
+#line 64
+ testRunner.When("I upload the file", ((string)(null)), table12, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                             "Path"});
-                table16.AddRow(new string[] {
+                table13.AddRow(new string[] {
                             "/testupload/MyPdf.pdf"});
-#line 72
- testRunner.When("I try to download the same file from my dropbox", ((string)(null)), table16, "When ");
+#line 67
+ testRunner.When("I try to download the same file from my dropbox", ((string)(null)), table13, "When ");
 #line hidden
-#line 75
+#line 70
  testRunner.Then("these two files should be identical", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -417,7 +425,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Delete"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("6 Delete a file", null, new string[] {
                         "Delete"});
-#line 79
+#line 74
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -437,40 +445,40 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 80
+#line 75
  testRunner.Given("I have \'MyPdf.pdf\' file to upload", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                             "Path",
                             "AutoRename"});
-                table17.AddRow(new string[] {
+                table14.AddRow(new string[] {
                             "/testdelete",
                             "true"});
-#line 81
- testRunner.When("I try to create a folder", ((string)(null)), table17, "When ");
+#line 76
+ testRunner.When("I try to create a folder", ((string)(null)), table14, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                             "Path",
                             "Mode",
                             "AutoRename",
                             "Mute"});
-                table18.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "/testdelete/MyPdf.pdf",
                             "add",
                             "true",
                             "false"});
-#line 84
- testRunner.When("I upload the file", ((string)(null)), table18, "When ");
+#line 79
+ testRunner.When("I upload the file", ((string)(null)), table15, "When ");
 #line hidden
-#line 87
- testRunner.When("I delete this file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                             "Path"});
-                table19.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "/testdelete/MyPdf.pdf"});
-#line 88
- testRunner.Then("I should be able to see the valid delete result", ((string)(null)), table19, "Then ");
+#line 82
+ testRunner.When("I perform a delete", ((string)(null)), table16, "When ");
+#line hidden
+#line 85
+ testRunner.Then("I should be able to see the valid delete result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -485,7 +493,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Delete"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("7 Delete a folder", null, new string[] {
                         "Delete"});
-#line 94
+#line 89
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -505,40 +513,40 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 95
+#line 90
  testRunner.Given("I have \'MyPdf.pdf\' file to upload", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                             "Path",
                             "AutoRename"});
-                table20.AddRow(new string[] {
+                table17.AddRow(new string[] {
                             "/testdelete",
                             "true"});
-#line 96
- testRunner.When("I try to create a folder", ((string)(null)), table20, "When ");
+#line 91
+ testRunner.When("I try to create a folder", ((string)(null)), table17, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                             "Path",
                             "Mode",
                             "AutoRename",
                             "Mute"});
-                table21.AddRow(new string[] {
+                table18.AddRow(new string[] {
                             "/testdelete/MyPdf.pdf",
                             "add",
                             "true",
                             "false"});
-#line 99
- testRunner.When("I upload the file", ((string)(null)), table21, "When ");
+#line 94
+ testRunner.When("I upload the file", ((string)(null)), table18, "When ");
 #line hidden
-#line 102
- testRunner.When("I delete this folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                             "Path"});
-                table22.AddRow(new string[] {
+                table19.AddRow(new string[] {
                             "/testdelete"});
-#line 103
- testRunner.Then("I should be able to see the valid delete result", ((string)(null)), table22, "Then ");
+#line 97
+ testRunner.When("I perform a delete", ((string)(null)), table19, "When ");
+#line hidden
+#line 100
+ testRunner.Then("I should be able to see the valid delete result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -553,7 +561,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "GetAfterDelete"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("8 Get folder after delete", null, new string[] {
                         "GetAfterDelete"});
-#line 109
+#line 105
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -573,42 +581,46 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 110
+#line 106
  testRunner.Given("I have \'MyPdf.pdf\' file to upload", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                             "Path",
                             "AutoRename"});
-                table23.AddRow(new string[] {
+                table20.AddRow(new string[] {
                             "/testdelete",
                             "true"});
-#line 111
- testRunner.When("I try to create a folder", ((string)(null)), table23, "When ");
+#line 107
+ testRunner.When("I try to create a folder", ((string)(null)), table20, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                             "Path",
                             "Mode",
                             "AutoRename",
                             "Mute"});
-                table24.AddRow(new string[] {
+                table21.AddRow(new string[] {
                             "/testdelete/MyPdf.pdf",
                             "add",
                             "true",
                             "false"});
-#line 114
- testRunner.When("I upload the file", ((string)(null)), table24, "When ");
+#line 110
+ testRunner.When("I upload the file", ((string)(null)), table21, "When ");
 #line hidden
-#line 117
- testRunner.When("I delete this folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                             "Path"});
-                table25.AddRow(new string[] {
+                table22.AddRow(new string[] {
                             "/testdelete"});
-#line 118
- testRunner.When("I try to get metadata", ((string)(null)), table25, "When ");
+#line 113
+ testRunner.When("I perform a delete", ((string)(null)), table22, "When ");
 #line hidden
-#line 121
+                TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Path"});
+                table23.AddRow(new string[] {
+                            "/testdelete"});
+#line 116
+ testRunner.When("I try to get metadata", ((string)(null)), table23, "When ");
+#line hidden
+#line 119
  testRunner.Then("I should receive an error", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -624,7 +636,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "GetAfterDelete"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("9 Get file after delete", null, new string[] {
                         "GetAfterDelete"});
-#line 125
+#line 123
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -644,40 +656,44 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 126
+#line 124
  testRunner.Given("I have \'MyPdf.pdf\' file to upload", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                             "Path",
                             "AutoRename"});
-                table26.AddRow(new string[] {
+                table24.AddRow(new string[] {
                             "/testdelete",
                             "true"});
-#line 127
- testRunner.When("I try to create a folder", ((string)(null)), table26, "When ");
+#line 125
+ testRunner.When("I try to create a folder", ((string)(null)), table24, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                             "Path",
                             "Mode",
                             "AutoRename",
                             "Mute"});
-                table27.AddRow(new string[] {
+                table25.AddRow(new string[] {
                             "/testdelete/MyPdf.pdf",
                             "add",
                             "true",
                             "false"});
-#line 130
- testRunner.When("I upload the file", ((string)(null)), table27, "When ");
+#line 128
+ testRunner.When("I upload the file", ((string)(null)), table25, "When ");
 #line hidden
-#line 133
- testRunner.When("I delete this folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                             "Path"});
-                table28.AddRow(new string[] {
+                table26.AddRow(new string[] {
+                            "/testdelete"});
+#line 131
+ testRunner.When("I perform a delete", ((string)(null)), table26, "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Path"});
+                table27.AddRow(new string[] {
                             "/testdelete/MyPdf.pdf"});
 #line 134
- testRunner.When("I try to get metadata", ((string)(null)), table28, "When ");
+ testRunner.When("I try to get metadata", ((string)(null)), table27, "When ");
 #line hidden
 #line 137
  testRunner.Then("I should receive an error", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

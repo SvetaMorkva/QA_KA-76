@@ -6,9 +6,7 @@ Scenario: 1 Create a folder
 	When I try to create a folder
 	| Path	| AutoRename |
 	| /test | true       |
-	Then I should be able to see folder info
-	| Name |
-	| test |
+	Then I should be able to see the valid create folder info
 
 
 @Upload
@@ -20,26 +18,23 @@ Scenario: 2 Upload a file
 	When I upload the file
 	| Path						| Mode | AutoRename | Mute  |
 	| /testupload/MyPdf.pdf		| add  | true       | false |
-	Then I should be able to get file info
-	| Name       |
-	| MyPdf.pdf  |
+	Then I should be able to get the valid upload file info
 
 
 @Get
 Scenario: 3 Get file metadata
 	Given I have 'MyPdf.pdf' file to upload
 	When I try to create a folder
-	| Path	| AutoRename |
-	| /test | true       |
+	| Path			| AutoRename |
+	| /testupload	| true       |
 	When I upload the file
 	| Path						| Mode | AutoRename | Mute  |
 	| /testupload/MyPdf.pdf		| add  | true       | false |
 	When I try to get metadata
-	| Path					|
-	| /testupload/MyPdf.pdf |
-	Then I should be able to get the valid info
-	| Name      | pathLower             |
-	| MyPdf.pdf | /testupload/MyPdf.pdf |
+	| Path                  | IncludeMediaInfo	| IncludeDeleted | IncludeHasExplicitSharedMembers |
+	| /testupload/MyPdf.pdf | true				| true           | true                            |
+	Then I should be able to get the valid get metadata info
+
 
 
 @Get
@@ -49,14 +44,14 @@ Scenario: 4 Get list of files
 	| Path			| AutoRename |
 	| /testupload	| true       |
 	When I upload the file
-	| Path						| Mode | AutoRename | Mute  |
-	| /testupload/MyPdf.pdf		| add  | true       | false |
+	| Path                  | Mode | AutoRename | Mute  | StrictConfclict |
+	| /testupload/MyPdf.pdf | add  | true       | false | false           |
 	When I upload the file
-	| Path							| Mode | AutoRename | Mute  |
-	| /testupload/MyPdf2.pdf		| add  | true       | false |
+	| Path                   | Mode | AutoRename | Mute  | StrictConflict |
+	| /testupload/MyPdf2.pdf | add  | true       | false | false          |
 	When I try to get the list of all existing files in a folder
-	| Path		  |
-	| /testupload |
+	| Path        | Recursive | IncludeMediaInfo | IncludeDeleted | IncludeHasExplicitSharedMembers | IncludeMountedFolders | IncludeNonDownloadableFiles |
+	| /testupload | false     | false            | false          | false                           | false                 | false                       |
 	Then I should get a valid list of files
 
 
@@ -84,10 +79,10 @@ Scenario: 6 Delete a file
 	When I upload the file
 	| Path						| Mode | AutoRename | Mute  |
 	| /testdelete/MyPdf.pdf		| add  | true       | false |
-	When I delete this file
-	Then I should be able to see the valid delete result
+	When I perform a delete
 	| Path					|
 	| /testdelete/MyPdf.pdf |
+	Then I should be able to see the valid delete result
 	
 
 @Delete
@@ -99,10 +94,11 @@ Scenario: 7 Delete a folder
 	When I upload the file
 	| Path						| Mode | AutoRename | Mute  |
 	| /testdelete/MyPdf.pdf		| add  | true       | false |
-	When I delete this folder
+	When I perform a delete
+	| Path		  |		
+	| /testdelete |
 	Then I should be able to see the valid delete result
-	| Path			|
-	| /testdelete	|
+
 
 
 @GetAfterDelete
@@ -114,7 +110,9 @@ Scenario: 8 Get folder after delete
 	When I upload the file
 	| Path						| Mode | AutoRename | Mute  |
 	| /testdelete/MyPdf.pdf		| add  | true       | false |
-	When I delete this folder
+	When I perform a delete
+	| Path		  |		
+	| /testdelete |
 	When I try to get metadata
 	| Path			|
 	| /testdelete	|
@@ -130,7 +128,9 @@ Scenario: 9 Get file after delete
 	When I upload the file
 	| Path						| Mode | AutoRename | Mute  |
 	| /testdelete/MyPdf.pdf		| add  | true       | false |
-	When I delete this folder
+	When I perform a delete
+	| Path		  |		
+	| /testdelete |
 	When I try to get metadata
 	| Path					 |
 	| /testdelete/MyPdf.pdf  |

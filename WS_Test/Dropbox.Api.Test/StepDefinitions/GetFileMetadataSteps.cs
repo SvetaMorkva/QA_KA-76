@@ -1,10 +1,12 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using Dropbox.Api.Test.Infrastructure.Commands;
+using Dropbox.Api.Test.Infrastructure.ResponseModels;
 using FluentAssertions;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
 using TestDropboxApi.ApiFacade;
-using TestDropboxApi.DataModels;
 using TestDropboxApi.Extensions;
 using TestDropboxApi.Helpers;
 
@@ -12,15 +14,26 @@ namespace Dropbox.Api.Test.StepDefinitions
 {
     [Binding]
     public class GetFileMetadataSteps
-    {        
-        [Then(@"I should be able to get the valid info")]
-        public void ThenIShouldBeAbleToGetTheValidInfo(FileResponseDto fileInfo)
+    {
+        [When(@"I try to get metadata")]
+        public void WhenITryToGetMetadata(GetMetadataRequest request)
         {
-            var apiResponse = ContextHelper.GetFromContext<ApiResponse>("LastApiResponse");
-            apiResponse.EnsureSuccessful();
-            var actualFileInfo = apiResponse.Content<FileResponseDto>();
+            var response = new ApiResponse(request);
+            ContextHelper.AddToContext("LastApiResponse", response);
+            ContextHelper.AddToContext("GetMetadataRequest", request);
+        }
 
-            actualFileInfo.ShouldBeEquivalentTo(fileInfo, options => options.Including(f => f.Name));
+
+        [Then(@"I should be able to get the valid get metadata info")]
+        public void ThenIShouldBeAbleToGetTheValidGetMetadataInfo()
+        {
+            var response = ContextHelper.GetFromContext<ApiResponse>("LastApiResponse");
+            var request = ContextHelper.GetFromContext<GetMetadataRequest>("GetMetadataRequest");
+
+            response.EnsureSuccessful();
+            var metadataInfo = response.Content<MetadataDto>();
+
+            Assert.AreEqual(request.Path, metadataInfo.PathDisplay);
         }
     }
 }

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
-using Dropbox.Api.Test.Infrastructure.DataModels;
+using Dropbox.Api.Test.Infrastructure.Commands;
+using Dropbox.Api.Test.Infrastructure.ResponseModels;
 using FluentAssertions;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 using TestDropboxApi.ApiFacade;
-using TestDropboxApi.DataModels;
 using TestDropboxApi.Extensions;
 using TestDropboxApi.Helpers;
 
@@ -26,39 +26,42 @@ namespace Dropbox.Api.Test.StepDefinitions
             ContextHelper.AddToContext("FilePath", filePath);
         }
 
-        [Given(@"I also have folder in Dropbox")]
-        public void GivenIAlsoHaveFolderInDropbox(Base path)
-        {
-            var response = new DropboxApi().GetFileMetadata(path);
-            response.EnsureSuccessful();
-            var folder = response.Content<Metadata>();
-            string respath = folder.PathLower;
 
-            Assert.AreEqual(path.Path, respath);
+        [Given(@"I also have folder in Dropbox")]
+        public void GivenIAlsoHaveFolderInDropbox(GetMetadataRequest request)
+        {
+            var response = new ApiResponse(request);
+            response.EnsureSuccessful();
+
+            var metadata = response.Content<MetadataDto>();
+
+            Assert.AreEqual(request.Path, metadata.PathDisplay);
         }
 
 
         [When(@"I upload the file")]
-        public void WhenIUploadTheFile(UploadFileDto uploadFile)
+        public void WhenIUploadTheFile(UploadRequest request)
         {
-            var filePath = ContextHelper.GetFromContext<string>("FilePath");
+            string filePath = ContextHelper.GetFromContext<string>("FilePath");
             var file = File.ReadAllBytes(filePath);
-            var response = new DropboxApiContent().UploadFile(uploadFile, file);
-            response.EnsureSuccessful();
-            ContextHelper.AddToContext("LastApiResponse", response);
+            request.FileToUpload = file;
 
-            var uploadPath = new Base();
-            uploadPath.Path = uploadFile.Path;
-            ContextHelper.AddToContext("UploadedFilePath", uploadPath);
+            var response = new ApiResponse(request);
+
+            ContextHelper.AddToContext("LastApiResponse", response);
+            ContextHelper.AddToContext("UploadRequest", request);
         }
 
-        [Then(@"I should be able to get file info")]
-        public void ThenIShouldBeAbleToGetFileInfo(FileResponseDto fileInfo)
-        {
-            var apiResponse = ContextHelper.GetFromContext<ApiResponse>("LastApiResponse");
-            var actualFileInfo = apiResponse.Content<FileResponseDto>();
 
-            actualFileInfo.ShouldBeEquivalentTo(fileInfo, options => options.Including(f => f.Name));
+        [Then(@"I should be able to get the valid upload file info")]
+        public void ThenIShouldBeAbleToGetTheValidUploadFileInfo()
+        {
+            var response = ContextHelper.GetFromContext<ApiResponse>("LastApiResponse");
+            var request = ContextHelper.GetFromContext<UploadRequest>("UploadRequest");
+
+            var fileResponseDto = response.Content<FileMetadataDto>();
+
+            Assert.AreEqual(request.Path, fileResponseDto.PathDisplay);
         }
 
         private string GetFilePath(string fileName)

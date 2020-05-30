@@ -1,11 +1,11 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using Dropbox.Api.Test.Infrastructure.Commands;
 using FluentAssertions;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 using TestDropboxApi.ApiFacade;
-using TestDropboxApi.DataModels;
 using TestDropboxApi.Extensions;
 using TestDropboxApi.Helpers;
 
@@ -15,10 +15,9 @@ namespace Dropbox.Api.Test.StepDefinitions
     public class DownloadFileSteps
     {        
         [When(@"I try to download the same file from my dropbox")]
-        public void WhenITryToDownloadTheSameFileFromMyDropbox(Base path)
+        public void WhenITryToDownloadTheSameFileFromMyDropbox(DownloadRequest request)
         {
-            var response = new DropboxApiContent().DownloadFile(path);
-            response.EnsureSuccessful();
+            var response = new ApiResponse(request);
             ContextHelper.AddToContext("LastApiResponse", response);
         }
         
@@ -31,9 +30,7 @@ namespace Dropbox.Api.Test.StepDefinitions
             FileInfo localFile = new FileInfo(filePath);
             byte[] downloadedFile = apiResponse.ContentAsByteArray;
 
-            bool areEqual = FilesAreEqual(localFile, downloadedFile);
-
-            Assert.IsTrue(areEqual);
+            Assert.IsTrue(FilesAreEqual(localFile, downloadedFile));
         }
 
 

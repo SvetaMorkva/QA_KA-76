@@ -1,13 +1,13 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 
-namespace Dropbox.Api.Test.Infrastructure.DataModels
+namespace Dropbox.Api.Test.Infrastructure.ResponseModels
 {
-    public class Metadata
+    public class MetadataDto
     {
         [JsonProperty("name")]
         public string Name { get; set; }
