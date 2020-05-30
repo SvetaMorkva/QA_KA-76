@@ -7,10 +7,14 @@ using WebApi.Builders;
 
 namespace WebApi.ApiFacade
 {
-    public class DropboxApi
+    public class DropboxApiService : DropboxApiBase
     {
-        public RequestBuilder request;
-        public DropboxApi()
+        public DropboxApiService()
+        {
+            
+        }
+
+        public override void CreateRequest()
         {
             request = new RequestBuilder(ConfigurationHelper.ServiceUrl);
         }

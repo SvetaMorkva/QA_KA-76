@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.IO;
 using System.Reflection;
 using NUnit.Framework;
@@ -12,7 +13,8 @@ namespace WebApi
     [TestFixture]
     public class WebApiTests
     {
-
+        private DropboxApiService ApiService = new DropboxApiService();
+        private DropboxApiContent ApiContent = new DropboxApiContent();
         [SetUp]
         public void SetUp()
         {
@@ -28,7 +30,8 @@ namespace WebApi
             string testFileName = "data.pdf";
 
             //act
-            ApiResponse responseData = new DropboxApi().GetFileMetadata("/data.pdf");
+            ApiService.CreateRequest();
+            ApiResponse responseData = ApiService.GetFileMetadata("/data.pdf");
             responseData.EnsureSuccessful();
 
             //assert
@@ -39,9 +42,12 @@ namespace WebApi
         public void Test_DeleteFile_ShouldThrowException()
         {
             //act
-            var responseDelete = new DropboxApi().DeleteFile("/data.pdf");
+            ApiService.CreateRequest();
+            ApiResponse responseDelete = ApiService.DeleteFile("/data.pdf");
             responseDelete.EnsureSuccessful();
-            var responseData = new DropboxApi().GetFileMetadata("/data.pdf");
+
+            ApiService.CreateRequest();
+            ApiResponse responseData = ApiService.GetFileMetadata("/data.pdf");
 
             //assert
             Assert.Throws<Exception>(() => responseData.EnsureSuccessful());
@@ -54,23 +60,23 @@ namespace WebApi
             {
                 throw new FileNotFoundException("File " + datafile + " does not exists");
             }
-            var uploadFile = new UploadFileDto
+            UploadFileDto uploadFile = new UploadFileDto
             {
                 Path = "/" + filename,
                 Mode = "add",
                 AutoRename = true,
                 Mute = false
             };
-            var file = File.ReadAllBytes(datafile);
-            var response = new DropboxApiContent().UploadFile(uploadFile, file);
-            response.EnsureSuccessful();
+            byte[] file = File.ReadAllBytes(datafile);
+            ApiContent.CreateRequest();
+            ApiContent.UploadFile(uploadFile, file).EnsureSuccessful();
         }
 
         private string GetFilePath(string fileName)
         {
             string codeBase = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase) + Path.DirectorySeparatorChar 
                 + ConfigurationHelper.DefaultFilePath;
-            var uri = new UriBuilder(codeBase).Uri.Append(fileName);
+            Uri uri = new UriBuilder(codeBase).Uri.Append(fileName);
             string fullPath = Path.GetFullPath(Uri.UnescapeDataString(uri.AbsolutePath));
             return fullPath;
         }
