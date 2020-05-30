@@ -19,7 +19,7 @@ namespace TestDropboxApi.Builders
         {
             _request = new HttpRequestMessage();
             BaseServiceUri = new Uri(url);
-            WithHeader("Authorization", Environment.GetEnvironmentVariable(ConfigurationHelper.EnvTokenVarName));
+            WithHeader("Authorization", ConfigurationHelper.AuthorizationToken);
         }
 
         public RequestBuilder WithHeaders(Dictionary<string, string> headers)
