@@ -35,5 +35,14 @@ namespace TestDropboxApi.ApiFacade
             var requestBody = JsonConvert.SerializeObject(body);
             return request.Method(HttpMethod.Post).Uri(url).WithBody(requestBody).Execute();
         }
+
+        public ApiResponse DeleteFiles(string path)
+        {
+            const string url = "files/delete_v2";
+            Base body = new Base();
+            body.Path = path;
+            var requestBody = JsonConvert.SerializeObject(body);
+            return request.Method(HttpMethod.Post).Uri(url).WithBody(requestBody).Execute();
+        }
     }
 }
