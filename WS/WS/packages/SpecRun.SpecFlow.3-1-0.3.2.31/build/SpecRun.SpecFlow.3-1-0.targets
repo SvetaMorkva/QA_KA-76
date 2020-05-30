@@ -1,0 +1,71 @@
+﻿<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+
+  <PropertyGroup>
+    <BuildDependsOn>
+      CopyProfilesToOutput;
+      GenerateSpecFlowAssemblyHooksFileTask;
+      $(BuildDependsOn)
+    </BuildDependsOn>
+    <CleanDependsOn>
+      $(CleanDependsOn)
+    </CleanDependsOn>
+    <RebuildDependsOn>
+      CopyProfilesToOutput;
+      GenerateSpecFlowAssemblyHooksFileTask;
+      $(RebuildDependsOn)
+    </RebuildDependsOn>
+  </PropertyGroup>
+
+  <PropertyGroup>
+
+    <_SpecFlow_GeneratorPlugin Condition=" '$(MSBuildRuntimeType)' == 'Core'">netstandard2.0</_SpecFlow_GeneratorPlugin>
+    <_SpecFlow_GeneratorPlugin Condition=" '$(MSBuildRuntimeType)' != 'Core'">net471</_SpecFlow_GeneratorPlugin>
+    <_SpecFlow_GeneratorPluginPath>$(MSBuildThisFileDirectory)\$(_SpecFlow_GeneratorPlugin)\SpecRun.Generator.SpecFlowPlugin.dll</_SpecFlow_GeneratorPluginPath>
+
+    <_SpecFlow_RuntimePlugin Condition=" '$(TargetFrameworkIdentifier)' == '.NETCoreApp' ">netstandard2.0</_SpecFlow_RuntimePlugin>
+    <_SpecFlow_RuntimePlugin Condition=" '$(TargetFrameworkIdentifier)' == '.NETStandard' ">netstandard2.0</_SpecFlow_RuntimePlugin>
+    <_SpecFlow_RuntimePlugin Condition=" '$(TargetFrameworkIdentifier)' == '.NETFramework' ">net45</_SpecFlow_RuntimePlugin>
+    <_SpecFlow_RuntimePluginPath>$(MSBuildThisFileDirectory)\..\lib\$(_SpecFlow_RuntimePlugin)\SpecRun.Runtime.SpecFlowPlugin.dll</_SpecFlow_RuntimePluginPath>
+
+    <_SpecFlow_SpecRunPath>$(MSBuildThisFileDirectory)\..\lib\$(_SpecFlow_RuntimePlugin)\TechTalk.SpecRun.dll</_SpecFlow_SpecRunPath>
+    <_SpecFlow_SpecRunCommonPath>$(MSBuildThisFileDirectory)\..\lib\$(_SpecFlow_RuntimePlugin)\TechTalk.SpecRun.Common.dll</_SpecFlow_SpecRunCommonPath>
+
+    <SourceSpecFlowAssemblyHooksFile Condition="'$(SourceSpecFlowAssemblyHooksFile)' == ''">$(MSBuildThisFileDirectory)SpecFlow.Plus.Runner.AssemblyHooks$(DefaultLanguageSourceExtension)</SourceSpecFlowAssemblyHooksFile>
+    <GenerateSpecFlowAssemblyHooksFile Condition="'$(GenerateSpecFlowAssemblyHooksFile)' == ''">true</GenerateSpecFlowAssemblyHooksFile>
+    <GeneratedSpecFlowAssemblyHooksFile>$(ProjectDir)$([MSBuild]::Unescape('$(IntermediateOutputPath)'))SpecFlow.Plus.Runner.AssemblyHooks$(DefaultLanguageSourceExtension)</GeneratedSpecFlowAssemblyHooksFile>
+  </PropertyGroup>
+
+  <!-- Desktop CLR needs auto-generated binding redirects (and full PDBs for TPv1) -->
+  <PropertyGroup Condition=" '$(TargetFrameworkIdentifier)' == '.NETFramework' ">
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <DebugType Condition=" '$(DebugType)' == '' ">full</DebugType>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+  </PropertyGroup>
+
+  <!-- .NET Core need .deps.json and .runtimeconfig.json files (and portable PDBs for TPv2) -->
+  <PropertyGroup Condition=" '$(TargetFrameworkIdentifier)' == '.NETCoreApp' ">
+    <DebugType Condition=" '$(DebugType)' == '' ">portable</DebugType>
+    <GenerateDependencyFile>true</GenerateDependencyFile>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+  </PropertyGroup>
+
+  <Target Name="CopyProfilesToOutput" >
+
+    <ItemGroup>
+      <None Condition="'%(None.Extension)' == '.srProfile'" >
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <Visible>true</Visible>
+      </None>
+    </ItemGroup>
+
+  </Target>
+
+  <Target Name="GenerateSpecFlowAssemblyHooksFileTask" Condition="'$(GenerateSpecFlowAssemblyHooksFile)' == 'true' AND '$(_SpecFlow_Tools_MsBuild_Generation_Imported)' == 'true'">
+    <ReplaceTokenInFileTask Condition="'$(Language)' == 'VB' or '$(Language)' == 'C#'" InputFile="$(SourceSpecFlowAssemblyHooksFile)" OutputFile="$(GeneratedSpecFlowAssemblyHooksFile)" TextToReplace="PROJECT_ROOT_NAMESPACE" TextToReplaceWith="$(RootNamespace.Replace('.', '_'))" />
+    <ItemGroup Condition="'$(Language)' == 'VB' or '$(Language)' == 'C#'">
+      <Compile Include="$(GeneratedSpecFlowAssemblyHooksFile)"/>
+    </ItemGroup>
+  </Target>
+
+</Project>

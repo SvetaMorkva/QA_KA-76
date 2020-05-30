@@ -1,0 +1,66 @@
+﻿@inherits SpecFlow.Plus.Runner.Reporting.CustomTemplateBase<TestRunResult>
+@using System
+@using System.Collections.Generic
+@using System.Linq
+@using System.Globalization
+@using Newtonsoft.Json
+@using Newtonsoft.Json.Converters
+@using TechTalk.SpecRun.Framework
+@using TechTalk.SpecRun.Framework.Results
+@using TechTalk.SpecRun.Framework.TestSuiteStructure
+@using TechTalk.SpecRun.Framework.Tracing
+@{
+    var serializationSettings = new JsonSerializerSettings
+    {
+        ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+        Converters = new List<JsonConverter>() { new StringEnumConverter(false) }
+    };
+
+    var features = GetTextFixtures()
+        .Select(f => new
+        {
+            description = "",
+            elements = (from scenario in f.SubNodes
+                        let lastExecutionResult = GetTestItemResult(scenario.GetTestSequence().First()).LastExecutionResult()
+                        select new
+                        {
+                            description = "",
+                            id = "",
+                            keyword = "Scenario",
+                            line = scenario.Source.SourceLine + 1,
+                            name = scenario.Title,
+                            tags = scenario.Tags.Select(t => new { name = t, line = 1 }),
+                            steps = from step in lastExecutionResult.Result.TraceEvents
+                                    where IsRelevant(step) && (step.ResultType == TestNodeResultType.Succeeded || step.ResultType == TestNodeResultType.Failed || step.ResultType == TestNodeResultType.Pending)
+                                    && (step.Type == TraceEventType.Test || step.Type == TraceEventType.TestAct || step.Type == TraceEventType.TestArrange || step.Type == TraceEventType.TestAssert)
+                                    let keyword = step.StepBindingInformation == null ? "" : step.StepBindingInformation.StepInstanceInformation == null ? "" : step.StepBindingInformation.StepInstanceInformation.Keyword
+                                    let matchLocation = step.StepBindingInformation == null ? "" : step.StepBindingInformation.MethodName
+                                    let name = step.StepBindingInformation == null ? "" : step.StepBindingInformation.Text
+                                    let cucumberStatus = step.ResultType == TestNodeResultType.Succeeded ? "Passed" : step.ResultType.ToString()
+                                    select new
+                                    {
+                                        keyword = keyword,
+                                        line = 0,
+                                        match = new
+                                        {
+                                            location = matchLocation
+                                        },
+                                        name = name,
+                                        result = new
+                                        {
+                                            duration = step.Duration.TotalMilliseconds,
+                                            error_message = step.StackTrace,
+                                            status = cucumberStatus
+                                        }
+                                    },
+                            type = "scenario"
+                        }).ToList(),
+            id = "",
+            keyword = "Feature",
+            line = f.Source.SourceLine + 1,
+            tags = f.Tags.Select(t => new { name = t, line = 1 }),
+            name = f.Title,
+            uri = f.Source.SourceFile
+        });
+}
+@Raw(JsonConvert.SerializeObject(features, Formatting.Indented, serializationSettings))

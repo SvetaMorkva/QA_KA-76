@@ -1,0 +1,6 @@
+﻿<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup >
+    <_SpecFlowPlusRunner_TestAdapterFramework Condition=" '$(TargetFrameworkIdentifier)' == '.NETFramework' ">net45</_SpecFlowPlusRunner_TestAdapterFramework>
+    <_SpecFlowPlusRunner_TestAdapterFramework Condition=" '$(TargetFrameworkIdentifier)' == '.NETCoreApp' ">$(TargetFramework)</_SpecFlowPlusRunner_TestAdapterFramework>
+  </PropertyGroup>
+</Project>
