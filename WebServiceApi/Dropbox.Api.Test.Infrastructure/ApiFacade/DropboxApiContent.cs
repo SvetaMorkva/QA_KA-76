@@ -13,7 +13,7 @@ namespace TestDropboxApi.ApiFacade
 {
     public class DropboxApiContent
     {
-        public RequestBuilder request;
+        public RequestBuilder request;  // принцип ооп - инкапсуляция (локальная переменная)
         public DropboxApiContent()
         {
             request = new RequestBuilder(ConfigurationHelper.ContentServiceUrl);

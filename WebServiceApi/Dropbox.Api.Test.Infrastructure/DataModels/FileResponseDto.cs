@@ -39,7 +39,7 @@ namespace TestDropboxApi.DataModels
         public bool HasMore { get; set; }
     }
 
-    public class Metadata : FileResponseDto  // принцип ооп - наследование 
+    public class Metadata : FileResponseDto    // принцип ооп - наследование 
     {
         [JsonProperty(".tag")]
         public string Tag { get; set; }

@@ -2,7 +2,7 @@
 
 namespace TestDropboxApi.DataModels
 {
-    public class UploadFileDto : Base // принцип ооп - наследование 
+    public class UploadFileDto : Base    // принцип ооп - наследование 
     {
         [JsonProperty("mode")]
         public string Mode { get; set; }
