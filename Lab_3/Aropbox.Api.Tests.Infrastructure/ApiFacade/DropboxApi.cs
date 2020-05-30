@@ -29,22 +29,20 @@ namespace TestDropboxApi.ApiFacade
                 .Execute();
         }
 
-        public ApiResponse GetFileMetadata(string fileName)
+        public ApiResponse GetFileMetadata(Base path)
         {
             const string url = "files/get_metadata";
-            var path = new Base();
-            path.Path = $"/{fileName}";
+
             var requestBody = JsonConvert.SerializeObject(path);
             return request.Method(HttpMethod.Post).Uri(url)
                 .WithBody(requestBody)
                 .Execute();
         }
 
-        public ApiResponse DeleteFile(string fileName)
+        public ApiResponse DeleteItem(Base path)
         {
-            var url = "files/delete_v2";
-            var path = new Base();
-            path.Path = $"/{fileName}";
+            const string url = "files/delete_v2";
+
             var requestBody = JsonConvert.SerializeObject(path);
             return request.Method(HttpMethod.Post).Uri(url)
                 .WithBody(requestBody)
@@ -53,7 +51,7 @@ namespace TestDropboxApi.ApiFacade
 
         public ApiResponse CreateFolder(CreateFolderDto createFolder)
         {
-            var url = "files/create_folder_v2";
+            const string url = "files/create_folder_v2";
             var requestBody = JsonConvert.SerializeObject(createFolder);
             return request.Method(HttpMethod.Post).Uri(url)
                 .WithBody(requestBody)

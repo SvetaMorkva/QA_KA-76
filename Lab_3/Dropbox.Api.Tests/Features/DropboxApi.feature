@@ -32,3 +32,9 @@ Scenario: Create a folder
 	| Path       | AutoRename |
 	| /IDA_Lab_5 | true       |
 	Then I should be able to get folder 'IDA_Lab_5' info
+
+@Delete
+Scenario: Delete a folder
+	When I try to delete folder 'IDA_Lab_5'
+	Then I should be able to get folder 'IDA_Lab_5' info
+	And folder 'IDA_Lab_5' should not be in list of existing items

@@ -15,7 +15,7 @@ namespace Dropbox.Api.Tests.StepDefinitions
         [When(@"I try to delete file '(.*)'")]
         public void WhenITryToDeleteFile(string fileName)
         {
-            var response = new DropboxApi().DeleteFile(fileName);
+            var response = new DropboxApi().DeleteItem(new Base($"/{fileName}"));
             response.EnsureSuccessful();
             ContextHelper.AddToContext("LastApiResponse", response);
         }

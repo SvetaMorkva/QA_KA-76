@@ -12,5 +12,6 @@ namespace Aropbox.Api.Tests.Infrastructure.DataModels
     {
         [JsonProperty("autorename")]
         public bool AutoRename { get; set; }
+
     }
 }

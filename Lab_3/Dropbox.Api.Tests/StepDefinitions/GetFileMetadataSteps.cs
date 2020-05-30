@@ -14,7 +14,7 @@ namespace Dropbox.Api.Tests.StepDefinitions
         [When(@"I want to get file '(.*)' metadata")]
         public void WhenIWantToGetFileMetadata(string fileName)
         {
-            var response = new DropboxApi().GetFileMetadata(fileName);
+            var response = new DropboxApi().GetFileMetadata(new Base($"/{fileName}"));
             response.EnsureSuccessful();
             ContextHelper.AddToContext("LastApiResponse", response);
         }
