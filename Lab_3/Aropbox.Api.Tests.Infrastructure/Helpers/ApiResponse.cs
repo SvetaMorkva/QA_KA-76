@@ -6,15 +6,48 @@ using System.Net.Http;
 
 namespace TestDropboxApi.ApiFacade
 {
-    public class ApiResponse
+    public class BasicResponse
     {
-        public ApiResponse(HttpResponseMessage responseMessage)
+        public HttpStatusCode StatusCode { get; }
+
+        public BasicResponse(HttpResponseMessage responseMessage)
         {
             StatusCode = responseMessage.StatusCode;
+        }
+
+        public virtual void EnsureSuccessful()
+        {
+            if ((int)StatusCode < 200 || (int)StatusCode >= 300)
+            {
+                throw new Exception(
+                    $"StatusCode is {StatusCode}");
+            }
+        }
+
+        public virtual void Ensure(HttpStatusCode httpStatusCode)
+        {
+            if (StatusCode != httpStatusCode)
+            {
+                throw new Exception($"StatusCode is {StatusCode}");
+            }
+        }
+
+        public bool IfSuccessful()
+        {
+            if ((int)StatusCode < 200 || (int)StatusCode >= 300)
+            {
+                return false;
+            }
+            return true;
+        }
+    }
+    public class ApiResponse: BasicResponse
+    {
+        public ApiResponse(HttpResponseMessage responseMessage): base(responseMessage)
+        {
             ContentAsString = responseMessage.Content.ReadAsStringAsync().Result;
         }
 
-        public HttpStatusCode StatusCode { get; }
         public string ContentAsString { get; private set; }
         public JToken ContentAsJson => JToken.Parse(ContentAsString);
 
@@ -36,7 +69,7 @@ namespace TestDropboxApi.ApiFacade
             ContentAsString = JsonConvert.SerializeObject(obj);
         }
 
-        public void Ensure(HttpStatusCode httpStatusCode)
+        public override void Ensure(HttpStatusCode httpStatusCode)
         {
             if (StatusCode != httpStatusCode)
             {
@@ -44,22 +77,13 @@ namespace TestDropboxApi.ApiFacade
             }
         }
 
-        public void EnsureSuccessful()
+        public override void EnsureSuccessful()
         {
             if ((int)StatusCode < 200 || (int)StatusCode >= 300)
             {
                 throw new Exception(
                     $"StatusCode is {StatusCode}. Expected to be successfull. Content = {ContentAsString}");
             }
-        }
-
-        public bool IfSuccessful()
-        {
-            if ((int)StatusCode < 200 || (int)StatusCode >= 300)
-            {
-                return false;
-            }
-            return true;
         }
     }
 }
