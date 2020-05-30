@@ -49,3 +49,4 @@ D:\DATA\Projects\CSharp\repos\QA_KA-76\Dropbox.Api.Tests.Infrastructure\obj\Debu
 D:\DATA\Projects\CSharp\repos\QA_KA-76\Dropbox.Api.Tests.Infrastructure\obj\Debug\Dropbox.Api.Tests.Infrastructure.csproj.CopyComplete
 D:\DATA\Projects\CSharp\repos\QA_KA-76\Dropbox.Api.Tests.Infrastructure\obj\Debug\Dropbox.Api.Tests.Infrastructure.dll
 D:\DATA\Projects\CSharp\repos\QA_KA-76\Dropbox.Api.Tests.Infrastructure\obj\Debug\Dropbox.Api.Tests.Infrastructure.pdb
+D:\DATA\Projects\CSharp\repos\QA_KA-76\Dropbox.Api.Tests.Infrastructure\obj\Debug\Dropbox.Api.Tests.Infrastructure.csprojAssemblyReference.cache

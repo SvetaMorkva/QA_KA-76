@@ -198,12 +198,12 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 20
- testRunner.When("I try get \'MyPdf.pdf\' file`s metatada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I try get \'ferret.jpg\' file`s metatada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name"});
                 table3.AddRow(new string[] {
-                            "MyPdf.pdf"});
+                            "ferret.jpg"});
 #line 21
  testRunner.Then("I should get valid file`s metadata", ((string)(null)), table3, "Then ");
 #line hidden

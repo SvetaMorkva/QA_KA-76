@@ -17,10 +17,10 @@ Scenario: Upload a file
 
 @Get
 Scenario: Get metadata
-	When I try get 'MyPdf.pdf' file`s metatada
+	When I try get 'ferret.jpg' file`s metatada
 	Then I should get valid file`s metadata
 	| Name       |
-	| MyPdf.pdf |
+	| ferret.jpg |
 
 
 
