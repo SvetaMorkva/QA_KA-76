@@ -1,6 +1,5 @@
 ﻿using FluentAssertions;
 using FluentAssertions.Execution;
-using System;
 using TechTalk.SpecFlow;
 using TestDropboxApi.ApiFacade;
 using TestDropboxApi.DataModels;

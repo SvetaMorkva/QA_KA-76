@@ -1,11 +1,9 @@
 ﻿using Aropbox.Api.Tests.Infrastructure.DataModels;
-using System;
-using TechTalk.SpecFlow;
-using TestDropboxApi.ApiFacade;
-using TestDropboxApi.DataModels;
-using TestDropboxApi.Helpers;
 using FluentAssertions;
 using FluentAssertions.Execution;
+using TechTalk.SpecFlow;
+using TestDropboxApi.ApiFacade;
+using TestDropboxApi.Helpers;
 
 namespace Dropbox.Api.Tests.StepDefinitions
 {

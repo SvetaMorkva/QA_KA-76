@@ -118,7 +118,6 @@
     <Compile Include="DataModels\FileResponseDto.cs" />
     <Compile Include="DataModels\UploadFileDto.cs" />
     <Compile Include="Extensions\RequestExtensions.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\UriExtensions.cs" />
     <Compile Include="Helpers\ApiResponse.cs" />
     <Compile Include="Helpers\ConfigurationHelper.cs" />
