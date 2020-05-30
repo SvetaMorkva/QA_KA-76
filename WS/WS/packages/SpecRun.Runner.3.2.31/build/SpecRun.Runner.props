@@ -1,0 +1,70 @@
+﻿<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_SpecFlowPlusRunner_TestAdapterFiles Condition="'$(_SpecFlowPlusRunner_TestAdapterFiles)' == '' ">$(MSBuildThisFileDirectory)..\tools</_SpecFlowPlusRunner_TestAdapterFiles>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="$(_SpecFlowPlusRunner_TestAdapterFiles)\**\*" Exclude="$(MSBuildThisFileDirectory)..\tools\server\**\*;$(_SpecFlowPlusRunner_TestAdapterFiles)\Licenses\**\*">
+      <Link>SpecFlowPlusRunner\%(RecursiveDir)\%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>False</Visible>
+    </None>
+
+    <None Include="$(_SpecFlowPlusRunner_TestAdapterFiles)\$(_SpecFlowPlusRunner_TestAdapterFramework)\TechTalk.SpecRun.VisualStudio.TestAdapter.*" >
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>False</Visible>
+    </None>
+
+    <None Include="$(_SpecFlowPlusRunner_TestAdapterFiles)\$(_SpecFlowPlusRunner_TestAdapterFramework)\TechTalk.SpecRun.Framework.dll" >
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>False</Visible>
+    </None>
+    
+    <None Include="$(_SpecFlowPlusRunner_TestAdapterFiles)\$(_SpecFlowPlusRunner_TestAdapterFramework)\BoDi.dll" Condition="Exists('$(_SpecFlowPlusRunner_TestAdapterFiles)\$(_SpecFlowPlusRunner_TestAdapterFramework)\BoDi.dll')">
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>False</Visible>
+    </None>
+
+    <None Include="$(_SpecFlowPlusRunner_TestAdapterFiles)\$(_SpecFlowPlusRunner_TestAdapterFramework)\SpecFlow.Plus.Shared.dll" >
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>False</Visible>
+    </None>
+
+    <None Include="$(_SpecFlowPlusRunner_TestAdapterFiles)\$(_SpecFlowPlusRunner_TestAdapterFramework)\TechTalk.SpecRun.Framework.*.dll" Exclude="$(_SpecFlowPlusRunner_TestAdapterFiles)\$(_SpecFlowPlusRunner_TestAdapterFramework)\TechTalk.SpecRun.Framework.Executor*.dll">
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>False</Visible>
+    </None>
+
+    <None Include="$(_SpecFlowPlusRunner_TestAdapterFiles)\$(_SpecFlowPlusRunner_TestAdapterFramework)\TechTalk.SpecFlow.Plus.RPC.dll" >
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>False</Visible>
+    </None>
+
+    <None Include="$(_SpecFlowPlusRunner_TestAdapterFiles)\$(_SpecFlowPlusRunner_TestAdapterFramework)\StreamJsonRpc.dll" Condition="Exists('$(_SpecFlowPlusRunner_TestAdapterFiles)\$(_SpecFlowPlusRunner_TestAdapterFramework)\StreamJsonRpc.dll')" >
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>False</Visible>
+    </None>
+
+    <None Include="$(_SpecFlowPlusRunner_TestAdapterFiles)\$(_SpecFlowPlusRunner_TestAdapterFramework)\Microsoft.Win32.*" >
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>False</Visible>
+    </None>
+
+    <None Include="$(_SpecFlowPlusRunner_TestAdapterFiles)\$(_SpecFlowPlusRunner_TestAdapterFramework)\FSharp.Core.dll" Condition="Exists('$(_SpecFlowPlusRunner_TestAdapterFiles)\$(_SpecFlowPlusRunner_TestAdapterFramework)\FSharp.Core.dll')" >
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>False</Visible>
+    </None>
+    
+
+    <ProjectCapability Include="TestContainer" />
+  </ItemGroup>
+</Project>
