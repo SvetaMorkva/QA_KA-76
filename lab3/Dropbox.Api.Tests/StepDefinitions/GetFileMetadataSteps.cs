@@ -1,12 +1,8 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-using System;
+﻿using NUnit.Framework;
 using System.IO;
-using System.Reflection;
 using TechTalk.SpecFlow;
 using TestDropboxApi.ApiFacade;
 using TestDropboxApi.DataModels;
-using TestDropboxApi.Extensions;
 using TestDropboxApi.Helpers;
 
 namespace Dropbox.Api.Test.StepDefinitions
@@ -15,15 +11,16 @@ namespace Dropbox.Api.Test.StepDefinitions
     public class GetFileMetadataSteps
     {
         private readonly string newFileName = Path.GetRandomFileName().Replace(".", "") + ".pdf";
-        private readonly string originalPdfName = "MyPdf.pdf";
+        private readonly string originalPdfName = MyPdfTestFilePaths.originalPdfName;
 
         [When(@"I uploaded a file")]
         public void WhenIUploadedAFile(UploadFileDto uploadFile)
         {
             // rename old pdf file to get a "new" one
-            string originalPdfPath = GetFilePath(originalPdfName);
+            MyPdfTestFilePaths myPdfPaths = new MyPdfTestFilePaths();
+            string originalPdfPath = myPdfPaths.GetFullPath();
             string newFilePath = originalPdfPath.Substring(0, originalPdfPath.Length-originalPdfName.Length) + newFileName;
-            File.Copy(GetFilePath("MyPdf.pdf"), newFilePath);
+            File.Copy(originalPdfPath, newFilePath);
             ContextHelper.AddToContext("FilePath", newFilePath);
 
             //upload to dropbox
@@ -44,18 +41,6 @@ namespace Dropbox.Api.Test.StepDefinitions
 
             var actualFileInfo = response.Content<FileResponseDto>();
             Assert.AreEqual(newFileName, actualFileInfo.Name);
-        }
-
-        public static string GetFilePath(string fileName)
-        {
-            string codeBase = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase)
-                              + Path.DirectorySeparatorChar
-                              + ConfigurationHelper.DefaultFilePath;
-            var uri = new UriBuilder(codeBase).Uri.Append(fileName);
-            string fullPath = Path.GetFullPath(Uri.UnescapeDataString(uri.AbsolutePath));
-
-            ScenarioContext.Current["DefaultFilePath"] = fullPath;
-            return fullPath;
         }
     }
 }

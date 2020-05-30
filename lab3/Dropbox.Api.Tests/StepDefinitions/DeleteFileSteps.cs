@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using System;
+using System.Collections.Generic;
 using System.IO;
 using TechTalk.SpecFlow;
 using TestDropboxApi.ApiFacade;
@@ -11,54 +11,47 @@ namespace Dropbox.Api.Test.StepDefinitions
     [Binding]
     public class GetFileListSteps
     {
-        private string defaultFilename = "MyPdf.pdf";
-
         [Given(@"I have nonempty dropbox folder")]
         public void GivenIHaveAtLeastFileInMyDropboxTestFolder()
         {
-            getAllDropboxFileNames();
-            var apiResponse = ContextHelper.GetFromContext<ApiResponse>("LastApiResponse");
-            var filesList = apiResponse.Content<FileListResponseDto>();
-
-            if (filesList.Entries.Count == 0){
+            if (getAllDropboxFileNames().Count == 0){
                 UploadFileDto uploadFile = new UploadFileDto
                 {
-                    Path = "/"+ defaultFilename,
+                    Path = "/" + MyPdfTestFilePaths.originalPdfName,
                     Mode = "add",
                     Mute = false
                 };
 
-                var file = File.ReadAllBytes(GetFileMetadataSteps.GetFilePath(defaultFilename));
+                MyPdfTestFilePaths myPdfPaths = new MyPdfTestFilePaths();
+                var file = File.ReadAllBytes(myPdfPaths.GetFullPath());
+
                 var response = new DropboxApiContent().UploadFile(uploadFile, file);
                 response.EnsureSuccessful();
-
-                getAllDropboxFileNames();
             }
         }
         
         [Then(@"I shoud be able to delete a file")]
         public void ThenIShoudBeAbleToDeleteAFile()
         {
-            var apiResponse = ContextHelper.GetFromContext<ApiResponse>("LastApiResponse");
-            var filesList = apiResponse.Content<FileListResponseDto>().Entries;
+            var filesList = getAllDropboxFileNames();
             var fileToDelName = filesList[0].Name;
 
             var response = new DropboxApi().DeleteFile(fileToDelName);
             response.EnsureSuccessful();
             ContextHelper.AddToContext("LastApiResponse", response);
 
-            getAllDropboxFileNames();
-            var filesListNew = ContextHelper.GetFromContext<ApiResponse>("LastApiResponse")
-                                .Content<FileListResponseDto>().Entries;
+            var filesListNew = getAllDropboxFileNames();
 
             Assert.IsFalse(filesListNew.Contains(filesList[0]));
         }
 
-        private void getAllDropboxFileNames()
+        private List<FileResponseDto> getAllDropboxFileNames()
         {
             var response = new DropboxApi().GetFilesList();
             response.EnsureSuccessful();
             ContextHelper.AddToContext("LastApiResponse", response);
+
+            return response.Content<FileListResponseDto>().Entries;
         }
     }
 }
