@@ -113,6 +113,7 @@
     <Compile Include="ApiFacade\DropboxApiContent.cs" />
     <Compile Include="Builders\RequestBuilder.cs" />
     <Compile Include="DataModels\Base.cs" />
+    <Compile Include="DataModels\DeleteFileResponseDto.cs" />
     <Compile Include="DataModels\FileResponseDto.cs" />
     <Compile Include="DataModels\UploadFileDto.cs" />
     <Compile Include="Extensions\RequestExtensions.cs" />

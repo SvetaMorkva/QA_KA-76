@@ -9,7 +9,7 @@ using TestDropboxApi.Helpers;
 namespace Dropbox.Api.Tests.StepDefinitions
 {
     [Binding]
-    public class GetFileMetadata
+    public class GetFileMetadataSteps
     {
         [When(@"I want to get file '(.*)' metadata")]
         public void WhenIWantToGetFileMetadata(string fileName)
