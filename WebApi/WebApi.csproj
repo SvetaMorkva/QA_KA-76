@@ -97,11 +97,8 @@
     <Compile Include="ApiFacade\DropboxApiBase.cs" />
     <Compile Include="ApiFacade\DropboxApiService.cs" />
     <Compile Include="ApiFacade\DropboxApiContent.cs" />
-    <Compile Include="BaseTestClass.cs" />
     <Compile Include="Builders\RequestBuilder.cs" />
     <Compile Include="DataModels\UploadFileDto.cs" />
-    <Compile Include="DeleteFile.cs" />
-    <Compile Include="GetMetaData.cs" />
     <Compile Include="WebApiTests.cs" />
     <Compile Include="DataModels\Base.cs" />
     <Compile Include="DataModels\FileResponseDto.cs" />
