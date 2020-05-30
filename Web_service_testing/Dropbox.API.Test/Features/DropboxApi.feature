@@ -14,3 +14,4 @@ Scenario: Upload a file
 	Then I should be able to get file info
 	| Name       |
 	| MyFile.pdf |
+

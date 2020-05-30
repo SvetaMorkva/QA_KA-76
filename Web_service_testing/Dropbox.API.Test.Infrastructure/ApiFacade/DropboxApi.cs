@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using TestDropboxApi.DataModels;
 using TestDropboxApi.Helpers;
 using TestDropboxApi.Builders;
+using System.IO;
 
 namespace TestDropboxApi.ApiFacade
 {
@@ -23,6 +24,15 @@ namespace TestDropboxApi.ApiFacade
         {
             const string url = "files/list_folder";
             var requestBody = JsonConvert.SerializeObject(new Base());
+            return request.Method(HttpMethod.Post).Uri(url).WithBody(requestBody).Execute();
+        }
+
+        public ApiResponse GetFilesMetadata(string path)
+        {
+            const string url = "files/get_metadata";
+            Base body = new Base(); 
+            body.Path = path;
+            var requestBody = JsonConvert.SerializeObject(body);
             return request.Method(HttpMethod.Post).Uri(url).WithBody(requestBody).Execute();
         }
     }

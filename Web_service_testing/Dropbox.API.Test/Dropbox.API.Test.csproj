@@ -118,6 +118,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GetFileMetadataTest.cs" />
     <Compile Include="Features\DropboxApi.feature.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpecflowHooks.cs" />
