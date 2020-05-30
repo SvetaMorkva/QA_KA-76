@@ -64,11 +64,6 @@ namespace Dropbox.API.Test
         {
             var response = new DropboxApi().DeleteFiles(filePath);
             response.EnsureSuccessful();
-
-            var apiResponse = response.Content<FileResponseDto>();
-            apiResponse.Should().NotBeNull();
-
-            Assert.AreEqual(filePath, apiResponse.PathDisplay);
         }
 
         [TearDown]
