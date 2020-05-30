@@ -1,0 +1,14 @@
+C:\Users\Acer\source\repos\TestQueue\TestQueue\bin\Debug\NUnit3.TestAdapter.dll
+C:\Users\Acer\source\repos\TestQueue\TestQueue\bin\Debug\NUnit3.TestAdapter.pdb
+C:\Users\Acer\source\repos\TestQueue\TestQueue\bin\Debug\nunit.engine.dll
+C:\Users\Acer\source\repos\TestQueue\TestQueue\bin\Debug\nunit.engine.api.dll
+C:\Users\Acer\source\repos\TestQueue\TestQueue\bin\Debug\TestQueue.dll
+C:\Users\Acer\source\repos\TestQueue\TestQueue\bin\Debug\TestQueue.pdb
+C:\Users\Acer\source\repos\TestQueue\TestQueue\bin\Debug\nunit.framework.dll
+C:\Users\Acer\source\repos\TestQueue\TestQueue\bin\Debug\nunit.framework.pdb
+C:\Users\Acer\source\repos\TestQueue\TestQueue\bin\Debug\nunit.framework.xml
+C:\Users\Acer\source\repos\TestQueue\TestQueue\obj\Debug\TestQueue.csprojAssemblyReference.cache
+C:\Users\Acer\source\repos\TestQueue\TestQueue\obj\Debug\TestQueue.csproj.CoreCompileInputs.cache
+C:\Users\Acer\source\repos\TestQueue\TestQueue\obj\Debug\TestQueue.csproj.CopyComplete
+C:\Users\Acer\source\repos\TestQueue\TestQueue\obj\Debug\TestQueue.dll
+C:\Users\Acer\source\repos\TestQueue\TestQueue\obj\Debug\TestQueue.pdb
