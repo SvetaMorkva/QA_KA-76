@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29905.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dropbox_Test_Infrastructure", "Dropbox_Test_Infrastructure\Dropbox_Test_Infrastructure.csproj", "{B44ACF63-A605-4B3D-97A8-5AEAE442D845}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dropbox_Test", "Dropbox_Test\Dropbox_Test.csproj", "{864E6C30-1898-48CA-8626-63E2753AEB9C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B44ACF63-A605-4B3D-97A8-5AEAE442D845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B44ACF63-A605-4B3D-97A8-5AEAE442D845}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B44ACF63-A605-4B3D-97A8-5AEAE442D845}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B44ACF63-A605-4B3D-97A8-5AEAE442D845}.Release|Any CPU.Build.0 = Release|Any CPU
+		{864E6C30-1898-48CA-8626-63E2753AEB9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{864E6C30-1898-48CA-8626-63E2753AEB9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{864E6C30-1898-48CA-8626-63E2753AEB9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{864E6C30-1898-48CA-8626-63E2753AEB9C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D721BCA7-C829-4FEF-A96D-C65486087E01}
+	EndGlobalSection
+EndGlobal
