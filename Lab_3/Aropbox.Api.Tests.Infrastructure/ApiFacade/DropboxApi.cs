@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using TestDropboxApi.DataModels;
 using TestDropboxApi.Helpers;
 using TestDropboxApi.Builders;
+using Aropbox.Api.Tests.Infrastructure.DataModels;
 
 namespace TestDropboxApi.ApiFacade
 {
@@ -45,6 +46,15 @@ namespace TestDropboxApi.ApiFacade
             var path = new Base();
             path.Path = $"/{fileName}";
             var requestBody = JsonConvert.SerializeObject(path);
+            return request.Method(HttpMethod.Post).Uri(url)
+                .WithBody(requestBody)
+                .Execute();
+        }
+
+        public ApiResponse CreateFolder(CreateFolderDto createFolder)
+        {
+            var url = "files/create_folder_v2";
+            var requestBody = JsonConvert.SerializeObject(createFolder);
             return request.Method(HttpMethod.Post).Uri(url)
                 .WithBody(requestBody)
                 .Execute();

@@ -17,11 +17,18 @@ Scenario: Upload a file
 
 @Get
 Scenario: Get file metadata
-	When I want to get file 'IDA_Lab_5.pdf' metadata
-	Then I should be given valid file 'IDA_Lab_5.pdf' metadata
+	When I want to get file 'Get Started with Dropbox.pdf' metadata
+	Then I should be given valid file 'Get Started with Dropbox.pdf' metadata
 
 @Delete
 Scenario: Delete a file
 	When I try to delete file 'IDA_Lab_5.pdf'
 	Then I should be able to get file 'IDA_Lab_5.pdf' info
 	And file 'IDA_Lab_5.pdf' should not be in list of existing files
+
+@Create
+Scenario: Create a folder
+	When I try to create folder
+	| Path       | AutoRename |
+	| /IDA_Lab_5 | true       |
+	Then I should be able to get folder 'IDA_Lab_5' info

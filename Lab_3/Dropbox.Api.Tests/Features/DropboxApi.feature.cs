@@ -198,10 +198,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 20
- testRunner.When("I want to get file \'IDA_Lab_5.pdf\' metadata", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I want to get file \'Get Started with Dropbox.pdf\' metadata", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 21
- testRunner.Then("I should be given valid file \'IDA_Lab_5.pdf\' metadata", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should be given valid file \'Get Started with Dropbox.pdf\' metadata", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -244,6 +244,51 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 27
  testRunner.And("file \'IDA_Lab_5.pdf\' should not be in list of existing files", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Create a folder")]
+        [NUnit.Framework.CategoryAttribute("Create")]
+        public virtual void CreateAFolder()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "Create"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a folder", null, new string[] {
+                        "Create"});
+#line 30
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Path",
+                            "AutoRename"});
+                table3.AddRow(new string[] {
+                            "/IDA_Lab_5",
+                            "true"});
+#line 31
+ testRunner.When("I try to create folder", ((string)(null)), table3, "When ");
+#line hidden
+#line 34
+ testRunner.Then("I should be able to get folder \'IDA_Lab_5\' info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
