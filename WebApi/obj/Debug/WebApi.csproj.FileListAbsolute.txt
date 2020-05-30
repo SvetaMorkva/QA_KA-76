@@ -1,0 +1,395 @@
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\NUnit3.TestAdapter.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\NUnit3.TestAdapter.pdb
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\nunit.engine.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\nunit.engine.api.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\WebApi.dll.config
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\WebApi.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\WebApi.pdb
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\Microsoft.Win32.Primitives.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\netstandard.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.AppContext.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Collections.Concurrent.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Collections.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Collections.NonGeneric.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Collections.Specialized.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.ComponentModel.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.ComponentModel.EventBasedAsync.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.ComponentModel.Primitives.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.ComponentModel.TypeConverter.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Console.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Data.Common.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Diagnostics.Contracts.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Diagnostics.Debug.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Diagnostics.Process.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Diagnostics.StackTrace.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Diagnostics.Tools.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Diagnostics.TraceSource.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Diagnostics.Tracing.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Drawing.Primitives.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Dynamic.Runtime.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Globalization.Calendars.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Globalization.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Globalization.Extensions.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.IO.Compression.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.IO.Compression.ZipFile.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.IO.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.IO.FileSystem.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.IO.FileSystem.DriveInfo.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.IO.FileSystem.Primitives.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.IO.FileSystem.Watcher.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.IO.IsolatedStorage.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.IO.MemoryMappedFiles.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.IO.Pipes.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.IO.UnmanagedMemoryStream.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Linq.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Linq.Expressions.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Linq.Parallel.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Linq.Queryable.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Net.Http.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Net.NameResolution.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Net.NetworkInformation.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Net.Ping.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Net.Primitives.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Net.Requests.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Net.Security.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Net.Sockets.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Net.WebHeaderCollection.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Net.WebSockets.Client.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Net.WebSockets.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.ObjectModel.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Reflection.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Reflection.Extensions.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Reflection.Primitives.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Resources.Reader.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Resources.ResourceManager.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Resources.Writer.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Runtime.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Runtime.Extensions.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Runtime.Handles.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Runtime.InteropServices.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Runtime.Numerics.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Runtime.Serialization.Formatters.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Runtime.Serialization.Json.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Runtime.Serialization.Primitives.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Runtime.Serialization.Xml.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Security.Claims.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Security.Cryptography.Csp.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Security.Principal.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Security.SecureString.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Text.Encoding.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Text.Encoding.Extensions.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Text.RegularExpressions.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Threading.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Threading.Overlapped.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Threading.Tasks.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Threading.Tasks.Parallel.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Threading.Thread.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Threading.ThreadPool.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Threading.Timer.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.ValueTuple.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Xml.ReaderWriter.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Xml.XDocument.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Xml.XmlDocument.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Xml.XmlSerializer.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Xml.XPath.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Xml.XPath.XDocument.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\BoDi.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\Cucumber.Messages.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\FluentAssertions.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\Gherkin.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\Google.Protobuf.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\Newtonsoft.Json.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\nunit.framework.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\TechTalk.SpecFlow.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\Utf8Json.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\BoDi.pdb
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\FluentAssertions.pdb
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\FluentAssertions.xml
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\Google.Protobuf.pdb
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\Google.Protobuf.xml
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\Newtonsoft.Json.xml
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\nunit.framework.pdb
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\nunit.framework.xml
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\TechTalk.SpecFlow.pdb
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\TechTalk.SpecFlow.xml
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.pdb
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\bin\Debug\Utf8Json.xml
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\obj\Debug\WebApi.csproj.CoreCompileInputs.cache
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\obj\Debug\WebApi.csproj.CopyComplete
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\obj\Debug\WebApi.dll
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\obj\Debug\WebApi.pdb
+C:\Users\lkhyl\OneDrive\Робочий стіл\WebApi\WebApi\obj\Debug\WebApi.csprojAssemblyReference.cache
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\NUnit3.TestAdapter.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\NUnit3.TestAdapter.pdb
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\nunit.engine.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\nunit.engine.api.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\WebApi.dll.config
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\WebApi.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\WebApi.pdb
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\Microsoft.Win32.Primitives.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\netstandard.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.AppContext.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Collections.Concurrent.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Collections.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Collections.NonGeneric.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Collections.Specialized.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.ComponentModel.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.ComponentModel.EventBasedAsync.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.ComponentModel.Primitives.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.ComponentModel.TypeConverter.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Console.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Data.Common.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Diagnostics.Contracts.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Diagnostics.Debug.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Diagnostics.Process.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Diagnostics.StackTrace.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Diagnostics.Tools.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Diagnostics.TraceSource.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Diagnostics.Tracing.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Drawing.Primitives.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Dynamic.Runtime.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Globalization.Calendars.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Globalization.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Globalization.Extensions.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.IO.Compression.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.IO.Compression.ZipFile.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.IO.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.IO.FileSystem.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.IO.FileSystem.DriveInfo.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.IO.FileSystem.Primitives.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.IO.FileSystem.Watcher.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.IO.IsolatedStorage.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.IO.MemoryMappedFiles.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.IO.Pipes.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.IO.UnmanagedMemoryStream.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Linq.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Linq.Expressions.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Linq.Parallel.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Linq.Queryable.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Net.Http.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Net.NameResolution.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Net.NetworkInformation.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Net.Ping.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Net.Primitives.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Net.Requests.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Net.Security.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Net.Sockets.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Net.WebHeaderCollection.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Net.WebSockets.Client.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Net.WebSockets.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.ObjectModel.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Reflection.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Reflection.Extensions.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Reflection.Primitives.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Resources.Reader.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Resources.ResourceManager.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Resources.Writer.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Runtime.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Runtime.Extensions.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Runtime.Handles.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Runtime.InteropServices.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Runtime.Numerics.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Runtime.Serialization.Formatters.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Runtime.Serialization.Json.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Runtime.Serialization.Primitives.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Runtime.Serialization.Xml.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Security.Claims.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Security.Cryptography.Algorithms.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Security.Cryptography.Csp.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Security.Cryptography.Encoding.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Security.Cryptography.Primitives.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Security.Principal.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Security.SecureString.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Text.Encoding.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Text.Encoding.Extensions.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Text.RegularExpressions.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Threading.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Threading.Overlapped.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Threading.Tasks.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Threading.Tasks.Parallel.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Threading.Thread.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Threading.ThreadPool.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Threading.Timer.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.ValueTuple.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Xml.ReaderWriter.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Xml.XDocument.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Xml.XmlDocument.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Xml.XmlSerializer.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Xml.XPath.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Xml.XPath.XDocument.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\BoDi.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\Cucumber.Messages.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\FluentAssertions.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\Gherkin.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\Google.Protobuf.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\Newtonsoft.Json.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\nunit.framework.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\TechTalk.SpecFlow.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\Utf8Json.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\BoDi.pdb
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\FluentAssertions.pdb
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\FluentAssertions.xml
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\Google.Protobuf.pdb
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\Google.Protobuf.xml
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\Newtonsoft.Json.xml
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\nunit.framework.pdb
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\nunit.framework.xml
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\TechTalk.SpecFlow.pdb
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\TechTalk.SpecFlow.xml
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.pdb
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\bin\Debug\Utf8Json.xml
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\obj\Debug\WebApi.csprojAssemblyReference.cache
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\obj\Debug\WebApi.csproj.CoreCompileInputs.cache
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\obj\Debug\WebApi.csproj.CopyComplete
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\obj\Debug\WebApi.dll
+D:\Study\QA\QA_KA-76-dd2701c2d0fe442b0a83c92fb0aa201a40d7da94\WebApi\obj\Debug\WebApi.pdb
+D:\Study\QA\WebAPI\WebApi\bin\Debug\NUnit3.TestAdapter.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\NUnit3.TestAdapter.pdb
+D:\Study\QA\WebAPI\WebApi\bin\Debug\nunit.engine.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\nunit.engine.api.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\WebApi.dll.config
+D:\Study\QA\WebAPI\WebApi\bin\Debug\WebApi.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\WebApi.pdb
+D:\Study\QA\WebAPI\WebApi\bin\Debug\Microsoft.Win32.Primitives.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\netstandard.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.AppContext.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Collections.Concurrent.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Collections.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Collections.NonGeneric.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Collections.Specialized.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.ComponentModel.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.ComponentModel.EventBasedAsync.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.ComponentModel.Primitives.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.ComponentModel.TypeConverter.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Console.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Data.Common.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Diagnostics.Contracts.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Diagnostics.Debug.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Diagnostics.Process.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Diagnostics.StackTrace.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Diagnostics.Tools.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Diagnostics.TraceSource.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Diagnostics.Tracing.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Drawing.Primitives.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Dynamic.Runtime.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Globalization.Calendars.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Globalization.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Globalization.Extensions.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.IO.Compression.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.IO.Compression.ZipFile.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.IO.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.IO.FileSystem.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.IO.FileSystem.DriveInfo.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.IO.FileSystem.Primitives.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.IO.FileSystem.Watcher.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.IO.IsolatedStorage.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.IO.MemoryMappedFiles.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.IO.Pipes.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.IO.UnmanagedMemoryStream.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Linq.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Linq.Expressions.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Linq.Parallel.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Linq.Queryable.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Net.Http.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Net.NameResolution.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Net.NetworkInformation.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Net.Ping.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Net.Primitives.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Net.Requests.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Net.Security.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Net.Sockets.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Net.WebHeaderCollection.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Net.WebSockets.Client.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Net.WebSockets.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.ObjectModel.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Reflection.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Reflection.Extensions.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Reflection.Primitives.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Resources.Reader.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Resources.ResourceManager.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Resources.Writer.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Runtime.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Runtime.Extensions.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Runtime.Handles.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Runtime.InteropServices.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Runtime.Numerics.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Runtime.Serialization.Formatters.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Runtime.Serialization.Json.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Runtime.Serialization.Primitives.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Runtime.Serialization.Xml.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Security.Claims.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Security.Cryptography.Algorithms.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Security.Cryptography.Csp.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Security.Cryptography.Encoding.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Security.Cryptography.Primitives.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Security.Principal.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Security.SecureString.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Text.Encoding.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Text.Encoding.Extensions.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Text.RegularExpressions.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Threading.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Threading.Overlapped.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Threading.Tasks.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Threading.Tasks.Parallel.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Threading.Thread.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Threading.ThreadPool.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Threading.Timer.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.ValueTuple.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Xml.ReaderWriter.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Xml.XDocument.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Xml.XmlDocument.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Xml.XmlSerializer.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Xml.XPath.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Xml.XPath.XDocument.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\BoDi.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\Cucumber.Messages.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\FluentAssertions.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\Gherkin.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\Google.Protobuf.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\Newtonsoft.Json.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\nunit.framework.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\TechTalk.SpecFlow.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\Utf8Json.dll
+D:\Study\QA\WebAPI\WebApi\bin\Debug\BoDi.pdb
+D:\Study\QA\WebAPI\WebApi\bin\Debug\FluentAssertions.pdb
+D:\Study\QA\WebAPI\WebApi\bin\Debug\FluentAssertions.xml
+D:\Study\QA\WebAPI\WebApi\bin\Debug\Google.Protobuf.pdb
+D:\Study\QA\WebAPI\WebApi\bin\Debug\Google.Protobuf.xml
+D:\Study\QA\WebAPI\WebApi\bin\Debug\Newtonsoft.Json.xml
+D:\Study\QA\WebAPI\WebApi\bin\Debug\nunit.framework.pdb
+D:\Study\QA\WebAPI\WebApi\bin\Debug\nunit.framework.xml
+D:\Study\QA\WebAPI\WebApi\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Study\QA\WebAPI\WebApi\bin\Debug\TechTalk.SpecFlow.pdb
+D:\Study\QA\WebAPI\WebApi\bin\Debug\TechTalk.SpecFlow.xml
+D:\Study\QA\WebAPI\WebApi\bin\Debug\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.pdb
+D:\Study\QA\WebAPI\WebApi\bin\Debug\Utf8Json.xml
+D:\Study\QA\WebAPI\WebApi\obj\Debug\WebApi.csproj.CoreCompileInputs.cache
+D:\Study\QA\WebAPI\WebApi\obj\Debug\WebApi.csproj.CopyComplete
+D:\Study\QA\WebAPI\WebApi\obj\Debug\WebApi.dll
+D:\Study\QA\WebAPI\WebApi\obj\Debug\WebApi.pdb
