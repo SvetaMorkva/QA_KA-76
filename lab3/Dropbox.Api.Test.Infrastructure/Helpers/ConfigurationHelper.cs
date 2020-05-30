@@ -11,7 +11,7 @@ namespace TestDropboxApi.Helpers
     {
         public static string ServiceUrl => ConfigurationManager.AppSettings["serviceUrl"];
         public static string ContentServiceUrl => ConfigurationManager.AppSettings["contentServiceUrl"];
-        public static string AuthorizationToken => Environment.GetEnvironmentVariable("EnvTokenVarName");
+        public static string AuthorizationToken => Environment.GetEnvironmentVariable("dropboxToken");
         public static string DefaultFilePath => ConfigurationManager.AppSettings["defaultFilePath"];
 
     }
