@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DATA\\Projects\\CSharp\\Lab1_BasicKnowledge\\Lab1Tests\\Lab1Tests.csproj": {}
+    "d:\\DATA\\Projects\\CSharp\\repos\\QA_KA-76\\Lab1Tests\\Lab1Tests.csproj": {}
   },
   "projects": {
-    "D:\\DATA\\Projects\\CSharp\\Lab1_BasicKnowledge\\Lab1Tests\\Lab1Tests.csproj": {
+    "d:\\DATA\\Projects\\CSharp\\repos\\QA_KA-76\\Lab1Tests\\Lab1Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DATA\\Projects\\CSharp\\Lab1_BasicKnowledge\\Lab1Tests\\Lab1Tests.csproj",
+        "projectUniqueName": "d:\\DATA\\Projects\\CSharp\\repos\\QA_KA-76\\Lab1Tests\\Lab1Tests.csproj",
         "projectName": "Lab1Tests",
-        "projectPath": "D:\\DATA\\Projects\\CSharp\\Lab1_BasicKnowledge\\Lab1Tests\\Lab1Tests.csproj",
+        "projectPath": "d:\\DATA\\Projects\\CSharp\\repos\\QA_KA-76\\Lab1Tests\\Lab1Tests.csproj",
         "packagesPath": "C:\\Users\\Vis\\.nuget\\packages\\",
-        "outputPath": "D:\\DATA\\Projects\\CSharp\\Lab1_BasicKnowledge\\Lab1Tests\\obj\\",
+        "outputPath": "d:\\DATA\\Projects\\CSharp\\repos\\QA_KA-76\\Lab1Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\DATA\\Projects\\CSharp\\Lab1_BasicKnowledge\\Lab1_BasicKnowledge\\Lab1_BasicKnowledge.csproj": {
-                "projectPath": "D:\\DATA\\Projects\\CSharp\\Lab1_BasicKnowledge\\Lab1_BasicKnowledge\\Lab1_BasicKnowledge.csproj"
+              "d:\\DATA\\Projects\\CSharp\\repos\\QA_KA-76\\Lab1_BasicKnowledge\\Lab1_BasicKnowledge.csproj": {
+                "projectPath": "d:\\DATA\\Projects\\CSharp\\repos\\QA_KA-76\\Lab1_BasicKnowledge\\Lab1_BasicKnowledge.csproj"
               }
             }
           }
@@ -77,11 +77,11 @@
         }
       }
     },
-    "D:\\DATA\\Projects\\CSharp\\Lab1_BasicKnowledge\\Lab1_BasicKnowledge\\Lab1_BasicKnowledge.csproj": {
+    "d:\\DATA\\Projects\\CSharp\\repos\\QA_KA-76\\Lab1_BasicKnowledge\\Lab1_BasicKnowledge.csproj": {
       "restore": {
-        "projectUniqueName": "D:\\DATA\\Projects\\CSharp\\Lab1_BasicKnowledge\\Lab1_BasicKnowledge\\Lab1_BasicKnowledge.csproj",
+        "projectUniqueName": "d:\\DATA\\Projects\\CSharp\\repos\\QA_KA-76\\Lab1_BasicKnowledge\\Lab1_BasicKnowledge.csproj",
         "projectName": "Lab1_BasicKnowledge",
-        "projectPath": "D:\\DATA\\Projects\\CSharp\\Lab1_BasicKnowledge\\Lab1_BasicKnowledge\\Lab1_BasicKnowledge.csproj"
+        "projectPath": "d:\\DATA\\Projects\\CSharp\\repos\\QA_KA-76\\Lab1_BasicKnowledge\\Lab1_BasicKnowledge.csproj"
       },
       "frameworks": {
         "net472": {}

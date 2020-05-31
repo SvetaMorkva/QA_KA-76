@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pVS9/BRYDvtziUksj+hTcZGcavHcJkSVz7mqlZrw3Vm0d631lbsirLpI7HJ57EEIMdBPa7jUCWe30X9pRPq9IQ==",
+  "dgSpecHash": "vYsfgfrrWNDLdkdVAPlXoTZiS/3ozUUvThcbgwBNpxA1fG4oBwfz8WKM2EtPD/foeKGUSs58EVzrBSmWLCKEhA==",
   "success": true,
-  "projectFilePath": "D:\\DATA\\Projects\\CSharp\\Lab1_BasicKnowledge\\Lab1Tests\\Lab1Tests.csproj",
+  "projectFilePath": "d:\\DATA\\Projects\\CSharp\\repos\\QA_KA-76\\Lab1Tests\\Lab1Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Vis\\.nuget\\packages\\microsoft.codecoverage\\16.4.0\\microsoft.codecoverage.16.4.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",

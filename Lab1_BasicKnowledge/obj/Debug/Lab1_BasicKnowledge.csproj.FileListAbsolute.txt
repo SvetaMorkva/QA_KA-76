@@ -4,3 +4,8 @@ D:\DATA\Projects\CSharp\Lab1_BasicKnowledge\Lab1_BasicKnowledge\obj\Debug\Lab1_B
 D:\DATA\Projects\CSharp\Lab1_BasicKnowledge\Lab1_BasicKnowledge\obj\Debug\Lab1_BasicKnowledge.csproj.CoreCompileInputs.cache
 D:\DATA\Projects\CSharp\Lab1_BasicKnowledge\Lab1_BasicKnowledge\obj\Debug\Lab1_BasicKnowledge.dll
 D:\DATA\Projects\CSharp\Lab1_BasicKnowledge\Lab1_BasicKnowledge\obj\Debug\Lab1_BasicKnowledge.pdb
+D:\DATA\Projects\CSharp\repos\QA_KA-76\Lab1_BasicKnowledge\bin\Debug\Lab1_BasicKnowledge.dll
+D:\DATA\Projects\CSharp\repos\QA_KA-76\Lab1_BasicKnowledge\bin\Debug\Lab1_BasicKnowledge.pdb
+D:\DATA\Projects\CSharp\repos\QA_KA-76\Lab1_BasicKnowledge\obj\Debug\Lab1_BasicKnowledge.csproj.CoreCompileInputs.cache
+D:\DATA\Projects\CSharp\repos\QA_KA-76\Lab1_BasicKnowledge\obj\Debug\Lab1_BasicKnowledge.dll
+D:\DATA\Projects\CSharp\repos\QA_KA-76\Lab1_BasicKnowledge\obj\Debug\Lab1_BasicKnowledge.pdb
