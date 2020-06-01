@@ -17,7 +17,6 @@ namespace Lab1
             var version2 = new Version(strWithoutSpaces2);
 
             var result = version1.CompareTo(version2);
-            Console.WriteLine(result);
             if (result > 0)
                 return 1;
             else if (result < 0)
