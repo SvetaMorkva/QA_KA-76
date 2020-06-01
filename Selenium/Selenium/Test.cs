@@ -84,9 +84,13 @@ namespace Selenium
         [Test]
         public void ChangeLanguage()
         {
+            IWebElement cookieAcceptance = smartFind(driver, ".cookie-disclaimer__button .button__content");
+            cookieAcceptance.Click();
+
             IWebElement languageButton = smartFind(driver, ".location-selector__button");
             languageButton.Click();
 
+            Thread.Sleep(3000);
             IWebElement russianLanguage = smartFind(driver, ".location-selector__item:nth-child(9) .location-selector__link");
             russianLanguage.Click();
 
