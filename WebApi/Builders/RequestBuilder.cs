@@ -13,7 +13,7 @@ namespace WebApi.Builders
     public class RequestBuilder
     {
 
-        //инкапсуляция
+        // Инкапсуляция
         private static HttpRequestMessage _request;
         private static Uri BaseServiceUri { get; set; }
 
