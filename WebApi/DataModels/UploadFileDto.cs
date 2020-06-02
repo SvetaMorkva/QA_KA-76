@@ -2,7 +2,7 @@
 
 namespace WebApi.DataModels
 {
-    // наследование
+    // Наследование 
     public class UploadFileDto : Base
     {
         [JsonProperty("mode")]
