@@ -1,0 +1,9 @@
+/home/itsuprun/IASA/Testing/UITestingHomework_pageobject/UITestingHomework_pageobject/obj/Debug/.NETFramework,Version=v4.6.1.AssemblyAttribute.cs
+/home/itsuprun/IASA/Testing/UITestingHomework_pageobject/UITestingHomework_pageobject/bin/Debug/chromedriver
+/home/itsuprun/IASA/Testing/UITestingHomework_pageobject/UITestingHomework_pageobject/bin/Debug/UITestingHomework_pageobject.dll.mdb
+/home/itsuprun/IASA/Testing/UITestingHomework_pageobject/UITestingHomework_pageobject/bin/Debug/UITestingHomework_pageobject.dll
+/home/itsuprun/IASA/Testing/UITestingHomework_pageobject/UITestingHomework_pageobject/obj/Debug/UITestingHomework_pageobject.dll
+/home/itsuprun/IASA/Testing/UITestingHomework_pageobject/UITestingHomework_pageobject/obj/Debug/UITestingHomework_pageobject.dll.mdb
+/home/itsuprun/IASA/Testing/UITestingHomework_pageobject/UITestingHomework_pageobject/bin/Debug/SeleniumExtras.PageObjects.dll
+/home/itsuprun/IASA/Testing/UITestingHomework_pageobject/UITestingHomework_pageobject/bin/Debug/nunit.framework.dll
+/home/itsuprun/IASA/Testing/UITestingHomework_pageobject/UITestingHomework_pageobject/bin/Debug/WebDriver.dll
