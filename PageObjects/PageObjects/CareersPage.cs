@@ -38,6 +38,7 @@ namespace PageObjects
             skill.Click();
             new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(submit));
             submit.Click();
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(title));
             string res = title.GetAttribute("innerHTML");
             return res;
         }
