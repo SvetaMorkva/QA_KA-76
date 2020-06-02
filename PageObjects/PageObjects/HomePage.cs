@@ -153,7 +153,8 @@ namespace PageObjects
             frequesntSearchItem.Click();
             new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(submitSearch));
             submitSearch.Click();
-            
+
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementToBeClickable(keyWordSearch));
             string res = keyWordSearch.GetAttribute("innerHTML");
             return res;
         }
