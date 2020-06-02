@@ -1,0 +1,56 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=21ddcc3d_002Da317_002D430e_002Dbc35_002De4006f1730be/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="False" ContinuousTestingMode="0" FrameworkVersion="{x:Null}" IsLocked="False" Name="clickLogoTest" PlatformMonoPreference="{x:Null}" PlatformType="{x:Null}" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::1AAC690E-EFC9-41C7-8AD8-75393905961F::.NETFramework,Version=v4.6.1::UITestingHomework.KPITests.clickLogoTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=460bad83_002Dd229_002D4d90_002D8dad_002Dabb52dee0a5f/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="False" ContinuousTestingMode="0" FrameworkVersion="{x:Null}" IsLocked="False" Name="changeLanguageTest #3" PlatformMonoPreference="{x:Null}" PlatformType="{x:Null}" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"&gt;
+  &lt;Or&gt;
+    &lt;Or&gt;
+      &lt;TestAncestor&gt;
+        &lt;TestId&gt;NUnit3x::1AAC690E-EFC9-41C7-8AD8-75393905961F::.NETFramework,Version=v4.6.1::UITestingHomework.KPITests.changeLanguageTest&lt;/TestId&gt;
+      &lt;/TestAncestor&gt;
+      &lt;TestAncestor&gt;
+        &lt;TestId&gt;NUnit3x::1AAC690E-EFC9-41C7-8AD8-75393905961F::.NETFramework,Version=v4.6.1::UITestingHomework.KPITests.searchFormTest&lt;/TestId&gt;
+      &lt;/TestAncestor&gt;
+    &lt;/Or&gt;
+    &lt;TestAncestor&gt;
+      &lt;TestId&gt;NUnit3x::1AAC690E-EFC9-41C7-8AD8-75393905961F::.NETFramework,Version=v4.6.1::UITestingHomework.KPITests.clickLogoTest&lt;/TestId&gt;
+    &lt;/TestAncestor&gt;
+  &lt;/Or&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=46efd538_002Dc8ec_002D477f_002D83ce_002Db8148d89c7c3/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="False" ContinuousTestingMode="0" FrameworkVersion="{x:Null}" IsLocked="False" Name="Test1" PlatformMonoPreference="{x:Null}" PlatformType="{x:Null}" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"&gt;
+  &lt;Or&gt;
+    &lt;Or&gt;
+      &lt;Or&gt;
+        &lt;TestAncestor&gt;
+          &lt;TestId&gt;NUnit3x::1AAC690E-EFC9-41C7-8AD8-75393905961F::.NETFramework,Version=v4.6.1::UITestingHomework.Tests.Test1&lt;/TestId&gt;
+        &lt;/TestAncestor&gt;
+        &lt;TestAncestor&gt;
+          &lt;TestId&gt;NUnit3x::1AAC690E-EFC9-41C7-8AD8-75393905961F::.NETFramework,Version=v4.6.1::UITestingHomework.Tests.switchToEnglish&lt;/TestId&gt;
+        &lt;/TestAncestor&gt;
+      &lt;/Or&gt;
+      &lt;TestAncestor&gt;
+        &lt;TestId&gt;NUnit3x::1AAC690E-EFC9-41C7-8AD8-75393905961F::.NETFramework,Version=v4.6.1::UITestingHomework.KPITests.switchToEnglish&lt;/TestId&gt;
+      &lt;/TestAncestor&gt;
+    &lt;/Or&gt;
+    &lt;TestAncestor&gt;
+      &lt;TestId&gt;NUnit3x::1AAC690E-EFC9-41C7-8AD8-75393905961F::.NETFramework,Version=v4.6.1::UITestingHomework.KPITests.changeLanguageTest&lt;/TestId&gt;
+    &lt;/TestAncestor&gt;
+  &lt;/Or&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=872223dd_002Db6e7_002D4981_002Daa43_002D78c19b00aa0c/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="False" ContinuousTestingMode="0" FrameworkVersion="{x:Null}" IsLocked="False" Name="changeLanguageTest" PlatformMonoPreference="{x:Null}" PlatformType="{x:Null}" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::1AAC690E-EFC9-41C7-8AD8-75393905961F::.NETFramework,Version=v4.6.1::UITestingHomework.KPITests.changeLanguageTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=cac8c1ae_002Dd4e6_002D4f0e_002D8abe_002D0c0cf14d96d3/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="False" ContinuousTestingMode="0" FrameworkVersion="{x:Null}" IsLocked="False" Name="changeLanguageTest #4" PlatformMonoPreference="{x:Null}" PlatformType="{x:Null}" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::1AAC690E-EFC9-41C7-8AD8-75393905961F::.NETFramework,Version=v4.6.1::UITestingHomework.KPITests.changeLanguageTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e573a0cf_002D045a_002D4588_002D9dc0_002Df1e9095be4d8/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="False" ContinuousTestingMode="0" FrameworkVersion="{x:Null}" IsLocked="False" Name="changeLanguageTest #2" PlatformMonoPreference="{x:Null}" PlatformType="{x:Null}" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::1AAC690E-EFC9-41C7-8AD8-75393905961F::.NETFramework,Version=v4.6.1::UITestingHomework.KPITests.changeLanguageTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
