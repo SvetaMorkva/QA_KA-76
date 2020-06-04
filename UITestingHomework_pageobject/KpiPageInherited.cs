@@ -24,6 +24,7 @@ namespace UITestingHomework_pageobject
 
         public KpiPageInherited ClickButton(IWebElement buttonToClick)
         {
+            Console.WriteLine("dynamic poly !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11");
             buttonToClick.Click();
             return this;
         }
