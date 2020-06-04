@@ -33,6 +33,20 @@ namespace UITestingHomework_pageobject
             driver.Quit();
         }
 
+
+        /*  =================================
+         *  Testn using inherited pegeobject class
+         */
+        
+        [Test]
+        public void russianButtonCheck()
+        {
+            var myPage = new KpiPageInherited(driver);
+            myPage.ClickButton(myPage.getRussianButton());
+            Assert.IsTrue(myPage.isRussian);
+        }
+        
+        
         [Test]
         public void changeLanguageTest()
         {

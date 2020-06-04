@@ -56,6 +56,7 @@
     <Compile Include="KpiTests.cs" />
     <Compile Include="LibraryPage.cs" />
     <Compile Include="LibraryTests.cs" />
+    <Compile Include="KpiPageInherited.cs" />
     <Compile Include="testChromePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

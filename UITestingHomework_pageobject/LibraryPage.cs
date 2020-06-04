@@ -41,7 +41,7 @@ namespace UITestingHomework_pageobject
         public IWebElement errorAttribute;
 
         public bool actualErrorAttribute => errorAttribute.GetAttribute("role") == null;
-        
+
         public LibraryPage ClickLinkToClick()
         {
             linkToClick.Click();

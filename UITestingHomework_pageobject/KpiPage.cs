@@ -8,8 +8,21 @@ namespace UITestingHomework_pageobject
 { 
     public class KpiPage
     {
-        private IWebDriver _driver;
+        protected IWebDriver _driver;
+        
+        /* ========================
+         * the usage of incapsulation
+         */
+        public void SetWebDriver(IWebDriver driver)
+        {
+            _driver = driver;
+        }
 
+        public IWebDriver getWebDriver()
+        {
+            return _driver;
+        }
+        
         public KpiPage(IWebDriver driver)
         {
             _driver = driver;
@@ -39,12 +52,30 @@ namespace UITestingHomework_pageobject
         {
             return searchResult.GetAttribute("innerHTML").ToLower().Contains(TextToType);
         }
-        public KpiPage ClickEnglishButton()
+        
+        /*  ===============================================
+         * the usage of static polymorphism
+         */
+
+        public bool SearchCompleted()
+        {
+            string TextToType = "testtext";
+            return searchResult.GetAttribute("innetyHTML").ToLower().Contains(TextToType);
+        }
+        
+        
+        public KpiPage ClickButton()
         {
             languageButton.Click();
             return this;
         }
 
+        public KpiPage ClickButton(IWebElement buttonToClick)
+        {
+            buttonToClick.Click();
+            return this;
+        }
+        
         public KpiPage FillSearchField(string TextToType)
         {
             searchForm.SendKeys(TextToType);
@@ -57,5 +88,12 @@ namespace UITestingHomework_pageobject
             logoLink.Click();
             return this;
         }
+        
+        public KpiPage ClickEnglishButton()
+        {
+            languageButton.Click();
+            return this;
+        }
+
     }
 }
